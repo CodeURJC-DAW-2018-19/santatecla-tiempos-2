@@ -1,6 +1,8 @@
 # santatecla-tiempos-2
 
-## Time Manager
+## Phase 0
+
+### Name: Time Manager
 
 **Team members:**
 
@@ -17,3 +19,7 @@
 
 ### Trello link:
 https://trello.com/b/52Tfgzru/daw
+
+---
+
+## Phase 1
