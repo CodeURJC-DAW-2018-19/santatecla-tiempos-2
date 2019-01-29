@@ -1,0 +1,32 @@
+<html>
+
+<head>
+    <title>Gestor de tiempos</title>
+    <link type="text/css" rel="stylesheet" href="dawStyle.css" />
+
+</head>
+
+<body>
+    <div class="tabs">
+        <!-- Tab sections -->
+        <button class="section" onclick="openTab(event, 'Categoria')" id="default">Categoria</button>
+        <button class="section" onclick="openTab(event, 'Evento')">Evento</button>
+        <button class="section" onclick="openTab(event, 'Intervalo')">Intervalo</button>
+
+        <!-- Tab contents -->
+        <div id="Categoria" class="tabcontent">
+            <p>Cosas de Categoria</p>
+        </div>
+
+        <div id="Evento" class="tabcontent">
+            <p>Cosas de Evento</p>
+        </div>
+
+        <div id="Intervalo" class="tabcontent">
+            <p>Cosas de Intervalo</p>
+        </div>
+    </div>
+    <script src="dawJavaScript.js"></script>
+</body>
+
+</html>
