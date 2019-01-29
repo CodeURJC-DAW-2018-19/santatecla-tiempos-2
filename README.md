@@ -22,4 +22,9 @@ https://trello.com/b/52Tfgzru/daw
 
 ---
 
+### Docs Google:
+https://docs.google.com/document/d/1Xx1CJYwagN6zfFhv3WBdONDRmzzXSm6Uv-9EQpe4I_4/edit
+
+---
+
 ## Phase 1
