@@ -1,10 +1,17 @@
 # santatecla-tiempos-2
 
-Name of the project: Time Manager
+## Time Manager
 
-Team members:
-  María Flores García
-  Karol Lisowski
-  Marcos Sánchez Hernández
-  Lucía Colás Vico
-  Sergio Lira Díaz
+**Team members:**
+
+| Name | Mail | Github Username |
+| ---- | ---- | --------------- |
+| María Flores García | m.flores.2016@alumnos.urjc.es | mariafg11 |
+| Karol Lisowski | k.lisowski@alumnos.urjc.es | KarolLisowski |
+| Marcos Sánchez Hernández | m.sanchezh.2016@alumnos.urjc.es | zikram013 |
+| Lucía Colás Vico | l.colas.2016@alumnos.urjc.es | lucia2cv |
+| Sergio Lira Díaz | s.lira.2016@alumnos.urjc.es | AzoriusSergh4 |
+
+
+---
+
