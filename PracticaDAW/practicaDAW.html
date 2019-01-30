@@ -3,15 +3,18 @@
 <head>
     <title>Gestor de tiempos</title>
     <link type="text/css" rel="stylesheet" href="dawStyle.css" />
+    < link href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet">
+        < script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></ script>
+        < script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></ script>
 
 </head>
 
 <body>
-    <div class="tabs">
+    <div class="btn-group" role="group" aria-label="Basic example ">
         <!-- Tab sections -->
-        <button class="section" onclick="openTab(event, 'Categoria')" id="default">Categoria</button>
-        <button class="section" onclick="openTab(event, 'Evento')">Evento</button>
-        <button class="section" onclick="openTab(event, 'Intervalo')">Intervalo</button>
+        <button type="button" onclick="openTab(event, 'Categoria')" class="btn btn-seondary">Categoria</button>
+        <button type="button" onclick="openTab(event, 'Evento')" class="btn btn-secondary">Evento</button>
+        <button type="button" onclick="openTab(event, 'Intervalo')" class="btn btn-secondary">Intervalo</button>
 
         <!-- Tab contents -->
         <div id="Categoria" class="tabcontent">
