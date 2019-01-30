@@ -1,3 +1,5 @@
+"use strict";
+
 function openTab(event, tab) {
     var i, tabcontent, section;
 
