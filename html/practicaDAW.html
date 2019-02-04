@@ -1,0 +1,101 @@
+<html>
+
+<head>
+    <title>Gestor de tiempos</title>
+    <link data-require="bootstrap@4.1.3" data-semver="4.1.3" rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.cs"/>
+    <script data-require="bootstrap@4.1.3" data-semver="4.1.3" src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="material-dashboard-master/assets/css/material-dashboard.css" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+
+
+</head>
+
+<body>
+    <div class="container">
+        <!-- nav  -->
+			<ul class="nav nav-tabs">
+				<li><a <a class="nav-link active" data-toggle="tab" href="#"  aria-expanded="true" onclick="openTab(event, 'Categoria')" id="default">Categoria</a></li>
+				<li><a class="nav-link" data-toggle="tab" href="#"  aria-expanded="false"onclick="openTab(event, 'Evento')">Evento</a></li>
+				<li><a class="nav-link" data-toggle="tab" href="#"  aria-expanded="false" onclick="openTab(event, 'Intervalo')">Intervalo</a></li>
+			</ul>
+
+	</div>
+    <!-- Tab contents -->
+    <div id="Categoria" class="tabcontent">
+		<div class="col-md-6">
+			
+				<table class="table">
+					<tbody>
+						<tr>
+							<td class="text-center" id="change" >Categoría 1</td>
+							<td class="td-actions text-left">
+								<img src="material-dashboard-master/assets/img/pencilIcon.png" height="42" width="42" type="button" rel="tooltip" class="btn btn-info" onclick="changeCategory()">	
+								</img>
+								<img src="material-dashboard-master/assets/img/trashIcon.png" height="42" width="42" type="button" rel="tooltip" class="btn btn-danger" onclick="deleteCategory()">
+								</img>	
+								
+							</td>
+						</tr>
+						<tr>
+							<td class="text-center" id="change" >Categoría 2</td>
+							<td class="td-actions text-left">
+								<img src="material-dashboard-master/assets/img/pencilIcon.png" height="42" width="42" type="button" rel="tooltip" class="btn btn-info" onclick="changeCategory()">	
+								</img>
+								<img src="material-dashboard-master/assets/img/trashIcon.png" height="42" width="42" type="button" rel="tooltip" class="btn btn-danger" onclick="deleteCategory()">
+								</img>	
+								
+							</td>
+						</tr>
+						<tr>
+							<td class="text-center" id="change" >Categoría 3</td>
+							<td class="td-actions text-left">
+								<img src="material-dashboard-master/assets/img/pencilIcon.png" height="42" width="42" type="button" rel="tooltip" class="btn btn-info" onclick="changeCategory()">	
+								</img>
+								<img src="material-dashboard-master/assets/img/trashIcon.png" height="42" width="42" type="button" rel="tooltip" class="btn btn-danger" onclick="deleteCategory()">
+								</img>	
+								
+							</td>
+						</tr>
+						<tr>
+							<td class="text-center" id="change" >Categoría 4</td>
+							<td class="td-actions text-left">
+								<img src="material-dashboard-master/assets/img/pencilIcon.png" height="42" width="42" type="button" rel="tooltip" class="btn btn-info" onclick="changeCategory()">	
+								</img>
+								<img src="material-dashboard-master/assets/img/trashIcon.png" height="42" width="42" type="button" rel="tooltip" class="btn btn-danger" onclick="deleteCategory()">
+								</img>	
+							</td>
+						</tr>
+						<tr>
+							<td class="text-center" id="change" >Categoría 5</td>
+							<td class="td-actions text-left">
+								<img src="material-dashboard-master/assets/img/pencilIcon.png" height="42" width="42" type="button" rel="tooltip" class="btn btn-info" onclick="changeCategory()">	
+								</img>
+								<img src="material-dashboard-master/assets/img/trashIcon.png" height="42" width="42" type="button" rel="tooltip" class="btn btn-danger" onclick="deleteCategory()">
+								</img>	
+							</td>
+						</tr>
+					</tbody>
+					
+				</table>
+				<div class="text-right">
+					<img src="material-dashboard-master/assets/img/plus.png" height="42" width="42" type="button" rel="tooltip" class="btn btn-info  btn-fab btn-fab-mini btn-round" onclick="newCategory()">
+					</button>
+				</div>
+		
+		</div>
+    </div>
+
+    <div id="Evento" class="tabcontent">
+        <p>Cosas de Evento</p>
+    </div>
+
+    <div id="Intervalo" class="tabcontent">
+        <p>Cosas de Intervalo</p>
+    </div>
+
+    <script src="tabs.js"></script>
+	<script src="category.js"></script>
+</body>
+
+</html>
