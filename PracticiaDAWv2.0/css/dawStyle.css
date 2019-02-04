@@ -1,5 +1,3 @@
-< !-- Archvio CSS asociado -- > .navbar {}
-
 #navBar {
     background-color: #377075 !important;
 }
@@ -14,10 +12,14 @@
 }
 
 body {
-    background-color: #86ABAE;
+    background-color: #AED4D7;
 }
 
 #cardInterv {
     width: 20rem;
     background-color: aqua;
+}
+
+.active {
+    background-color: #89AEB1;
 }

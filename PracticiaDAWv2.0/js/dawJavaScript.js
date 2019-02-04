@@ -6,7 +6,7 @@ function openTab(event, tab) {
         tabcontent[i].style.display = "none";
     }
 
-    section = document.getElementsByClassName("nav-item");
+    section = document.getElementsByClassName("nav-link");
     for (i = 0; i < section.length; i++) {
         section[i].className = section[i].className.replace(" active", "");
     }
