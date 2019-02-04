@@ -1,5 +1,6 @@
 #navBar {
     background-color: #377075 !important;
+    box-shadow: none;
 }
 
 #navBarCollap {
@@ -12,10 +13,30 @@
 }
 
 body {
-    background-color: #86ABAE;
+    background-color: #AED4D7;
 }
 
 #cardInterv {
     width: 20rem;
     background-color: aqua;
+}
+
+.active {
+    background-color: #89AEB1;
+}
+
+#categoryIcon {
+    font-size: 1.1rem;
+    padding-top: 5px;
+}
+
+#categoryButton {
+    height: 2.1rem;
+    width: 2.1rem;
+}
+
+#categoryButtonAdd {
+    height: 2.1rem;
+    width: 2.1rem;
+    padding: 5px;
 }
