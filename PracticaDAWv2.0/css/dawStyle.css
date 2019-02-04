@@ -1,0 +1,21 @@
+#navBar {
+    background-color: #377075 !important;
+}
+
+#navBarCollap {
+    padding-left: 0px;
+}
+
+#navBarContainer {
+    margin-left: 0px;
+    padding-left: 0px;
+}
+
+body {
+    background-color: #86ABAE;
+}
+
+#cardInterv {
+    width: 20rem;
+    background-color: aqua;
+}
