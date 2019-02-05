@@ -32,19 +32,19 @@ https://docs.google.com/document/d/1Xx1CJYwagN6zfFhv3WBdONDRmzzXSm6Uv-9EQpe4I_4/
 #### In fase 1 we've built the base structure for our web page, divided into 4 sections: Categories, events, time and intervals, plus a login button. Every section has been edited as indicated in requirements using HTML, CSS, Bootstrap and Dashboard. 
 
 ##### Default Page
-![Screenshot](screenshots/CapturaCategorias.jpg)
+![Screenshot](CapturaCategorias.jpg)
 
 ##### Events Section
-![Screenshot](Screenshots/CapturaEvento.jpg)
+![Screenshot](CapturaEvento.jpg)
 
 ##### Time Section
-![Screenshot](Screenshots/CapturaIntervalo.jpg)
+![Screenshot](CapturaIntervalo.jpg)
 
 ##### Interval Section
-![Screenshot](Screenshots/CapturaIntervalo1.jpg)
+![Screenshot](CapturaIntervalo1.jpg)
 
 ##### Log In Section
-![Screenshot](Screenshots/CapturaLogIn.jpg)
+![Screenshot](CapturaLogIn.jpg)
 
 ##### Navegation Diagram
-![Screenshot](Screenshots/Diagrama.PNG.png)
+![Screenshot](Diagrama.PNG.png)
