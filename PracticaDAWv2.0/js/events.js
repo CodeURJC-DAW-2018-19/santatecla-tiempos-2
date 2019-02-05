@@ -1,6 +1,7 @@
 /*Apertura de paginas*/
 var crearEvento = "newEvent.html";
 var seleccionarCategorias = "listCategories.html";
+var login = "login.html"
 /*Variables de validacion*/
 var nombre;
 var fecha;
@@ -9,6 +10,11 @@ var urlWiki;
 /*Variables de acceso*/
 var userName;
 var password;
+
+/*Entrada a Login*/
+function enterLogin() {
+    window.open(login, "Login", "width=500px,height=500px,margin=auto");
+}
 
 /*Validacion del login*/
 function dataLogin() {

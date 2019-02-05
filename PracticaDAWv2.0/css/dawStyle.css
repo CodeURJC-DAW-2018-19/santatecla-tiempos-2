@@ -17,8 +17,8 @@ body {
 }
 
 #cardInterv {
-    width: 20rem;
-    background-color: aqua;
+    width: 50%;
+    background-color: #f8feff;
 }
 
 .active {
@@ -39,4 +39,8 @@ body {
     height: 2.1rem;
     width: 2.1rem;
     padding: 5px;
+}
+
+#searchInterval {
+    display: inline;
 }
