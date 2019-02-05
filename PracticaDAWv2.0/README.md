@@ -35,16 +35,16 @@ https://docs.google.com/document/d/1Xx1CJYwagN6zfFhv3WBdONDRmzzXSm6Uv-9EQpe4I_4/
 ![Screenshot](https://github.com/CodeURJC-DAW-2018-19/santatecla-tiempos-2/blob/master/Screenshots/CapturaCategorias.jpg)
 
 ##### Events Section
-![Screenshot](CapturaEvento.jpg)
+![Screenshot](https://github.com/CodeURJC-DAW-2018-19/santatecla-tiempos-2/blob/master/Screenshots/capturaEvento.jpg)
 
 ##### Time Section
-![Screenshot](CapturaIntervalo.jpg)
+![Screenshot](https://github.com/CodeURJC-DAW-2018-19/santatecla-tiempos-2/blob/master/Screenshots/CapturaIntervalo.jpg)
 
 ##### Interval Section
-![Screenshot](CapturaIntervalo1.jpg)
+![Screenshot](https://github.com/CodeURJC-DAW-2018-19/santatecla-tiempos-2/blob/master/Screenshots/CapturaIntervalo1.jpg)
 
 ##### Log In Section
-![Screenshot](CapturaLogIn.jpg)
+![Screenshot](https://github.com/CodeURJC-DAW-2018-19/santatecla-tiempos-2/blob/master/Screenshots/CapturaLogIn.jpg)
 
 ##### Navegation Diagram
-![Screenshot](Diagrama.PNG.png)
+![Screenshot](https://github.com/CodeURJC-DAW-2018-19/santatecla-tiempos-2/blob/master/Screenshots/Diagrama.PNG.png)
