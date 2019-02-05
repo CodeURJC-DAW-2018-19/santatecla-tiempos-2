@@ -35,16 +35,16 @@ https://docs.google.com/document/d/1Xx1CJYwagN6zfFhv3WBdONDRmzzXSm6Uv-9EQpe4I_4/
 ![Screenshot](screenshots/CapturaCategorias.jpg)
 
 ##### Events Section
-![Screenshot](screenshots/CapturaEvento.jpg)
+![Screenshot](Screenshots/CapturaEvento.jpg)
 
 ##### Time Section
-![Screenshot](screenshots/CapturaIntervalo.jpg)
+![Screenshot](Screenshots/CapturaIntervalo.jpg)
 
 ##### Interval Section
-![Screenshot](screenshots/CapturaIntervalo1.jpg)
+![Screenshot](Screenshots/CapturaIntervalo1.jpg)
 
 ##### Log In Section
-![Screenshot](screenshots/CapturaLogIn.jpg)
+![Screenshot](Screenshots/CapturaLogIn.jpg)
 
 ##### Navegation Diagram
-![Screenshot](screenshots/Diagrama.PNG.png)
+![Screenshot](Screenshots/Diagrama.PNG.png)
