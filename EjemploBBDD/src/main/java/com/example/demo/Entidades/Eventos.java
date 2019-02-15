@@ -2,10 +2,11 @@ package com.example.demo.Entidades;
 /*Imports*/
 
 
-import java.sql.Date;
-import java.util.List;
+import com.fasterxml.jackson.annotation.JsonInclude;
 
 import javax.persistence.*;
+import java.sql.Date;
+import java.util.List;
 
 
 /*Declaramos la clase como entidad para crear la base de datos*/
@@ -15,9 +16,10 @@ public class Eventos {
 	/*Generamos el Id de cada evento*/
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
+	@JsonInclude(JsonInclude.Include.NON_NULL)
 	private long id;
 	private String nameEvent ;
-	private Date date;
+	private java.util.Date date;
 	private String photo;
 	private String wiki;
 	
@@ -26,7 +28,7 @@ public class Eventos {
 	private List<Categorias>categorie;
 	
 	/*Constructor vacio*/
-	public Eventos() {
+	public Eventos(String daw, String s, String url_foto, String url_wiki) {
 		
 	}
 	
@@ -57,7 +59,7 @@ public class Eventos {
 		this.nameEvent = nameEvent;
 	}
 
-	public Date getDate() {
+	public java.util.Date getDate() {
 		return date;
 	}
 
