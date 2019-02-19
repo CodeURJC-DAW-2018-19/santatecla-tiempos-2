@@ -1,5 +1,5 @@
 #navBar {
-    background-color: #377075 !important;
+    background-color: #BE6245 !important;
     box-shadow: none;
 }
 
@@ -12,17 +12,22 @@
     padding-left: 0px;
 }
 
-body {
-    background-color: #AED4D7;
+.nav-item a:hover {
+    background-color: #FFD9CD;
+
 }
 
-#cardInterv {
-    width: 50%;
-    background-color: #f8feff;
+.nav-item:hover {
+    color: black;
+}
+
+body {
+    background-color: #FFEFEA;
 }
 
 .active {
-    background-color: #89AEB1;
+    background-color: #FFD9CD;
+    color: black;
 }
 
 #categoryIcon {
@@ -30,17 +35,88 @@ body {
     padding-top: 5px;
 }
 
-#categoryButton {
+#categoryIconT {
+    font-size: 1.1rem;
+}
+
+.categoryButton {
     height: 2.1rem;
     width: 2.1rem;
 }
 
 #categoryButtonAdd {
-    height: 2.1rem;
-    width: 2.1rem;
+    height: 4.0em;
+    width: 4.0em;
     padding: 5px;
+    margin-left: 2rem;
+
 }
 
-#searchInterval {
-    display: inline;
+/* Intervalos concretos */
+
+.searchInterval {
+    display: block;
+    margin-left: 3.0em;
+    background-color: #ffbfaa;
+    width: 50%;
+}
+
+.searchIntervalItem {
+    margin-left: 10px;
+    margin-bottom: 5px;
+}
+
+#searchIntervalInput {
+    width: 90%;
+}
+
+.form-control {
+    background-image: linear-gradient(to top, #ff9300 2px, rgba(156, 39, 176, 0) 2px), linear-gradient(to top, #d2d2d2 1px, rgba(210, 210, 210, 0) 1px);
+}
+
+
+.card {
+    background-color: #ffbfaa;
+}
+
+.cardInterv {
+    width: 55%;
+    margin-left: 3.0em;
+
+}
+
+.intervMain {
+    display: flex;
+}
+
+.fechas {
+    display: flex;
+    margin: 2.0em;
+    width: 50%;
+}
+
+.buttonInterv {
+    display: block;
+    float: right;
+    margin: 2.0em;
+}
+
+.buttonList {
+    list-style-type: none;
+}
+
+.buttonListInt {
+    width: inherit;
+}
+
+.modal-body {
+    overflow: auto;
+}
+
+.col {
+    font-size: 2rem;
+}
+
+.row {
+    padding: 1rem;
 }
