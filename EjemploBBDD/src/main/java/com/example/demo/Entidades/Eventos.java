@@ -5,7 +5,6 @@ package com.example.demo.Entidades;
 import com.fasterxml.jackson.annotation.JsonInclude;
 
 import javax.persistence.*;
-import java.sql.Date;
 import java.util.List;
 
 
@@ -19,27 +18,24 @@ public class Eventos {
 	@JsonInclude(JsonInclude.Include.NON_NULL)
 	private long id;
 	private String nameEvent ;
-	private java.util.Date date;
+	private String date;
 	private String photo;
 	private String wiki;
 	
 	/*bidireccionalidad*/
 	@ManyToMany
 	private List<Categorias>categorie;
-	
-	/*Constructor vacio*/
-	public Eventos(String daw, String s, String url_foto, String url_wiki) {
-		
-	}
+
+
 	
 	/*Constructor*/
-	public Eventos( String nameEvent, Date date, String photo, String wiki) {
-	
-		
+
+	public Eventos(String nameEvent, String date, String photo, String wiki) {
 		this.nameEvent = nameEvent;
 		this.date = date;
 		this.photo = photo;
 		this.wiki = wiki;
+		//this.categorie = categorie;
 	}
 
 	/*Getters and setters*/
@@ -59,11 +55,11 @@ public class Eventos {
 		this.nameEvent = nameEvent;
 	}
 
-	public java.util.Date getDate() {
+	public String getDate() {
 		return date;
 	}
 
-	public void setDate(Date date) {
+	public void setDate(String date) {
 		this.date = date;
 	}
 
@@ -81,6 +77,14 @@ public class Eventos {
 
 	public void setWiki(String wiki) {
 		this.wiki = wiki;
+	}
+
+	public List<Categorias> getCategorie() {
+		return categorie;
+	}
+
+	public void setCategorie(List<Categorias> categorie) {
+		this.categorie = categorie;
 	}
 
 	@Override

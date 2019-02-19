@@ -1,8 +1,6 @@
 package com.example.demo;
 
-import com.example.demo.Entidades.CategoriasRepositorio;
-import com.example.demo.Entidades.EventoRepositorio;
-import com.example.demo.Entidades.TiempoRepositorio;
+import com.example.demo.Entidades.*;
 import com.example.demo.Users.Usuario;
 import com.example.demo.Users.UsuarioRepositorio;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -19,9 +17,20 @@ public class BBDDinit {
     @PostConstruct
     public void init(){
         //Eventos,tiempo y categorias
+        Categorias cat1 = new Categorias("Examenes");
+        Categorias cat2 = new Categorias("Practicas");
+        Categorias cat3 = new Categorias("Apuntes");
+        catRep.save(cat1);
+        catRep.save(cat2);
+        catRep.save(cat3);
+
+
+        Eventos event1=new Eventos("DAW","7/7/2019","hola","hola");
+        event1.getCategorie().add(cat1);
 
         //usuarios
-        userRep.save(new Usuario("User","pass","alumno"));
-        userRep.save(new Usuario("admin","pass","profesor"));
+        userRep.save(new Usuario("User","pass","ROLE_USER"));
+        userRep.save(new Usuario("Marcos","pass","ROLE_USER"));
+        userRep.save(new Usuario("admin","pass","ROLE_USER","ROLE_ADMIN"));
     }
 }
