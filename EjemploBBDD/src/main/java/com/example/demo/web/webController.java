@@ -89,7 +89,9 @@ public class webController {
 
     @GetMapping("/deleteEvent/{id}")
     public String deleteEvent(Model model,@PathVariable long id){
+    	
         eveControl.delete(id);
+        return "practicaDAW";
     }
 
     //Tiempos
