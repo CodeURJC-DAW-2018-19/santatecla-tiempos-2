@@ -16,7 +16,7 @@ public class Categorias {
 	private String nameCategory;
 	
 	/*UniDireccional*/
-	@ManyToMany(mappedBy="categorias")
+	@ManyToMany(mappedBy="categorie")
 	private List<Eventos>event;
 	
 	

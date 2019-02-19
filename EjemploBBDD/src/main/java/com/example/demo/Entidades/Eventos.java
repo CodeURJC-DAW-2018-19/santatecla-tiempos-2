@@ -27,6 +27,7 @@ public class Eventos {
 	private List<Categorias>categorie;
 
 
+
 	
 	/*Constructor*/
 

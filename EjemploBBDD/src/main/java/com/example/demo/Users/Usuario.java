@@ -1,9 +1,6 @@
 package com.example.demo.Users;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import javax.persistence.*;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
@@ -17,6 +14,8 @@ public class Usuario {
     /*Parametros de los usuarios*/
     private String username;
     private String password;
+
+    @ElementCollection(fetch = FetchType.EAGER)
     private List<String> rol;
 
     public Usuario(){
