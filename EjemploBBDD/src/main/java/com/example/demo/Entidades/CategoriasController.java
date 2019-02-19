@@ -2,7 +2,9 @@ package com.example.demo.Entidades;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
+import org.springframework.data.domain.PageRequest;
 import org.springframework.data.domain.Pageable;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import java.util.List;
@@ -36,12 +38,11 @@ public class CategoriasController {
 		catRep.deleteById(id);
 	}
 	//Paginacion de elemetos de la pestaña categoria
+
+	@GetMapping("/practicaDAW/")
 	public Page<Categorias> category (Pageable page){
+		Page<Categorias>cat=catRep.findAll(PageRequest.of(0,10));
 		return catRep.findAll(page);
 	}
-
-
-
-
 
 }
