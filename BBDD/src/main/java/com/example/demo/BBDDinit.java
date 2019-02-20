@@ -1,5 +1,6 @@
 package com.example.demo;
 
+
 import com.example.demo.Entidades.*;
 import com.example.demo.Users.Usuario;
 import com.example.demo.Users.UsuarioRepositorio;
@@ -15,7 +16,7 @@ public class BBDDinit {
     private UsuarioRepositorio userRep;
 
     @PostConstruct
-    public void init(){
+    public void init() {
         //Eventos,tiempo y categorias
         Categorias cat1 = new Categorias("Examenes");
         Categorias cat2 = new Categorias("Practicas");

@@ -11,18 +11,18 @@ import java.util.List;
 import java.util.Optional;
 
 @Service
-public class EventosController {
+public class EventosService {
     @Autowired
     private EventoRepositorio eveRep;
 
     //Paginacion
     @GetMapping("/practicaDAW/")
     public Page<Eventos> category (Pageable page){
-        Page<Eventos>event=eveRep.findAll(PageRequest.of(0,10));
+        Page<Eventos> event=eveRep.findAll(PageRequest.of(0,10));
         return eveRep.findAll(page);
     }
 
-    public Optional<Eventos>findOne(long id){
+    public Optional<Eventos> findOne(long id){
         return eveRep.findById(id);
     }
 

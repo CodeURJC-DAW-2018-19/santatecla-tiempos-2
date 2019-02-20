@@ -1,6 +1,5 @@
 package com.example.demo.Security;
 
-import com.example.demo.Security.UserRepositoryAuthenticationProvider;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.config.annotation.authentication.builders.AuthenticationManagerBuilder;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
@@ -12,7 +11,7 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
     public UserRepositoryAuthenticationProvider authenticationProvider;
 
     @Override
-    protected void configure(HttpSecurity http) throws Exception{
+    protected void configure(HttpSecurity http) throws Exception {
 
         //Url publicas
         http.authorizeRequests().antMatchers("/").permitAll();
@@ -46,7 +45,7 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
         auth.inMemoryAuthentication().withUser("user").password("pass");
     }
   */
-    protected void configure (AuthenticationManagerBuilder auth) throws Exception{
+    protected void configure (AuthenticationManagerBuilder auth) throws Exception {
         //autenticacion desde la base de datos
         auth.authenticationProvider(authenticationProvider);
     }

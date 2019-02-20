@@ -22,7 +22,7 @@ public class Usuario {
 
     }
 
-    public Usuario(String username, String password,String... rol) {
+    public Usuario(String username, String password, String... rol) {
         this.username = username;
         this.password = password;
         this.rol=new ArrayList<>(Arrays.asList(rol));

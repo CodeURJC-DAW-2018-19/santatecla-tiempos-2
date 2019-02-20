@@ -1,9 +1,7 @@
 package com.example.demo.Entidades;
 
-import java.sql.Date;
-import java.util.List;
-
 import javax.persistence.*;
+import java.util.List;
 
 @Entity
 public class Tiempo {
@@ -22,10 +20,10 @@ public class Tiempo {
 		this.fechaFin = fechaFin;
 	}
 	
-	
+
 	@OneToMany
 	private List<Eventos> eventos;
-	
+
 	
 
 	public List<Eventos> getEventos() {

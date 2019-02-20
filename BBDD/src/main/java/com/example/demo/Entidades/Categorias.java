@@ -1,56 +1,52 @@
 package com.example.demo.Entidades;
 
 
-import java.util.List;
 
-import javax.persistence.*;
-
-
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
 
 @Entity
-public class Categorias {
+    public class Categorias {
 
-	@Id
-	@GeneratedValue(strategy = GenerationType.AUTO)
-	private long id;
-	private String nameCategory;
-	
-	/*UniDireccional*/
-	@ManyToMany(mappedBy="categorie")
-	private List<Eventos>event;
-	
-	
-	public Categorias() {
-		
-	}
+        @Id
+        @GeneratedValue(strategy = GenerationType.AUTO)
+        private long id=-1;
+        private String nameCategory;
 
-	public Categorias( String nameCategory) {
-		
-		
-		this.nameCategory = nameCategory;
-	}
+    /**
+     * @ManytoMany(mappedBy="categories")
+     * private List<Eventos>event
+     */
+    public Categorias(){}
 
-	public long getId() {
-		return id;
-	}
+    public Categorias(String nameCategory){
+        super();
+        this.nameCategory=nameCategory;
+    }
 
-	public void setId(long id) {
-		this.id = id;
-	}
+    public long getId() {
+        return id;
+    }
 
-	public String getNameCategory() {
-		return nameCategory;
-	}
+    public void setId(long id) {
+        this.id = id;
+    }
 
-	public void setNameCategory(String nameCategory) {
-		this.nameCategory = nameCategory;
-	}
+    public String getNameCategory() {
+        return nameCategory;
+    }
 
-	@Override
-	public String toString() {
-		return "Categorias [id=" + id + ", nameCategory=" + nameCategory + "]";
-	}
-	
-	
-	
+    public void setNameCategory(String nameCategory) {
+        this.nameCategory = nameCategory;
+    }
+
+    @Override
+    public String toString() {
+        return "Categorias{" +
+                "id=" + id +
+                ", nameCategory='" + nameCategory + '\'' +
+                '}';
+    }
 }

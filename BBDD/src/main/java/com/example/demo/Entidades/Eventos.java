@@ -23,8 +23,9 @@ public class Eventos {
 	private String wiki;
 	
 	/*bidireccionalidad*/
+
 	@ManyToMany
-	private List<Categorias>categorie;
+	private List<Categorias> categorie;
 
 
 

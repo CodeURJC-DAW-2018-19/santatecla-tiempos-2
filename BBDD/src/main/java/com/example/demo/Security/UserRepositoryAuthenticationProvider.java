@@ -3,7 +3,6 @@ package com.example.demo.Security;
 import com.example.demo.Users.UserComponent;
 import com.example.demo.Users.Usuario;
 import com.example.demo.Users.UsuarioRepositorio;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.authentication.AuthenticationProvider;
 import org.springframework.security.authentication.BadCredentialsException;
@@ -38,7 +37,7 @@ public class UserRepositoryAuthenticationProvider implements AuthenticationProvi
            throw new BadCredentialsException("Fail password");
        }else{
            userComponent.setLoggedUser(user);
-           List<GrantedAuthority>roles=new ArrayList<>();
+           List<GrantedAuthority> roles=new ArrayList<>();
            for(String role:user.getRol()){
                roles.add(new SimpleGrantedAuthority(role));
            }
@@ -53,4 +52,6 @@ public class UserRepositoryAuthenticationProvider implements AuthenticationProvi
     public boolean supports(Class<?> aClass) {
         return false;
     }
+
+
 }
