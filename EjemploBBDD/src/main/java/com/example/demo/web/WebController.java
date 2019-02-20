@@ -1,7 +1,5 @@
 package com.example.demo.web;
 
-import java.util.Optional;
-
 import com.example.demo.Entidades.*;
 import com.example.demo.Users.UserComponent;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -12,8 +10,10 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 
-@Controller
-public class webController {
+import java.util.Optional;
+
+@Controller()
+public class WebController {
     @Autowired
     private CategoriasController catcontrol;
     @Autowired
