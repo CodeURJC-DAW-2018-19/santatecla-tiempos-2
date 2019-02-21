@@ -12,7 +12,7 @@ public class BBDDinit {
     @Autowired
     private CategoriasRepositorio catRep;
     private EventoRepositorio eveRep;
-    private TiempoRepositorio timeRep;
+    private TimeRepository timeRep;
     private UsuarioRepositorio userRep;
 
     @PostConstruct
