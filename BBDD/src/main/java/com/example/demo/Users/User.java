@@ -6,7 +6,7 @@ import java.util.Arrays;
 import java.util.List;
 
 @Entity
-public class Usuario {
+public class User {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
@@ -18,11 +18,11 @@ public class Usuario {
     @ElementCollection(fetch = FetchType.EAGER)
     private List<String> rol;
 
-    public Usuario(){
+    public User(){
 
     }
 
-    public Usuario(String username, String password, String... rol) {
+    public User(String username, String password, String... rol) {
         this.username = username;
         this.password = password;
         this.rol=new ArrayList<>(Arrays.asList(rol));

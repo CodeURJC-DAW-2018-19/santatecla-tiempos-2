@@ -1,8 +1,6 @@
 package com.example.demo.Security;
 
-import com.example.demo.Users.UserComponent;
-import com.example.demo.Users.Usuario;
-import com.example.demo.Users.UsuarioRepositorio;
+import com.example.demo.Users.*;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.authentication.AuthenticationProvider;
 import org.springframework.security.authentication.BadCredentialsException;
@@ -19,7 +17,7 @@ import java.util.List;
 public class UserRepositoryAuthenticationProvider implements AuthenticationProvider {
 
     @Autowired
-    private UsuarioRepositorio userRep;
+    private UserRepository userRep;
     @Autowired
     private UserComponent userComponent;
 
@@ -27,7 +25,7 @@ public class UserRepositoryAuthenticationProvider implements AuthenticationProvi
        String username=authentication.getName();
        String password=(String)authentication.getCredentials();
 
-       Usuario user = userRep.findByUsername(username);
+       User user = userRep.findByUsername(username);
 
        if(user==null){
            throw new BadCredentialsException("User dont exist");

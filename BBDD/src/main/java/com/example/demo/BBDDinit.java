@@ -2,8 +2,7 @@ package com.example.demo;
 
 
 import com.example.demo.Entidades.*;
-import com.example.demo.Users.Usuario;
-import com.example.demo.Users.UsuarioRepositorio;
+import com.example.demo.Users.*;
 import org.springframework.beans.factory.annotation.Autowired;
 
 import javax.annotation.PostConstruct;
@@ -13,7 +12,7 @@ public class BBDDinit {
     private CategoriasRepositorio catRep;
     private EventoRepositorio eveRep;
     private TimeRepository timeRep;
-    private UsuarioRepositorio userRep;
+    private UserRepository userRep;
 
     @PostConstruct
     public void init() {
@@ -34,9 +33,9 @@ public class BBDDinit {
         time1.getEventos().add(event1);*/
 
         //usuarios
-        userRep.save(new Usuario("User","pass","ROLE_USER"));
-        userRep.save(new Usuario("Marcos","pass","ROLE_USER"));
-        userRep.save(new Usuario("admin","pass","ROLE_USER","ROLE_ADMIN"));
+        userRep.save(new User("User","pass","ROLE_USER"));
+        userRep.save(new User("Marcos","pass","ROLE_USER"));
+        userRep.save(new User("admin","pass","ROLE_USER","ROLE_ADMIN"));
         
         
     }
