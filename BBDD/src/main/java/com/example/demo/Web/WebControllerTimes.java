@@ -1,6 +1,6 @@
 package com.example.demo.Web;
 
-import com.example.demo.Entidades.*;
+import com.example.demo.entities.*;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;

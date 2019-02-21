@@ -1,4 +1,4 @@
-package com.example.demo.Entidades;
+package com.example.demo.entities;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
@@ -16,26 +16,26 @@ import java.util.Optional;
 
 @Service
 @Controller
-public class EventosService {
+public class EventService {
     @Autowired
-    private EventoRepositorio eveRep;
+    private EventRepository eveRep;
 
     //Paginacion
     @GetMapping("/practicaDAW/")
-    public Page<Eventos> eventosPage (Pageable page){
-        Page<Eventos> event=eveRep.findAll(PageRequest.of(0,10));
+    public Page<Event> eventosPage (Pageable page){
+        Page<Event> event=eveRep.findAll(PageRequest.of(0,10));
         return eveRep.findAll(page);
     }
 
-    public Optional<Eventos> findOne(long id){
+    public Optional<Event> findOne(long id){
         return eveRep.findById(id);
     }
 
-    public List<Eventos> findAll(){
+    public List<Event> findAll(){
         return eveRep.findAll();
     }
 
-    public void saveEvent(Eventos event){
+    public void saveEvent(Event event){
         eveRep.save(event);
     }
 

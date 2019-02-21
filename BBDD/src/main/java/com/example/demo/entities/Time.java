@@ -1,4 +1,4 @@
-package com.example.demo.Entidades;
+package com.example.demo.entities;
 
 import javax.persistence.*;
 
@@ -17,13 +17,13 @@ public class Time {
 	private String endDate;
 
 	@OneToMany
-	private List<Eventos> events;
+	private List<Event> events;
 
 	public Time(String nameInterval, String startDate, String endDate) {
 		this.nameInterval = nameInterval;
 		this.startDate = startDate;
 		this.endDate = endDate;
-		this.events = new ArrayList<Eventos>();
+		this.events = new ArrayList<Event>();
 	}
 
 	public String getNameInterval() {
@@ -50,11 +50,11 @@ public class Time {
 		this.endDate = endDate;
 	}
 
-	public List<Eventos> getEvents() {
+	public List<Event> getEvents() {
 		return events;
 	}
 
-	public void setEvents(List<Eventos> events) {
+	public void setEvents(List<Event> events) {
 		this.events = events;
 	}
 

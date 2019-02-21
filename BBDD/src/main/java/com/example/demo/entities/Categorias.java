@@ -1,4 +1,4 @@
-package com.example.demo.Entidades;
+package com.example.demo.entities;
 
 
 
@@ -15,7 +15,7 @@ import java.util.List;
 
 
       @ManyToMany(mappedBy="categorias")
-      private List<Eventos> event;
+      private List<Event> event;
 
     public Categorias(){}
 
@@ -24,11 +24,11 @@ import java.util.List;
         this.nameCategory=nameCategory;
     }
 
-    public List<Eventos> getEvent() {
+    public List<Event> getEvent() {
         return event;
     }
 
-    public void setEvent(List<Eventos> event) {
+    public void setEvent(List<Event> event) {
         this.event = event;
     }
 

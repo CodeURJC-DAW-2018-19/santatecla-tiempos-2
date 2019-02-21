@@ -1,7 +1,7 @@
 package com.example.demo;
 
 
-import com.example.demo.Entidades.*;
+import com.example.demo.entities.*;
 import com.example.demo.Users.*;
 import org.springframework.beans.factory.annotation.Autowired;
 
@@ -10,7 +10,7 @@ import javax.annotation.PostConstruct;
 public class BBDDinit {
     @Autowired
     private CategoriasRepositorio catRep;
-    private EventoRepositorio eveRep;
+    private EventRepository eveRep;
     private TimeRepository timeRep;
     private UserRepository userRep;
 
@@ -25,7 +25,7 @@ public class BBDDinit {
         catRep.save(cat3);
 
 
-        Eventos event1=new Eventos("DAW","7/7/2019","hola");
+        Event event1=new Event("DAW","7/7/2019","hola");
         event1.getCategorias().add(cat1);
 
         /*
