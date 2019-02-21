@@ -27,10 +27,11 @@ public class BBDDinit {
 
 
         Eventos event1=new Eventos("DAW","7/7/2019","hola","hola");
-        event1.getCategorie().add(cat1);
-        
+        event1.getCategorias().add(cat1);
+
+        /*
         Tiempo time1 = new Tiempo("Intervalo 1", "5/7/2018", "1/1/2020");
-        time1.getEventos().add(event1);
+        time1.getEventos().add(event1);*/
 
         //usuarios
         userRep.save(new Usuario("User","pass","ROLE_USER"));

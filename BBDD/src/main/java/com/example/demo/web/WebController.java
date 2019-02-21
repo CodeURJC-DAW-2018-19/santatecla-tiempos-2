@@ -1,4 +1,4 @@
-package com.example.demo.web;
+package com.example.demo.Web;
 
 
 import com.example.demo.Entidades.*;
@@ -17,10 +17,7 @@ import java.util.Optional;
 public class WebController {
     @Autowired
     private CategoriasService service;
-    @Autowired
-    private EventosService evenService;
-    @Autowired
-    private TiempoService timeService;
+
     @Autowired
     private UserComponent userComponent;
 
@@ -36,36 +33,37 @@ public class WebController {
     }
 
     @GetMapping("/")
-    public String showCategorias(Model model){
+    public String showCategory(Model model){
         model.addAttribute("categorias",service.findAll());
         return "practicaDAW";
     }
 
     @GetMapping("/Categorias/{id}")
-    public String showEvents(Model model,@PathVariable long id){
+    public String showCategory(Model model,@PathVariable long id){
         Optional<Categorias> cat=service.findOne(id);
 
 
         if(cat.isPresent()){
-            model.addAttribute("evento",cat.get());
+            model.addAttribute("categorias",cat.get());
         }
         return "practicaDAW";
     }
 
     @PostMapping("/newCategory")
     public String saveCategory(Model model,Categorias category){
-        service.save(category);
+        service.saveCategory(category);
         return "practicaDAW";
     }
 
     @GetMapping("/deleteCategory/{id}")
     public String deleteCategory(Model model,@PathVariable long id){
-        service.delete(id);
+        service.deleteCategory(id);
         return "practicaDAW";
     }
 
-    /*
+
     //Eventos
+/*
     @GetMapping("/")
     public String showEvents(Model model){
         model.addAttribute("eventos",evenService.findAll());
@@ -74,7 +72,7 @@ public class WebController {
 
 
     @GetMapping("/Eventos/{id}")
-    public String showCategories(Model model, @PathVariable long id){
+    public String showEvents(Model model, @PathVariable long id){
         Optional<Eventos> event=evenService.findOne(id);
         if(event.isPresent()){
             model.addAttribute("evento", event.get());
@@ -84,18 +82,19 @@ public class WebController {
 
     @PostMapping("/newEvent")
     public String saveEvent(Model model,Eventos event){
-        evenService.save(event);
+        evenService.saveEvent(event);
         return "practicaDAW";
     }
 
     @GetMapping("/deleteEvent/{id}")
     public String deleteEvent(Model model,@PathVariable long id){
 
-        evenService.delete(id);
+        evenService.deleteEvent(id);
         return "practicaDAW";
-    }
+    }*/
 
     //Tiempos
+    /*
     @GetMapping("/")
     public String showTime(Model model){
         model.addAttribute("time",timeService.findAll());

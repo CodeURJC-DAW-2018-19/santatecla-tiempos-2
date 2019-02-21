@@ -2,10 +2,8 @@ package com.example.demo.Entidades;
 
 
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import javax.persistence.*;
+import java.util.List;
 
 @Entity
     public class Categorias {
@@ -15,15 +13,23 @@ import javax.persistence.Id;
         private long id=-1;
         private String nameCategory;
 
-    /**
-     * @ManytoMany(mappedBy="categories")
-     * private List<Eventos>event
-     */
+
+      @ManyToMany(mappedBy="categorias")
+      private List<Eventos> event;
+
     public Categorias(){}
 
     public Categorias(String nameCategory){
         super();
         this.nameCategory=nameCategory;
+    }
+
+    public List<Eventos> getEvent() {
+        return event;
+    }
+
+    public void setEvent(List<Eventos> event) {
+        this.event = event;
     }
 
     public long getId() {
@@ -49,4 +55,5 @@ import javax.persistence.Id;
                 ", nameCategory='" + nameCategory + '\'' +
                 '}';
     }
+
 }

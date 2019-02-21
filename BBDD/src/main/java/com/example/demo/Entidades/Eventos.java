@@ -25,7 +25,7 @@ public class Eventos {
 	/*bidireccionalidad*/
 
 	@ManyToMany
-	private List<Categorias> categorie;
+	private List<Categorias> categorias;
 
 
 
@@ -81,12 +81,12 @@ public class Eventos {
 		this.wiki = wiki;
 	}
 
-	public List<Categorias> getCategorie() {
-		return categorie;
+	public List<Categorias> getCategorias() {
+		return categorias;
 	}
 
-	public void setCategorie(List<Categorias> categorie) {
-		this.categorie = categorie;
+	public void setCategoras(List<Categorias> categorie) {
+		this.categorias = categorias;
 	}
 
 	@Override
