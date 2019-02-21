@@ -2,7 +2,7 @@ package com.example.demo;
 
 
 import com.example.demo.entities.*;
-import com.example.demo.Users.*;
+import com.example.demo.users.*;
 import org.springframework.beans.factory.annotation.Autowired;
 
 import javax.annotation.PostConstruct;
