@@ -2,7 +2,7 @@ package com.example.demo.Web;
 
 
 import com.example.demo.entities.*;
-import com.example.demo.Users.UserComponent;
+import com.example.demo.users.UserComponent;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;

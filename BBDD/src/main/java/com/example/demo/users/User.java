@@ -1,4 +1,4 @@
-package com.example.demo.Users;
+package com.example.demo.users;
 
 import javax.persistence.*;
 import java.util.ArrayList;
