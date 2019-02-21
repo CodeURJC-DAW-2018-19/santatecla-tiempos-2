@@ -19,7 +19,7 @@ public class Eventos {
 	private long id;
 	private String nameEvent ;
 	private String date;
-	private String photo;
+	//private String photo;
 	private String wiki;
 	
 	/*bidireccionalidad*/
@@ -27,17 +27,18 @@ public class Eventos {
 	@ManyToMany
 	private List<Categorias> categorias;
 
+	@OneToOne (cascade = CascadeType.ALL)
+	private Photo image;
 
 
 	
 	/*Constructor*/
 
-	public Eventos(String nameEvent, String date, String photo, String wiki) {
+	public Eventos(String nameEvent, String date, String wiki) {
 		this.nameEvent = nameEvent;
 		this.date = date;
-		this.photo = photo;
+		//this.photo = photo;
 		this.wiki = wiki;
-		//this.categorie = categorie;
 	}
 
 	/*Getters and setters*/
@@ -64,7 +65,7 @@ public class Eventos {
 	public void setDate(String date) {
 		this.date = date;
 	}
-
+/*
 	public String getPhoto() {
 		return photo;
 	}
@@ -72,7 +73,7 @@ public class Eventos {
 	public void setPhoto(String photo) {
 		this.photo = photo;
 	}
-
+*/
 	public String getWiki() {
 		return wiki;
 	}
@@ -91,7 +92,7 @@ public class Eventos {
 
 	@Override
 	public String toString() {
-		return "Eventos [idEventos=" + id + ", nameEvent=" + nameEvent + ", date=" + date + ", photo=" + photo
+		return "Eventos [idEventos=" + id + ", nameEvent=" + nameEvent + ", date=" + date
 				+ ", wiki=" + wiki + "]";
 	}
 	

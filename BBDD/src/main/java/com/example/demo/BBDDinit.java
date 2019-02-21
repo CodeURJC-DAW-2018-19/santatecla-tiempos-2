@@ -26,7 +26,7 @@ public class BBDDinit {
         catRep.save(cat3);
 
 
-        Eventos event1=new Eventos("DAW","7/7/2019","hola","hola");
+        Eventos event1=new Eventos("DAW","7/7/2019","hola");
         event1.getCategorias().add(cat1);
 
         /*
