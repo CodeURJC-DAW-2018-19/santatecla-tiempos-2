@@ -11,27 +11,27 @@ import java.util.List;
 import java.util.Optional;
 
 @Service
-public class CategoriasService {
+public class CategoryService {
     @Autowired
-    private CategoriasRepositorio catRep;
+    private CategoryRepository catRep;
 
     //Paginacion
     @GetMapping("/practicaDAW/")
-    public Page<Categorias> categoryPage (Pageable page){
-        Page<Categorias> cat=catRep.findAll(PageRequest.of(0,10));
+    public Page<Category> categoryPage (Pageable page){
+        Page<Category> cat=catRep.findAll(PageRequest.of(0,10));
         return catRep.findAll(page);
     }
 
-    public Optional<Categorias> findOne(long id){
+    public Optional<Category> findOne(long id){
         return catRep.findById(id);
     }
 
-    public List<Categorias> findAll(){
+    public List<Category> findAll(){
         return catRep.findAll();
     }
 
-    public void saveCategory(Categorias categorias){
-        catRep.save(categorias);
+    public void saveCategory(Category category){
+        catRep.save(category);
     }
 
     public void deleteCategory(long id){

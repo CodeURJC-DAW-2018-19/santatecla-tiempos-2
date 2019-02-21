@@ -6,7 +6,7 @@ import javax.persistence.*;
 import java.util.List;
 
 @Entity
-    public class Categorias {
+    public class Category {
 
         @Id
         @GeneratedValue(strategy = GenerationType.AUTO)
@@ -14,12 +14,12 @@ import java.util.List;
         private String nameCategory;
 
 
-      @ManyToMany(mappedBy="categorias")
+      @ManyToMany(mappedBy="categories")
       private List<Event> event;
 
-    public Categorias(){}
+    public Category(){}
 
-    public Categorias(String nameCategory){
+    public Category(String nameCategory){
         super();
         this.nameCategory=nameCategory;
     }

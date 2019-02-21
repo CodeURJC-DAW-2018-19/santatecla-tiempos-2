@@ -9,7 +9,7 @@ import javax.annotation.PostConstruct;
 
 public class BBDDinit {
     @Autowired
-    private CategoriasRepositorio catRep;
+    private CategoryRepository catRep;
     private EventRepository eveRep;
     private TimeRepository timeRep;
     private UserRepository userRep;
@@ -17,9 +17,9 @@ public class BBDDinit {
     @PostConstruct
     public void init() {
         //Eventos,tiempo y categorias
-        Categorias cat1 = new Categorias("Examenes");
-        Categorias cat2 = new Categorias("Practicas");
-        Categorias cat3 = new Categorias("Apuntes");
+        Category cat1 = new Category("Examenes");
+        Category cat2 = new Category("Practicas");
+        Category cat3 = new Category("Apuntes");
         catRep.save(cat1);
         catRep.save(cat2);
         catRep.save(cat3);

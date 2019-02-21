@@ -25,7 +25,7 @@ public class Event {
 	/*bidireccionalidad*/
 
 	@ManyToMany
-	private List<Categorias> categorias;
+	private List<Category> categories;
 
 	@OneToOne (cascade = CascadeType.ALL)
 	private Photo image;
@@ -82,12 +82,12 @@ public class Event {
 		this.wiki = wiki;
 	}
 
-	public List<Categorias> getCategorias() {
-		return categorias;
+	public List<Category> getCategorias() {
+		return categories;
 	}
 
-	public void setCategoras(List<Categorias> categorie) {
-		this.categorias = categorias;
+	public void setCategoras(List<Category> categories) {
+		this.categories = categories;
 	}
 
 	@Override
