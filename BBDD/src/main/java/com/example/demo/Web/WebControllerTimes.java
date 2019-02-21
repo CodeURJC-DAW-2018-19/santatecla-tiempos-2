@@ -1,6 +1,6 @@
 package com.example.demo.Web;
 
-import com.example.demo.Entidades.*;
+import com.example.demo.entities.*;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -15,7 +15,7 @@ public class WebControllerTimes {
 
 
     @Autowired
-    private TiempoService timeService;
+    private TimeService timeService;
 
     @GetMapping("/Tiempo")
     public String showTimes(Model model){
@@ -26,7 +26,7 @@ public class WebControllerTimes {
 
     @GetMapping("/tiempos/{id}")
     public String showTimes(Model model, @PathVariable long id){
-        Optional<Tiempo> timer=timeService.findOne(id);
+        Optional<Time> timer=timeService.findOne(id);
         if(timer.isPresent()){
             model.addAttribute("tiempo", timer.get());
         }
@@ -34,7 +34,7 @@ public class WebControllerTimes {
     }
 
     @PostMapping("/newTime")
-    public String saveTimer(Model model,Tiempo timer){
+    public String saveTimer(Model model,Time timer){
         timeService.saveTimer(timer);
         return "practicaDAW";
     }

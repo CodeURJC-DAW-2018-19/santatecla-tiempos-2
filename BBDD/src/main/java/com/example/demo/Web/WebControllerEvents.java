@@ -1,7 +1,6 @@
 package com.example.demo.Web;
 
-import com.example.demo.Entidades.Eventos;
-import com.example.demo.Entidades.EventosService;
+import com.example.demo.entities.*;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -16,7 +15,7 @@ public class WebControllerEvents {
 
 
     @Autowired
-    private EventosService evenService;
+    private EventService evenService;
     //Eventos
 
     @GetMapping("/Eventos")
@@ -28,7 +27,7 @@ public class WebControllerEvents {
 
     @GetMapping("/Eventos/{id}")
     public String showEvents(Model model, @PathVariable long id){
-        Optional<Eventos> event=evenService.findOne(id);
+        Optional<Event> event=evenService.findOne(id);
         if(event.isPresent()){
             model.addAttribute("evento", event.get());
         }
@@ -36,7 +35,7 @@ public class WebControllerEvents {
     }
 
     @PostMapping("/newEvent")
-    public String saveEvent(Model model,Eventos event){
+    public String saveEvent(Model model,Event event){
         evenService.saveEvent(event);
         return "practicaDAW";
     }

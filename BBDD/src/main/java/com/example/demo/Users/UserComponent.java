@@ -6,13 +6,13 @@ import org.springframework.web.context.annotation.SessionScope;
 @Component
 @SessionScope
 public class UserComponent {
-    private Usuario user;
+    private User user;
 
-    public Usuario getLoggedUser(){
+    public User getLoggedUser(){
         return user;
     }
 
-    public void setLoggedUser(Usuario user){
+    public void setLoggedUser(User user){
         this.user=user;
     }
 

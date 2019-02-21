@@ -1,4 +1,4 @@
-package com.example.demo.Entidades;
+package com.example.demo.entities;
 
 
 
@@ -6,7 +6,7 @@ import javax.persistence.*;
 import java.util.List;
 
 @Entity
-    public class Categorias {
+    public class Category {
 
         @Id
         @GeneratedValue(strategy = GenerationType.AUTO)
@@ -14,21 +14,21 @@ import java.util.List;
         private String nameCategory;
 
 
-      @ManyToMany(mappedBy="categorias")
-      private List<Eventos> event;
+      @ManyToMany(mappedBy="categories")
+      private List<Event> event;
 
-    public Categorias(){}
+    public Category(){}
 
-    public Categorias(String nameCategory){
+    public Category(String nameCategory){
         super();
         this.nameCategory=nameCategory;
     }
 
-    public List<Eventos> getEvent() {
+    public List<Event> getEvent() {
         return event;
     }
 
-    public void setEvent(List<Eventos> event) {
+    public void setEvent(List<Event> event) {
         this.event = event;
     }
 

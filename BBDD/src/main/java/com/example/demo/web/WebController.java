@@ -1,7 +1,7 @@
 package com.example.demo.Web;
 
 
-import com.example.demo.Entidades.*;
+import com.example.demo.entities.*;
 import com.example.demo.Users.UserComponent;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -16,7 +16,7 @@ import java.util.Optional;
 @Controller
 public class WebController {
     @Autowired
-    private CategoriasService service;
+    private CategoryService service;
 
     @Autowired
     private UserComponent userComponent;
@@ -40,7 +40,7 @@ public class WebController {
 
     @GetMapping("/Categorias/{id}")
     public String showCategory(Model model,@PathVariable long id){
-        Optional<Categorias> cat=service.findOne(id);
+        Optional<Category> cat=service.findOne(id);
 
 
         if(cat.isPresent()){
@@ -50,7 +50,7 @@ public class WebController {
     }
 
     @PostMapping("/newCategory")
-    public String saveCategory(Model model,Categorias category){
+    public String saveCategory(Model model,Category category){
         service.saveCategory(category);
         return "practicaDAW";
     }

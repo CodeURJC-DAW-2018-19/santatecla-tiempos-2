@@ -1,4 +1,4 @@
-package com.example.demo.Entidades;
+package com.example.demo.entities;
 /*Imports*/
 
 
@@ -10,7 +10,7 @@ import java.util.List;
 
 /*Declaramos la clase como entidad para crear la base de datos*/
 @Entity
-public class Eventos {
+public class Event {
 
 	/*Generamos el Id de cada evento*/
 	@Id
@@ -25,7 +25,7 @@ public class Eventos {
 	/*bidireccionalidad*/
 
 	@ManyToMany
-	private List<Categorias> categorias;
+	private List<Category> categories;
 
 	@OneToOne (cascade = CascadeType.ALL)
 	private Photo image;
@@ -34,7 +34,7 @@ public class Eventos {
 	
 	/*Constructor*/
 
-	public Eventos(String nameEvent, String date, String wiki) {
+	public Event(String nameEvent, String date, String wiki) {
 		this.nameEvent = nameEvent;
 		this.date = date;
 		//this.photo = photo;
@@ -42,12 +42,12 @@ public class Eventos {
 	}
 
 	/*Getters and setters*/
-	public long getIdEventos() {
+	public long getId() {
 		return id;
 	}
 
-	public void setIdEventos(long idEventos) {
-		this.id = idEventos;
+	public void setId(long id) {
+		this.id = id;
 	}
 
 	public String getNameEvent() {
@@ -82,12 +82,12 @@ public class Eventos {
 		this.wiki = wiki;
 	}
 
-	public List<Categorias> getCategorias() {
-		return categorias;
+	public List<Category> getCategorias() {
+		return categories;
 	}
 
-	public void setCategoras(List<Categorias> categorie) {
-		this.categorias = categorias;
+	public void setCategoras(List<Category> categories) {
+		this.categories = categories;
 	}
 
 	@Override

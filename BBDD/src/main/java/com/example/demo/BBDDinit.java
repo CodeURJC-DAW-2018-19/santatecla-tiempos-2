@@ -1,32 +1,31 @@
 package com.example.demo;
 
 
-import com.example.demo.Entidades.*;
-import com.example.demo.Users.Usuario;
-import com.example.demo.Users.UsuarioRepositorio;
+import com.example.demo.entities.*;
+import com.example.demo.Users.*;
 import org.springframework.beans.factory.annotation.Autowired;
 
 import javax.annotation.PostConstruct;
 
 public class BBDDinit {
     @Autowired
-    private CategoriasRepositorio catRep;
-    private EventoRepositorio eveRep;
-    private TiempoRepositorio timeRep;
-    private UsuarioRepositorio userRep;
+    private CategoryRepository catRep;
+    private EventRepository eveRep;
+    private TimeRepository timeRep;
+    private UserRepository userRep;
 
     @PostConstruct
     public void init() {
         //Eventos,tiempo y categorias
-        Categorias cat1 = new Categorias("Examenes");
-        Categorias cat2 = new Categorias("Practicas");
-        Categorias cat3 = new Categorias("Apuntes");
+        Category cat1 = new Category("Examenes");
+        Category cat2 = new Category("Practicas");
+        Category cat3 = new Category("Apuntes");
         catRep.save(cat1);
         catRep.save(cat2);
         catRep.save(cat3);
 
 
-        Eventos event1=new Eventos("DAW","7/7/2019","hola");
+        Event event1=new Event("DAW","7/7/2019","hola");
         event1.getCategorias().add(cat1);
 
         /*
@@ -34,9 +33,9 @@ public class BBDDinit {
         time1.getEventos().add(event1);*/
 
         //usuarios
-        userRep.save(new Usuario("User","pass","ROLE_USER"));
-        userRep.save(new Usuario("Marcos","pass","ROLE_USER"));
-        userRep.save(new Usuario("admin","pass","ROLE_USER","ROLE_ADMIN"));
+        userRep.save(new User("User","pass","ROLE_USER"));
+        userRep.save(new User("Marcos","pass","ROLE_USER"));
+        userRep.save(new User("admin","pass","ROLE_USER","ROLE_ADMIN"));
         
         
     }

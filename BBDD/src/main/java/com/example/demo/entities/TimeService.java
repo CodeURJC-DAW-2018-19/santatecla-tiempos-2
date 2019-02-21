@@ -1,4 +1,4 @@
-package com.example.demo.Entidades;
+package com.example.demo.entities;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
@@ -12,27 +12,27 @@ import java.util.Optional;
 
 @Service
 
-public class TiempoService {
+public class TimeService {
 	@Autowired
-	public TiempoRepositorio timeRep;
+	public TimeRepository timeRep;
 	
 
 	
 	@GetMapping("/practicaDAW/")
-	public Page<Tiempo> time (Pageable page){
-		Page<Tiempo> tim=timeRep.findAll(PageRequest.of(0,10));
+	public Page<Time> time (Pageable page){
+		Page<Time> tim=timeRep.findAll(PageRequest.of(0,10));
 		return timeRep.findAll(page);
 	}
 
-	public Optional<Tiempo> findOne(long id){
+	public Optional<Time> findOne(long id){
 		return timeRep.findById(id);
 	}
 
-	public List<Tiempo> findAll(){
+	public List<Time> findAll(){
 		return timeRep.findAll();
 	}
 
-	public void saveTimer(Tiempo tiempo){
+	public void saveTimer(Time tiempo){
 		timeRep.save(tiempo);
 	}
 
