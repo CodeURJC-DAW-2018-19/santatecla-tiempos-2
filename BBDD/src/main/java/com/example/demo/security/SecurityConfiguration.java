@@ -48,6 +48,6 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
   */
     protected void configure (AuthenticationManagerBuilder auth) throws Exception {
         //autenticacion desde la base de datos
-        auth.inMemoryAuthentication().withUser("admin").password("pass");
+        auth.authenticationProvider(authenticationProvider);
     }
 }

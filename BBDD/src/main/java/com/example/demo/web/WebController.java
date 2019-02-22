@@ -10,6 +10,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
 
 import java.util.Optional;
 
@@ -31,12 +32,18 @@ public class WebController {
             model.addAttribute("userName",userComponent.getLoggedUser().getUsername());
         }
     }
-
+    
     @GetMapping("/")
+    public String index() {
+    	System.out.println("SAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAALTO");
+    	return "index";
+    }
+
+   /* @GetMapping("/")
     public String showCategory(Model model){
         model.addAttribute("categorias",service.findAll());
         return "practicaDAW";
-    }
+    }*/
 
     @GetMapping("/Categorias/{id}")
     public String showCategory(Model model,@PathVariable long id){
@@ -59,6 +66,17 @@ public class WebController {
     public String deleteCategory(Model model,@PathVariable long id){
         service.deleteCategory(id);
         return "practicaDAW";
+    }
+    
+    @RequestMapping("/login")
+    public String login() {
+    	System.out.println("SAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAALTOLOOOOOOOOOOOOOOOOOOOOOOOOOOGIN");
+    	return "login";
+    }
+    
+    @RequestMapping("/loginerror")
+    public String loginerror() {
+    	return "loginerror";
     }
 
 
