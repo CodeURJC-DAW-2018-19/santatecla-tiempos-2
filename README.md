@@ -55,5 +55,5 @@ https://docs.google.com/document/d/1Xx1CJYwagN6zfFhv3WBdONDRmzzXSm6Uv-9EQpe4I_4/
 #### In phase 2, the one created in phase 1 for the implementation of Mustache has been used as the base model so that the page goes from being static to dynamic. To achieve this, we have also used Spring and Maven frameworks based on Java, as well as the use of a database in sql language for the storage, creation and deletion of data.
 
 ##### Entity relationship diagram
-![Screenshot](https://github.com/CodeURJC-DAW-2018-19/santatecla-tiempos-2/blob/master/Screenshots/EntidadRelacion.PNG.png)
+![Screenshot](https://github.com/CodeURJC-DAW-2018-19/santatecla-tiempos-2/blob/master/Screenshots/EntidadRelacion.PNG)
 
