@@ -4,14 +4,19 @@ package com.example.demo;
 import com.example.demo.entities.*;
 import com.example.demo.users.*;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
 
 import javax.annotation.PostConstruct;
 
+@Component
 public class BBDDinit {
     @Autowired
     private CategoryRepository catRep;
+    @Autowired
     private EventRepository eveRep;
+    @Autowired
     private TimeRepository timeRep;
+    @Autowired
     private UserRepository userRep;
 
     @PostConstruct

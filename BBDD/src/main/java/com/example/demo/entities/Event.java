@@ -5,6 +5,8 @@ package com.example.demo.entities;
 import com.fasterxml.jackson.annotation.JsonInclude;
 
 import javax.persistence.*;
+
+import java.util.ArrayList;
 import java.util.List;
 
 
@@ -22,9 +24,9 @@ public class Event {
 	//private String photo;
 	private String wiki;
 	
-	/*bidireccionalidad*/
+	/*unidireccionalidad*/
 
-	@ManyToMany
+	@OneToMany
 	private List<Category> categories;
 
 	@OneToOne (cascade = CascadeType.ALL)
@@ -39,6 +41,7 @@ public class Event {
 		this.date = date;
 		//this.photo = photo;
 		this.wiki = wiki;
+		this.categories = new ArrayList<>();
 	}
 
 	/*Getters and setters*/

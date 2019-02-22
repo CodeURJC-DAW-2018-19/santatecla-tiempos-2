@@ -14,22 +14,11 @@ import java.util.List;
         private String nameCategory;
 
 
-      @ManyToMany(mappedBy="categories")
-      private List<Event> event;
-
     public Category(){}
 
     public Category(String nameCategory){
         super();
         this.nameCategory=nameCategory;
-    }
-
-    public List<Event> getEvent() {
-        return event;
-    }
-
-    public void setEvent(List<Event> event) {
-        this.event = event;
     }
 
     public long getId() {
