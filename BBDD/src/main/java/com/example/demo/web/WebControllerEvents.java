@@ -11,17 +11,17 @@ import org.springframework.web.bind.annotation.PostMapping;
 import java.util.Optional;
 
 @Controller
-public class WebControllerEvents {
+public class WebControllerEvents extends WebController{
 
 
     @Autowired
     private EventService evenService;
     //Eventos
 
-    @GetMapping("/Eventos")
+    @GetMapping("/events")
     public String showEvents(Model model){
-        model.addAttribute("eventos",evenService.findAll());
-        return "practicaDAW";
+        model.addAttribute("events",evenService.findAll());
+        return "events";
     }
 
 

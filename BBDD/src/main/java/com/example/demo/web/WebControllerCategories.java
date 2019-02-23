@@ -15,26 +15,22 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import java.util.Optional;
 
 @Controller
-public class WebControllerCategories {
+public class WebControllerCategories extends WebController{
     @Autowired
     private CategoryService service;
 
-    @Autowired
-    private UserComponent userComponent;
+   
 
 
-    @ModelAttribute
-    public void addUserToModel(Model model){
-        boolean logged=userComponent.getLoggedUser()!=null;
-        model.addAttribute("logged",logged);
-        if(logged){
-            model.addAttribute("admin",userComponent.getLoggedUser().getRol().contains("ROLE_ADMIN"));
-            model.addAttribute("userName",userComponent.getLoggedUser().getUsername());
-        }
-    }
+    
     
     @GetMapping("/")
     public String index() {
+    	return "login2";
+    }
+    
+    @RequestMapping("/categories")
+    public String categories(){
     	return "categories";
     }
 
@@ -69,7 +65,6 @@ public class WebControllerCategories {
 
     @RequestMapping("/login")
     public String login() {
-    	System.out.println("SAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAALTOLOOOOOOOOOOOOOOOOOOOOOOOOOOGIN");
     	return "login";
     }
     

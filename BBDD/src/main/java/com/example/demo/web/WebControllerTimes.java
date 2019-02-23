@@ -11,16 +11,16 @@ import org.springframework.web.bind.annotation.PostMapping;
 import java.util.Optional;
 
 @Controller
-public class WebControllerTimes {
+public class WebControllerTimes extends WebController{
 
 
     @Autowired
     private TimeService timeService;
 
-    @GetMapping("/Tiempo")
+    @GetMapping("/times")
     public String showTimes(Model model){
-        model.addAttribute("eventos",timeService.findAll());
-        return "practicaDAW";
+        model.addAttribute("tiempo",timeService.findAll());
+        return "times";
     }
 
 
