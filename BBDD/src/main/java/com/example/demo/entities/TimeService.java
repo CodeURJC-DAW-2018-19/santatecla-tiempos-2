@@ -18,11 +18,11 @@ public class TimeService {
 	
 
 	
-	@GetMapping("/practicaDAW/")
+	/*@GetMapping("/practicaDAW")
 	public Page<Time> time (Pageable page){
 		Page<Time> tim=timeRep.findAll(PageRequest.of(0,10));
 		return timeRep.findAll(page);
-	}
+	}*/
 
 	public Optional<Time> findOne(long id){
 		return timeRep.findById(id);

@@ -19,7 +19,7 @@ public class WebControllerTimes extends WebController{
 
     @GetMapping("/times")
     public String showTimes(Model model){
-        model.addAttribute("tiempo",timeService.findAll());
+        model.addAttribute("times",timeService.findAll());
         return "times";
     }
 
