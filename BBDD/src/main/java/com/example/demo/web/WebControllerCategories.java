@@ -1,4 +1,4 @@
-package com.example.demo.web;
+package com.example.demo.Web;
 
 
 import com.example.demo.entities.*;
@@ -15,7 +15,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import java.util.Optional;
 
 @Controller
-public class WebController {
+public class WebControllerCategories {
     @Autowired
     private CategoryService service;
 
@@ -67,7 +67,7 @@ public class WebController {
         service.deleteCategory(id);
         return "practicaDAW";
     }
-    
+
     @RequestMapping("/login")
     public String login() {
     	System.out.println("SAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAALTOLOOOOOOOOOOOOOOOOOOOOOOOOOOGIN");
@@ -80,42 +80,14 @@ public class WebController {
     }
 
 
-    //Eventos
-/*
-    @GetMapping("/")
-    public String showEvents(Model model){
-        model.addAttribute("eventos",evenService.findAll());
-        return "practicaDAW";
-    }
+  @GetMapping("/login")
+  public String login(Model model){
+        model.addAttribute("hideLogin",true);
+        return "login";
+  }
 
-
-    @GetMapping("/Eventos/{id}")
-    public String showEvents(Model model, @PathVariable long id){
-        Optional<Eventos> event=evenService.findOne(id);
-        if(event.isPresent()){
-            model.addAttribute("evento", event.get());
-        }
-        return "practicaDAW";
-    }
-
-    @PostMapping("/newEvent")
-    public String saveEvent(Model model,Eventos event){
-        evenService.saveEvent(event);
-        return "practicaDAW";
-    }
-
-    @GetMapping("/deleteEvent/{id}")
-    public String deleteEvent(Model model,@PathVariable long id){
-
-        evenService.deleteEvent(id);
-        return "practicaDAW";
-    }*/
-
-    //Tiempos
-    /*
-    @GetMapping("/")
-    public String showTime(Model model){
-        model.addAttribute("time",timeService.findAll());
-        return "practicaDAW";
-    }*/
+  @GetMapping("/loginerror")
+    public String loginError(){
+        return "loginError";
+  }
 }
