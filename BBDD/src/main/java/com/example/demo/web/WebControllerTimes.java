@@ -24,13 +24,9 @@ public class WebControllerTimes extends WebController{
     }
 
 
-    @GetMapping("/tiempos/{id}")
+    @GetMapping("/times/{id}")
     public String showTimes(Model model, @PathVariable long id){
-        Optional<Time> timer=timeService.findOne(id);
-        if(timer.isPresent()){
-            model.addAttribute("tiempo", timer.get());
-        }
-        return "practicaDAW";
+        return "concreteInterval";
     }
 
     @PostMapping("/newTime")
