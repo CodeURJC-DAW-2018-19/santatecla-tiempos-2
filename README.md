@@ -57,3 +57,8 @@ https://docs.google.com/document/d/1Xx1CJYwagN6zfFhv3WBdONDRmzzXSm6Uv-9EQpe4I_4/
 ##### Entity relationship diagram
 ![Screenshot](https://github.com/CodeURJC-DAW-2018-19/santatecla-tiempos-2/blob/master/Screenshots/EntidadRelacion.PNG)
 
+##### Configuration of the development environment
+#### Eclipse as Intellij so we will explain how to configure them for both of them. The environment configuration for Eclipse can be done in two ways:
+- If you have downloaded the Eclipse STS, it already comes with the framework of Spring boot therefore we just have to create a project   in the what we say the dependencies that we want as the base of data or the devTools.
+- If you have a normal Eclipse it would be enough to go to the section of market that has Eclipse and look for the FrameWork of Spring Boot, the will be installed automatically once selected and the form to create a project is in the same way as the previous one with the only difference that you will have to choose the type of project manually.
+
