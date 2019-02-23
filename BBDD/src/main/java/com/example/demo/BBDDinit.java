@@ -4,6 +4,7 @@ package com.example.demo;
 import com.example.demo.entities.*;
 import com.example.demo.users.*;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Component;
 
 import javax.annotation.PostConstruct;
@@ -18,6 +19,9 @@ public class BBDDinit {
     private TimeRepository timeRep;
     @Autowired
     private UserRepository userRep;
+    
+    @Autowired
+    private BCryptPasswordEncoder passEncoder;
 
     @PostConstruct
     public void init() {
@@ -38,9 +42,9 @@ public class BBDDinit {
         time1.getEventos().add(event1);*/
 
         //usuarios
-        userRep.save(new User("User","pass","ROLE_USER"));
-        userRep.save(new User("Marcos","pass","ROLE_USER"));
-        userRep.save(new User("admin","pass","ROLE_USER","ROLE_ADMIN"));
+        userRep.save(new User("User",passEncoder.encode("pass"),"ROLE_USER"));
+        userRep.save(new User("Marcos",passEncoder.encode("pass"),"ROLE_USER"));
+        userRep.save(new User("admin",passEncoder.encode("pass"),"ROLE_USER","ROLE_ADMIN"));
         
         
     }

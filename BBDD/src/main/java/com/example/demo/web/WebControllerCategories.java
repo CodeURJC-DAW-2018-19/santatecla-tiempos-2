@@ -1,4 +1,4 @@
-package com.example.demo.Web;
+package com.example.demo.web;
 
 
 import com.example.demo.entities.*;

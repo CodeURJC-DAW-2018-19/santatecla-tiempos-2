@@ -31,6 +31,7 @@ public class UserRepositoryAuthenticationProvider implements AuthenticationProvi
        User user = userRep.findByUsername(username);
 
        if(user==null){
+    	   System.out.println("No autenticado");
            throw new BadCredentialsException("User dont exist");
        }
 
