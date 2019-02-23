@@ -18,6 +18,8 @@ public class Time {
 
 	@OneToMany
 	private List<Event> events;
+	
+	public Time() {}
 
 	public Time(String nameInterval, String startDate, String endDate) {
 		this.nameInterval = nameInterval;

@@ -34,12 +34,24 @@ public class BBDDinit {
         catRep.save(cat3);
 
 
-        Event event1=new Event("DAW","7/7/2019","hola");
+        Event event1=new Event("DAW","7/7/2019", "Aulario 1", "hola");
+        Event event2 = new Event("Seguridad", "20/12/18", "Aulario 1", "muy seguro");
+        Event event3 = new Event("Java", "1/1/19", "Aulario 2", "No huele");
+        
+        eveRep.save(event1);
+        eveRep.save(event2);
+        eveRep.save(event3);
+        
         event1.getCategorias().add(cat1);
 
-        /*
-        Tiempo time1 = new Tiempo("Intervalo 1", "5/7/2018", "1/1/2020");
-        time1.getEventos().add(event1);*/
+   
+        Time time1 = new Time("Intervalo 1", "5/7/2018", "1/1/2020");
+        Time time2 = new Time("Intervalo 2", "2/1/2020", "1/3/2020");
+        Time time3 = new Time("Intervalo 3", "2/4/2021", "2/5/2021");
+        
+        timeRep.save(time1);
+        timeRep.save(time2);
+        timeRep.save(time3);
 
         //usuarios
         userRep.save(new User("User",passEncoder.encode("pass"),"ROLE_USER"));

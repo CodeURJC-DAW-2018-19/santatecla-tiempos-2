@@ -2,6 +2,7 @@ package com.example.demo.entities;
 /*Imports*/
 
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonInclude;
 
 import javax.persistence.*;
@@ -17,10 +18,11 @@ public class Event {
 	/*Generamos el Id de cada evento*/
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
-	@JsonInclude(JsonInclude.Include.NON_NULL)
+	@JsonIgnore
 	private long id;
 	private String nameEvent ;
 	private String date;
+	private String location;
 	//private String photo;
 	private String wiki;
 	
@@ -29,17 +31,18 @@ public class Event {
 	@OneToMany
 	private List<Category> categories;
 
-	@OneToOne (cascade = CascadeType.ALL)
-	private Photo image;
+	/*@OneToOne (cascade = CascadeType.ALL)
+	private Photo image;*/
 
-
+	public Event() {}
 	
 	/*Constructor*/
 
-	public Event(String nameEvent, String date, String wiki) {
+	public Event(String nameEvent, String date, String location, String wiki) {
 		this.nameEvent = nameEvent;
 		this.date = date;
 		//this.photo = photo;
+		this.location = location;
 		this.wiki = wiki;
 		this.categories = new ArrayList<>();
 	}
@@ -51,6 +54,14 @@ public class Event {
 
 	public void setId(long id) {
 		this.id = id;
+	}
+	
+	public String getLocation() {
+		return location;
+	}
+	
+	public void setLocation(String location) {
+		this.location = location;
 	}
 
 	public String getNameEvent() {

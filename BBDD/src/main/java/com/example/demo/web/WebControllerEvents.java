@@ -8,6 +8,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 
+import java.util.List;
 import java.util.Optional;
 
 @Controller
@@ -20,6 +21,7 @@ public class WebControllerEvents extends WebController{
 
     @GetMapping("/events")
     public String showEvents(Model model){
+    	//List<Event> eventList = evenService.findAll();    	
         model.addAttribute("events",evenService.findAll());
         return "events";
     }
