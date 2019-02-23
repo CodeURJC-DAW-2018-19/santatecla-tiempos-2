@@ -10,10 +10,12 @@ import org.springframework.security.core.AuthenticationException;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
+import org.springframework.stereotype.Component;
 
 import java.util.ArrayList;
 import java.util.List;
 
+@Component
 public class UserRepositoryAuthenticationProvider implements AuthenticationProvider {
 
     @Autowired
@@ -21,13 +23,15 @@ public class UserRepositoryAuthenticationProvider implements AuthenticationProvi
     @Autowired
     private UserComponent userComponent;
 
-   public Authentication authenticate(Authentication authentication)throws AuthenticationException {
+    @Override
+     public Authentication authenticate(Authentication authentication)throws AuthenticationException {
        String username=authentication.getName();
        String password=(String)authentication.getCredentials();
 
        User user = userRep.findByUsername(username);
 
        if(user==null){
+    	   System.out.println("No autenticado");
            throw new BadCredentialsException("User dont exist");
        }
 
@@ -48,7 +52,7 @@ public class UserRepositoryAuthenticationProvider implements AuthenticationProvi
 
     @Override
     public boolean supports(Class<?> aClass) {
-        return false;
+        return true;
     }
 
 

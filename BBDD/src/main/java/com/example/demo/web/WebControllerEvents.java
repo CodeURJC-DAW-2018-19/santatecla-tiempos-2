@@ -46,4 +46,6 @@ public class WebControllerEvents {
         evenService.deleteEvent(id);
         return "practicaDAW";
     }
+
+
 }

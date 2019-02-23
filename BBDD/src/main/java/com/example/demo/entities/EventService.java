@@ -15,7 +15,6 @@ import java.util.List;
 import java.util.Optional;
 
 @Service
-@Controller
 public class EventService {
     @Autowired
     private EventRepository eveRep;
