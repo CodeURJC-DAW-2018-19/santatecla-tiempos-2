@@ -10,7 +10,7 @@ import java.util.List;
 
         @Id
         @GeneratedValue(strategy = GenerationType.AUTO)
-        private long id=-1;
+        private long id;
         private String nameCategory;
 
 

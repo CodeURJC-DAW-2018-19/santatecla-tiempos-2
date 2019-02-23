@@ -30,7 +30,8 @@ public class WebControllerCategories extends WebController{
     }
     
     @RequestMapping("/categories")
-    public String categories(){
+    public String categories(Model model){
+    	model.addAttribute("categories",service.findAll());
     	return "categories";
     }
 
