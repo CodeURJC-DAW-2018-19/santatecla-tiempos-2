@@ -25,7 +25,7 @@ import java.util.concurrent.ConcurrentHashMap;
 import java.util.concurrent.atomic.AtomicInteger;
 
 @Controller
-public class WebControllerPhoto {
+public class WebControllerPhoto extends WebController{
     private static final Path FILES_FOLDER= Paths.get(System.getProperty("user.der"),"img");
     private AtomicInteger imageId=new AtomicInteger();
     private Map<Long, Image> image=new ConcurrentHashMap<>();

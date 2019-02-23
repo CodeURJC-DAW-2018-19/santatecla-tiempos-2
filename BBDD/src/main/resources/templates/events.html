@@ -26,20 +26,20 @@
             <div class="collapse navbar-collapse" id="navbarCollap">
                 <ul class="navbar-nav" id="navBar">
                     <li class="nav-item">
-                        <a href="/categories" onclick="openTab(event, 'Categoria')" id="default" class="nav-link">Categoria</a>
+                        <a href="/categories" class="nav-link">Categoria</a>
                     </li>
                     <li class="nav-item">
-                        <a href="/events" onclick="openTab(event, 'Evento')" class="nav-link">Evento</a>
+                        <a href="" class="nav-link active">Evento</a>
                     </li>
                     <li class="nav-item">
-                        <a href="#" onclick="openTab(event, 'Tiempo')" class="nav-link">Tiempo</a>
+                        <a href="/times" onclick="openTab(event, 'Tiempo')" class="nav-link">Tiempo</a>
                     </li>
                     <li class="nav-item">
                         <a href="#" onclick="openTab(event, 'Intervalo1')" class="nav-link">Intervalo 1</a>
                     </li>
                 </ul>
                 <div class="login">
-                    <button type="button" class="btn btn-info ml-auto" onclick="enterLogin()">Login</button>
+                    <button type="button" class="btn btn-info ml-auto">{{^logged}}Login{{/logged}}{{#logged}}Logout{{/logged}}</button>
                 </div>
 
             </div>

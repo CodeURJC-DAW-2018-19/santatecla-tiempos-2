@@ -13,24 +13,24 @@
 </head>
 
 <body>
-    <form>
+    <form action="/login" method="post">
         <div class="form-group">
             <label for="exampleInputEmail1">Nombre de usuario</label>
-            <input type="name" class="form-control" id="loginUser" aria-describedby="emailHelp" placeholder="Nombre de usuario">
+            <input type="name" class="form-control" id="loginUser" aria-describedby="emailHelp" placeholder="Nombre de usuario" name="username">
             <span id="errorUser"></span>
         </div>
         <div class="form-group">
             <label for="exampleInputPassword1">Contraseña</label>
-            <input type="password" class="form-control" id="loginPassword" placeholder="Introduce la contraseña">
+            <input type="password" class="form-control" id="loginPassword" placeholder="Introduce la contraseña" name="password">
             <span id="errorPassword"></span>
         </div>
         <div class="form-check">
             <label class="form-check-label">
-                <a href="practicaDAW.html">Entrar como invitado</a>
+                <a href="/categories">Entrar como invitado</a>
             </label>
         </div>
 
-        <input type="button" class="btn btn-primary" value="Acceder" onclick="dataLogin()">
+        <input type="submit" class="btn btn-primary" value="Acceder">
     </form>
     <!--Etiquetas de script de Bootstrap-->
     <!--   Core JS Files   -->

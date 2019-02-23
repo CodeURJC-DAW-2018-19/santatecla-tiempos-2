@@ -11,7 +11,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 import java.util.Optional;
 
 @Controller
-public class WebControllerEvents {
+public class WebControllerEvents extends WebController{
 
 
     @Autowired
