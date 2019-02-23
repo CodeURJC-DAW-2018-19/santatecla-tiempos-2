@@ -19,7 +19,7 @@ public class WebControllerTimes {
 
     @GetMapping("/Tiempo")
     public String showTimes(Model model){
-        model.addAttribute("eventos",timeService.findAll());
+        model.addAttribute("tiempo",timeService.findAll());
         return "practicaDAW";
     }
 

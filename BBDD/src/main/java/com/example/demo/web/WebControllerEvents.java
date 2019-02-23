@@ -18,10 +18,10 @@ public class WebControllerEvents {
     private EventService evenService;
     //Eventos
 
-    @GetMapping("/Eventos")
+    @GetMapping("/events")
     public String showEvents(Model model){
-        model.addAttribute("eventos",evenService.findAll());
-        return "practicaDAW";
+        model.addAttribute("events",evenService.findAll());
+        return "events";
     }
 
 

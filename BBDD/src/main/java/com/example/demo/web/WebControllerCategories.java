@@ -37,6 +37,11 @@ public class WebControllerCategories {
     public String index() {
     	return "categories";
     }
+    
+    @RequestMapping("/categories")
+    public String categories(){
+    	return "categories";
+    }
 
    /* @GetMapping("/")
     public String showCategory(Model model){
@@ -69,7 +74,6 @@ public class WebControllerCategories {
 
     @RequestMapping("/login")
     public String login() {
-    	System.out.println("SAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAALTOLOOOOOOOOOOOOOOOOOOOOOOOOOOGIN");
     	return "login";
     }
     
