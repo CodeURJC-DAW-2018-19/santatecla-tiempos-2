@@ -35,8 +35,7 @@ public class WebControllerCategories {
     
     @GetMapping("/")
     public String index() {
-    	System.out.println("SAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAALTO");
-    	return "index";
+    	return "categories";
     }
 
    /* @GetMapping("/")
