@@ -54,8 +54,8 @@ public class BBDDinit {
         time1.getEvents().add(event3);
         
         
-        subTime subtime1 = new subTime ("2018", "8-9-2018", "10-10-2018");
-        subTime subtime2 = new subTime ("2019", "10-1-2019", "20-11-2019");
+        SubTime subtime1 = new SubTime ("2018", "8-9-2018", "10-10-2018");
+        SubTime subtime2 = new SubTime ("2019", "10-1-2019", "20-11-2019");
         
         
         

@@ -9,7 +9,7 @@ import javax.persistence.Id;
 import javax.persistence.OneToMany;
 
 @Entity
-public class subTime {
+public class SubTime {
 	@Id
 	@GeneratedValue(strategy=GenerationType.AUTO)
 	private long id;
@@ -19,11 +19,11 @@ public class subTime {
 	private String endDate;
 	
 	@OneToMany
-	private List<subTime> subTimes;
+	private List<SubTime> subTimes;
 	
-	public subTime() {}
+	public SubTime() {}
 	
-	public subTime(String nameSubTime, String startDate, String endDate) {
+	public SubTime(String nameSubTime, String startDate, String endDate) {
 		this.nameSubTime = nameSubTime;
 		this.startDate = startDate;
 		this.endDate = endDate;
@@ -53,11 +53,11 @@ public class subTime {
 		this.endDate = endDate;
 	}
 
-	public List<subTime> getSubTimes() {
+	public List<SubTime> getSubTimes() {
 		return subTimes;
 	}
 
-	public void setSubTimes(List<subTime> subTimes) {
+	public void setSubTimes(List<SubTime> subTimes) {
 		this.subTimes = subTimes;
 	}
 

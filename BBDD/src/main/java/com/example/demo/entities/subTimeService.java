@@ -12,11 +12,11 @@ public class subTimeService {
 	@Autowired
 	public subTimeRepository subTimeRep;
 	
-	public List<subTime> findAll(){
+	public List<SubTime> findAll(){
 		return subTimeRep.findAll();
 	}
 	
-	public Optional<subTime> findOne(long id){
+	public Optional<SubTime> findOne(long id){
 		return subTimeRep.findById(id);
 	}
 }

@@ -20,7 +20,7 @@ public class Time {
 	private List<Event> events;
 	
 	@OneToMany(cascade=CascadeType.ALL)
-	private List<subTime> subIntervals;
+	private List<SubTime> subIntervals;
 	
 	public Time() {}
 
@@ -29,7 +29,7 @@ public class Time {
 		this.startDate = startDate;
 		this.endDate = endDate;
 		this.events = new ArrayList<Event>();
-		this.subIntervals = new ArrayList<subTime>();
+		this.subIntervals = new ArrayList<SubTime>();
 	}
 
 	public String getNameInterval() {
@@ -64,11 +64,11 @@ public class Time {
 		this.events = events;
 	}	
 
-	public List<subTime> getSubIntervals() {
+	public List<SubTime> getSubIntervals() {
 		return subIntervals;
 	}
 
-	public void setSubIntervals(List<subTime> subIntervals) {
+	public void setSubIntervals(List<SubTime> subIntervals) {
 		this.subIntervals = subIntervals;
 	}
 
