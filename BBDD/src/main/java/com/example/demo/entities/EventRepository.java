@@ -7,5 +7,5 @@ import org.springframework.data.jpa.repository.JpaRepository;
 
 public interface EventRepository extends JpaRepository<Event, Long>{
 
-    Page<Event> findByNameEvent(String nameEvent, Pageable page);
+    List<Event> findByNameEventOrLocation(String nameEvent,String location);
 }

@@ -66,9 +66,11 @@
         {{/concreteTime}}
             <input type="text" class="form-control searchIntervalItem" id="searchIntervalInput" placeholder="Buscar intervalo">
             {{#admin}}
-                <button type="button" class="btn categoryButton" id="categoryButtonAdd">
+            <form action="/{{id}}/deleteTime" method="post">
+                <button type="submit" class="btn categoryButton" id="categoryButtonAdd">
                     <i class="material-icons" id="categoryIcon">delete</i>
                 </button>
+            </form>
             {{/admin}}
         </div>
         <div class="intervMain">
@@ -90,17 +92,18 @@
             </div>
             {{#concreteTime}}
             <div class="form-row fechas">
+            	<form action="/{{id}}/updateTime" method="post">
                 <div class="form-group col-md-6">
                     <label for="inputIni">Fecha Inicio: {{startDate}}</label>
-                    <input type="date" class="form-control" id="inputIni" placeholder="Fecha Inicio">
+                    <input type="date" class="form-control" id="inputIni" placeholder="Fecha Inicio" name="startDate">
                 </div>
                 <div class="form-group col-md-6">
                     <label for="inputEnd">Fecha Fin: {{endDate}}</label>
-                    <input type="date" class="form-control" id="inputEnd" placeholder="Fecha Fin">
+                    <input type="date" class="form-control" id="inputEnd" placeholder="Fecha Fin" name="endDate">
                     <div class="form-check">
                     	<br>
                         <label class="form-check-label">
-                            <input class="form-check-input" type="checkbox" value="categorias" name="listaDeCategorias">
+                            <input class="form-check-input" type="checkbox" value="categorias" >
                             Actualidad
                             <span class="form-check-sign">
                                 <span class="check"></span>
@@ -108,22 +111,25 @@
                         </label>
                     </div>
                 </div>
+                {{#admin}}
+                    <div class="form-group col-md-6">
+                        <button type="submit" class="btn btn-info buttonListInt">Enviar a tiempo</button>
+                     </div>
+                {{/admin}}
+                </form>
             </div>
             {{/concreteTime}}
         </div>
         {{#admin}}
-            <button type="button" class="btn btn-info btn-simple categoryButton" id="categoryButtonAdd" value="">
+        <form></form>
+            <button type="button" class="btn btn-info btn-simple categoryButton" id="categoryButtonAdd" data-toggle="modal" data-target="#modalSubinterval">
                 <i class="material-icons" id="categoryIcon">add_circle</i>
             </button>
         {{/admin}}
 
         <div class="buttonInterv">
             <ul class="list-group list-group-flush buttonList">
-                {{#admin}}
-                    <li>
-                        <a><button type="button" class="btn btn-info buttonListInt">Enviar a tiempo</button></a>
-                    </li>
-                {{/admin}}
+                
                 <li>
                     <a><button type="button" class="btn btn-info buttonListInt" data-toggle="modal" data-target="#visualModal">Visualizar</button></a>
                 </li>
@@ -136,7 +142,7 @@
             <div class="modal-dialog modal-dialog-centered modal-lg" role="document">
                 <div class="modal-content">
                     <div class="modal-header">
-                        <h1>Intervalo 1</h1>
+                        <h1>Intervalo:</h1>
                     </div>
                     <div class="modal-body">
                     	
@@ -162,6 +168,46 @@
                     </div>
                     <div class="modal-footer">
                         <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="modal fade" id="modalSubinterval" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabelT" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered modal-lg" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="exampleModalLabelT">Nuevo Intervalo</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    
+                    <div class="modal-body">
+                        <br>
+                        <br>
+                        <form action="/{{id}}/newSubtime" method="post">
+                            <div class="form-row">
+
+                                <div class="form-group">
+                                    <label for="inputName">Nombre</label>
+                                    <input type="text" class="form-control" id="inputName" placeholder="Nombre" name="subTimeName">
+                                </div>
+                                <div class="form-row">
+                                    <div class="form-group col-md-6">
+                                        <label for="inputIni">Fecha Inicio</label>
+                                        <input type="date" class="form-control" id="inputIni" placeholder="Fecha Inicio" name="startDate">
+                                    </div>
+                                    <div class="form-group col-md-3">
+                                        <label for="inputEnd">Fecha Fin</label>
+                                        <input type="date" class="form-control" id="inputEnd" placeholder="Fecha Fin" name="endDate">
+                                    </div>
+                                </div>
+                            </div>
+                            <input type="submit" class="btn btn-info"  value="Guardar cambios"/>
+                        </form>
+                    </div>
+                    <div class="modal-footer">
+                        
                     </div>
                 </div>
             </div>

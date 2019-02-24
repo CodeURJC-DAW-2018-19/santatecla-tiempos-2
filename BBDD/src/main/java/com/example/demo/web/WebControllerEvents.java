@@ -56,6 +56,24 @@ public class WebControllerEvents extends WebController {
     	return "events";
     }
     
+   /* @GetMapping("/searchEvent")
+    public String searchEvent(Model model) {
+    	model.addAttribute("events", evenService.findByName(search, search));
+    	return "events";
+    }*/
+    
+    @PostMapping("/searchEvent")
+    public String searchEvent(Model model,@RequestParam String search) {
+    	if(search.equals("")) {
+    		model.addAttribute("events", evenService.findAll());
+    		return "events";
+    	}else {
+    		model.addAttribute("events", evenService.findByName(search, search));
+    		return "events";
+    	}
+    }
+    
+    
 
 
 }

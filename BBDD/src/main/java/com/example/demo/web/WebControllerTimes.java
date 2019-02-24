@@ -56,10 +56,62 @@ public class WebControllerTimes extends WebController{
         return "times";
     }
 
-    @GetMapping("/deleteTime/{id}")
+    @PostMapping("/{id}/deleteTime")
     public String deleteTimer(Model model,@PathVariable long id){
-
-        timeService.deleteTimer(id);
-        return "practicaDAW";
+    	timeService.deleteTimer(id);
+    	model.addAttribute("times",timeService.findAll());
+    	return "times";
+    }
+    
+    @GetMapping("/{id}/updateTime")
+    public String updateTime(Model model, @PathVariable long id) {
+    	Time time = timeService.findOne(id).get();
+    	model.addAttribute("concreteTime", time);
+		List<subTime> subInterv = time.getSubIntervals();
+		model.addAttribute("subIntervals", subInterv);
+		List<Event> events = time.getEvents();
+		model.addAttribute("eventListInt", events);
+		return "concreteInterval";
+    }
+    
+    
+    @PostMapping("/{id}/updateTime")
+    public String updateTime(Model model, @PathVariable long id, @RequestParam String startDate, @RequestParam String endDate) {
+    	Time time = timeService.findOne(id).get();
+    	time.setStartDate(startDate);
+    	time.setEndDate(endDate);
+    	timeService.saveTimer(time);
+    	model.addAttribute("concreteTime", time);
+		List<subTime> subInterv = time.getSubIntervals();
+		model.addAttribute("subIntervals", subInterv);
+		List<Event> events = time.getEvents();
+		model.addAttribute("eventListInt", events);
+		return "concreteInterval";
+    }
+    
+    @GetMapping("/{id}/newSubtime")
+    public String saveSubtime(Model model, @PathVariable long id) {
+    	Time time = timeService.findOne(id).get();
+    	model.addAttribute("concreteTime", time);
+		List<subTime> subInterv = time.getSubIntervals();
+		model.addAttribute("subIntervals", subInterv);
+		List<Event> events = time.getEvents();
+		model.addAttribute("eventListInt", events);
+		return "concreteInterval";
+    }
+    
+    
+    @PostMapping("/{id}/newSubtime")
+    public String saveSubtime(Model model,@PathVariable long id, @RequestParam String subTimeName, @RequestParam String startDate, @RequestParam String endDate) {
+    	subTime subTime = new subTime(subTimeName, startDate, endDate);
+    	Time time = timeService.findOne(id).get();
+    	time.getSubIntervals().add(subTime);
+    	timeService.saveTimer(time);
+    	model.addAttribute("concreteTime", time);
+		List<subTime> subInterv = time.getSubIntervals();
+		model.addAttribute("subIntervals", subInterv);
+		List<Event> events = time.getEvents();
+		model.addAttribute("eventListInt", events);
+		return "concreteInterval";
     }
 }

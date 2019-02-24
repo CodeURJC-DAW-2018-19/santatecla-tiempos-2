@@ -15,13 +15,11 @@ public class CategoryService {
     @Autowired
     private CategoryRepository catRep;
 
-    //Paginacion
-    @GetMapping("/practicaDAW/")
-    public Page<Category> categoryPage (Pageable page){
+    public Page<Category> findAll (Pageable page){
         Page<Category> cat=catRep.findAll(PageRequest.of(0,10));
         return catRep.findAll(page);
-    }
-
+}
+    
     public Optional<Category> findOne(long id){
         return catRep.findById(id);
     }
@@ -37,4 +35,5 @@ public class CategoryService {
     public void deleteCategory(long id){
         catRep.deleteById(id);
     }
+    
 }
