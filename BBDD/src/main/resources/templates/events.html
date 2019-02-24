@@ -81,7 +81,15 @@
             	<td>{{nameEvent}}</td>
             	<td>{{location}}</td>
             	<td>{{date}}</td>
-            	<td class="text-right"> <i class="material-icons">delete</i></td>         	
+                 {{#admin}}
+                 <form method="get" action="/deleteEvent/">
+            	    <td class="text-right">
+                        <button type="button" rel="tooltip" class="btn btn-info btn-simple categoryButton" id="">
+                         <i class="material-icons" id="categoryIconDelete">delete</i>
+                         </button>
+                    </td>
+                 </form>
+                {{/admin}}
             	</tr>
             	{{/events}}
                 <!-- <tr>
@@ -116,10 +124,53 @@
         </table>
         
         {{#admin}}
-            <button type="button" class="btn btn-info btn-simple categoryButton" id="categoryButtonAdd" value="" onclick="newEvent()">
-                <i class="material-icons" id="categoryIcon">add_circle</i>
-            </button>
+        <button class="btn btn-info btn-fab btn-fab-mini categoryButton" data-toggle="modal" data-target="#ModalEvent">
+            <i class="material-icons" id="categoryIconT">add_circle</i>
+        </button>
         {{/admin}}
+
+        <div class="modal fade" id="ModalEvent" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabelT" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered modal-lg" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="exampleModalLabelT">Nuevo Evento</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <label for="title">NUEVO EVENTO</label>
+                        <form>
+                            <div class="form-row">
+
+                                <div class="form-group">
+                                    <label for="inputName">Nombre evento</label>
+                                    <input type="text" class="form-control" id="inputName" placeholder="Nombre">
+                                </div>
+                                <div class="form-row">
+                                    <div class="form-group col-md-6">
+                                        <label for="inputIni">Fecha</label>
+                                        <input type="date" class="form-control" id="inputIni" placeholder="Fecha Inicio">
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="inputURL">URL Foto</label>
+                                        <input type="text" class="form-control" id="foto" placeholder="Introduce URL foto">
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="inputWiki">URL Wiki</label>
+                                        <input type="text" class="form-control" id="wiki" placeholder=" Introduce URL Wiki">
+                                        <span id="errorWiki"></span>
+                                    </div>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="submit" class="btn btn-info" data-dismiss="modal">Save changes</button>
+                    </div>
+                </div>
+            </div>
+        </div>
 
     </div>
     <!--Etiquetas de script de Bootstrap-->
