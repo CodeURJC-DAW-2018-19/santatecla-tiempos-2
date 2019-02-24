@@ -1,8 +1,9 @@
-package com.example.demo.web;
+package com.example.demo.Web;
 
 
 import com.example.demo.entities.*;
 import com.example.demo.users.UserComponent;
+import com.example.demo.web.WebController;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -15,7 +16,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import java.util.Optional;
 
 @Controller
-public class WebControllerCategories extends WebController{
+public class WebControllerCategories extends WebController {
     @Autowired
     private CategoryService service;
 
@@ -50,6 +51,11 @@ public class WebControllerCategories extends WebController{
             model.addAttribute("categorias",cat.get());
         }
         return "modalCategory";
+    }
+
+    @GetMapping("/newCategory")
+    public String saveCategory(Model model){
+        return "categories";
     }
 
     @PostMapping("/newCategory")
