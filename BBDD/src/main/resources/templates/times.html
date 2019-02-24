@@ -52,7 +52,6 @@
                     </form>
                 </div>
                 {{/logged}}
-
             </div>
         </div>
     </nav>
@@ -61,11 +60,8 @@
             <ul class="list-group list-group-flush">
             {{#times}}
                 <li class="list-group-item">
-                    <a href="#0" class="card-link">{{nameInterval}}</a>
+                    <a href="/times/{{id}}" class="card-link">{{nameInterval}}</a>
                 </li>
-                <!--<li class="list-group-item">
-                    <a href="#0" class="card-link">Intervalo 2</a>
-                </li>-->
             {{/times}}
             </ul>
             

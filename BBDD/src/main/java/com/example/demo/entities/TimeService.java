@@ -23,9 +23,14 @@ public class TimeService {
 		Page<Time> tim=timeRep.findAll(PageRequest.of(0,10));
 		return timeRep.findAll(page);
 	}*/
+	
 
 	public Optional<Time> findOne(long id){
 		return timeRep.findById(id);
+	}
+	
+	public List<Time> findTimes(List<Time> list){
+		return timeRep.findBySubIntervals(list);
 	}
 
 	public List<Time> findAll(){

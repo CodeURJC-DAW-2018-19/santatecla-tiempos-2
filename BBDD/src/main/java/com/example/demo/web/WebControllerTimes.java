@@ -8,6 +8,8 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Optional;
 
 @Controller
@@ -24,13 +26,16 @@ public class WebControllerTimes extends WebController{
     }
 
 
-    @GetMapping("/tiempos/{id}")
+    @GetMapping("/times/{id}")
     public String showTimes(Model model, @PathVariable long id){
-        Optional<Time> timer=timeService.findOne(id);
-        if(timer.isPresent()){
-            model.addAttribute("tiempo", timer.get());
-        }
-        return "practicaDAW";
+    	Optional<Time> time = timeService.findOne(id);
+    	if(time.isPresent()) {
+    		model.addAttribute("concreteTime", time.get());
+    		List<subTime> subInterv = time.get().getSubIntervals();
+    		model.addAttribute("subIntervals", subInterv);
+    	}
+    	
+        return "concreteInterval";
     }
 
     @PostMapping("/newTime")
