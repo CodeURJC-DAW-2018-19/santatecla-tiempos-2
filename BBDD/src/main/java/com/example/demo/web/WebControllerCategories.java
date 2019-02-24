@@ -64,25 +64,5 @@ public class WebControllerCategories extends WebController{
         return "practicaDAW";
     }
 
-    @RequestMapping("/login")
-    public String login() {
-    	return "login";
-    }
-    
-    @RequestMapping("/loginerror")
-    public String loginerror() {
-    	return "loginerror";
-    }
 
-
-  @GetMapping("/login")
-  public String login(Model model){
-        model.addAttribute("hideLogin",true);
-        return "login";
-  }
-
-  @GetMapping("/loginerror")
-    public String loginError(){
-        return "loginError";
-  }
 }
