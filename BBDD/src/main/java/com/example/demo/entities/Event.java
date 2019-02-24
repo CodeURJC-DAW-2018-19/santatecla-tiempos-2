@@ -23,7 +23,7 @@ public class Event {
 	private String nameEvent ;
 	private String date;
 	private String location;
-	//private String photo;
+	private String photo;
 	private String wiki;
 	
 	/*unidireccionalidad*/
@@ -41,7 +41,7 @@ public class Event {
 	public Event(String nameEvent, String date, String location, String wiki) {
 		this.nameEvent = nameEvent;
 		this.date = date;
-		//this.photo = photo;
+		this.photo = "";
 		this.location = location;
 		this.wiki = wiki;
 		this.categories = new ArrayList<>();
@@ -79,7 +79,7 @@ public class Event {
 	public void setDate(String date) {
 		this.date = date;
 	}
-/*
+
 	public String getPhoto() {
 		return photo;
 	}
@@ -87,7 +87,7 @@ public class Event {
 	public void setPhoto(String photo) {
 		this.photo = photo;
 	}
-*/
+
 	public String getWiki() {
 		return wiki;
 	}

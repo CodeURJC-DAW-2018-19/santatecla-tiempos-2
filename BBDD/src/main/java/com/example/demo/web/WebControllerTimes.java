@@ -41,6 +41,12 @@ public class WebControllerTimes extends WebController{
     	
         return "concreteInterval";
     }
+    
+    @GetMapping("/newTime")
+    public String saveCategory(Model model){
+    	model.addAttribute("times",timeService.findAll());
+        return "times";
+    }
 
     @PostMapping("/newTime")
     public String saveTimer(Model model, @RequestParam String timeName, @RequestParam String startDate, @RequestParam String endDate){

@@ -34,9 +34,9 @@ public class BBDDinit {
         catRep.save(cat3);
 
 
-        Event event1=new Event("DAW","7/7/2019", "Aulario 1", "hola");
-        Event event2 = new Event("Seguridad", "20/12/18", "Aulario 1", "muy seguro");
-        Event event3 = new Event("Java", "1/1/19", "Aulario 2", "No huele");
+        Event event1=new Event("DAW","7-7-2019", "Aulario 1", "hola");
+        Event event2 = new Event("Seguridad", "20-12-18", "Aulario 1", "muy seguro");
+        Event event3 = new Event("Java", "1-1-19", "Aulario 2", "No huele");
         
         eveRep.save(event1);
         eveRep.save(event2);
