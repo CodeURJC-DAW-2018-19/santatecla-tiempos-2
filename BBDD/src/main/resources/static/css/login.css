@@ -1,0 +1,35 @@
+
+body{
+background-color: #FFEFEA !important;
+}
+
+
+
+.card{
+height: 370px;
+margin-top: auto;
+margin-bottom: auto;
+width: 400px;
+background-color: #FFEFEA !important;
+opacity: 1;
+}
+
+
+#face, #key{
+	background-color: #FFD9CD; 
+}
+.card-header h1{
+color: #BE6245 ;
+}
+.form-check a{
+	color: #BE6245 ;
+	display: inline-block;
+}
+#button{
+	background-color:#BE6245 !important;
+	border-color:#BE6245 !important;
+	
+}
+.form-check a:hover{
+	color:#BE6245 ;
+}

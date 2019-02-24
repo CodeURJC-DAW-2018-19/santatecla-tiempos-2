@@ -1,0 +1,30 @@
+body{
+background-color: #FFEFEA !important;
+}
+
+.card{
+height: 150px;
+margin-top: auto;
+margin-bottom: auto;
+width: 400px;
+background-color: #FFD9CD !important;
+box-shadow: 15px 0px 15px #BE6245;
+ 
+}
+.card-body  {
+	font-size: 20px;
+
+}
+.card-body p{
+	color: #BE6245;
+}
+.card-header h1{
+color: #BE6245 ;
+}
+.card-body a{
+	color: purple;
+	text-decoration: underline;
+}
+#containerForm{
+	margin-top: 15rem;
+}
