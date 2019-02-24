@@ -59,7 +59,7 @@
         </div>
     </nav>
     <div id="Intervalo1" class="tabcontent">
-
+{{#searchInterval}}
         <div class="searchInterval">
         {{#concreteTime}}
             <h2 class="searchIntervalItem">Nombre: {{nameInterval}}</h2>
@@ -166,6 +166,11 @@
                 </div>
             </div>
         </div>
+   	{{/searchInterval}}
+   	{{^searchInterval}}
+   	<br>
+   	<h1 style="color: #BE6245; margin-left: 5%">Vaya, el intervalo que buscas no existe, será mejor volver a la <span><a href="/times">lista de intervalos</a></span></h1>
+   	{{/searchInterval}}
     </div>
     <!--Etiquetas de script de Bootstrap-->
     <!--   Core JS Files   -->
