@@ -49,19 +49,19 @@ public class WebControllerCategories extends WebController{
         if(cat.isPresent()){
             model.addAttribute("categorias",cat.get());
         }
-        return "practicaDAW";
+        return "modalCategory";
     }
 
     @PostMapping("/newCategory")
     public String saveCategory(Model model,Category category){
         service.saveCategory(category);
-        return "practicaDAW";
+        return "categories";
     }
 
     @GetMapping("/deleteCategory/{id}")
     public String deleteCategory(Model model,@PathVariable long id){
         service.deleteCategory(id);
-        return "practicaDAW";
+        return "categories";
     }
 
 
