@@ -99,14 +99,15 @@
                                 <div class="form-row">
 
                                     <div class="form-group">
+                                        {{#category}}<input type="hidden" name="id" value="{{id}}" class="form-control"/>{{/category}}
                                         <label for="inputName">Nombre categoria</label>
-                                        <input type="text" class="form-control" id="inputName" placeholder="Categoria">
+                                        <input type="text" id="nameCategory" placeholder="Categoria" name="nameCategory" {{#Category}}  value={{nameCategory}}{{/Category}} class="form-control" >
                                     </div>
                                 </div>
+                                <div class="modal-footer">
+                                    <button type="submit" class="btn btn-info" data-dismiss="modal">Save changes</button>
+                                </div>
                             </form>
-                        </div>
-                        <div class="modal-footer">
-                            <button type="submit" class="btn btn-info" data-dismiss="modal">Save changes</button>
                         </div>
                     </div>
                 </div>
