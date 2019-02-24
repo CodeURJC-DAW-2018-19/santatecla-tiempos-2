@@ -33,6 +33,8 @@ public class WebControllerTimes extends WebController{
     		model.addAttribute("concreteTime", time.get());
     		List<subTime> subInterv = time.get().getSubIntervals();
     		model.addAttribute("subIntervals", subInterv);
+    		List<Event> events = time.get().getEvents();
+    		model.addAttribute("eventListInt", events);
     	}
     	
         return "concreteInterval";
