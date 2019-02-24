@@ -1,6 +1,7 @@
-package com.example.demo.web;
+package com.example.demo.Web;
 
 import com.example.demo.entities.*;
+import com.example.demo.web.WebController;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -12,7 +13,7 @@ import java.util.List;
 import java.util.Optional;
 
 @Controller
-public class WebControllerEvents extends WebController{
+public class WebControllerEvents extends WebController {
 
 
     @Autowired
