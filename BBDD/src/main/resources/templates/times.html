@@ -40,15 +40,18 @@
                 </ul>
                 {{^logged}}
                 <div class="login">
-                    <a href="/"></a><button type="button" class="btn btn-info ml-auto">Login</button></a>
+                    <form action="/">
+                        <a href="/"></a><button type="submit" class="btn btn-info ml-auto">Login</button></a>
+                    </form>
                 </div>
                 {{/logged}}
                 {{#logged}}
                 <div class="login">
-                    <a href="/"></a><button type="button" class="btn btn-info ml-auto">Logout</button></a>
+                    <form action="/" method="get">
+                        <a href="/"></a><button type="submit" class="btn btn-info ml-auto">logout</button></a>
+                    </form>
                 </div>
-				{{/logged}}
-
+                {{/logged}}
             </div>
         </div>
     </nav>
