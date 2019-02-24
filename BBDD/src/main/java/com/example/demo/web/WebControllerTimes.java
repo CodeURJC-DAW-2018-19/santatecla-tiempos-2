@@ -7,6 +7,8 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -33,15 +35,19 @@ public class WebControllerTimes extends WebController{
     		model.addAttribute("concreteTime", time.get());
     		List<subTime> subInterv = time.get().getSubIntervals();
     		model.addAttribute("subIntervals", subInterv);
+    		List<Event> events = time.get().getEvents();
+    		model.addAttribute("eventListInt", events);
     	}
     	
         return "concreteInterval";
     }
 
     @PostMapping("/newTime")
-    public String saveTimer(Model model,Time timer){
-        timeService.saveTimer(timer);
-        return "practicaDAW";
+    public String saveTimer(Model model, @RequestParam String timeName, @RequestParam String startDate, @RequestParam String endDate){
+    	Time time = new Time(timeName, startDate, endDate);
+    	timeService.saveTimer(time);
+    	model.addAttribute("times", timeService.findAll());    	
+        return "times";
     }
 
     @GetMapping("/deleteTime/{id}")

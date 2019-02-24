@@ -139,37 +139,26 @@
                         <h1>Intervalo 1</h1>
                     </div>
                     <div class="modal-body">
+                    	
                         <div class="container">
-                            <div class="row">
+                            
+                            	{{#concreteTime}}
                                 <div class="col">
-                                    Año 2019
-                                </div>
+                                    {{startDate}}
+                                
+                            	{{/concreteTime}}
+                            </div>
+                            	{{#eventListInt}}
+                            <div class="row">	
+                            	<div class="col"></div>
                                 <div class="col">
-                                    DAW
+                                    {{nameEvent}}
                                 </div>
                             </div>
-                            <div class="row">
-                                <div class="col">
-                                </div>
-                                <div class="col">
-                                    Seguridad
-                                </div>
-                            </div>
-                            <div class="row">
-                                <div class="col">
-                                </div>
-                                <div class="col">
-                                    Java
-                                </div>
-                            </div>
-                            <div class="row">
-                                <div class="col">
-                                </div>
-                                <div class="col">
-                                    Redes
-                                </div>
-                            </div>
+                                {{/eventListInt}}
+                            
                         </div>
+                        
                     </div>
                     <div class="modal-footer">
                         <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
