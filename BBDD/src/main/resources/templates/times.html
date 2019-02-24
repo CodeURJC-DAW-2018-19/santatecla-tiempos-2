@@ -80,30 +80,33 @@
                             <span aria-hidden="true">&times;</span>
                         </button>
                     </div>
+                    
                     <div class="modal-body">
-                        <label for="title">NUEVO INTERVALO</label>
-                        <form>
+                        <br>
+                        <br>
+                        <form action="/newTime" method="post">
                             <div class="form-row">
 
                                 <div class="form-group">
                                     <label for="inputName">Nombre</label>
-                                    <input type="text" class="form-control" id="inputName" placeholder="Nombre">
+                                    <input type="text" class="form-control" id="inputName" placeholder="Nombre" name="timeName">
                                 </div>
                                 <div class="form-row">
                                     <div class="form-group col-md-6">
                                         <label for="inputIni">Fecha Inicio</label>
-                                        <input type="date" class="form-control" id="inputIni" placeholder="Fecha Inicio">
+                                        <input type="date" class="form-control" id="inputIni" placeholder="Fecha Inicio" name="startDate">
                                     </div>
                                     <div class="form-group col-md-3">
                                         <label for="inputEnd">Fecha Fin</label>
-                                        <input type="date" class="form-control" id="inputEnd" placeholder="Fecha Fin">
+                                        <input type="date" class="form-control" id="inputEnd" placeholder="Fecha Fin" name="endDate">
                                     </div>
                                 </div>
                             </div>
+                            <input type="submit" class="btn btn-info"  value="Guardar cambios"/>
                         </form>
                     </div>
                     <div class="modal-footer">
-                        <button type="button" class="btn btn-info" data-dismiss="modal">Save changes</button>
+                        
                     </div>
                 </div>
             </div>
