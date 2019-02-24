@@ -27,19 +27,9 @@ public class WebControllerEvents extends WebController {
         model.addAttribute("events",evenService.findAll());
         return "events";
     }
-
-
-    /*@GetMapping("/Eventos/{id}")
-    public String showEvents(Model model, @PathVariable long id){
-        Optional<Event> event=evenService.findOne(id);
-        if(event.isPresent()){
-            model.addAttribute("evento", event.get());
-        }
-        return "practicaDAW";
-    }*/
     
     @GetMapping("/newEvent")
-    public String saveCategory(Model model){
+    public String saveEvent(Model model){
     	model.addAttribute("events",evenService.findAll());
         return "events";
     }
@@ -54,11 +44,18 @@ public class WebControllerEvents extends WebController {
     }
 
     @GetMapping("/deleteEvent/{id}")
-    public String deleteEvent(Model model,@PathVariable long id){
-
-        evenService.deleteEvent(id);
-        return "practicaDAW";
+    public String deleteEvent(Model model){
+    	model.addAttribute("events",evenService.findAll());
+        return "events";
     }
+    
+    @PostMapping("/deleteEvent/{id}")
+    public String deleteEvent(Model model,@PathVariable long id) {
+    	evenService.deleteEvent(id);
+    	model.addAttribute("events", evenService.findAll());
+    	return "events";
+    }
+    
 
 
 }

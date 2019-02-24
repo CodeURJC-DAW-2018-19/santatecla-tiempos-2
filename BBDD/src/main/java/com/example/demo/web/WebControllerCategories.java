@@ -62,10 +62,18 @@ public class WebControllerCategories extends WebController {
         model.addAttribute("categories", service.findAll());
         return "categories";
     }
-
+    
     @GetMapping("/deleteCategory/{id}")
+    public String deleteCategory(Model model) {
+    	model.addAttribute("categories", service.findAll());
+        return "categories";
+    }
+    
+    
+    @PostMapping("/deleteCategory/{id}")
     public String deleteCategory(Model model,@PathVariable long id){
         service.deleteCategory(id);
+        model.addAttribute("categories", service.findAll());
         return "categories";
     }
 
