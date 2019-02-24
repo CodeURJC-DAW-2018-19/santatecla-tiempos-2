@@ -38,9 +38,20 @@
                         <a href="#" onclick="openTab(event, 'Intervalo1')" class="nav-link">Intervalo 1</a>
                     </li>
                 </ul>
+                {{^logged}}
                 <div class="login">
-                    <button type="button" class="btn btn-info ml-auto" onclick="enterLogin()">Login</button>
+                    <form action="/">
+                        <a href="/"></a><button type="submit" class="btn btn-info ml-auto">Login</button></a>
+                    </form>
                 </div>
+                {{/logged}}
+                {{#logged}}
+                <div class="login">
+                    <form action="/" method="get">
+                        <a href="/"></a><button type="submit" class="btn btn-info ml-auto">logout</button></a>
+                    </form>
+                </div>
+                {{/logged}}
 
             </div>
         </div>
