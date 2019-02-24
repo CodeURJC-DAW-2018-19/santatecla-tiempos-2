@@ -5,6 +5,8 @@ import com.example.demo.entities.*;
 import com.example.demo.users.UserComponent;
 import com.example.demo.web.WebController;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.PageRequest;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -21,9 +23,6 @@ public class WebControllerCategories extends WebController {
     @Autowired
     private CategoryService service;
 
-   
-
-
     
     
     @GetMapping("/")
@@ -31,23 +30,18 @@ public class WebControllerCategories extends WebController {
     	return "login2";
     }
     
+    /*@RequestMapping("/categories")
+    public String categories(Model model, @RequestParam(defaultValue = "0")int page){
+    	model.addAttribute("categories",service.findAll(PageRequest.of(page, 1)));
+    	return "categories";
+    }*/
+    
     @RequestMapping("/categories")
     public String categories(Model model){
     	model.addAttribute("categories",service.findAll());
     	return "categories";
     }
-
-
-    @GetMapping("/Categorias/{id}")
-    public String showCategory(Model model,@PathVariable long id){
-        Optional<Category> cat=service.findOne(id);
-
-
-        if(cat.isPresent()){
-            model.addAttribute("categorias",cat.get());
-        }
-        return "modalCategory";
-    }
+    
 
     @GetMapping("/newCategory")
     public String saveCategory(Model model){
@@ -76,6 +70,20 @@ public class WebControllerCategories extends WebController {
         model.addAttribute("categories", service.findAll());
         return "categories";
     }
+    
+    @GetMapping("/updateCategory")
+    public String updateCategory(Model model) {
+    	model.addAttribute("categories", service.findAll());
+        return "categories";
+    }
 
+    @PostMapping("/updateCategory")
+    public String updateCategory(Model model,@PathVariable long id, @RequestParam String category) {
+    	Category categ = service.findOne(id).get();
+    	categ.setNameCategory(category);
+    	service.saveCategory(categ);
+    	model.addAttribute("categories", service.findAll());
+    	return "categories";
+    }
 
 }

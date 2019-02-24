@@ -20,11 +20,6 @@ public class EventService {
     private EventRepository eveRep;
 
     //Paginacion
-    @GetMapping("/practicaDAW/")
-    public Page<Event> eventosPage (Pageable page){
-        Page<Event> event=eveRep.findAll(PageRequest.of(0,10));
-        return eveRep.findAll(page);
-    }
 
     public Optional<Event> findOne(long id){
         return eveRep.findById(id);
@@ -41,35 +36,8 @@ public class EventService {
     public void deleteEvent(long id){
         eveRep.deleteById(id);
     }
-
-    //Eventos
-/*
-    @GetMapping("/")
-    public String showEvents(Model model){
-        model.addAttribute("eventos",eveRep.findAll());
-        return "practicaDAW";
+    
+    public List<Event> findByName(String name, String loc){
+    	return eveRep.findByNameEventOrLocation(name, loc);
     }
-
-
-    @GetMapping("/Eventos/{id}")
-    public String showEvents(Model model, @PathVariable long id){
-        Optional<Eventos> event=eveRep.findById(id);
-        if(event.isPresent()){
-            model.addAttribute("evento", event.get());
-        }
-        return "practicaDAW";
-    }
-
-    @PostMapping("/newEvent")
-    public String saveEvent(Model model,Eventos event){
-        eveRep.save(event);
-        return "practicaDAW";
-    }
-
-    @GetMapping("/deleteEvent/{id}")
-    public String deleteEvent(Model model,@PathVariable long id){
-
-        eveRep.deleteById(id);
-        return "practicaDAW";
-    }*/
 }
