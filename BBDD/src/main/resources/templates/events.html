@@ -32,10 +32,7 @@
                         <a href="" class="nav-link active">Evento</a>
                     </li>
                     <li class="nav-item">
-                        <a href="/times" onclick="openTab(event, 'Tiempo')" class="nav-link">Tiempo</a>
-                    </li>
-                    <li class="nav-item">
-                        <a href="#" onclick="openTab(event, 'Intervalo1')" class="nav-link">Intervalo 1</a>
+                        <a href="/times" class="nav-link">Tiempo</a>
                     </li>
                 </ul>
                 {{^logged}}
@@ -47,8 +44,8 @@
                 {{/logged}}
                 {{#logged}}
                 <div class="login">
-                    <form action="/" method="get">
-                        <a href="/"></a><button type="submit" class="btn btn-info ml-auto">logout</button></a>
+                    <form action="/logout" method="get">
+                        <a href="/"></a><button type="submit" class="btn btn-info ml-auto">Logout</button></a>
                     </form>
                 </div>
                 {{/logged}}
@@ -92,34 +89,6 @@
                 {{/admin}}
             	</tr>
             	{{/events}}
-                <!-- <tr>
-                    <td class="text-center">1</td>
-                    <td>DAW</td>
-                    <td>Aulario 1</td>
-                    <td>2019</td>
-                    <td class="text-right"> <i class="material-icons">delete</i></td>
-                </tr>
-                <tr>
-                    <td class="text-center">2</td>
-                    <td>Seguridad</td>
-                    <td>Aulario 1</td>
-                    <td>2019</td>
-                    <td class="text-right"> <i class="material-icons">delete</i></td>
-                </tr>
-                <tr>
-                    <td class="text-center">3</td>
-                    <td>JAVA</td>
-                    <td>Aulario 1</td>
-                    <td>2019</td>
-                    <td class="text-right"> <i class="material-icons">delete</i></td>
-                </tr>
-                <tr>
-                    <td class="text-center">4</td>
-                    <td>Redes</td>
-                    <td>Aulario 1</td>
-                    <td>2019</td>
-                    <td class="text-right"> <i class="material-icons">delete</i></td>
-                </tr>-->
             </tbody>
         </table>
         
@@ -140,34 +109,39 @@
                     </div>
                     <div class="modal-body">
                         <label for="title">NUEVO EVENTO</label>
-                        <form>
+                        <form action="/newEvent" method="post">
                             <div class="form-row">
 
                                 <div class="form-group">
                                     <label for="inputName">Nombre evento</label>
-                                    <input type="text" class="form-control" id="inputName" placeholder="Nombre">
+                                    <input type="text" class="form-control" id="inputName" placeholder="Nombre" name="nameEvent">
                                 </div>
                                 <div class="form-row">
                                     <div class="form-group col-md-6">
                                         <label for="inputIni">Fecha</label>
-                                        <input type="date" class="form-control" id="inputIni" placeholder="Fecha Inicio">
+                                        <input type="date" class="form-control" id="inputIni" placeholder="Fecha Inicio" name="eventDate">
+                                    </div>
+                                    <div class="form-group col-md-6">
+                                        <label for="inputIni">Localización</label>
+                                        <input type="text" class="form-control" id="inputLoc" placeholder="Fecha Inicio" name="eventLoc">
                                     </div>
                                     <div class="form-group">
                                         <label for="inputURL">URL Foto</label>
-                                        <input type="text" class="form-control" id="foto" placeholder="Introduce URL foto">
+                                        <input type="text" class="form-control" id="foto" placeholder="Introduce URL foto" name="photoUrl">
                                     </div>
                                     <div class="form-group">
                                         <label for="inputWiki">URL Wiki</label>
-                                        <input type="text" class="form-control" id="wiki" placeholder=" Introduce URL Wiki">
+                                        <input type="text" class="form-control" id="wiki" placeholder=" Introduce URL Wiki" name="wikiUrl">
                                         <span id="errorWiki"></span>
                                     </div>
                                 </div>
                             </div>
+                            <div class="modal-footer">
+                        		<button type="submit" class="btn btn-info">Save changes</button>
+                    		</div>
                         </form>
                     </div>
-                    <div class="modal-footer">
-                        <button type="submit" class="btn btn-info" data-dismiss="modal">Save changes</button>
-                    </div>
+                    
                 </div>
             </div>
         </div>

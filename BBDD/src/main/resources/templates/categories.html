@@ -33,9 +33,6 @@
                     <li class="nav-item">
                         <a href="/times" class="nav-link">Tiempo</a>
                     </li>
-                    <li class="nav-item">
-                        <a href="#" class="nav-link">Intervalo 1</a>
-                    </li>
                 </ul>
                 {{^logged}}
                 <div class="login">
@@ -46,8 +43,8 @@
                 {{/logged}}
                 {{#logged}}
                 <div class="login">
-                    <form action="/" method="get">
-                        <a href="/"></a><button type="submit" class="btn btn-info ml-auto">logout</button></a>
+                    <form action="/logout" method="get">
+                        <a href="/"></a><button type="submit" class="btn btn-info ml-auto">Logout</button></a>
                     </form>
                 </div>
 				{{/logged}}
@@ -94,18 +91,19 @@
                             </button>
                         </div>
                         <div class="modal-body">
-                            <label for="title">NUEVO CATEGORIA</label>
+                            <br>
+                            <br>
                             <form action="/newCategory" method="post">
                                 <div class="form-row">
 
                                     <div class="form-group">
-                                        {{#category}}<input type="hidden" name="id" value="{{id}}" class="form-control"/>{{/category}}
+                                        
                                         <label for="inputName">Nombre categoria</label>
-                                        <input type="text" id="nameCategory" placeholder="Categoria" name="nameCategory" {{#Category}}  value={{nameCategory}}{{/Category}} class="form-control" >
+                                        <input type="text" id="nameCategory" placeholder="Categoria" name="catName" class="form-control" >
                                     </div>
                                 </div>
                                 <div class="modal-footer">
-                                    <button type="submit" class="btn btn-info" data-dismiss="modal">Save changes</button>
+                                    <button type="submit" class="btn btn-info">Save changes</button>
                                 </div>
                             </form>
                         </div>

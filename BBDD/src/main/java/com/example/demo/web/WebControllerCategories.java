@@ -1,4 +1,4 @@
-package com.example.demo.Web;
+package com.example.demo.web;
 
 
 import com.example.demo.entities.*;
@@ -12,6 +12,7 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 
 import java.util.Optional;
 
@@ -36,11 +37,6 @@ public class WebControllerCategories extends WebController {
     	return "categories";
     }
 
-   /* @GetMapping("/")
-    public String showCategory(Model model){
-        model.addAttribute("categorias",service.findAll());
-        return "practicaDAW";
-    }*/
 
     @GetMapping("/Categorias/{id}")
     public String showCategory(Model model,@PathVariable long id){
@@ -55,12 +51,15 @@ public class WebControllerCategories extends WebController {
 
     @GetMapping("/newCategory")
     public String saveCategory(Model model){
+    	model.addAttribute("categories",service.findAll());
         return "categories";
     }
 
     @PostMapping("/newCategory")
-    public String saveCategory(Model model,Category category){
+    public String saveCategory(Model model,@RequestParam String catName){
+        Category category = new Category(catName);
         service.saveCategory(category);
+        model.addAttribute("categories", service.findAll());
         return "categories";
     }
 

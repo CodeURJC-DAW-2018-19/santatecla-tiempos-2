@@ -49,8 +49,8 @@
                 {{/logged}}
                 {{#logged}}
                 <div class="login">
-                    <form action="/" method="get">
-                        <a href="/"></a><button type="submit" class="btn btn-info ml-auto">logout</button></a>
+                    <form action="/logout" method="get">
+                        <a href="/"></a><button type="submit" class="btn btn-info ml-auto">Logout</button></a>
                     </form>
                 </div>
                 {{/logged}}
@@ -59,7 +59,7 @@
         </div>
     </nav>
     <div id="Intervalo1" class="tabcontent">
-{{#searchInterval}}
+{{#concreteTime}}
         <div class="searchInterval">
         {{#concreteTime}}
             <h2 class="searchIntervalItem">Nombre: {{nameInterval}}</h2>
@@ -166,11 +166,11 @@
                 </div>
             </div>
         </div>
-   	{{/searchInterval}}
-   	{{^searchInterval}}
+   	{{/concreteTime}}
+   	{{^concreteTime}}
    	<br>
    	<h1 style="color: #BE6245; margin-left: 5%">Vaya, el intervalo que buscas no existe, será mejor volver a la <span><a href="/times">lista de intervalos</a></span></h1>
-   	{{/searchInterval}}
+   	{{/concreteTime}}
     </div>
     <!--Etiquetas de script de Bootstrap-->
     <!--   Core JS Files   -->

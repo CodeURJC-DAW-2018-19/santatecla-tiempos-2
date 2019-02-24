@@ -8,6 +8,7 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 
 import java.util.List;
 import java.util.Optional;
@@ -28,19 +29,28 @@ public class WebControllerEvents extends WebController {
     }
 
 
-    @GetMapping("/Eventos/{id}")
+    /*@GetMapping("/Eventos/{id}")
     public String showEvents(Model model, @PathVariable long id){
         Optional<Event> event=evenService.findOne(id);
         if(event.isPresent()){
             model.addAttribute("evento", event.get());
         }
         return "practicaDAW";
+    }*/
+    
+    @GetMapping("/newEvent")
+    public String saveCategory(Model model){
+    	model.addAttribute("events",evenService.findAll());
+        return "events";
     }
 
     @PostMapping("/newEvent")
-    public String saveEvent(Model model,Event event){
+    public String saveEvent(Model model,@RequestParam String nameEvent, @RequestParam String eventDate, @RequestParam String eventLoc, @RequestParam String photoUrl, @RequestParam String wikiUrl){
+    	Event event = new Event(nameEvent,eventDate, eventLoc, wikiUrl);
+    	event.setPhoto(photoUrl);
         evenService.saveEvent(event);
-        return "practicaDAW";
+        model.addAttribute("events", evenService.findAll());
+        return "events";
     }
 
     @GetMapping("/deleteEvent/{id}")
