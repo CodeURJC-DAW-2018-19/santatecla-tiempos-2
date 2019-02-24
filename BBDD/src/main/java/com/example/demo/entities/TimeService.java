@@ -28,6 +28,10 @@ public class TimeService {
 	public Optional<Time> findOne(long id){
 		return timeRep.findById(id);
 	}
+	
+	public List<Time> findTimes(List<Time> list){
+		return timeRep.findBySubIntervals(list);
+	}
 
 	public List<Time> findAll(){
 		return timeRep.findAll();

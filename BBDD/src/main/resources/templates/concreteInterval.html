@@ -34,9 +34,11 @@
                     <li class="nav-item">
                         <a href="/times" onclick="openTab(event, 'Tiempo')" class="nav-link">Tiempo</a>
                     </li>
+                    {{#concreteTime}}
                     <li class="nav-item">
-                        <a href="" onclick="openTab(event, 'Intervalo1')" class="nav-link">Intervalo 1</a>
+                        <a href="" onclick="openTab(event, 'Intervalo1')" class="nav-link">{{nameInterval}}</a>
                     </li>
+                    {{/concreteTime}}
                 </ul>
                 {{^logged}}
                 <div class="login">
@@ -55,7 +57,9 @@
     <div id="Intervalo1" class="tabcontent">
 
         <div class="searchInterval">
-            <h2 class="searchIntervalItem">Nombre: </h2>
+        {{#concreteTime}}
+            <h2 class="searchIntervalItem">Nombre: {{nameInterval}}</h2>
+        {{/concreteTime}}
             <input type="text" class="form-control searchIntervalItem" id="searchIntervalInput" placeholder="Buscar intervalo">
             {{#admin}}
                 <button type="button" class="btn categoryButton" id="categoryButtonAdd">
@@ -67,29 +71,30 @@
             <div class="card cardInterv" id="">
                 <div class="card-body">
                     <ul class="list-group list-group-flush">
+                    	{{#subIntervals}}
                         <li class="list-group-item">
-                            <a href="#0" class="card-link">Intervalo 1.1</a>
+                            <a href="#0" class="card-link">{{nameSubTime}}</a>
                         </li>
+                        {{/subIntervals}}
+                        {{^subIntervals}}
                         <li class="list-group-item">
-                            <a href="#0" class="card-link">Intervalo 1.2</a>
+                            <a class="card-link" style="font-size: medium">Ups, no hay subintervalos</a>
                         </li>
-                        <li class="list-group-item">
-                            <a href="#0" class="card-link">Intervalo 1.3</a>
-                        </li>
-                        <li class="list-group-item">
-                            <a href="#0" class="card-link">Intervalo 1.4</a>
-                        </li>
+                        {{/subIntervals}}
                     </ul>
                 </div>
             </div>
+            {{#concreteTime}}
             <div class="form-row fechas">
                 <div class="form-group col-md-6">
-                    <label for="inputIni">Fecha Inicio</label>
+                    <label for="inputIni">Fecha Inicio: {{startDate}}</label>
                     <input type="date" class="form-control" id="inputIni" placeholder="Fecha Inicio">
                 </div>
                 <div class="form-group col-md-6">
-                    <label for="inputEnd">Fecha Fin</label>
+                    <label for="inputEnd">Fecha Fin: {{endDate}}</label>
+                    <input type="date" class="form-control" id="inputEnd" placeholder="Fecha Fin">
                     <div class="form-check">
+                    	<br>
                         <label class="form-check-label">
                             <input class="form-check-input" type="checkbox" value="categorias" name="listaDeCategorias">
                             Actualidad
@@ -98,9 +103,9 @@
                             </span>
                         </label>
                     </div>
-                    <input type="date" class="form-control" id="inputEnd" placeholder="Fecha Fin">
                 </div>
             </div>
+            {{/concreteTime}}
         </div>
         {{#admin}}
             <button type="button" class="btn btn-info btn-simple categoryButton" id="categoryButtonAdd" value="">
