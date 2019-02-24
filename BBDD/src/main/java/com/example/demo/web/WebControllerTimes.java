@@ -43,7 +43,7 @@ public class WebControllerTimes extends WebController{
     }
     
     @GetMapping("/newTime")
-    public String saveCategory(Model model){
+    public String saveTime(Model model){
     	model.addAttribute("times",timeService.findAll());
         return "times";
     }

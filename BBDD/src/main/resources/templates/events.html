@@ -29,7 +29,7 @@
                         <a href="/categories" class="nav-link">Categoria</a>
                     </li>
                     <li class="nav-item">
-                        <a href="" class="nav-link active">Evento</a>
+                        <a href="/events" class="nav-link active">Evento</a>
                     </li>
                     <li class="nav-item">
                         <a href="/times" class="nav-link">Tiempo</a>
@@ -79,13 +79,13 @@
             	<td>{{location}}</td>
             	<td>{{date}}</td>
                  {{#admin}}
-                 <form method="get" action="/deleteEvent/">
+                	<form action="/deleteEvent/{{id}}" method="post">
             	    <td class="text-right">
-                        <button type="button" rel="tooltip" class="btn btn-info btn-simple categoryButton" id="">
+                        <button type="submit" rel="tooltip" class="btn btn-info btn-simple categoryButton" id="">
                          <i class="material-icons" id="categoryIconDelete">delete</i>
                          </button>
                     </td>
-                 </form>
+                 	</form>
                 {{/admin}}
             	</tr>
             	{{/events}}
