@@ -7,10 +7,10 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 @Service
-public class subTimeService {
+public class SubTimeService {
 	
 	@Autowired
-	public subTimeRepository subTimeRep;
+	public SubTimeRepository subTimeRep;
 	
 	public List<SubTime> findAll(){
 		return subTimeRep.findAll();
