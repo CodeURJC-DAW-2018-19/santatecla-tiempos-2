@@ -52,13 +52,18 @@
             </div>
         </div>
     </nav>
+
     <div id="Tiempo" class="tabcontent">
         <div class="card" id="cardInterv">       	
             <ul class="list-group list-group-flush">
             {{#times}}
+
                 <li class="list-group-item">
-                    <a href="/times/{{id}}" class="card-link">{{nameInterval}}</a>
+
+                    <a href="{{#logged}}/times/{{id}}{{/logged}}" class="card-link">{{nameInterval}}</a>
+
                 </li>
+
             {{/times}}
             </ul>
             
