@@ -1,5 +1,5 @@
 package com.example.demo.security;
-
+/*
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
@@ -30,4 +30,4 @@ class CSRFHandlerInterceptor extends HandlerInterceptorAdapter {
             modelAndView.addObject("token", token.getToken());
         }
     }
-}
+}*/
