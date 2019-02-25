@@ -19,11 +19,9 @@ public class WebControllerEvents extends WebController {
 
     @Autowired
     private EventService evenService;
-    //Eventos
 
     @GetMapping("/events")
-    public String showEvents(Model model){
-    	//List<Event> eventList = evenService.findAll();    	
+    public String showEvents(Model model){	
         model.addAttribute("events",evenService.findAll());
         return "events";
     }

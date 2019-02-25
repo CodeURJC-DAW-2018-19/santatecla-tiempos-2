@@ -7,11 +7,11 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.ResponseStatus;
 
 public class UserController {
-    /*Conectamos con el repositorio del usuario*/
+    /*User repository connection*/
     @Autowired
     private UserRepository userRep;
 
-    /*Añadir usuarios*/
+    /*Add user*/
     @PostMapping(value ="/usuarios/{id")
     @ResponseStatus(HttpStatus.CREATED)
     public User newUser(@RequestBody User user){

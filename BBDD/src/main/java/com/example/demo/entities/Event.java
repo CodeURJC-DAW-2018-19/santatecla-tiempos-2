@@ -11,11 +11,11 @@ import java.util.ArrayList;
 import java.util.List;
 
 
-/*Declaramos la clase como entidad para crear la base de datos*/
+/*Entity for DB*/
 @Entity
 public class Event {
 
-	/*Generamos el Id de cada evento*/
+	/*ID of the entity*/
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	@JsonIgnore
@@ -26,7 +26,7 @@ public class Event {
 	private String photo;
 	private String wiki;
 	
-	/*unidireccionalidad*/
+	/*One-way*/
 
 	@OneToMany
 	private List<Category> categories;

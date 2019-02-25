@@ -25,42 +25,34 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
     @Override
     protected void configure(HttpSecurity http) throws Exception {
 
-        //Url publicas
+        //public pages
         http.authorizeRequests().antMatchers("/").permitAll();
         http.authorizeRequests().antMatchers("/login").permitAll();
         http.authorizeRequests().antMatchers("/loginerror").permitAll();
         http.authorizeRequests().antMatchers("/logout").permitAll();
 
-        //private pages (otras paginas) url privada
+        //private pages
         http.authorizeRequests().antMatchers("/index").hasAnyRole("USER");
         http.authorizeRequests().antMatchers("/index").hasAnyRole("ADMIN");
         http.authorizeRequests().antMatchers("/concreteInterval").hasAnyRole("USER","ADMIN");
 
-        //Login here configuracion del formulario de login
+        //login form config
         http.formLogin().loginPage("/login");
         http.formLogin().usernameParameter("username");
         http.formLogin().passwordParameter("password");
         http.formLogin().defaultSuccessUrl("/categories");
         http.formLogin().failureUrl("/loginerror");
 
-        //logout pagina logout
+        //logout page
         http.logout().logoutUrl("/logout");
         http.logout().logoutSuccessUrl("/");
 
         //disable CSRF
         http.csrf().disable();
     }
-/*
-    //metodo para los usuarios que tienes
-    protected void configure(AuthenticationManagerBuilder auth) throws Exception{
-        //user
-        //aqui decidimmos que el usuario es user con la contraseña user con el rol usuario
-        //no hace falta poner .roles("User")
-        auth.inMemoryAuthentication().withUser("user").password("pass");
-    }
-  */
+
     protected void configure (AuthenticationManagerBuilder auth) throws Exception {
-        //autenticacion desde la base de datos
+        //DB authentication
         auth.authenticationProvider(authenticationProvider);
     }
 }

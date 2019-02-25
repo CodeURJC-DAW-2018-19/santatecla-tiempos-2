@@ -19,7 +19,6 @@ public class EventService {
     @Autowired
     private EventRepository eveRep;
 
-    //Paginacion
 
     public Optional<Event> findOne(long id){
         return eveRep.findById(id);

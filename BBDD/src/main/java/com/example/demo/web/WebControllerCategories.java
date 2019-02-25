@@ -30,7 +30,8 @@ public class WebControllerCategories extends WebController {
     	return "login2";
     }
     
-    /*@RequestMapping("/categories")
+    /*Page
+    @RequestMapping("/categories")
     public String categories(Model model, @RequestParam(defaultValue = "0")int page){
     	model.addAttribute("categories",service.findAll(PageRequest.of(page, 1)));
     	return "categories";
