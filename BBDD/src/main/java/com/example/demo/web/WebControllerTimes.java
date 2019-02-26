@@ -56,14 +56,14 @@ public class WebControllerTimes extends WebController{
         return "times";
     }
 
-    @PostMapping("/{id}/deleteTime")
+    @PostMapping("/times/{id}/deleteTime")
     public String deleteTimer(Model model,@PathVariable long id){
     	timeService.deleteTimer(id);
     	model.addAttribute("times",timeService.findAll());
     	return "times";
     }
     
-    @GetMapping("/{id}/updateTime")
+    @GetMapping("/times/{id}/updateTime")
     public String updateTime(Model model, @PathVariable long id) {
     	Time time = timeService.findOne(id).get();
     	model.addAttribute("concreteTime", time);
@@ -75,7 +75,7 @@ public class WebControllerTimes extends WebController{
     }
     
     
-    @PostMapping("/{id}/updateTime")
+    @PostMapping("/times/{id}/updateTime")
     public String updateTime(Model model, @PathVariable long id, @RequestParam String startDate, @RequestParam String endDate) {
     	Time time = timeService.findOne(id).get();
     	time.setStartDate(startDate);
@@ -89,7 +89,7 @@ public class WebControllerTimes extends WebController{
 		return "concreteInterval";
     }
     
-    @GetMapping("/{id}/newSubtime")
+    @GetMapping("/times/{id}/newSubtime")
     public String saveSubtime(Model model, @PathVariable long id) {
     	Time time = timeService.findOne(id).get();
     	model.addAttribute("concreteTime", time);
@@ -101,7 +101,7 @@ public class WebControllerTimes extends WebController{
     }
     
     
-    @PostMapping("/{id}/newSubtime")
+    @PostMapping("/times/{id}/newSubtime")
     public String saveSubtime(Model model,@PathVariable long id, @RequestParam String subTimeName, @RequestParam String startDate, @RequestParam String endDate) {
     	SubTime subTime = new SubTime(subTimeName, startDate, endDate);
     	Time time = timeService.findOne(id).get();

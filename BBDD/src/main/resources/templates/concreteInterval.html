@@ -13,10 +13,10 @@
     <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700|Roboto+Slab:400,700|Material+Icons" />
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/latest/css/font-awesome.min.css" />
 
-    <link rel="stylesheet" href="../assets/css/material-dashboard.css">
+    <link rel="stylesheet" href="/assets/css/material-dashboard.css">
 
-    <link type="text/css" rel="stylesheet" href="../css/dawStyle.css" />
-    <link type="text/css" rel="stylesheet" href="../css/events.css" />
+    <link type="text/css" rel="stylesheet" href="/css/dawStyle.css" />
+    <link type="text/css" rel="stylesheet" href="/css/events.css" />
 
 </head>
 
@@ -66,7 +66,7 @@
         {{/concreteTime}}
             <input type="text" class="form-control searchIntervalItem" id="searchIntervalInput" placeholder="Buscar intervalo">
             {{#admin}}
-            <form action="/{{id}}/deleteTime" method="post">
+            <form action="/times/{{id}}/deleteTime" method="post">
                 <button type="submit" class="btn categoryButton" id="categoryButtonAdd">
                     <i class="material-icons" id="categoryIcon">delete</i>
                 </button>
@@ -92,7 +92,7 @@
             </div>
             {{#concreteTime}}
             <div class="form-row fechas">
-            	<form action="/{{id}}/updateTime" method="post">
+            	<form action="/times/{{id}}/updateTime" method="post">
                 <div class="form-group col-md-6">
                     <label for="inputIni">Fecha Inicio: {{startDate}}</label>
                     <input type="date" class="form-control" id="inputIni" placeholder="Fecha Inicio" name="startDate">
@@ -185,7 +185,7 @@
                     <div class="modal-body">
                         <br>
                         <br>
-                        <form action="/{{id}}/newSubtime" method="post">
+                        <form action="/times/{{id}}/newSubtime" method="post">
                             <div class="form-row">
 
                                 <div class="form-group">
