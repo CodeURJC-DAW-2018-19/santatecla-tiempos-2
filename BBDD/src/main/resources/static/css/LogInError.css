@@ -3,7 +3,7 @@ background-color: #FFEFEA !important;
 }
 
 .card{
-height: 150px;
+height: 180px;
 margin-top: auto;
 margin-bottom: auto;
 width: 400px;
@@ -17,6 +17,7 @@ box-shadow: 15px 0px 15px #BE6245;
 }
 .card-body p{
 	color: #BE6245;
+	line-height: 1.5;
 }
 .card-header h1{
 color: #BE6245 ;
