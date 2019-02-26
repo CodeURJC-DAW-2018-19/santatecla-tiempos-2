@@ -59,7 +59,7 @@ https://docs.google.com/document/d/1Xx1CJYwagN6zfFhv3WBdONDRmzzXSm6Uv-9EQpe4I_4/
 ##### Navigation Diagram
 ![Screenshot](https://github.com/CodeURJC-DAW-2018-19/santatecla-tiempos-2/blob/master/Screenshots/NavDiagram.png)
 
-## When you create any entity or modify any entity,we go back to the initial page of that entity
+#### When you create any entity or modify any entity,we go back to the initial page of that entity
 
 ##### Diagram
 ![Screenshot](https://github.com/CodeURJC-DAW-2018-19/santatecla-tiempos-2/blob/master/Screenshots/diagrama.PNG)
