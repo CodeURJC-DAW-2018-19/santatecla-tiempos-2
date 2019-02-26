@@ -97,7 +97,7 @@
             <i class="material-icons" id="categoryIconT">add_circle</i>
         </button>
         {{/admin}}
-
+		<form action="/newEvent" method="post">
         <div class="modal fade" id="ModalEvent" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabelT" aria-hidden="true">
             <div class="modal-dialog modal-dialog-centered modal-lg" role="document">
                 <div class="modal-content">
@@ -109,7 +109,7 @@
                     </div>
                     <div class="modal-body">
                         <label for="title">NUEVO EVENTO</label>
-                        <form action="/newEvent" method="post">
+                        
                             <div class="form-row">
 
                                 <div class="form-group">
@@ -135,16 +135,36 @@
                                         <span id="errorWiki"></span>
                                     </div>
                                 </div>
-                            </div>
+                            </div>                                                        	                         
                             <div class="modal-footer">
+                            	<button type="button" class="btn btn-info" data-toggle="modal" data-target="#CategoriesPerEvent">Relación con categorías</button>
                         		<button type="submit" class="btn btn-info">Save changes</button>
                     		</div>
-                        </form>
+                        
                     </div>
                     
                 </div>
             </div>
         </div>
+        <div class="modal fade" id="CategoriesPerEvent" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabelT" aria-hidden="true">
+        	<div class="modal-dialog modal-dialog-centered modal-lg" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                    	<h5 class="modal-title" id="exampleModalLabelT">Categorías</h5>
+                    </div>
+                    <div class="modal-body">
+                    	{{#categoryList}}
+                    		<input type="checkbox" name="categList" value="{{nameCategory}}">{{nameCategory}}<br>
+                    	{{/categoryList}}
+                    		<input type="hidden" name="selectedCat" id="selectedCat">
+                    </div>
+                    <div class="modal-footer">
+                    	<button class="btn btn-info" data-dismiss="modal" onClick="processCategories()">Aceptar</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        </form>
 
     </div>
     <!--Bootstrap scripts-->

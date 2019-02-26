@@ -39,4 +39,5 @@ public class EventService {
     public List<Event> findByName(String name, String loc){
     	return eveRep.findByNameEventOrLocation(name, loc);
     }
+    
 }

@@ -19,10 +19,15 @@ public class WebControllerEvents extends WebController {
 
     @Autowired
     private EventService evenService;
+    
+    @Autowired
+    private CategoryService catService;
 
     @GetMapping("/events")
     public String showEvents(Model model){	
         model.addAttribute("events",evenService.findAll());
+        model.addAttribute("categoryList", catService.findAll());
+        
         return "events";
     }
     
@@ -33,9 +38,14 @@ public class WebControllerEvents extends WebController {
     }
 
     @PostMapping("/newEvent")
-    public String saveEvent(Model model,@RequestParam String nameEvent, @RequestParam String eventDate, @RequestParam String eventLoc, @RequestParam String photoUrl, @RequestParam String wikiUrl){
+    public String saveEvent(Model model,@RequestParam String nameEvent, @RequestParam String eventDate, @RequestParam String eventLoc, @RequestParam String photoUrl, @RequestParam String wikiUrl, @RequestParam String selectedCat){
     	Event event = new Event(nameEvent,eventDate, eventLoc, wikiUrl);
     	event.setPhoto(photoUrl);
+    	String[] catSplitted= selectedCat.split(",");
+    	for(int i = 0; i< catSplitted.length; i++) {
+    		List<Category> c = catService.findByName(catSplitted[i]);
+    		event.getCategorias().add(c.get(0));
+    	}
         evenService.saveEvent(event);
         model.addAttribute("events", evenService.findAll());
         return "events";

@@ -27,6 +27,10 @@ public class CategoryService {
     public List<Category> findAll(){
         return catRep.findAll();
     }
+    
+    public List<Category> findByName(String name){
+    	return catRep.findByNameCategory(name);
+    }
 
     public void saveCategory(Category category){
         catRep.save(category);
