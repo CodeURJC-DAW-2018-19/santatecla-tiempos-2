@@ -20,15 +20,10 @@ font-size:25px;
 #cardInterv li a{
 	color:#BE6245  ;
 }
-#categoryIconT{
-	background-color: #BE6245;
-	border-radius: 45%;
-	
-}
+
 
 #cardInterv button{
-	border-radius:45%;
-	background-color:#BE6245;
+	
 	margin-left: 285px;
 	margin-top:10px;
 }

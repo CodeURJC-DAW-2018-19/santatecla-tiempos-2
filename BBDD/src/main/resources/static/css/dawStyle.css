@@ -120,3 +120,16 @@ body {
 .row {
     padding: 1rem;
 }
+.btn.btn-info{
+	box-shadow: none;
+	border-radius:10px;
+}
+.btn-info{
+	background-color:#C80000 !important;
+	border-color:#C80000 !important;
+	box-shadow:none;
+}
+.btn.btn-info:hover{
+	box-shadow: none;
+
+}
