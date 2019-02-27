@@ -72,13 +72,13 @@ public class WebControllerCategories extends WebController {
         return "categories";
     }
     
-    @GetMapping("/updateCategory")
+    @GetMapping("{id}/updateCategory")
     public String updateCategory(Model model) {
     	model.addAttribute("categories", service.findAll());
         return "categories";
     }
 
-    @PostMapping("/updateCategory")
+    @PostMapping("{id}/updateCategory")
     public String updateCategory(Model model,@PathVariable long id, @RequestParam String category) {
     	Category categ = service.findOne(id).get();
     	categ.setNameCategory(category);

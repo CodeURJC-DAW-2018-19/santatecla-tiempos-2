@@ -61,7 +61,7 @@
                         <td class="text-center" id="change">{{nameCategory}}</td>
                         {{#admin}}
                         <td class="td-actions text-left">                                                     	
-                                	<button class="btn btn-info btn-fab btn-fab-mini categoryButton" data-toggle="modal" data-target="#UpdateCategory">
+                                	<button class="btn btn-info btn-fab btn-fab-mini categoryButton" onClick="select({{id}})" data-toggle="modal" data-target="#UpdateCategory">
                                     	<i class="material-icons" id="categoryIconEdit">edit</i>
                                 	</button>                                
                         </td>
@@ -125,17 +125,21 @@
                         <div class="modal-body">
                             <br>
                             <br>
-                            <form action="/updateCategory" method="post">
-                                <div class="form-row">
+                            {{#categories}}
+                            <form action="/{{id}}/updateCategory" method="post">
+                            
+                                <div class="form-row selectID hidden" id="{{id}}">
                                     <div class="form-group">
                                         <label for="inputName">Nombre categoria</label>
-                                        <input type="text" class="form-control" id="inputName" placeholder="Categoria" name="category">
+                                        <input type="text" class="form-control" id="{{id}}" placeholder="Categoria" name="category">
                                     </div>
                                 </div>
-                                <div class="modal-footer">
+                                 
+                                <div class="modal-footer selectID hidden" id="{{id}}">
                             		<button type="submit" class="btn btn-info">Save changes</button>
                         		</div>
                             </form>
+                           {{/categories}}
                         </div>
                         
                     </div>
@@ -206,10 +210,11 @@
 
         <!-- Control Center for Material Dashboard: parallax effects, scripts for the example pages etc -->
         <script src="assets/js/material-dashboard.min.js?v=2.1.1" type="text/javascript"></script>
-        <script src="../js/dawJavaScript.js"></script>
-        <script src="../js/events.js"></script>
-        <script src="../js/category.js"></script>
-        <script src="../js/intervalo.js"></script>
+        <script src="/js/dawJavaScript.js"></script>
+        <script src="/js/events.js"></script>
+        <script src="/js/category.js"></script>
+        <script src="/js/intervalo.js"></script>
+        <script src="/js/selectThing.js"></script>
 </body>
 
 </html>
