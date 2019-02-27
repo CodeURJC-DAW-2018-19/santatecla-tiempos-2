@@ -1,5 +1,5 @@
 #cardInterv{
-height: 180px;
+height: auto;
 margin-top: auto;
 margin-bottom: auto;
 width: 600px;
@@ -10,20 +10,25 @@ font-size:25px;
 
 }
 #cardInterv li{
-	padding-bottom: 0.50rem;
+	padding-bottom: 1rem;
 	padding-top: 1rem;
 	border-bottom:solid;
 	border-color:#ffbfaa;
-	text-color:#BE6245 !important;
+	margin: 0.50rem;
+	
+}
+#cardInterv li a{
+	color:#BE6245  ;
 }
 #categoryIconT{
 	background-color: #BE6245;
 	border-radius: 45%;
 	
 }
+
 #cardInterv button{
 	border-radius:45%;
 	background-color:#BE6245;
-	margin-left: 30px;
-	margin-top:30px;
+	margin-left: 285px;
+	margin-top:10px;
 }
