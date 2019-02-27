@@ -17,6 +17,7 @@
 
     <link type="text/css" rel="stylesheet" href="/css/dawStyle.css" />
     <link type="text/css" rel="stylesheet" href="/css/events.css" />
+    <link type="text/css" rel="stylesheet" href="/css/times.css"/>
 
 </head>
 
@@ -54,25 +55,27 @@
     </nav>
 
     <div id="Tiempo" class="tabcontent">
-        <div class="card" id="cardInterv">       	
-            <ul class="list-group list-group-flush">
-            {{#times}}
-
-                <li class="list-group-item">
-
-                    <a href="{{#logged}}/times/{{id}}{{/logged}}" class="card-link">{{nameInterval}}</a>
-
-                </li>
-
-            {{/times}}
-            </ul>
-            
-            {{#admin}}
-                <button class="btn btn-info btn-fab btn-fab-mini categoryButton" data-toggle="modal" data-target="#ModalTiempo">
-                    <i class="material-icons" id="categoryIconT">add_circle</i>
-                </button>
-            {{/admin}}
-        </div>
+    	<div class="continer d-flex justify-content-center">
+	        <div class="card" id="cardInterv">       	
+	            <ul class="list-group list-group-flush">
+	            {{#times}}
+	
+	                <li class="list-group-item">
+	
+	                    <a href="{{#logged}}/times/{{id}}{{/logged}}" class="card-link">{{nameInterval}}</a>
+	
+	                </li>
+	
+	            {{/times}}
+	            </ul>
+	            
+	            {{#admin}}
+	                <button class="btn btn-info btn-fab btn-fab-mini categoryButton" data-toggle="modal" data-target="#ModalTiempo">
+	                    <i class="material-icons" id="categoryIconT">add</i>
+	                </button>
+	            {{/admin}}
+	        </div>
+       </div>
         <div class="modal fade" id="ModalTiempo" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabelT" aria-hidden="true">
             <div class="modal-dialog modal-dialog-centered modal-lg" role="document">
                 <div class="modal-content">

@@ -1,0 +1,29 @@
+#cardInterv{
+height: auto;
+margin-top: auto;
+margin-bottom: auto;
+width: 600px;
+background-color: #FFD9CD !important;
+text-align: center;
+font-size:25px;
+
+
+}
+#cardInterv li{
+	padding-bottom: 1rem;
+	padding-top: 1rem;
+	border-bottom:solid;
+	border-color:#ffbfaa;
+	margin: 0.50rem;
+	
+}
+#cardInterv li a{
+	color:#BE6245  ;
+}
+
+
+#cardInterv button{
+	
+	margin-left: 285px;
+	margin-top:10px;
+}
