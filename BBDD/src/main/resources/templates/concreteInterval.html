@@ -17,6 +17,7 @@
 
     <link type="text/css" rel="stylesheet" href="/css/dawStyle.css" />
     <link type="text/css" rel="stylesheet" href="/css/events.css" />
+    <link type="text/css" rel="stylesheet" href="/css/concreteInterval.css"/>
 
 </head>
 
@@ -67,14 +68,14 @@
             <input type="text" class="form-control searchIntervalItem" id="searchIntervalInput" placeholder="Buscar intervalo">
             {{#admin}}
             <form action="/times/{{id}}/deleteTime" method="post">
-                <button type="submit" class="btn categoryButton" id="categoryButtonAdd">
+                <button type="submit" class="btn categoryButton" id="categoryButtonBin">
                     <i class="material-icons" id="categoryIcon">delete</i>
                 </button>
             </form>
             {{/admin}}
         </div>
         <div class="intervMain">
-            <div class="card cardInterv" id="">
+            <div class="card cardInterv" id="cardInt" >
                 <div class="card-body">
                     <ul class="list-group list-group-flush">
                     	{{#subIntervals}}
@@ -91,7 +92,8 @@
                 </div>
             </div>
             {{#concreteTime}}
-            <div class="form-row fechas">
+            <div class="container" id="sendT">
+            <div class="form-row fechas" id="rowDate">
             	<form action="/times/{{id}}/updateTime" method="post">
                 <div class="form-group col-md-6">
                     <label for="inputIni">Fecha Inicio: {{startDate}}</label>
@@ -118,12 +120,13 @@
                 {{/admin}}
                 </form>
             </div>
+            </div>
             {{/concreteTime}}
         </div>
         {{#admin}}
         <form></form>
             <button type="button" class="btn btn-info btn-simple categoryButton" id="categoryButtonAdd" data-toggle="modal" data-target="#modalSubinterval">
-                <i class="material-icons" id="categoryIcon">add_circle</i>
+                <i class="material-icons" id="categoryIcon">add</i>
             </button>
         {{/admin}}
 
