@@ -68,14 +68,23 @@
 	
 	            {{/times}}
 	            </ul>
-	            
-	            {{#admin}}
+
+
+                {{#admin}}
 	                <button class="btn btn-info btn-fab btn-fab-mini categoryButton" data-toggle="modal" data-target="#ModalTiempo">
 	                    <i class="material-icons" id="categoryIconT">add</i>
 	                </button>
 	            {{/admin}}
 	        </div>
-       </div>
+            {{#showNext}}
+            <a  href="/times/?page={{prevPage}}">next</a>
+            {{/showNext}}
+
+            {{#showPrev}}
+            <a href="/times/?page={{nextPage}}">prev</a>
+            {{/showPrev}}
+
+        </div>
         <div class="modal fade" id="ModalTiempo" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabelT" aria-hidden="true">
             <div class="modal-dialog modal-dialog-centered modal-lg" role="document">
                 <div class="modal-content">

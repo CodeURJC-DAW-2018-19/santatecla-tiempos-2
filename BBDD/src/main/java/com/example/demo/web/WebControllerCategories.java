@@ -7,6 +7,8 @@ import com.example.demo.web.WebController;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
+import org.springframework.data.domain.Pageable;
+import org.springframework.data.web.PageableDefault;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -30,18 +32,26 @@ public class WebControllerCategories extends WebController {
     	return "login2";
     }
     
-    /*Page
+    //Page
     @RequestMapping("/categories")
-    public String categories(Model model, @RequestParam(defaultValue = "0")int page){
-    	model.addAttribute("categories",service.findAll(PageRequest.of(page, 1)));
-    	return "categories";
-    }*/
+    public String categories(@PageableDefault(value =10) Pageable pageable, Model model){
+        Page<Category>categories=service.findAll(pageable);
+        model.addAttribute("categories",categories);
+
+        model.addAttribute("showNext",!categories.isLast());
+        model.addAttribute("showPrev",!categories.isFirst());
+        model.addAttribute("numPage",categories.getNumber());
+        model.addAttribute("prevPage",categories.getNumber()+1);
+        model.addAttribute("nextPage",categories.getNumber()-1);
+        model.addAttribute("categories",service.findAll(pageable));
+        return "categories";
+    }
     
-    @RequestMapping("/categories")
+   /* @RequestMapping("/categories")
     public String categories(Model model){
     	model.addAttribute("categories",service.findAll());
     	return "categories";
-    }
+    }*/
     
 
     @GetMapping("/newCategory")

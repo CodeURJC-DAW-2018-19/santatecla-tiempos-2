@@ -2,6 +2,9 @@ package com.example.demo.web;
 
 import com.example.demo.entities.*;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Pageable;
+import org.springframework.data.web.PageableDefault;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -21,11 +24,19 @@ public class WebControllerTimes extends WebController{
     @Autowired
     private TimeService timeService;
 
-    @GetMapping("/times")
-    public String showTimes(Model model){
-        model.addAttribute("times",timeService.findAll());
-        return "times";
-    }
+	@RequestMapping("/times")
+	public String times(@PageableDefault(value =1) Pageable pageable, Model model){
+		Page<Time> times=timeService.findAll(pageable);
+		model.addAttribute("times",times);
+
+		model.addAttribute("showNext",!times.isLast());
+		model.addAttribute("showPrev",!times.isFirst());
+		model.addAttribute("numPage",times.getNumber());
+		model.addAttribute("prevPage",times.getNumber()+1);
+		model.addAttribute("nextPage",times.getNumber()-1);
+		model.addAttribute("events",timeService.findAll(pageable));
+		return "times";
+	}
 
 
     @GetMapping("/times/{id}")

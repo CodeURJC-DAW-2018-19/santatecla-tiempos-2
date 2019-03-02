@@ -39,5 +39,9 @@ public class EventService {
     public List<Event> findByName(String name, String loc){
     	return eveRep.findByNameEventOrLocation(name, loc);
     }
-    
+
+    public Page<Event> findAll (Pageable page){
+        Page<Event> events=eveRep.findAll(PageRequest.of(0,10));
+        return eveRep.findAll(page);
+    }
 }

@@ -3,6 +3,9 @@ package com.example.demo.web;
 import com.example.demo.entities.*;
 import com.example.demo.web.WebController;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Pageable;
+import org.springframework.data.web.PageableDefault;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -24,10 +27,19 @@ public class WebControllerEvents extends WebController {
     private CategoryService catService;
 
     @GetMapping("/events")
-    public String showEvents(Model model){	
+    public String showEvents(@PageableDefault(value =1) Pageable pageable, Model model){
+        Page<Event> events=evenService.findAll(pageable);
+
         model.addAttribute("events",evenService.findAll());
         model.addAttribute("categoryList", catService.findAll());
-        
+
+        model.addAttribute("events",events);
+        model.addAttribute("showNext",!events.isLast());
+        model.addAttribute("showPrev",!events.isFirst());
+        model.addAttribute("numPage",events.getNumber());
+        model.addAttribute("prevPage",events.getNumber()+1);
+        model.addAttribute("nextPage",events.getNumber()-1);
+        model.addAttribute("events",evenService.findAll(pageable));
         return "events";
     }
     

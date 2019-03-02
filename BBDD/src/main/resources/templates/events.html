@@ -89,6 +89,14 @@
                 {{/admin}}
             	</tr>
             	{{/events}}
+
+                {{#showNext}}
+                <a  href="/events/?page={{prevPage}}">next</a>
+                {{/showNext}}
+
+                {{#showPrev}}
+                <a href="/events/?page={{nextPage}}">prev</a>
+                {{/showPrev}}
             </tbody>
         </table>
         

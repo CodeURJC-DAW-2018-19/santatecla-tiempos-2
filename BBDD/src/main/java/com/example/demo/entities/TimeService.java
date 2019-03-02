@@ -44,6 +44,11 @@ public class TimeService {
 	public void deleteTimer(long id){
 		timeRep.deleteById(id);
 	}
+
+	public Page<Time> findAll (Pageable page){
+		Page<Time> time=timeRep.findAll(PageRequest.of(0,10));
+		return timeRep.findAll(page);
+	}
 	
 	
 	

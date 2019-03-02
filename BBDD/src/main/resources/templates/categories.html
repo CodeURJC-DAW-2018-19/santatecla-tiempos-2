@@ -75,6 +75,14 @@
                         {{/admin}}
                     </tr>
                     {{/categories}}
+
+                    {{#showNext}}
+                    <a  href="/categories/?page={{prevPage}}">next</a>
+                    {{/showNext}}
+
+                    {{#showPrev}}
+                    <a href="/categories/?page={{nextPage}}">prev</a>
+                    {{/showPrev}}
                 </tbody>
 
             </table>
