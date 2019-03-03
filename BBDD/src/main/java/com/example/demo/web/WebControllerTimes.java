@@ -25,7 +25,7 @@ public class WebControllerTimes extends WebController{
     private TimeService timeService;
 
 	@RequestMapping("/times")
-	public String times(@PageableDefault(value =1) Pageable pageable, Model model){
+	public String times(@PageableDefault(value =5) Pageable pageable, Model model){
 		Page<Time> times=timeService.findAll(pageable);
 		model.addAttribute("times",times);
 

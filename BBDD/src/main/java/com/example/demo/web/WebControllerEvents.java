@@ -27,7 +27,7 @@ public class WebControllerEvents extends WebController {
     private CategoryService catService;
 
     @GetMapping("/events")
-    public String showEvents(@PageableDefault(value =1) Pageable pageable, Model model){
+    public String showEvents(@PageableDefault(value =5) Pageable pageable, Model model){
         Page<Event> events=evenService.findAll(pageable);
 
         model.addAttribute("events",evenService.findAll());
@@ -91,6 +91,37 @@ public class WebControllerEvents extends WebController {
     		model.addAttribute("events", evenService.findByName(search, search));
     		return "events";
     	}
+    }
+    
+    @PostMapping("/updateEvent/{id}")
+    public String updateEvent(Model model, @PathVariable long id, @RequestParam String nameEvent, @RequestParam String eventDate, @RequestParam String eventLoc, @RequestParam String photoUrl, @RequestParam String wikiUrl, @RequestParam String selectedCatUpdate) {
+    	Event event = evenService.findOne(id).get();
+    	if(!nameEvent.equals("")) {
+    		event.setNameEvent(nameEvent);
+    	}
+    	if(!eventDate.equals("")) {
+    		event.setDate(eventDate);
+    	}
+    	if(!eventLoc.equals("")) {
+    		event.setLocation(eventLoc);
+    	}
+    	if(!photoUrl.equals("")) {
+    		event.setPhoto(photoUrl);
+    	}
+    	if(!wikiUrl.equals("")) {
+    		event.setWiki(wikiUrl);
+    	}
+    	if(!selectedCatUpdate.equals("")) {
+    		event.getCategorias().clear();
+    		String[] catSplitted= selectedCatUpdate.split(",");
+    		for(int i = 0; i< catSplitted.length; i++) {
+    			List<Category> c = catService.findByName(catSplitted[i]);
+    			event.getCategorias().add(c.get(0));
+    		}
+    	}
+    	evenService.saveEvent(event);
+        model.addAttribute("events", evenService.findAll());
+        return "events";
     }
     
     

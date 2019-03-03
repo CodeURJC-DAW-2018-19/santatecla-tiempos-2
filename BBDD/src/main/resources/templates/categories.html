@@ -130,26 +130,27 @@
                                 <span aria-hidden="true">&times;</span>
                             </button>
                         </div>
-                        <div class="modal-body">
+                        {{#categories}}
+                        <div class="modal-body selectID" id="{{id}}">
                             <br>
                             <br>
-                            {{#categories}}
-                            <form action="/{{id}}/updateCategory" method="post">
                             
-                                <div class="form-row selectID hidden" id="{{id}}">
+                            <form action="/{{id}}/updateCategory" method="post">
+                            <!-- <div class="selectThing selectID hidden" id="{{id}}">  -->
+                                <div class="form-row selectID" id="{{id}}">
                                     <div class="form-group">
                                         <label for="inputName">Nombre categoria</label>
                                         <input type="text" class="form-control" id="{{id}}" placeholder="Categoria" name="category">
                                     </div>
                                 </div>
-                                 
-                                <div class="modal-footer selectID hidden" id="{{id}}">
+                            <!-- </div>  -->  
+                                <div class="modal-footer selectID" id="{{id}}">
                             		<button type="submit" class="btn btn-info">Save changes</button>
                         		</div>
                             </form>
-                           {{/categories}}
+                           
                         </div>
-                        
+                        {{/categories}}
                     </div>
                 </div>
             </div>
