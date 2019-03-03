@@ -53,10 +53,12 @@ public class WebControllerEvents extends WebController {
     public String saveEvent(@PageableDefault(value =2) Pageable pageable,Model model,@RequestParam String nameEvent, @RequestParam String eventDate, @RequestParam String eventLoc, @RequestParam String photoUrl, @RequestParam String wikiUrl, @RequestParam String selectedCat){
     	Event event = new Event(nameEvent,eventDate, eventLoc, wikiUrl);
     	event.setPhoto(photoUrl);
-    	String[] catSplitted= selectedCat.split(",");
-    	for(int i = 0; i< catSplitted.length; i++) {
-    		List<Category> c = catService.findByName(catSplitted[i]);
-    		event.getCategorias().add(c.get(0));
+    	if(!selectedCat.equals("")) {
+    		String[] catSplitted= selectedCat.split(",");
+    		for(int i = 0; i< catSplitted.length; i++) {
+    			List<Category> c = catService.findByName(catSplitted[i]);
+    			event.getCategorias().add(c.get(0));
+    		}
     	}
         evenService.saveEvent(event);
         Page<Event> events=evenService.findAll(pageable);
