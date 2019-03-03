@@ -50,7 +50,7 @@ public class WebControllerEvents extends WebController {
     }
 
     @PostMapping("/newEvent")
-    public String saveEvent(Model model,@RequestParam String nameEvent, @RequestParam String eventDate, @RequestParam String eventLoc, @RequestParam String photoUrl, @RequestParam String wikiUrl, @RequestParam String selectedCat){
+    public String saveEvent(@PageableDefault(value =2) Pageable pageable,Model model,@RequestParam String nameEvent, @RequestParam String eventDate, @RequestParam String eventLoc, @RequestParam String photoUrl, @RequestParam String wikiUrl, @RequestParam String selectedCat){
     	Event event = new Event(nameEvent,eventDate, eventLoc, wikiUrl);
     	event.setPhoto(photoUrl);
     	String[] catSplitted= selectedCat.split(",");
@@ -59,7 +59,18 @@ public class WebControllerEvents extends WebController {
     		event.getCategorias().add(c.get(0));
     	}
         evenService.saveEvent(event);
-        model.addAttribute("events", evenService.findAll());
+        Page<Event> events=evenService.findAll(pageable);
+
+        model.addAttribute("events",evenService.findAll());
+        model.addAttribute("categoryList", catService.findAll());
+
+        model.addAttribute("events",events);
+        model.addAttribute("showNext",!events.isLast());
+        model.addAttribute("showPrev",!events.isFirst());
+        model.addAttribute("numPage",events.getNumber());
+        model.addAttribute("prevPage",events.getNumber()+1);
+        model.addAttribute("nextPage",events.getNumber()-1);
+        model.addAttribute("events",evenService.findAll(pageable));
         return "events";
     }
 
@@ -70,10 +81,21 @@ public class WebControllerEvents extends WebController {
     }
     
     @PostMapping("/deleteEvent/{id}")
-    public String deleteEvent(Model model,@PathVariable long id) {
+    public String deleteEvent(Model model,@PathVariable long id,@PageableDefault(value =2) Pageable pageable) {
     	evenService.deleteEvent(id);
-    	model.addAttribute("events", evenService.findAll());
-    	return "events";
+        Page<Event> events=evenService.findAll(pageable);
+
+        model.addAttribute("events",evenService.findAll());
+        model.addAttribute("categoryList", catService.findAll());
+
+        model.addAttribute("events",events);
+        model.addAttribute("showNext",!events.isLast());
+        model.addAttribute("showPrev",!events.isFirst());
+        model.addAttribute("numPage",events.getNumber());
+        model.addAttribute("prevPage",events.getNumber()+1);
+        model.addAttribute("nextPage",events.getNumber()-1);
+        model.addAttribute("events",evenService.findAll(pageable));
+        return "events";
     }
     
    /* @GetMapping("/searchEvent")
