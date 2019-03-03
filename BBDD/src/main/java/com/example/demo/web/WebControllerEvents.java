@@ -50,7 +50,7 @@ public class WebControllerEvents extends WebController {
     }
 
     @PostMapping("/newEvent")
-    public String saveEvent(@PageableDefault(value =2) Pageable pageable,Model model,@RequestParam String nameEvent, @RequestParam String eventDate, @RequestParam String eventLoc, @RequestParam String photoUrl, @RequestParam String wikiUrl, @RequestParam String selectedCat){
+    public String saveEvent(@PageableDefault(value =5) Pageable pageable,Model model,@RequestParam String nameEvent, @RequestParam String eventDate, @RequestParam String eventLoc, @RequestParam String photoUrl, @RequestParam String wikiUrl, @RequestParam String selectedCat){
     	Event event = new Event(nameEvent,eventDate, eventLoc, wikiUrl);
     	event.setPhoto(photoUrl);
     	if(!selectedCat.equals("")) {
@@ -83,7 +83,7 @@ public class WebControllerEvents extends WebController {
     }
     
     @PostMapping("/deleteEvent/{id}")
-    public String deleteEvent(Model model,@PathVariable long id,@PageableDefault(value =2) Pageable pageable) {
+    public String deleteEvent(Model model,@PathVariable long id,@PageableDefault(value =5) Pageable pageable) {
     	evenService.deleteEvent(id);
         Page<Event> events=evenService.findAll(pageable);
 
@@ -118,7 +118,7 @@ public class WebControllerEvents extends WebController {
     }
     
     @PostMapping("/updateEvent/{id}")
-    public String updateEvent(Model model, @PathVariable long id, @RequestParam String nameEvent, @RequestParam String eventDate, @RequestParam String eventLoc, @RequestParam String photoUrl, @RequestParam String wikiUrl, @RequestParam String selectedCatUpdate) {
+    public String updateEvent(@PageableDefault(value =5) Pageable pageable,Model model, @PathVariable long id, @RequestParam String nameEvent, @RequestParam String eventDate, @RequestParam String eventLoc, @RequestParam String photoUrl, @RequestParam String wikiUrl, @RequestParam String selectedCatUpdate) {
     	Event event = evenService.findOne(id).get();
     	if(!nameEvent.equals("")) {
     		event.setNameEvent(nameEvent);
@@ -144,7 +144,18 @@ public class WebControllerEvents extends WebController {
     		}
     	}
     	evenService.saveEvent(event);
-        model.addAttribute("events", evenService.findAll());
+        Page<Event> events=evenService.findAll(pageable);
+
+        model.addAttribute("events",evenService.findAll());
+        model.addAttribute("categoryList", catService.findAll());
+
+        model.addAttribute("events",events);
+        model.addAttribute("showNext",!events.isLast());
+        model.addAttribute("showPrev",!events.isFirst());
+        model.addAttribute("numPage",events.getNumber());
+        model.addAttribute("prevPage",events.getNumber()+1);
+        model.addAttribute("nextPage",events.getNumber()-1);
+        model.addAttribute("events",evenService.findAll(pageable));
         return "events";
     }
     
