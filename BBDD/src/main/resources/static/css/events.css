@@ -52,10 +52,33 @@
     height: 500px;
 }
 
-
-
-.deleteEvents {
-    color: red;
-    font-size: 10pt;
-    float: center;
+#deleteBin{
+	background-color:#C80000 !important;
+	border-color:#C80000 !important;
+	box-shadow:none;
+	border-radius:10px;
+	padding:5px;
+	margin-left: 10px;
+}
+#deleteBin i{
+	padding-top: 5px;
+}
+#tableHead{
+	font-size: 20px;
+	color:#BE6245;
+	font-weight: bold;
+}
+#searchBtn{
+	background-color:#C80000 !important;
+	border-color:#C80000 !important;
+}
+.text-right{
+	padding-right: 60px !important;
+	width:10%;
+}
+#addBtn{
+	margin-left: 47px;
+}
+#searchBox{
+	margin-left: 25px;
 }
