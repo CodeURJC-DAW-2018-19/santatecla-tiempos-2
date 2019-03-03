@@ -54,10 +54,10 @@
     </nav>
     <div id="Evento" class="tabcontent">
         <form class="form-inline ml-auto" action="/searchEvent" method="post">
-            <div class="form-group no-border">
+            <div class="form-group no-border" id="searchBox">
                 <input type="text" class="form-control" placeholder="Search" name="search">
             </div>
-            <button type="submit" class="btn btn-just-icon btn-round">
+            <button type="submit" class="btn btn-just-icon btn-round" id="searchBtn">
                 <i class="material-icons">search</i>
             </button>
         </form>
@@ -65,10 +65,10 @@
         <table class="table">
             <thead>
                 <tr>
-                    <th class="text-center">#</th>
-                    <th>Evento</th>
-                    <th>Lugar</th>
-                    <th>Fecha</th>
+                    <th class="text-center" id="tableHead">#</th>
+                    <th id="tableHead">Evento</th>
+                    <th id="tableHead">Lugar</th>
+                    <th id="tableHead">Fecha</th>
                 </tr>
             </thead>
             <tbody>
@@ -81,7 +81,7 @@
                  {{#admin}}
                 	<form action="/deleteEvent/{{id}}" method="post">
             	    <td class="text-right">
-                        <button type="submit" rel="tooltip" class="btn btn-info categoryButton" id="">
+                        <button type="submit" rel="tooltip" class="btn btn-info categoryButton" id="deleteBin">
                          <i class="material-icons" id="categoryIconDelete">delete</i>
                          </button>
                     </td>
@@ -93,8 +93,8 @@
         </table>
         
         {{#admin}}
-        <button class="btn btn-info btn-fab btn-fab-mini categoryButton" data-toggle="modal" data-target="#ModalEvent">
-            <i class="material-icons" id="categoryIconT">add_circle</i>
+        <button class="btn btn-info btn-fab btn-fab-mini categoryButton" data-toggle="modal" data-target="#ModalEvent" id="addBtn">
+            <i class="material-icons" id="categoryIconT">add</i>
         </button>
         {{/admin}}
 
