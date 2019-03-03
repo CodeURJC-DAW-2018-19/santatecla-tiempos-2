@@ -2,27 +2,21 @@ function select(id)
 {
 	var bodycontent, footercontent;
 	
-	bodycontent = document.getElementsByClassName("form-row selectID");
+	bodycontent = document.getElementsByClassName("modal-body selectID");
 	footercontent = document.getElementsByClassName("modal-footer selectID");
 	
 	for(var i = 0; i < bodycontent.length; i++){
 		var bContent = bodycontent[i].getAttribute("id");
 		if(bContent==id){
-			bodycontent[i].className = bodycontent[i].className.replace(" hidden", "");
+			bodycontent[i].style.display = "block";
 		}else{
-			var list = bodycontent[i].classList;
-			if(!list.contains("hidden")){
-				bodycontent[i].className += " hidden";
-			}
+			bodycontent[i].style.display = "none";
 		}
 		var fContent = footercontent[i].getAttribute("id");
 		if(fContent==id){
-			footercontent[i].className = footercontent[i].className.replace(" hidden", "");
+			footercontent[i].style.display = "block";
 		}else{
-			var list = footercontent[i].classList;
-			if(!list.contains("hidden")){
-				footercontent[i].className += " hidden";
-			}
+			footercontent[i].style.display = "none";
 		}
 	}
 }
