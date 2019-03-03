@@ -60,7 +60,7 @@ public class WebControllerTimes extends WebController{
     }
 
     @PostMapping("/newTime")
-    public String saveTimer(Model model, @RequestParam String timeName, @RequestParam String startDate, @RequestParam String endDate,@PageableDefault(value =1) Pageable pageable){
+    public String saveTimer(Model model, @RequestParam String timeName, @RequestParam String startDate, @RequestParam String endDate,@PageableDefault(value =5) Pageable pageable){
     	Time time = new Time(timeName, startDate, endDate);
     	timeService.saveTimer(time);
 		Page<Time> times=timeService.findAll(pageable);
@@ -76,7 +76,7 @@ public class WebControllerTimes extends WebController{
     }
 
     @PostMapping("/times/{id}/deleteTime")
-    public String deleteTimer(Model model,@PathVariable long id,@PageableDefault(value =1) Pageable pageable){
+    public String deleteTimer(Model model,@PathVariable long id,@PageableDefault(value =5) Pageable pageable){
     	timeService.deleteTimer(id);
 		Page<Time> times=timeService.findAll(pageable);
 		model.addAttribute("times",times);
@@ -103,7 +103,7 @@ public class WebControllerTimes extends WebController{
     
     
     @PostMapping("/times/{id}/updateTime")
-    public String updateTime(Model model, @PathVariable long id, @RequestParam String startDate, @RequestParam String endDate,@PageableDefault(value =1) Pageable pageable) {
+    public String updateTime(Model model, @PathVariable long id, @RequestParam String startDate, @RequestParam String endDate,@PageableDefault(value =5) Pageable pageable) {
     	Time time = timeService.findOne(id).get();
     	time.setStartDate(startDate);
     	time.setEndDate(endDate);

@@ -61,7 +61,7 @@ public class WebControllerCategories extends WebController {
     }
 
     @PostMapping("/newCategory")
-    public String saveCategory(Model model,@RequestParam String catName,@PageableDefault(value =10) Pageable pageable){
+    public String saveCategory(Model model,@RequestParam String catName,@PageableDefault(value =5) Pageable pageable){
         Category category = new Category(catName);
         service.saveCategory(category);
         Page<Category>categories=service.findAll(pageable);
@@ -84,7 +84,7 @@ public class WebControllerCategories extends WebController {
     
     
     @PostMapping("/deleteCategory/{id}")
-    public String deleteCategory(Model model,@PathVariable long id,@PageableDefault(value =10) Pageable pageable){
+    public String deleteCategory(Model model,@PathVariable long id,@PageableDefault(value =5) Pageable pageable){
         service.deleteCategory(id);
         Page<Category>categories=service.findAll(pageable);
         model.addAttribute("categories",categories);
@@ -105,7 +105,7 @@ public class WebControllerCategories extends WebController {
     }
 
     @PostMapping("{id}/updateCategory")
-    public String updateCategory(Model model,@PathVariable long id, @RequestParam String category,@PageableDefault(value =10) Pageable pageable) {
+    public String updateCategory(Model model,@PathVariable long id, @RequestParam String category,@PageableDefault(value =5) Pageable pageable) {
     	Category categ = service.findOne(id).get();
     	categ.setNameCategory(category);
     	service.saveCategory(categ);
