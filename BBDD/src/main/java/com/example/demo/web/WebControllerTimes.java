@@ -60,18 +60,34 @@ public class WebControllerTimes extends WebController{
     }
 
     @PostMapping("/newTime")
-    public String saveTimer(Model model, @RequestParam String timeName, @RequestParam String startDate, @RequestParam String endDate){
+    public String saveTimer(Model model, @RequestParam String timeName, @RequestParam String startDate, @RequestParam String endDate,@PageableDefault(value =1) Pageable pageable){
     	Time time = new Time(timeName, startDate, endDate);
     	timeService.saveTimer(time);
-    	model.addAttribute("times", timeService.findAll());    	
-        return "times";
+		Page<Time> times=timeService.findAll(pageable);
+		model.addAttribute("times",times);
+
+		model.addAttribute("showNext",!times.isLast());
+		model.addAttribute("showPrev",!times.isFirst());
+		model.addAttribute("numPage",times.getNumber());
+		model.addAttribute("prevPage",times.getNumber()+1);
+		model.addAttribute("nextPage",times.getNumber()-1);
+		model.addAttribute("events",timeService.findAll(pageable));
+		return "times";
     }
 
     @PostMapping("/times/{id}/deleteTime")
-    public String deleteTimer(Model model,@PathVariable long id){
+    public String deleteTimer(Model model,@PathVariable long id,@PageableDefault(value =1) Pageable pageable){
     	timeService.deleteTimer(id);
-    	model.addAttribute("times",timeService.findAll());
-    	return "times";
+		Page<Time> times=timeService.findAll(pageable);
+		model.addAttribute("times",times);
+
+		model.addAttribute("showNext",!times.isLast());
+		model.addAttribute("showPrev",!times.isFirst());
+		model.addAttribute("numPage",times.getNumber());
+		model.addAttribute("prevPage",times.getNumber()+1);
+		model.addAttribute("nextPage",times.getNumber()-1);
+		model.addAttribute("events",timeService.findAll(pageable));
+		return "times";
     }
     
     @GetMapping("/times/{id}/updateTime")
@@ -87,7 +103,7 @@ public class WebControllerTimes extends WebController{
     
     
     @PostMapping("/times/{id}/updateTime")
-    public String updateTime(Model model, @PathVariable long id, @RequestParam String startDate, @RequestParam String endDate) {
+    public String updateTime(Model model, @PathVariable long id, @RequestParam String startDate, @RequestParam String endDate,@PageableDefault(value =1) Pageable pageable) {
     	Time time = timeService.findOne(id).get();
     	time.setStartDate(startDate);
     	time.setEndDate(endDate);
@@ -96,8 +112,16 @@ public class WebControllerTimes extends WebController{
 		List<SubTime> subInterv = time.getSubIntervals();
 		model.addAttribute("subIntervals", subInterv);
 		List<Event> events = time.getEvents();
-		model.addAttribute("eventListInt", events);
-		return "concreteInterval";
+
+		Page<Time> times=timeService.findAll(pageable);
+		model.addAttribute("times",times);
+		model.addAttribute("showNext",!times.isLast());
+		model.addAttribute("showPrev",!times.isFirst());
+		model.addAttribute("numPage",times.getNumber());
+		model.addAttribute("prevPage",times.getNumber()+1);
+		model.addAttribute("nextPage",times.getNumber()-1);
+		model.addAttribute("events",timeService.findAll(pageable));
+		return "times";
     }
     
     @GetMapping("/times/{id}/newSubtime")

@@ -61,24 +61,40 @@ public class WebControllerCategories extends WebController {
     }
 
     @PostMapping("/newCategory")
-    public String saveCategory(Model model,@RequestParam String catName){
+    public String saveCategory(Model model,@RequestParam String catName,@PageableDefault(value =10) Pageable pageable){
         Category category = new Category(catName);
         service.saveCategory(category);
-        model.addAttribute("categories", service.findAll());
+        Page<Category>categories=service.findAll(pageable);
+        model.addAttribute("categories",categories);
+
+        model.addAttribute("showNext",!categories.isLast());
+        model.addAttribute("showPrev",!categories.isFirst());
+        model.addAttribute("numPage",categories.getNumber());
+        model.addAttribute("prevPage",categories.getNumber()+1);
+        model.addAttribute("nextPage",categories.getNumber()-1);
+        model.addAttribute("categories",service.findAll(pageable));
         return "categories";
     }
     
     @GetMapping("/deleteCategory/{id}")
-    public String deleteCategory(Model model) {
+    public String deleteCategory(Model model,@PageableDefault(value =10) Pageable pageable) {
     	model.addAttribute("categories", service.findAll());
         return "categories";
     }
     
     
     @PostMapping("/deleteCategory/{id}")
-    public String deleteCategory(Model model,@PathVariable long id){
+    public String deleteCategory(Model model,@PathVariable long id,@PageableDefault(value =10) Pageable pageable){
         service.deleteCategory(id);
-        model.addAttribute("categories", service.findAll());
+        Page<Category>categories=service.findAll(pageable);
+        model.addAttribute("categories",categories);
+
+        model.addAttribute("showNext",!categories.isLast());
+        model.addAttribute("showPrev",!categories.isFirst());
+        model.addAttribute("numPage",categories.getNumber());
+        model.addAttribute("prevPage",categories.getNumber()+1);
+        model.addAttribute("nextPage",categories.getNumber()-1);
+        model.addAttribute("categories",service.findAll(pageable));
         return "categories";
     }
     
@@ -89,12 +105,20 @@ public class WebControllerCategories extends WebController {
     }
 
     @PostMapping("{id}/updateCategory")
-    public String updateCategory(Model model,@PathVariable long id, @RequestParam String category) {
+    public String updateCategory(Model model,@PathVariable long id, @RequestParam String category,@PageableDefault(value =10) Pageable pageable) {
     	Category categ = service.findOne(id).get();
     	categ.setNameCategory(category);
     	service.saveCategory(categ);
-    	model.addAttribute("categories", service.findAll());
-    	return "categories";
+        Page<Category>categories=service.findAll(pageable);
+        model.addAttribute("categories",categories);
+
+        model.addAttribute("showNext",!categories.isLast());
+        model.addAttribute("showPrev",!categories.isFirst());
+        model.addAttribute("numPage",categories.getNumber());
+        model.addAttribute("prevPage",categories.getNumber()+1);
+        model.addAttribute("nextPage",categories.getNumber()-1);
+        model.addAttribute("categories",service.findAll(pageable));
+        return "categories";
     }
 
 }
