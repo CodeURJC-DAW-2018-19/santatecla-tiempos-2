@@ -16,6 +16,7 @@
 
     <link type="text/css" rel="stylesheet" href="/css/dawStyle.css" />
     <link type="text/css" rel="stylesheet" href="/css/events.css" />
+    <link type="text/css" rel="stylesheet" href="/css/categories.css" />
 
 </head>
 
@@ -51,7 +52,9 @@
             </div>
         </div>
     </nav>
+
     <div id="Categoria" class="tabcontent">
+    <div class="continer d-flex justify-content-center" id="cardCategory">
         <div class="col-md-6">
 
             <table class="table">
@@ -66,8 +69,8 @@
                                 	</button>                                
                         </td>
                         <td class="td-actions text-left">
-                                <form action="/deleteCategory/{{id}}" method="post">
-                                	<button type="submit" rel="tooltip" class="btn btn-info btn-simple categoryButton" id="">
+                                <form action="/deleteCategory/{{id}}" method="post" id="Delete">
+                                	<button type="submit" rel="tooltip" class="btn btn-info btn-simple categoryButton" >
                                    		<i class="material-icons" id="categoryIconDelete">delete</i>
                                 	</button>
                                 </form>                           
@@ -88,7 +91,7 @@
             </table>
             {{#admin}}
 
-                    <button class="btn btn-info btn-fab btn-fab-mini categoryButton" data-toggle="modal" data-target="#ModalCategory">
+                    <button class="btn btn-info btn-fab btn-fab-mini categoryButton" data-toggle="modal" data-target="#ModalCategory" id="categoryAdd">
                         <i class="material-icons" id="categoryIconT">add</i>
                     </button>
 
@@ -156,6 +159,7 @@
             </div>
 
         </div>
+    </div>
     </div>
         <!--Bootstrap scripts-->
         <!--   Core JS Files   -->
