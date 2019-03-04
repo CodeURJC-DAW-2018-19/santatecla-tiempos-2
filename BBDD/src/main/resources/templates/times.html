@@ -77,11 +77,15 @@
 	            {{/admin}}
 	        </div>
             {{#showNext}}
-            <a  href="/times/?page={{prevPage}}">next</a>
+            <button class="btn btn-info btn-fab btn-fab-mini categoryButton" id="butNextTimes">
+                 <a  href="/times/?page={{prevPage}}" class="nextTime">next</a>
+            </button>
             {{/showNext}}
 
             {{#showPrev}}
-            <a href="/times/?page={{nextPage}}">prev</a>
+            <button class="btn btn-info btn-fab btn-fab-mini categoryButton" id="butNextTimes">
+                <a href="/times/?page={{nextPage}}" class="nextTime">prev</a>
+            </button>
             {{/showPrev}}
 
         </div>

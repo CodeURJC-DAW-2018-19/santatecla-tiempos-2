@@ -80,12 +80,17 @@
                     {{/categories}}
 
                     {{#showNext}}
-                    <a  href="/categories/?page={{prevPage}}">next</a>
+                    <button class="btn btn-info btn-fab btn-fab-mini categoryButton" id="butNext">
+                        <a href="/categories/?page={{prevPage}}" class="nextCategory">next</a>
+                    </button>
                     {{/showNext}}
 
                     {{#showPrev}}
-                    <a href="/categories/?page={{nextPage}}">prev</a>
+                    <button class="btn btn-info btn-fab btn-fab-mini categoryButton" id="butNext">
+                    <a href="/categories/?page={{nextPage}}" class="nextCategory">prev</a>
+                    </button>
                     {{/showPrev}}
+
                 </tbody>
 
             </table>

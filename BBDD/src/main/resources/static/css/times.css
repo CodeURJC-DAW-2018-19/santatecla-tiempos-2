@@ -1,13 +1,18 @@
-#cardInterv{
-height: auto;
-margin-top: auto;
-margin-bottom: auto;
-width: 600px;
-background-color: #FFD9CD !important;
-text-align: center;
-font-size:25px;
+#cardInterv {
+	height: auto;
+	margin-top: auto;
+	margin-bottom: auto;
+	width: 600px;
+	background-color: #FFD9CD !important;
+	text-align: center;
+	font-size: 25px;
+}
 
-
+.nextTime{
+	color: white;
+}
+#butNextTimes{
+	width: 50px;
 }
 #cardInterv li{
 	

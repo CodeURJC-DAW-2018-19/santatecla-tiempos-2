@@ -103,11 +103,15 @@
             	{{/events}}
 
                 {{#showNext}}
-                <a  href="/events/?page={{prevPage}}">next</a>
+                <button class="btn btn-info btn-fab btn-fab-mini categoryButton" id="butNextEvents">
+                <a  href="/events/?page={{prevPage}}" class="nextEvent">next</a>
+                </button>
                 {{/showNext}}
 
                 {{#showPrev}}
-                <a href="/events/?page={{nextPage}}">prev</a>
+                <button class="btn btn-info btn-fab btn-fab-mini categoryButton" id="butNextEvents">
+                <a href="/events/?page={{nextPage}}" class="nextEvent">prev</a>
+                </button>
                 {{/showPrev}}
             </tbody>
         </table>

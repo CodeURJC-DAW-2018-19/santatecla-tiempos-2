@@ -8,6 +8,19 @@ font-size:25px;
 margin-left: 250px;
 border-radius:10px;
 }
+
+.nextCategory{
+	color: white;
+	padding-top: 15px;
+
+}
+#butNext{
+	width: 50px;
+	text-align: center;
+}
+
+
+
 #cardCategory td{
 	padding-bottom: 1rem;
 	padding-top: 1rem;
