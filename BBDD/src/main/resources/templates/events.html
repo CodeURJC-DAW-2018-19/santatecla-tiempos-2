@@ -374,7 +374,7 @@
     <script src="/js/selectThing.js"></script>
     <script type="text/javascript">
         var cargar=document.getElementById("cargar");
-        var nextPage=2;
+        var nextPage=1;
         cargar.onclick = function () {
             console.log("loadEvents");
             var dataAux;
@@ -383,8 +383,7 @@
                 url: "https://localhost:8443/events/list/?page="+nextPage
             }).done(function (events) {
                 console.log(events);
-                console.log("times");
-                // console.log(categories[i]);
+                console.log("events");
                 $("#tablaEvents").append(events);
                 nextPage++;
             })}

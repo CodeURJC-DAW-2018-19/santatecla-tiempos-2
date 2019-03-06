@@ -34,7 +34,7 @@ public class WebControllerTimes extends WebController{
 		model.addAttribute("numPage",times.getNumber());
 		model.addAttribute("prevPage",times.getNumber()+1);
 		model.addAttribute("nextPage",times.getNumber()-1);
-		model.addAttribute("events",timeService.findAll(pageable));
+		model.addAttribute("times",timeService.findAll(pageable));
 		return "times";
 	}
 

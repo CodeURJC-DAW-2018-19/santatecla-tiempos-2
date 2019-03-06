@@ -181,7 +181,7 @@
     <script src="../js/intervalo.js"></script>
         <script type="text/javascript">
         var cargar=document.getElementById("cargar");
-        var nextPage=2;
+        var nextPage=1;
         cargar.onclick = function () {
             console.log("loadTimes");
             var dataAux;
@@ -190,8 +190,7 @@
                 url: "https://localhost:8443/times/list/?page="+nextPage
             }).done(function (times) {
                 console.log(times);
-                console.log("times");
-                // console.log(categories[i]);
+                console.log("time");
                 $("#tablaTimes").append(times);
                 nextPage++;
             })}

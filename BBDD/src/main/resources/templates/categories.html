@@ -202,7 +202,7 @@
         <script src="/js/selectThing.js"></script>
     <script type="text/javascript">
         var cargar=document.getElementById("cargar");
-        var nextPage=2;
+        var nextPage=1;
         cargar.onclick = function () {
                 console.log("loadCategories");
                 var dataAux;
@@ -212,7 +212,6 @@
                 }).done(function (categories) {
                     console.log(categories);
                     console.log("category");
-                    // console.log(categories[i]);
                     $("#tabla").append(categories);
                     nextPage++;
                 })}
