@@ -53,47 +53,14 @@
         </div>
     </nav>
 
+    <input type="button" name="cargar" class="btn btn-info btn-fab btn-fab-mini categoryButton" data-toggle="modal" id="cargar" onclick="cargar()">
+
+
     <div id="Categoria" class="tabcontent">
     <div class="continer d-flex justify-content-center" id="cardCategory">
         <div class="col-md-6">
 
-            <table class="table">
-                <tbody>
-                	{{#categories}}
-                    <tr>
-                        <td class="text-center" id="change">{{nameCategory}}</td>
-                        {{#admin}}
-                        <td class="td-actions text-left">                                                     	
-                                	<button class="btn btn-info btn-fab btn-fab-mini categoryButton" onClick="select({{id}})" data-toggle="modal" data-target="#UpdateCategory">
-                                    	<i class="material-icons" id="categoryIconEdit">edit</i>
-                                	</button>                                
-                        </td>
-                        <td class="td-actions text-left">
-                                <form action="/deleteCategory/{{id}}" method="post" id="Delete">
-                                	<button type="submit" rel="tooltip" class="btn btn-info btn-simple categoryButton" >
-                                   		<i class="material-icons" id="categoryIconDelete">delete</i>
-                                	</button>
-                                </form>                           
-                        </td>
-                        {{/admin}}
-                    </tr>
-                    {{/categories}}
-
-                    {{#showNext}}
-                    <button class="btn btn-info btn-fab btn-fab-mini categoryButton" id="butNext">
-                        <a href="/categories/?page={{prevPage}}" class="nextCategory">next</a>
-                    </button>
-                    {{/showNext}}
-
-                    {{#showPrev}}
-                    <button class="btn btn-info btn-fab btn-fab-mini categoryButton" id="butNext">
-                    <a href="/categories/?page={{nextPage}}" class="nextCategory">prev</a>
-                    </button>
-                    {{/showPrev}}
-
-                </tbody>
-
-            </table>
+            {{>categoriesList}}
             {{#admin}}
 
                     <button class="btn btn-info btn-fab btn-fab-mini categoryButton" data-toggle="modal" data-target="#ModalCategory" id="categoryAdd">
@@ -233,6 +200,23 @@
         <script src="/js/category.js"></script>
         <script src="/js/intervalo.js"></script>
         <script src="/js/selectThing.js"></script>
+    <script type="text/javascript">
+        var cargar=document.getElementById("cargar");
+        var nextPage=2;
+        cargar.onclick = function () {
+                console.log("loadCategories");
+                var dataAux;
+                $.ajax({
+                    method: "GET",
+                    url: "https://localhost:8443/categories/list/?page="+nextPage
+                }).done(function (categories) {
+                    console.log(categories);
+                    console.log("category");
+                    // console.log(categories[i]);
+                    $("#tabla").append(categories);
+                    nextPage++;
+                })}
+    </script>
 </body>
 
 </html>

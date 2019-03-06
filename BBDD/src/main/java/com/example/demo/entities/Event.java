@@ -32,16 +32,24 @@ public class Event {
 	private List<Category> categories;
 
 	/*@OneToOne (cascade = CascadeType.ALL)
-	private Photo image;*/
+	private Image image;*/
 
 	public Event() {}
 	
 	/*Constructor*/
 
-	public Event(String nameEvent, String date, String location, String wiki) {
+	public Event(String nameEvent, String date, String location, String wiki, List<Category> categories) {
 		this.nameEvent = nameEvent;
 		this.date = date;
-		this.photo = "";
+		this.location = location;
+		this.wiki = wiki;
+		this.categories = categories;
+	}
+
+	public Event(String nameEvent, String date, String location, String wiki,String photo) {
+		this.nameEvent = nameEvent;
+		this.date = date;
+		this.photo = photo;
 		this.location = location;
 		this.wiki = wiki;
 		this.categories = new ArrayList<>();
@@ -100,7 +108,7 @@ public class Event {
 		return categories;
 	}
 
-	public void setCategoras(List<Category> categories) {
+	public void setCategories(List<Category> categories) {
 		this.categories = categories;
 	}
 

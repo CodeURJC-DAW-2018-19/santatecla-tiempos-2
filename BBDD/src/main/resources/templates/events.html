@@ -52,6 +52,9 @@
             </div>
         </div>
     </nav>
+
+    <input type="button" name="cargar" class="btn btn-info btn-fab btn-fab-mini categoryButton" data-toggle="modal" id="cargar" onclick="cargar()">
+
     <div id="Evento" class="tabcontent">
         <form class="form-inline ml-auto" action="/searchEvent" method="post">
             <div class="form-group no-border" id="searchBox">
@@ -61,61 +64,20 @@
                 <i class="material-icons">search</i>
             </button>
         </form>
-        
         <table class="table">
             <thead>
-                <tr>
-                    <th class="text-center" id="tableHead">#</th>
-                    <th id="tableHead">Evento</th>
-                    <th id="tableHead">Lugar</th>
-                    <th id="tableHead">Fecha</th>
-                </tr>
+            <tr>
+                <th class="text-center" id="tableHead">#</th>
+                <th id="tableHead">Evento</th>
+                <th id="tableHead">Foto</th>
+                <th id="tableHead">Lugar</th>
+                <th id="tableHead">Fecha</th>
+            </tr>
             </thead>
-            <tbody>
-            	{{#events}}
-            	<tr>
-            	<td class="text-center">{{-index}}</td>
-            	<td>{{nameEvent}}</td>
-            	<td>{{location}}</td>
-            	<td>{{date}}</td>
-            	{{#logged}}
-            		<td class="text-right">
-                        <button type="submit" rel="tooltip" class="btn btn-info categoryButton" id="deleteBin" data-toggle="modal" data-target="#ViewEvent" onClick="select({{id}})">
-                         <i class="material-icons" id="categoryIconDelete">remove_red_eye</i>
-                         </button>
-                    </td>
-                {{/logged}}
-                 {{#admin}}
-                 	<td class="text-right">
-                        <button type="submit" rel="tooltip" class="btn btn-info categoryButton" id="deleteBin" data-toggle="modal" data-target="#ModalEventUpdate" onClick="select({{id}})">
-                         <i class="material-icons" id="categoryIconDelete">edit</i>
-                         </button>
-                    </td>
-                	<form action="/deleteEvent/{{id}}" method="post">
-            	    <td class="text-right">
-                        <button type="submit" rel="tooltip" class="btn btn-info categoryButton" id="deleteBin">
-                         <i class="material-icons" id="categoryIconDelete">delete</i>
-                         </button>
-                    </td>
-                 	</form>
-                {{/admin}}
-            	</tr>
-            	{{/events}}
-
-                {{#showNext}}
-                <button class="btn btn-info btn-fab btn-fab-mini categoryButton" id="butNextEvents">
-                <a  href="/events/?page={{prevPage}}" class="nextEvent">next</a>
-                </button>
-                {{/showNext}}
-
-                {{#showPrev}}
-                <button class="btn btn-info btn-fab btn-fab-mini categoryButton" id="butNextEvents">
-                <a href="/events/?page={{nextPage}}" class="nextEvent">prev</a>
-                </button>
-                {{/showPrev}}
-            </tbody>
         </table>
-        
+
+        {{>eventsList}}
+
         {{#admin}}
         <button class="btn btn-info btn-fab btn-fab-mini categoryButton" data-toggle="modal" data-target="#ModalEvent" id="addBtn">
             <i class="material-icons" id="categoryIconT">add</i>
@@ -142,7 +104,7 @@
         					<li><a>Nombre: {{nameEvent}}</a></li>
         					<li><a>Fecha: {{date}}</a></li>
         					<li><a>Ubicación: {{location}}</a></li>
-        					<li><a>URL Foto: {{photo}}</a></li>
+        					<li><a>URL Foto: <img src='img/image-{{id}}.jpg' width="30px" height="30px"/></a></li>
         					<li><a>URL Wiki: {{wiki}}</a></li>
         					<li><a>Lista de categorias asociadas:</a></li>
         						<ul>
@@ -163,54 +125,99 @@
         	</div>
         </div>
         
-		<form action="/newEvent" method="post">
-        <div class="modal fade" id="ModalEvent" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabelT" aria-hidden="true">
-            <div class="modal-dialog modal-dialog-centered modal-lg" role="document">
-                <div class="modal-content">
-                    <div class="modal-header">
-                        <h5 class="modal-title" id="exampleModalLabelT">Nuevo Evento</h5>
-                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                            <span aria-hidden="true">&times;</span>
-                        </button>
-                    </div>
-                    <div class="modal-body">
-                        <label for="title">NUEVO EVENTO</label>
-                        
-                            <div class="form-row">
 
-                                <div class="form-group">
-                                    <label for="inputName">Nombre evento</label>
-                                    <input type="text" class="form-control" id="inputName" placeholder="Nombre" name="nameEvent">
-                                </div>
+            <form action="/newEvent" method="post" enctype="multipart/form-data">
+                <div class="modal fade" id="ModalEvent" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabelT"
+                     aria-hidden="true">
+                    <div class="modal-dialog modal-dialog-centered modal-lg" role="document">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h5 class="modal-title" id="exampleModalLabelT">Nuevo Evento</h5>
+                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                    <span aria-hidden="true">&times;</span>
+                                </button>
+                            </div>
+                            <div class="modal-body">
+                                <label for="title">NUEVO EVENTO</label>
+
                                 <div class="form-row">
-                                    <div class="form-group col-md-6">
-                                        <label for="inputIni">Fecha</label>
-                                        <input type="date" class="form-control" id="inputIni" placeholder="Fecha Inicio" name="eventDate">
-                                    </div>
-                                    <div class="form-group col-md-6">
-                                        <label for="inputIni">Localización</label>
-                                        <input type="text" class="form-control" id="inputLoc" placeholder="Fecha Inicio" name="eventLoc">
-                                    </div>
+
                                     <div class="form-group">
-                                        <label for="inputURL">URL Foto</label>
-                                        <input type="text" class="form-control" id="foto" placeholder="Introduce URL foto" name="photoUrl">
+                                        <label for="inputName">Nombre evento</label>
+                                        <input type="text" class="form-control" id="inputName" placeholder="Nombre"
+                                               name="nameEvent">
                                     </div>
-                                    <div class="form-group">
-                                        <label for="inputWiki">URL Wiki</label>
-                                        <input type="text" class="form-control" id="wiki" placeholder=" Introduce URL Wiki" name="wikiUrl">
-                                        <span id="errorWiki"></span>
+                                    <div class="form-row">
+                                        <div class="form-group col-md-6">
+                                            <label for="inputIni">Fecha</label>
+                                            <input type="date" class="form-control" id="inputIni" placeholder="Fecha Inicio"
+                                                   name=" date">
+                                        </div>
+                                        <div class="form-group col-md-6">
+                                            <label for="inputIni">Localización</label>
+                                            <input type="text" class="form-control" id="inputLoc" placeholder="Fecha Inicio"
+                                                   name="location">
+                                        </div>
+                                        <div class="form-group col-md-6">
+                                            <div class="fileinput fileinput-new text-center" data-provides="fileinput">
+                                                <div class="fileinput-new thumbnail img-raised">
+                                                    <img src="http://style.anu.edu.au/_anu/4/images/placeholders/person_8x10.png"
+                                                         alt="...">
+                                                </div>
+
+
+                                                <div>
+                                        <span class="btn btn-raised btn-round btn-default btn-file">
+                                            <span class="fileinput-new">Select image</span>
+                                            <span class="fileinput-exists">Change</span>
+                                            <input type="file" name="file"/>
+                                        </span>
+
+                                                </div>
+
+
+                                            </div>
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="wiki">URL Wiki</label>
+                                            <input type="text" class="form-control" id="wiki" placeholder=" Introduce URL Wiki"
+                                                   name="wiki">
+                                            <span id="errorWiki"></span>
+                                        </div>
                                     </div>
                                 </div>
-                            </div>                                                        	                         
-                            <div class="modal-footer">
-                            	<button type="button" class="btn btn-info" data-toggle="modal" data-target="#CategoriesPerEvent">Relación con categorías</button>
-                        		<button type="submit" class="btn btn-info">Aceptar</button>
-                    		</div>
-                        
+                                <div class="modal-footer">
+                                    <button type="button" class="btn btn-info" data-toggle="modal"
+                                            data-target="#CategoriesPerEvent">Relación con categorías
+                                    </button>
+                                    <button type="submit" class="btn btn-info">Save changes</button>
+                                </div>
+
+                            </div>
+
+                        </div>
                     </div>
-                    
                 </div>
-            </div>
+                <div class="modal fade" id="CategoriesPerEvent" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabelT"
+                     aria-hidden="true">
+                    <div class="modal-dialog modal-dialog-centered modal-lg" role="document">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h5 class="modal-title" id="exampleModalLabelT">Categorías</h5>
+                            </div>
+                            <div class="modal-body">
+                                {{#categoryList}}
+                                <input type="checkbox" name="categList" value="{{nameCategory}}">{{nameCategory}}<br>
+                                {{/categoryList}}
+                                <input type="hidden" name="selectedCat" id="selectedCat">
+                            </div>
+                            <div class="modal-footer">
+                                <button class="btn btn-info" data-dismiss="modal" onClick="processCategories()">Aceptar</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </form>
         </div>
         <div class="modal fade" id="CategoriesPerEvent" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabelT" aria-hidden="true">
         	<div class="modal-dialog modal-dialog-centered modal-lg" role="document">
@@ -261,10 +268,7 @@
                                         <label for="inputIni">Localización</label>
                                         <input type="text" class="form-control" id="inputLoc" placeholder="{{location}}" name="eventLoc">
                                     </div>
-                                    <div class="form-group">
-                                        <label for="inputURL">URL Foto</label>
-                                        <input type="text" class="form-control" id="foto" placeholder="{{photo}}" name="photoUrl">
-                                    </div>
+
                                     <div class="form-group">
                                         <label for="inputWiki">URL Wiki</label>
                                         <input type="text" class="form-control" id="wiki" placeholder="{{wiki}}" name="wikiUrl">
@@ -368,6 +372,23 @@
     <script src="/js/category.js"></script>
     <script src="/js/intervalo.js"></script>
     <script src="/js/selectThing.js"></script>
+    <script type="text/javascript">
+        var cargar=document.getElementById("cargar");
+        var nextPage=2;
+        cargar.onclick = function () {
+            console.log("loadEvents");
+            var dataAux;
+            $.ajax({
+                method: "GET",
+                url: "https://localhost:8443/events/list/?page="+nextPage
+            }).done(function (events) {
+                console.log(events);
+                console.log("times");
+                // console.log(categories[i]);
+                $("#tablaEvents").append(events);
+                nextPage++;
+            })}
+    </script>
 </body>
 
 </html>

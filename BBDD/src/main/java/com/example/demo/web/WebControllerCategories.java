@@ -46,7 +46,16 @@ public class WebControllerCategories extends WebController {
         model.addAttribute("categories",service.findAll(pageable));
         return "categories";
     }
-    
+
+
+    @RequestMapping("/categories/list")
+    public String categoriesList(@PageableDefault(value =5) Pageable pageable, Model model) {
+
+        Page<Category> categories = service.findAll(pageable);
+        model.addAttribute("categories", service.findAll(pageable));
+        return "categoriesList";
+
+    }
    /* @RequestMapping("/categories")
     public String categories(Model model){
     	model.addAttribute("categories",service.findAll());

@@ -8,10 +8,8 @@ import org.springframework.data.domain.Pageable;
 import org.springframework.data.web.PageableDefault;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.*;
+import org.springframework.web.multipart.MultipartFile;
 
 import java.util.List;
 import java.util.Optional;
@@ -19,6 +17,7 @@ import java.util.Optional;
 @Controller
 public class WebControllerEvents extends WebController {
 
+    @Autowired PhotoService foto;
 
     @Autowired
     private EventService evenService;
@@ -42,7 +41,19 @@ public class WebControllerEvents extends WebController {
         model.addAttribute("events",evenService.findAll(pageable));
         return "events";
     }
-    
+
+
+
+
+    @RequestMapping("/events/list")
+    public String eventsList(@PageableDefault(value =5) Pageable pageable, Model model) {
+
+        Page<Event> event = evenService.findAll(pageable);
+        model.addAttribute("events", evenService.findAll(pageable));
+        return "eventsList";
+
+    }
+
     @GetMapping("/newEvent")
     public String saveEvent(Model model){
     	model.addAttribute("events",evenService.findAll());
@@ -50,29 +61,10 @@ public class WebControllerEvents extends WebController {
     }
 
     @PostMapping("/newEvent")
-    public String saveEvent(@PageableDefault(value =5) Pageable pageable,Model model,@RequestParam String nameEvent, @RequestParam String eventDate, @RequestParam String eventLoc, @RequestParam String photoUrl, @RequestParam String wikiUrl, @RequestParam String selectedCat){
-    	Event event = new Event(nameEvent,eventDate, eventLoc, wikiUrl);
-    	event.setPhoto(photoUrl);
-    	if(!selectedCat.equals("")) {
-    		String[] catSplitted= selectedCat.split(",");
-    		for(int i = 0; i< catSplitted.length; i++) {
-    			List<Category> c = catService.findByName(catSplitted[i]);
-    			event.getCategorias().add(c.get(0));
-    		}
-    	}
+    public String saveEvent(@PageableDefault(value =5) Pageable pageable, Event event, @RequestParam("file") MultipartFile file, Model model){
+        foto.handleFileUpload(event,file);
         evenService.saveEvent(event);
-        Page<Event> events=evenService.findAll(pageable);
-
-        model.addAttribute("events",evenService.findAll());
-        model.addAttribute("categoryList", catService.findAll());
-
-        model.addAttribute("events",events);
-        model.addAttribute("showNext",!events.isLast());
-        model.addAttribute("showPrev",!events.isFirst());
-        model.addAttribute("numPage",events.getNumber());
-        model.addAttribute("prevPage",events.getNumber()+1);
-        model.addAttribute("nextPage",events.getNumber()-1);
-        model.addAttribute("events",evenService.findAll(pageable));
+        model.addAttribute("events", evenService.findAll());
         return "events";
     }
 

@@ -54,21 +54,14 @@
         </div>
     </nav>
 
+    <input type="button" name="cargar" class="btn btn-info btn-fab btn-fab-mini categoryButton" data-toggle="modal" id="cargar" onclick="cargar()">
+
+
     <div id="Tiempo" class="tabcontent">
     	<div class="continer d-flex justify-content-center">
 	        <div class="card" id="cardInterv">       	
-	            <ul class="list-group list-group-flush">
-	            {{#times}}
-	
-	                <li class="list-group-item">
-	
-	                    <a href="{{#logged}}/times/{{id}}{{/logged}}" class="card-link">{{nameInterval}}</a>
-	
-	                </li>
-	
-	            {{/times}}
-	            </ul>
 
+                {{>timeList}}
 
                 {{#admin}}
 	                <button class="btn btn-info btn-fab btn-fab-mini categoryButton" data-toggle="modal" data-target="#ModalTiempo">
@@ -76,17 +69,7 @@
 	                </button>
 	            {{/admin}}
 	        </div>
-            {{#showNext}}
-            <button class="btn btn-info btn-fab btn-fab-mini categoryButton" id="butNextTimes">
-                 <a  href="/times/?page={{prevPage}}" class="nextTime">next</a>
-            </button>
-            {{/showNext}}
 
-            {{#showPrev}}
-            <button class="btn btn-info btn-fab btn-fab-mini categoryButton" id="butNextTimes">
-                <a href="/times/?page={{nextPage}}" class="nextTime">prev</a>
-            </button>
-            {{/showPrev}}
 
         </div>
         <div class="modal fade" id="ModalTiempo" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabelT" aria-hidden="true">
@@ -196,6 +179,23 @@
     <script src="../js/events.js"></script>
     <script src="../js/category.js"></script>
     <script src="../js/intervalo.js"></script>
+        <script type="text/javascript">
+        var cargar=document.getElementById("cargar");
+        var nextPage=2;
+        cargar.onclick = function () {
+            console.log("loadTimes");
+            var dataAux;
+            $.ajax({
+                method: "GET",
+                url: "https://localhost:8443/times/list/?page="+nextPage
+            }).done(function (times) {
+                console.log(times);
+                console.log("times");
+                // console.log(categories[i]);
+                $("#tablaTimes").append(times);
+                nextPage++;
+            })}
+    </script>
 </body>
 
 </html>

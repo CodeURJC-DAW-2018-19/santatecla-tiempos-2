@@ -38,6 +38,14 @@ public class WebControllerTimes extends WebController{
 		return "times";
 	}
 
+	@RequestMapping("/times/list")
+	public String eventsList(@PageableDefault(value =5) Pageable pageable, Model model) {
+
+		Page<Time> time = timeService.findAll(pageable);
+		model.addAttribute("times", timeService.findAll(pageable));
+		return "timeList";
+
+	}
 
     @GetMapping("/times/{id}")
     public String showTimes(Model model, @PathVariable long id){
