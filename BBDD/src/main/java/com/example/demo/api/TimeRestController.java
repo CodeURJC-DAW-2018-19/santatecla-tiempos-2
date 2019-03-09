@@ -29,18 +29,18 @@ public class TimeRestController {
     }
 
     @DeleteMapping("/deleteTimes/{id}")
-    public Time deleteTime(@PathVariable long id){
-        Time deleteTime=timeService.findOne(id).get();
+    public Time deleteTimer(@PathVariable long id){
+        Time deleteTimer=timeService.findOne(id).get();
         timeService.deleteTimer(id);
-        return deleteTime;
+        return deleteTimer;
     }
 
     @PutMapping("/updateTimes/{id}")
     @ResponseStatus(HttpStatus.CREATED)
-    public  Time updateTime(@PathVariable long id, @RequestBody Time updateTime){
+    public  Time updateTimer(@PathVariable long id, @RequestBody Time updateTimer){
         timeService.findOne(id).get();
-        updateTime.setId(id);
-        timeService.saveTimer(updateTime);
-        return updateTime;
+        updateTimer.setId(id);
+        timeService.saveTimer(updateTimer);
+        return updateTimer;
     }
 }
