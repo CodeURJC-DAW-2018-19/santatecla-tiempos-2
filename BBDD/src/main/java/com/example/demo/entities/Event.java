@@ -18,7 +18,6 @@ public class Event {
 	/*ID of the entity*/
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
-	@JsonIgnore
 	private long id;
 	private String nameEvent ;
 	private String date;
@@ -29,6 +28,7 @@ public class Event {
 	/*One-way*/
 
 	@OneToMany
+
 	private List<Category> categories;
 
 	/*@OneToOne (cascade = CascadeType.ALL)
