@@ -32,7 +32,7 @@ public class EventsRestController {
     @ResponseStatus(HttpStatus.CREATED)
     public Event saveEvent(@RequestBody Event event, MultipartFile file){
 
-       // foto.handleFileUpload(event,file);
+      // foto.handleFileUpload(event,file);
         evenService.saveEvent(event);
         return event;
 
