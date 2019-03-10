@@ -146,12 +146,7 @@ The template diagrams have not been modified in this phase of the practice.
 ![Screenshot](https://github.com/CodeURJC-DAW-2018-19/santatecla-tiempos-2/blob/master/Screenshots/Phase%203/Update.PNG)
 
 ### Delete
-![Screenshot](https://github.com/CodeURJC-DAW-2018-19/santatecla-tiempos-2/blob/master/Screenshots/Phase%203/DeleteEvents.png)
-![Screenshot](https://github.com/CodeURJC-DAW-2018-19/santatecla-tiempos-2/blob/master/Screenshots/Phase%203/DeleteCategories.png)
-
-
-When we delete an event or a postman time, we are notified by an error 500 (Error internal server) but if we make a get later we can observe as if it deletes this element.
-In categories, this is not appreciated.
+![Screenshot](https://github.com/CodeURJC-DAW-2018-19/santatecla-tiempos-2/blob/master/Screenshots/Phase%203/newdelete.PNG)
 
 ### Login error 401
 ![Screenshot](https://github.com/CodeURJC-DAW-2018-19/santatecla-tiempos-2/blob/master/Screenshots/Phase%203/login.PNG)
