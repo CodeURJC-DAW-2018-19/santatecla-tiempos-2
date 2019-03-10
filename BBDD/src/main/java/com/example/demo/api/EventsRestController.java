@@ -53,7 +53,6 @@ public class EventsRestController {
     }
 
     @PutMapping("/{id}")
-    @ResponseStatus(HttpStatus.CREATED)
     public  Event updateEvent(@PathVariable long id, @RequestBody Event updateEvent){
         evenService.findOne(id).get();
 

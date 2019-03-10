@@ -44,7 +44,6 @@ public class TimeRestController {
     }
 
     @PutMapping("/{id}")
-    @ResponseStatus(HttpStatus.CREATED)
     public  Time updateTimer(@PathVariable long id, @RequestBody Time updateTimer){
         timeService.findOne(id).get();
         updateTimer.setId(id);
