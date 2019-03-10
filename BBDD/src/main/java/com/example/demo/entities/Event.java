@@ -22,6 +22,7 @@ public class Event {
 	private String nameEvent ;
 	private String date;
 	private String location;
+	@Column(length = 429496729)
 	private String photo;
 	private String wiki;
 	
@@ -93,6 +94,9 @@ public class Event {
 	}
 
 	public void setPhoto(String photo) {
+		if(photo==null){
+			photo="";
+		}
 		this.photo = photo;
 	}
 

@@ -15,7 +15,7 @@ import java.util.Optional;
 @RequestMapping("/api/events")
 public class EventsRestController {
 
-    @Autowired
+   @Autowired
     PhotoService foto;
 
     @Autowired

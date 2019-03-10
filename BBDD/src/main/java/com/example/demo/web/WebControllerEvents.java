@@ -1,6 +1,7 @@
 package com.example.demo.web;
 
 import com.example.demo.entities.*;
+import com.example.demo.photos.Decoder;
 import com.example.demo.web.WebController;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
@@ -10,7 +11,9 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.multipart.MultipartFile;
+import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
+import java.io.IOException;
 import java.util.List;
 import java.util.Optional;
 
@@ -61,8 +64,18 @@ public class WebControllerEvents extends WebController {
     }
 
     @PostMapping("/newEvent")
-    public String saveEvent(@PageableDefault(value =5) Pageable pageable, Event event, @RequestParam("file") MultipartFile file, Model model){
-        foto.handleFileUpload(event,file);
+    public String saveEvent(@PageableDefault(value =5) Pageable pageable, Event event, @RequestParam("file") MultipartFile file, Model model,RedirectAttributes redirectAttributes ){
+       foto.handleFileUpload(event,file,redirectAttributes);
+
+     /*  if(!file.isEmpty()){
+           try{
+               byte[]bytesPhoto=file.getBytes();
+               redirectAttributes.addFlashAttribute("info","upload Image" + file.getOriginalFilename());
+               event.setPhoto(Decoder.Encode(bytesPhoto));
+           }catch (IOException exception){
+               exception.printStackTrace();
+           }
+       }*/
         evenService.saveEvent(event);
         model.addAttribute("events", evenService.findAll());
         return "events";
