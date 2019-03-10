@@ -59,6 +59,7 @@
             </div>
         </div>
     </nav>
+{{#logged}}
     <div id="Intervalo1" class="tabcontent">
 {{#concreteTime}}
         <div class="searchInterval">
@@ -221,6 +222,10 @@
    	<h1 style="color: #BE6245; margin-left: 5%">Vaya, el intervalo que buscas no existe, será mejor volver a la <span><a href="/times">lista de intervalos</a></span></h1>
    	{{/concreteTime}}
     </div>
+    {{/logged}}
+    {{^logged}}
+    <h1 style="color: #BE6245; margin-left: 5%">Vaya, para acceder a esta página necesitas estar registrado. <span><a href="/">Log in</a></span></h1>
+    {{/logged}}
     <!--Bootstrap scripts-->
     <!--   Core JS Files   -->
     <script src="assets/js/core/jquery.min.js" type="text/javascript"></script>
