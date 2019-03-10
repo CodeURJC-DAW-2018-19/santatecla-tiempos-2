@@ -128,11 +128,11 @@ public class WebControllerEvents extends WebController {
     		event.setWiki(wikiUrl);
     	}
     	if(!selectedCatUpdate.equals("")) {
-    		event.getCategorias().clear();
+    		event.getCategories().clear();
     		String[] catSplitted= selectedCatUpdate.split(",");
     		for(int i = 0; i< catSplitted.length; i++) {
     			List<Category> c = catService.findByName(catSplitted[i]);
-    			event.getCategorias().add(c.get(0));
+    			event.getCategories().add(c.get(0));
     		}
     	}
     	evenService.saveEvent(event);

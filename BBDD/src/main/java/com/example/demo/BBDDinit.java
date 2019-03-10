@@ -36,20 +36,21 @@ public class BBDDinit {
             catRep.save(new Category("Categoria1"+i));
         }
         //Events
-        Event event1=new Event("DAW","7-7-2019","null","Aulario 1", "hola");
+        Event event1=new Event("DAW","7-7-2019","null","Aulario 1", "src/main/resources/static/img/image-52.jpg");
         Event event2 = new Event("Seguridad", "20-12-18","null", "Aulario 1", "muy seguro");
         Event event3 = new Event("Java", "1-1-19","null", "Aulario 2", "No huele");
         Event event4=new Event("DAW","7-7-2019","null", "Aulario 1", "hola");
         Event event5 = new Event("Seguridad", "20-12-18","null", "Aulario 1", "muy seguro");
         Event event6 = new Event("Java", "1-1-19","null", "Aulario 2", "No huele");
-        
+
+        event1.getCategories().add(cat1);
         eveRep.save(event1);
         eveRep.save(event2);
         eveRep.save(event3);
         eveRep.save(event4);
         eveRep.save(event5);
         eveRep.save(event6);
-        /*  event1.getCategorias().add(cat1);*/
+
 
         //Times
         Time time1 = new Time("Intervalo 1", "5-7-2018", "1-1-2020");
@@ -63,9 +64,9 @@ public class BBDDinit {
         Time time9 = new Time("Intervalo 9", "2-4-2021", "2-5-2021");
         Time time10 = new Time("Intervalo 10'", "2-4-2021", "2-5-2021");
 
-       /* time1.getEvents().add(event1);
+       time1.getEvents().add(event1);
         time1.getEvents().add(event2);
-        time1.getEvents().add(event3);*/
+        time1.getEvents().add(event3);
         
         
         SubTime subtime1 = new SubTime ("2018", "8-9-2018", "10-10-2018");

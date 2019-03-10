@@ -18,7 +18,6 @@ public class Event {
 	/*ID of the entity*/
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
-	@JsonIgnore
 	private long id;
 	private String nameEvent ;
 	private String date;
@@ -29,6 +28,7 @@ public class Event {
 	/*One-way*/
 
 	@OneToMany
+
 	private List<Category> categories;
 
 	/*@OneToOne (cascade = CascadeType.ALL)
@@ -104,7 +104,7 @@ public class Event {
 		this.wiki = wiki;
 	}
 
-	public List<Category> getCategorias() {
+	public List<Category> getCategories() {
 		return categories;
 	}
 
@@ -114,9 +114,14 @@ public class Event {
 
 	@Override
 	public String toString() {
-		return "Eventos [idEventos=" + id + ", nameEvent=" + nameEvent + ", date=" + date
-				+ ", wiki=" + wiki + "]";
+		return "Event{" +
+				"id=" + id +
+				", nameEvent='" + nameEvent + '\'' +
+				", date='" + date + '\'' +
+				", location='" + location + '\'' +
+				", photo='" + photo + '\'' +
+				", wiki='" + wiki + '\'' +
+				", categories=" + categories +
+				'}';
 	}
-	
-	
 }
