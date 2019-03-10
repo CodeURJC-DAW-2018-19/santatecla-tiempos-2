@@ -19,17 +19,35 @@ border-radius:10px;
 	text-align: center;
 }
 
+#tablaCategories{
+height: auto;
+margin-top: auto;
+margin-bottom: auto;
+background-color: #FFD9CD !important;
+max-width:270px;
+min-width:200px;
+}
+
+#tablaCategories td{
+	padding-bottom: 1rem;
+	padding-top: 1rem;
+	border-bottom:solid; 
+	border-color:#ffbfaa;
+	margin: 0.50rem;
+	text-align: center;
+} 
 
 
 #cardCategory td{
 	padding-bottom: 1rem;
 	padding-top: 1rem;
-	border-bottom:solid;
+	border-bottom:solid; 
 	border-color:#ffbfaa;
-	margin: 0.50rem;
+	margin: 0.50rem; 
 	color:#BE6245;
 	text-align: center;
-}
+} 
+
 #delete{
 	margin-bottom: 0rem;
 }

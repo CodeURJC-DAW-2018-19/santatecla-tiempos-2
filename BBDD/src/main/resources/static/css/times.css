@@ -9,13 +9,12 @@
 }
 
 .nextTime{
-	color: white;
+	color: #ffbfaa;
 }
 #butNextTimes{
 	width: 50px;
 }
-#cardInterv li{
-	
+#cardInterv li{	
 	padding-bottom: 1rem;
 	padding-top: 1rem;
 	border-bottom:solid;
@@ -28,6 +27,15 @@
 	color:#BE6245  ;
 }
 
+#tablaTimes {
+	height: auto;
+	margin-top: auto;
+	margin-bottom: auto;
+	width: 600px;
+	background-color: #FFD9CD !important;
+	text-align: center;
+	font-size: 16px;
+}
 
 #cardInterv button{
 	

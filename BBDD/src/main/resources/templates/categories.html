@@ -57,9 +57,9 @@
 
 
     <div id="Categoria" class="tabcontent">
-    <div class="continer d-flex justify-content-center" id="cardCategory">
+    <div class="container d-flex justify-content-center" id="cardCategory">
         <div class="col-md-6">
-
+			
             {{>categoriesList}}
             {{#admin}}
 
@@ -212,7 +212,7 @@
                 }).done(function (categories) {
                     console.log(categories);
                     console.log("category");
-                    $("#tabla").append(categories);
+                    $("#tablaCategories").append(categories);
                     nextPage++;
                 })}
     </script>
