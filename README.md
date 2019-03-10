@@ -116,7 +116,7 @@ Once everything is executed and running smoothly,
 we add the templates and the assets and open the page in the
 browser.
 
-## Phase 2
+## Phase 3
 
 ### Installation and configuration of Docker
 
@@ -125,3 +125,36 @@ To install Docker for Windows, you have to go to [this link](https://docs.docker
 ### Execution instructions for our application
 
 In Windows Powershell, supposing that you are on our repository ("Github\santatecla-tiempos-2"), go to the docker folder ("cd docker") and execute the "create_image-ps1" script. It will update our app jar and will copy it in the docker image. Then the only thing you have to do is execute the "docker-compose up" command, and both containers will set up and start.
+
+### Diagram
+
+The template diagrams have not been modified in this phase of the practice.
+
+### UML diagram updated
+![Screenshot](https://github.com/CodeURJC-DAW-2018-19/santatecla-tiempos-2/blob/master/Screenshots/Phase%203/newDiagram.PNG)
+
+### Create 
+![Screenshot](https://github.com/CodeURJC-DAW-2018-19/santatecla-tiempos-2/blob/master/Screenshots/Phase%203/CreateEvent.png)
+
+### Show one
+![Screenshot](https://github.com/CodeURJC-DAW-2018-19/santatecla-tiempos-2/blob/master/Screenshots/Phase%203/GetEvent.png)
+
+### Show all
+![Screenshot](https://github.com/CodeURJC-DAW-2018-19/santatecla-tiempos-2/blob/master/Screenshots/Phase%203/PostmanGETCategories.png)
+
+### Update
+![Screenshot](https://github.com/CodeURJC-DAW-2018-19/santatecla-tiempos-2/blob/master/Screenshots/Phase%203/Update.PNG)
+
+### Delete
+![Screenshot](https://github.com/CodeURJC-DAW-2018-19/santatecla-tiempos-2/blob/master/Screenshots/Phase%203/DeleteEvents.png)
+![Screenshot](https://github.com/CodeURJC-DAW-2018-19/santatecla-tiempos-2/blob/master/Screenshots/Phase%203/DeleteCategories.png)
+
+
+When we delete an event or a postman time, we are notified by an error 500 (Error internal server) but if we make a get later we can observe as if it deletes this element.
+In categories, this is not appreciated.
+
+### Login error 401
+![Screenshot](https://github.com/CodeURJC-DAW-2018-19/santatecla-tiempos-2/blob/master/Screenshots/Phase%203/login.PNG)
+
+### Resource not found
+![Screenshot](https://github.com/CodeURJC-DAW-2018-19/santatecla-tiempos-2/blob/master/Screenshots/Phase%203/404.PNG)
