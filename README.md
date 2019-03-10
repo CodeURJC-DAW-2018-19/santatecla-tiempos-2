@@ -49,7 +49,7 @@ https://docs.google.com/document/d/1Xx1CJYwagN6zfFhv3WBdONDRmzzXSm6Uv-9EQpe4I_4/
 ##### Navegation Diagram
 ![Screenshot](https://github.com/CodeURJC-DAW-2018-19/santatecla-tiempos-2/blob/master/Screenshots/Diagrama.PNG.png)
 
-## Phase2
+## Phase 2
 
 #### In phase 2, the one created in phase 1 for the implementation of Mustache has been used as the base model so that the page goes from being static to dynamic. To achieve this, we have also used Spring and Maven frameworks based on Java, as well as the use of a database in sql language for the storage, creation and deletion of data.
 
@@ -115,3 +115,13 @@ of the database.
 Once everything is executed and running smoothly,
 we add the templates and the assets and open the page in the
 browser.
+
+## Phase 2
+
+### Installation and configuration of Docker
+
+To install Docker for Windows, you have to go to [this link](https://docs.docker.com/docker-for-windows/install/) to download it and follow the steps. Once you have installed it, go to your shell and type "docker --version" and "docker-compose --version" to check taht you have all installed correctly. Finally, go to the Docker icon in your taskbar, right-click on it and go to "Settings". Once you are in, go to "Daemon" section and ensure that the "Experimental features" is unchecked. 
+
+### Execution instructions for our application
+
+In Windows Powershell, supposing that you are on our repository ("Github\santatecla-tiempos-2"), go to the docker folder ("cd docker") and execute the "create_image-ps1" script. It will update our app jar and will copy it in the docker image. Then the only thing you have to do is execute the "docker-compose up" command, and both containers will set up and start.
