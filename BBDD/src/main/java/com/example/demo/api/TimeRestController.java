@@ -31,7 +31,8 @@ public class TimeRestController {
     }
 
     @GetMapping("/{id}")
-    public Optional<Time> getEventId(@PathVariable long id){
+    public Optional<Time> getTimeId(@PathVariable long id){
+        Time getTimeId=timeService.findOne(id).get();
         return timeService.findOne(id);
     }
 

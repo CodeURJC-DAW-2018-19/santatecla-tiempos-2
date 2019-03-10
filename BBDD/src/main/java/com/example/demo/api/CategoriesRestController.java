@@ -36,6 +36,7 @@ public class CategoriesRestController {
 
     @GetMapping("/{id}")
     public Optional<Category> getCategoryId(@PathVariable long id){
+        categoryService.findOne(id).get();
         return categoryService.findOne(id);
     }
 

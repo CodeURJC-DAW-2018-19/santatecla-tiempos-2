@@ -41,6 +41,7 @@ public class EventsRestController {
 
     @GetMapping("/{id}")
     public Optional<Event> getEventId(@PathVariable long id){
+        Event getEventId=evenService.findOne(id).get();
         return evenService.findOne(id);
     }
 
