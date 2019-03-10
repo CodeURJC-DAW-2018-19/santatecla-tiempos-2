@@ -9,6 +9,7 @@ import org.springframework.web.multipart.MultipartFile;
 
 import java.util.Collection;
 import java.util.List;
+import java.util.Optional;
 
 @RestController
 @RequestMapping("/api/events")
@@ -23,29 +24,34 @@ public class EventsRestController {
     @Autowired
     private CategoryService catService;
 
-    @GetMapping("/event")
+    @GetMapping("/")
     public Collection<Event> getEvents(){
         return evenService.findAll();
     }
 
-    @PostMapping("/newEvents")
+    @PostMapping("/")
     @ResponseStatus(HttpStatus.CREATED)
     public Event saveEvent(@RequestBody Event event, MultipartFile file){
 
-      // foto.handleFileUpload(event,file);
+      //foto.handleFileUpload(event,file);
         evenService.saveEvent(event);
         return event;
 
     }
 
-    @DeleteMapping("/deleteEvents/{id}")
+    @GetMapping("/{id}")
+    public Optional<Event> getEventId(@PathVariable long id){
+        return evenService.findOne(id);
+    }
+
+    @DeleteMapping("/{id}")
     public Event deleteEvent(@PathVariable long id){
         Event deleteEvent=evenService.findOne(id).get();
         evenService.deleteEvent(id);
         return deleteEvent;
     }
 
-    @PutMapping("/updateEvents/{id}")
+    @PutMapping("/{id}")
     @ResponseStatus(HttpStatus.CREATED)
     public  Event updateEvent(@PathVariable long id, @RequestBody Event updateEvent){
         evenService.findOne(id).get();
