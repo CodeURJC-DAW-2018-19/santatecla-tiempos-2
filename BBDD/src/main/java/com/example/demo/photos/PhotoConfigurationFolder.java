@@ -11,10 +11,10 @@ import org.springframework.web.servlet.config.annotation.WebMvcConfigurerAdapter
 @Configuration
 public class PhotoConfigurationFolder implements WebMvcConfigurer {
 
-    @Bean
+    /*@Bean
     public MultipartResolver resolver(){
         return new StandardServletMultipartResolver();
-    }
+    }*/
 
     @Override
     public void addResourceHandlers(ResourceHandlerRegistry registry) {
