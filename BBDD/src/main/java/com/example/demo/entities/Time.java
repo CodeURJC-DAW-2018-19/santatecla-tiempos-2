@@ -16,10 +16,13 @@ public class Time {
 	private String startDate;
 	private String endDate;
 
-	@OneToMany
+	@OneToMany(fetch=FetchType.EAGER)
+	@ElementCollection
 	private List<Event> events;
-	
+
+
 	@OneToMany(cascade=CascadeType.ALL)
+	@ElementCollection
 	private List<SubTime> subIntervals;
 	
 	public Time() {}
