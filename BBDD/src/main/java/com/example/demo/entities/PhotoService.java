@@ -14,6 +14,8 @@ import javax.annotation.PostConstruct;
 import javax.servlet.http.HttpServletResponse;
 
 import com.example.demo.entities.Event;
+import com.example.demo.photos.Decoder;
+import org.springframework.context.annotation.Bean;
 import org.springframework.stereotype.Controller;
 import org.springframework.stereotype.Service;
 import org.springframework.ui.Model;
@@ -23,15 +25,31 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.multipart.MultipartFile;
+import org.springframework.web.multipart.MultipartResolver;
+import org.springframework.web.multipart.support.StandardServletMultipartResolver;
+import org.springframework.web.servlet.config.annotation.ResourceHandlerRegistry;
+import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
+import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 //@Controller
 @Service
-public class PhotoService {
+public class PhotoService implements WebMvcConfigurer {
     /* RUTA A STATIC/IMG */
     private static final Path FILES_FOLDER = Paths.get(System.getProperty("user.dir"), "src/main/resources/static/img");
 
     private AtomicInteger imageId = new AtomicInteger();
     // private Map<Integer, Image> images = new ConcurrentHashMap<>();
+
+    @Bean
+    public MultipartResolver resolver(){
+        return new StandardServletMultipartResolver();
+    }
+
+    @Override
+    public void addResourceHandlers(ResourceHandlerRegistry registry) {
+        registry.addResourceHandler("/images/**")
+                .addResourceLocations("file:C:/Windows/temp/images");
+    }
 
     @PostConstruct
     public void init() throws IOException {
@@ -49,10 +67,10 @@ public class PhotoService {
 
     //@RequestMapping(value = "/image/upload", method = RequestMethod.POST)
     public String handleFileUpload(Event event,
-                                   MultipartFile file) {
+                                   MultipartFile file, RedirectAttributes redirectAttributes ) {
 
 
-        long id = event.getId()+52;
+        long id = event.getId()+62;
 
         String fileName = "image-"+id +".jpg";
 
@@ -62,6 +80,9 @@ public class PhotoService {
                 File uploadedFile = new File(FILES_FOLDER.toFile(), fileName);
                 file.transferTo(uploadedFile);
                 System.out.println(uploadedFile.getPath());
+                byte[]bytesPhoto=file.getBytes();
+                redirectAttributes.addFlashAttribute("info","upload Image" + file.getOriginalFilename());
+                event.setPhoto(Decoder.Encode(bytesPhoto));
                 //images.put(id, new Image(id, fileName));
 
                 return fileName;
