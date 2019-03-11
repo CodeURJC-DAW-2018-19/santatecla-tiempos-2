@@ -9,7 +9,7 @@ import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
 import org.springframework.web.servlet.config.annotation.WebMvcConfigurerAdapter;
 
 @Configuration
-public class PhotoConfigurationFolder implements WebMvcConfigurer {
+public class ConfigurationFolder implements WebMvcConfigurer {
 
     /*@Bean
     public MultipartResolver resolver(){
