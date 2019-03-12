@@ -1,12 +1,18 @@
 package com.example.demo.entities;
-public class Image {
 
-    private int id;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+
+
+public class Image {
+	
+    private long id;
     private String title;
 
-    public Image(int id, String title) {
+    public Image(long id) {
         this.id = id;
-        this.title = title;
     }
 
     public String getTitle() {
@@ -17,11 +23,11 @@ public class Image {
         this.title = title;
     }
 
-    public int getId() {
+    public long getId() {
         return id;
     }
 
-    public void setId(int id) {
+    public void setId(long id) {
         this.id = id;
     }
 

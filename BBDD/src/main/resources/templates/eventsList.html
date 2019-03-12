@@ -4,7 +4,9 @@
         <td class="text-center">{{-index}}</td>
         <td>{{nameEvent}}</td>
         <td>
-            <img src='img/image-{{id}}.jpg' />
+        	{{#hasImage}}
+			<img src="data:image/png;base64,{{encodedImage}}"/>
+            {{/hasImage}}
         </td>
         <td>{{location}}</td>
         <td>{{date}}</td>

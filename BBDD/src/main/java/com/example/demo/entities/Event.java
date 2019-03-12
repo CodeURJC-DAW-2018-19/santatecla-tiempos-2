@@ -22,9 +22,8 @@ public class Event {
 	private String nameEvent ;
 	private String date;
 	private String location;
-	@Column(length = 429496729)
-	private String photo;
 	private String wiki;
+	private boolean hasImage;
 	
 	/*One-way*/
 
@@ -32,8 +31,11 @@ public class Event {
 	@ElementCollection
 	private List<Category> categories;
 
-	/*@OneToOne (cascade = CascadeType.ALL)
-	private Image image;*/
+	@Lob
+	private byte[] photo;
+	
+	@Lob
+	private String encodedImage;
 
 	public Event() {}
 	
@@ -45,18 +47,38 @@ public class Event {
 		this.location = location;
 		this.wiki = wiki;
 		this.categories = categories;
+		this.hasImage=false;
 	}
 
-	public Event(String nameEvent, String date, String location, String wiki,String photo) {
+	public Event(String nameEvent, String date, String location, String wiki) {
 		this.nameEvent = nameEvent;
 		this.date = date;
-		this.photo = photo;
+		//this.photo = photo;
 		this.location = location;
 		this.wiki = wiki;
 		this.categories = new ArrayList<>();
+		this.hasImage=false;
 	}
 
 	/*Getters and setters*/
+	
+	
+	public boolean isHasImage() {
+		return hasImage;
+	}
+
+	public String getEncodedImage() {
+		return encodedImage;
+	}
+
+	public void setEncodedImage(String encodedImage) {
+		this.encodedImage = encodedImage;
+	}
+
+	public void setHasImage(boolean hasImage) {
+		this.hasImage = hasImage;
+	}
+
 	public long getId() {
 		return id;
 	}
@@ -89,14 +111,11 @@ public class Event {
 		this.date = date;
 	}
 
-	public String getPhoto() {
+	public byte[] getPhoto() {
 		return photo;
 	}
 
-	public void setPhoto(String photo) {
-		if(photo==null){
-			photo="";
-		}
+	public void setPhoto(byte[] photo) {
 		this.photo = photo;
 	}
 
@@ -123,7 +142,7 @@ public class Event {
 				", nameEvent='" + nameEvent + '\'' +
 				", date='" + date + '\'' +
 				", location='" + location + '\'' +
-				", photo='" + photo + '\'' +
+			", photo='" + photo + '\'' +
 				", wiki='" + wiki + '\'' +
 				", categories=" + categories +
 				'}';
