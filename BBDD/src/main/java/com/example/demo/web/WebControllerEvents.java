@@ -87,15 +87,6 @@ public class WebControllerEvents extends WebController {
     public String saveEvent(@PageableDefault(value =5) Pageable pageable, Event event,Model model, @RequestParam("file") MultipartFile file){
     	long id = event.getId();
     	String fileName = "image-" + id + ".jpg";
-    	/*if(!file.isEmpty()) {
-    		try {
-    			File uploadedFile = new File(FILES_FOLDER.toFile(), fileName);
-    			file.transferTo(uploadedFile);
-    			images.put(id, new Image(id));  			
-    		}catch(IOException ioe) {ioe.printStackTrace();}
-    	}*/
-    	
-    	//event.setPhoto(images.get(id));
     	if(!file.isEmpty()) {
     		try {
     			event.setPhoto(file.getBytes());
