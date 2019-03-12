@@ -35,18 +35,19 @@ public class BBDDinit {
         for(int i=0;i<37;i++){
             catRep.save(new Category("Categoria1"+i));
         }
+        
         //Events
-        Event event1=  new Event("DAW","7-7-2019","Aulario 1","Aulario 1", "src/main/resources/static/img/image-52.jpg");
-        Event event2 = new Event("Seguridad", "20-12-18","Aulario 1", "Aulario 1", "muy seguro");
-        Event event3 = new Event("Java", "1-1-19","Aulario 2", "Aulario 2", "No huele");
-        Event event4=  new Event("DAW","7-7-2019","Aulario 1", "Aulario 1", "hola");
-        Event event5 = new Event("Seguridad", "20-12-18","Aulario 1", "Aulario 1", "muy seguro");
-        Event event6 = new Event("Java", "1-1-19","Aulario 2", "Aulario 2", "No huele");
-        Event event7 = new Event("Javaa", "1-1-19","Aulario 3", "Aulario 2", "No huele");
-        Event event8 = new Event("Javaaa", "1-1-19","Aulario 3", "Aulario 2", "No huele");
-        Event event9 = new Event("Javaaa", "1-1-19","Aulario 3", "Aulario 2", "No huele");
-        Event event10 = new Event("Javaaa", "1-1-19","Aulario 3", "Aulario 2", "No huele");
-        Event event11 = new Event("Javaaa", "1-1-19","Aulario3", "Aulario 2", "No huele");
+        Event event1=  new Event("DAW","7-7-2019","Aulario 1","Aulario 1" );
+        Event event2 = new Event("Seguridad", "20-12-18","Aulario 1", "Aulario 1");
+        Event event3 = new Event("Java", "1-1-19","Aulario 2", "Aulario 2");
+        Event event4=  new Event("DAW","7-7-2019","Aulario 1", "Aulario 1");
+        Event event5 = new Event("Seguridad", "20-12-18","Aulario 1", "Aulario 1");
+        Event event6 = new Event("Java", "1-1-19","Aulario 2", "Aulario 2");
+        Event event7 = new Event("Javaa", "1-1-19","Aulario 3", "Aulario 2");
+        Event event8 = new Event("Javaaa", "1-1-19","Aulario 3", "Aulario 2");
+        Event event9 = new Event("Javaaa", "1-1-19","Aulario 3", "Aulario 2");
+        Event event10 = new Event("Javaaa", "1-1-19","Aulario 3", "Aulario 2");
+        Event event11 = new Event("Javaaa", "1-1-19","Aulario3", "Aulario 2");
         
 
         event1.getCategories().add(cat1);

@@ -13,12 +13,32 @@ import org.springframework.web.bind.annotation.*;
 import org.springframework.web.multipart.MultipartFile;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
+import java.io.File;
 import java.io.IOException;
+import java.nio.file.Files;
+import java.nio.file.Path;
+import java.nio.file.Paths;
+import com.sun.org.apache.xerces.internal.impl.dv.util.Base64;
 import java.util.List;
+import java.util.Map;
 import java.util.Optional;
+import java.util.concurrent.ConcurrentHashMap;
+
+import javax.annotation.PostConstruct;
 
 @Controller
 public class WebControllerEvents extends WebController {
+	
+	private static final Path FILES_FOLDER = Paths.get(System.getProperty("user.dir"), "img");
+	private Map<Long, Image> images = new ConcurrentHashMap<>();
+	
+	@PostConstruct
+	public void init() throws IOException {
+
+		if (!Files.exists(FILES_FOLDER)) {
+			Files.createDirectories(FILES_FOLDER);
+		}
+	}
 
     @Autowired PhotoService foto;
 
@@ -64,18 +84,25 @@ public class WebControllerEvents extends WebController {
     }
 
     @PostMapping("/newEvent")
-    public String saveEvent(@PageableDefault(value =5) Pageable pageable, Event event, @RequestParam("file") MultipartFile file, Model model,RedirectAttributes redirectAttributes ){
-       foto.handleFileUpload(event,file,redirectAttributes);
-
-     /*  if(!file.isEmpty()){
-           try{
-               byte[]bytesPhoto=file.getBytes();
-               redirectAttributes.addFlashAttribute("info","upload Image" + file.getOriginalFilename());
-               event.setPhoto(Decoder.Encode(bytesPhoto));
-           }catch (IOException exception){
-               exception.printStackTrace();
-           }
-       }*/
+    public String saveEvent(@PageableDefault(value =5) Pageable pageable, Event event,Model model, @RequestParam("file") MultipartFile file){
+    	long id = event.getId();
+    	String fileName = "image-" + id + ".jpg";
+    	/*if(!file.isEmpty()) {
+    		try {
+    			File uploadedFile = new File(FILES_FOLDER.toFile(), fileName);
+    			file.transferTo(uploadedFile);
+    			images.put(id, new Image(id));  			
+    		}catch(IOException ioe) {ioe.printStackTrace();}
+    	}*/
+    	
+    	//event.setPhoto(images.get(id));
+    	if(!file.isEmpty()) {
+    		try {
+    			event.setPhoto(file.getBytes());
+    			event.setEncodedImage(Base64.encode(file.getBytes()));
+    			event.setHasImage(true);
+    		}catch(IOException ioe) {ioe.printStackTrace();}
+    	}
         evenService.saveEvent(event);
         model.addAttribute("events", evenService.findAll());
         return "events";
@@ -123,7 +150,7 @@ public class WebControllerEvents extends WebController {
     }
     
     @PostMapping("/updateEvent/{id}")
-    public String updateEvent(@PageableDefault(value =5) Pageable pageable,Model model, @PathVariable long id, @RequestParam String nameEvent, @RequestParam String eventDate, @RequestParam String eventLoc, @RequestParam String photoUrl, @RequestParam String wikiUrl, @RequestParam String selectedCatUpdate) {
+    public String updateEvent(@PageableDefault(value =5) Pageable pageable,Model model, @PathVariable long id, @RequestParam String nameEvent, @RequestParam String eventDate, @RequestParam String eventLoc, @RequestParam String wikiUrl, @RequestParam String selectedCatUpdate) {
     	Event event = evenService.findOne(id).get();
     	if(!nameEvent.equals("")) {
     		event.setNameEvent(nameEvent);
@@ -134,9 +161,9 @@ public class WebControllerEvents extends WebController {
     	if(!eventLoc.equals("")) {
     		event.setLocation(eventLoc);
     	}
-    	if(!photoUrl.equals("")) {
+    	/*if(!photoUrl.equals("")) {
     		event.setPhoto(photoUrl);
-    	}
+    	}*/
     	if(!wikiUrl.equals("")) {
     		event.setWiki(wikiUrl);
     	}
