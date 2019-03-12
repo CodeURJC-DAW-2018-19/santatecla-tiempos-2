@@ -42,6 +42,12 @@ public class BBDDinit {
         Event event4=  new Event("DAW","7-7-2019","Aulario 1", "Aulario 1", "hola");
         Event event5 = new Event("Seguridad", "20-12-18","Aulario 1", "Aulario 1", "muy seguro");
         Event event6 = new Event("Java", "1-1-19","Aulario 2", "Aulario 2", "No huele");
+        Event event7 = new Event("Javaa", "1-1-19","Aulario 3", "Aulario 2", "No huele");
+        Event event8 = new Event("Javaaa", "1-1-19","Aulario 3", "Aulario 2", "No huele");
+        Event event9 = new Event("Javaaa", "1-1-19","Aulario 3", "Aulario 2", "No huele");
+        Event event10 = new Event("Javaaa", "1-1-19","Aulario 3", "Aulario 2", "No huele");
+        Event event11 = new Event("Javaaa", "1-1-19","Aulario3", "Aulario 2", "No huele");
+        
 
         event1.getCategories().add(cat1);
         eveRep.save(event1);
@@ -50,6 +56,11 @@ public class BBDDinit {
         eveRep.save(event4);
         eveRep.save(event5);
         eveRep.save(event6);
+        eveRep.save(event7);
+        eveRep.save(event8);
+        eveRep.save(event9);
+        eveRep.save(event10);
+        eveRep.save(event11);
 
 
         //Times
