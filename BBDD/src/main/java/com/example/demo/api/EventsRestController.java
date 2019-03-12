@@ -3,6 +3,9 @@ package com.example.demo.api;
 
 import com.example.demo.entities.*;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Pageable;
+import org.springframework.data.web.PageableDefault;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.multipart.MultipartFile;
@@ -25,8 +28,9 @@ public class EventsRestController {
     private CategoryService catService;
 
     @GetMapping("/")
-    public Collection<Event> getEvents(){
-        return evenService.findAll();
+    public Page<Event> getEvents(@PageableDefault(value =5) Pageable pageable){
+        Page<Event>events=evenService.findAll(pageable);
+        return evenService.findAll(pageable);
     }
 
     @PostMapping("/")
@@ -39,11 +43,19 @@ public class EventsRestController {
 
     }
 
-    @GetMapping("/{id}")
-    public Optional<Event> getEventId(@PathVariable long id){
-        Event getEventId=evenService.findOne(id).get();
-        return evenService.findOne(id);
+    @GetMapping("/{search}")
+    public List<Event> getEventId(@PathVariable String search){
+
+        evenService.findByName(search, search);
+
+        return evenService.findByName(search,search);
     }
+/*
+    @GetMapping("/{loc}")
+    public List<Event>getEventLoc(@PathVariable String loc){
+        return evenService.findByLocation(loc);
+    }*/
+
 
     @DeleteMapping("/{id}")
     public Event deleteEvent(@PathVariable long id){

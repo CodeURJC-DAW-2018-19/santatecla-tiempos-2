@@ -13,6 +13,7 @@ import org.springframework.web.bind.annotation.*;
 
 import javax.annotation.PostConstruct;
 import java.util.Collection;
+import java.util.List;
 import java.util.Optional;
 
 @RestController
@@ -23,8 +24,9 @@ public class CategoriesRestController {
     private CategoryService categoryService;
 
     @GetMapping("/")
-    public Collection<Category> getCategories(){
-        return categoryService.findAll();
+    public Page<Category> getCategories(@PageableDefault(value =5) Pageable pageable){
+         Page<Category>categories=categoryService.findAll(pageable);
+        return categoryService.findAll(pageable);
     }
 
     @PostMapping("/")
@@ -34,10 +36,10 @@ public class CategoriesRestController {
         return category;
     }
 
-    @GetMapping("/{id}")
-    public Optional<Category> getCategoryId(@PathVariable long id){
-        categoryService.findOne(id).get();
-        return categoryService.findOne(id);
+    @GetMapping("/{nameCategory}")
+    public List<Category> getCategoryId(@PathVariable String nameCategory){
+        categoryService.findByName(nameCategory);
+        return categoryService.findByName(nameCategory);
     }
 
     @DeleteMapping("/{id}")

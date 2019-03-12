@@ -8,5 +8,7 @@ import org.springframework.data.jpa.repository.JpaRepository;
 public interface EventRepository extends JpaRepository<Event, Long>{
 
     List<Event> findByNameEventOrLocation(String nameEvent,String location);
+    List<Event>findByNameEvent(String nameEvent);
+    List<Event>findByLocation(String loc);
     
 }

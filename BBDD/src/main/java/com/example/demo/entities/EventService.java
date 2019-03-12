@@ -44,4 +44,12 @@ public class EventService {
         Page<Event> events=eveRep.findAll(PageRequest.of(0,10));
         return eveRep.findAll(page);
     }
+
+    public List<Event>findByNameEvent(String nameEvent){
+        return eveRep.findByNameEvent(nameEvent);
+    }
+
+    public List<Event>findByLocation(String location){
+        return eveRep.findByLocation(location);
+    }
 }

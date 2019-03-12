@@ -5,6 +5,9 @@ import com.example.demo.entities.Event;
 import com.example.demo.entities.Time;
 import com.example.demo.entities.TimeService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Pageable;
+import org.springframework.data.web.PageableDefault;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
 
@@ -19,8 +22,9 @@ public class TimeRestController {
     private TimeService timeService;
 
     @GetMapping("/")
-    public Collection<Time> getTimes(){
-        return timeService.findAll();
+    public Page<Time> getTimes(@PageableDefault(value =5) Pageable pageable){
+        Page<Time>times=timeService.findAll(pageable);
+        return timeService.findAll(pageable);
     }
 
     @PostMapping("/")
