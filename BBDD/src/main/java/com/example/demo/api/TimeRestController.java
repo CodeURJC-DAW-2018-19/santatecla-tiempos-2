@@ -4,11 +4,14 @@ import com.example.demo.entities.Category;
 import com.example.demo.entities.Event;
 import com.example.demo.entities.Time;
 import com.example.demo.entities.TimeService;
+import com.example.demo.users.User;
+import com.example.demo.users.UserComponent;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.data.web.PageableDefault;
 import org.springframework.http.HttpStatus;
+import org.springframework.security.core.annotation.AuthenticationPrincipal;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.Collection;
@@ -20,9 +23,11 @@ public class TimeRestController {
 
     @Autowired
     private TimeService timeService;
+    @Autowired
+    private UserComponent userComponent;
 
     @GetMapping("/")
-    public Page<Time> getTimes(@PageableDefault(value =5) Pageable pageable){
+    public Page<Time> getTimes(@PageableDefault(value =5) Pageable pageable, @AuthenticationPrincipal User user){
         Page<Time>times=timeService.findAll(pageable);
         return timeService.findAll(pageable);
     }

@@ -45,9 +45,8 @@ public class EventsRestController {
 
     @PostMapping("/")
     @ResponseStatus(HttpStatus.CREATED)
-    public Event saveEvent(@RequestBody Event event, MultipartFile file){
+    public Event saveEvent(@RequestBody Event event){
 
-      //foto.handleFileUpload(event,file);
         evenService.saveEvent(event);
         return event;
 
@@ -60,11 +59,6 @@ public class EventsRestController {
 
         return evenService.findByName(search,search);
     }
-/*
-    @GetMapping("/{loc}")
-    public List<Event>getEventLoc(@PathVariable String loc){
-        return evenService.findByLocation(loc);
-    }*/
 
 
     @DeleteMapping("/{id}")
