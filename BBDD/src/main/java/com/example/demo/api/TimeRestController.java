@@ -6,6 +6,7 @@ import com.example.demo.entities.Time;
 import com.example.demo.entities.TimeService;
 import com.example.demo.users.User;
 import com.example.demo.users.UserComponent;
+import com.fasterxml.jackson.annotation.JsonView;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
@@ -21,13 +22,23 @@ import java.util.Optional;
 @RequestMapping("/api/times")
 public class TimeRestController {
 
+    interface VisitanteView extends Time.Visitante{}
+
     @Autowired
     private TimeService timeService;
     @Autowired
     private UserComponent userComponent;
 
+
     @GetMapping("/")
     public Page<Time> getTimes(@PageableDefault(value =5) Pageable pageable, @AuthenticationPrincipal User user){
+        Page<Time>times=timeService.findAll(pageable);
+        return timeService.findAll(pageable);
+    }
+
+    @GetMapping("/visitante")
+    @JsonView(VisitanteView.class)
+    public Page<Time> getTimesIntervals(@PageableDefault(value =5) Pageable pageable, @AuthenticationPrincipal User user){
         Page<Time>times=timeService.findAll(pageable);
         return timeService.findAll(pageable);
     }

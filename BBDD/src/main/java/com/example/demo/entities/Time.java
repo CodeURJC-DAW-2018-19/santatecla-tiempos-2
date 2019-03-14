@@ -1,5 +1,7 @@
 package com.example.demo.entities;
 
+import com.fasterxml.jackson.annotation.JsonView;
+
 import javax.persistence.*;
 
 import java.util.ArrayList;
@@ -8,11 +10,14 @@ import java.util.List;
 @Entity
 public class Time {
 
+	public interface Visitante{}
 	@Id
 	@GeneratedValue(strategy=GenerationType.AUTO)
 	private long id;
-	
+
+	@JsonView(Visitante.class)
 	private String nameInterval;
+
 	private String startDate;
 	private String endDate;
 
