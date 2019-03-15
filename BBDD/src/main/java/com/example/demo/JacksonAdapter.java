@@ -14,7 +14,7 @@ import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
 import java.io.IOException;
 
 @Configuration
-public class Adapter implements WebMvcConfigurer {
+public class JacksonAdapter implements WebMvcConfigurer {
 
     @Bean
     public Jackson2ObjectMapperBuilder jacksonBuilder() {

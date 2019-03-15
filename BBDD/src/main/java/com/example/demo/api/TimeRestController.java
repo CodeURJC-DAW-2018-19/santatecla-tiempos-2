@@ -30,6 +30,7 @@ public class TimeRestController {
     private UserComponent userComponent;
 
 
+
     @GetMapping("/")
     public Page<Time> getTimes(@PageableDefault(value =5) Pageable pageable, @AuthenticationPrincipal User user){
         Page<Time>times=timeService.findAll(pageable);
