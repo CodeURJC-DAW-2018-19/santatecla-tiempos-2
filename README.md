@@ -153,3 +153,6 @@ The template diagrams have not been modified in this phase of the practice.
 
 ### Resource not found
 ![Screenshot](https://github.com/CodeURJC-DAW-2018-19/santatecla-tiempos-2/blob/master/Screenshots/Phase%203/404.PNG)
+### REST API documentation
+Document [Api documentation](API.md) with information about the REST API.
+
