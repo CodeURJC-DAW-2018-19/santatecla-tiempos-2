@@ -1,0 +1,38 @@
+ <table class="table" id="tablaEvents">
+    {{#events}}
+    <tr>
+        <td class="text-center">{{-index}}</td>
+        <td>{{nameEvent}}</td>
+        <td>
+        	{{#hasImage}}
+			<img src="data:image/png;base64,{{encodedImage}}"/>
+            {{/hasImage}}
+        </td>
+        <td>{{location}}</td>
+        <td>{{date}}</td>
+        {{#logged}}
+        <td class="text-right">
+            <button type="submit" rel="tooltip" class="btn btn-info categoryButton" id="deleteBin" data-toggle="modal" data-target="#ViewEvent" onClick="select({{id}})">
+                <i class="material-icons" id="categoryIconDelete">remove_red_eye</i>
+            </button>
+        </td>
+        {{/logged}}
+        {{#admin}}
+        <td class="text-right">
+            <button type="submit" rel="tooltip" class="btn btn-info categoryButton" id="deleteBin" data-toggle="modal" data-target="#ModalEventUpdate" onClick="select({{id}})">
+                <i class="material-icons" id="categoryIconDelete">edit</i>
+            </button>
+        </td>
+        <form action="/deleteEvent/{{id}}" method="post">
+            <td class="text-right">
+                <button type="submit" rel="tooltip" class="btn btn-info categoryButton" id="deleteBin">
+                    <i class="material-icons" id="categoryIconDelete">delete</i>
+                </button>
+            </td>
+        </form>
+        {{/admin}}
+    </tr>
+    {{/events}}
+
+    </tbody>
+</table>
