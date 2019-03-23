@@ -20,6 +20,7 @@ import java.util.Optional;
 
 @RestController
 @RequestMapping("/api/times")
+@CrossOrigin(origins = "http://localhost:4200")
 public class TimeRestController {
 
     interface VisitanteView extends Time.Visitante{}
