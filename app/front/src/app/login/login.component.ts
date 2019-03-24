@@ -1,4 +1,4 @@
-import {Component} from '../daw/node_modules/@angular/core';
+import {Component} from 'node_modules/@angular/core/core';
 
 @Component({
     templateUrl:'./login.component.html',

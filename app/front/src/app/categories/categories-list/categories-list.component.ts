@@ -1,4 +1,4 @@
-import {Component,OnInit}from '../../daw/node_modules/@angular/core/core';
+import {Component,OnInit}from 'node_modules/@angular/core/core';
 import {CategoriesService}from '../shared/categories.service';
 
 

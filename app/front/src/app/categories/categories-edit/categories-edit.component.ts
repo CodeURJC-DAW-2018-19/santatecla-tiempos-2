@@ -1,8 +1,8 @@
-import {Component,OnDestroy,OnInit} from '../../daw/node_modules/@angular/core';
-import {Subscription} from '../../daw/node_modules/rxjs';
-import {ActivatedRoute,Router} from '../../daw/node_modules/@angular/router';
+import {Component,OnDestroy,OnInit} from 'node_modules/@angular/core/core';
+import {Subscription} from 'node_modules/rxjs';
+import {ActivatedRoute,Router} from 'node_modules/@angular/router/router';
 import {CategoriesService} from "../shared/categories.service";
-import {NgForm} from '../../daw/node_modules/@angular/forms';
+import {NgForm} from 'node_modules/@angular/forms/forms';
 
 @Component({
     selector:'categories-edit',
