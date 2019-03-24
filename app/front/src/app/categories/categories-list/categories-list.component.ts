@@ -12,7 +12,7 @@ export class CategoriesListComponent implements OnInit{
     categories: Array<any>;
     constructor(private catSev:CategoriesService){}
     ngOnInit(){
-        this.catSev.getAll().susbscribe(data=>{
+        this.catSev.getAll().subscribe(data=>{
             this.categories=data;
         });
     }

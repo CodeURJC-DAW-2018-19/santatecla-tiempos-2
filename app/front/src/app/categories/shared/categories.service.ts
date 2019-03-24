@@ -1,6 +1,6 @@
-import {Injectable} from '../../../../../frontend/daw/node_modules/@angular/core/core';
-import {HttpClient} from '../../../../../frontend/daw/node_modules/@angular/common/http';
-import {Observable} from '../../../../../frontend/daw/node_modules/rxjs';
+import {Injectable} from 'node_modules/@angular/core/core';
+import {HttpClient} from 'node_modules/@angular/common/http';
+import {Observable} from 'node_modules/rxjs';
 
 
 @Injectable({providedIn:'root'})
