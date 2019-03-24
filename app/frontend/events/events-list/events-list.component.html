@@ -1,0 +1,38 @@
+<table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
+
+    <!--- Note that these columns can be defined in any order.
+          The actual rendered columns are set as a property on the row definition" -->
+
+    <!-- ID Column -->
+    <ng-container matColumnDef="position">
+        <th mat-header-cell *matHeaderCellDef> ID </th>
+        <td mat-cell *matCellDef="let element"> {{Event.id}} </td>
+    </ng-container>
+
+    <!-- Event Column -->
+    <ng-container matColumnDef="name">
+        <th mat-header-cell *matHeaderCellDef> Evento </th>
+        <td mat-cell *matCellDef="let element"> {{Event.nameEvent}} </td>
+    </ng-container>
+
+    <!-- Place Column -->
+    <ng-container matColumnDef="weight">
+        <th mat-header-cell *matHeaderCellDef> Lugar </th>
+        <td mat-cell *matCellDef="let element"> {{Event.location}} </td>
+    </ng-container>
+
+    <!-- Foto Column -->
+    <ng-container matColumnDef="symbol">
+        <th mat-header-cell *matHeaderCellDef> Foto </th>
+        <td mat-cell *matCellDef="let element"> Foto </td>
+    </ng-container>
+
+    <!-- Foto Column -->
+    <ng-container matColumnDef="symbol">
+        <th mat-header-cell *matHeaderCellDef> Fecha </th>
+        <td mat-cell *matCellDef="let element"> {{Event.date}} </td>
+    </ng-container>
+
+    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+    <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+</table>
