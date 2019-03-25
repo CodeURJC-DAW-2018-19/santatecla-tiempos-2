@@ -7,7 +7,7 @@ import java.util.List;
 
 
 @Entity
-    public class Category {
+public class Category {
 
         @Id
         @GeneratedValue(strategy = GenerationType.AUTO)

@@ -2,14 +2,15 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="13c461c2-5c65-43a1-ab9f-02281bc03080" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/santatecla-tiempos-2.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/santatecla-tiempos-2.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/backend/src/main/java/com/example/demo/entities/Category.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/backend/src/main/java/com/example/demo/entities/Category.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/backend/src/main/java/com/example/demo/entities/CategoryRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/backend/src/main/java/com/example/demo/entities/CategoryRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/backend/src/main/java/com/example/demo/entities/EventRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/backend/src/main/java/com/example/demo/entities/EventRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/backend/src/main/java/com/example/demo/entities/SubTimeRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/backend/src/main/java/com/example/demo/entities/SubTimeRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/backend/src/main/java/com/example/demo/entities/TimeRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/backend/src/main/java/com/example/demo/entities/TimeRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/front/src/app/app.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/app/front/src/app/app.component.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/front/src/app/app.module.ts" beforeDir="false" afterPath="$PROJECT_DIR$/app/front/src/app/app.module.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/front/src/app/categories/categories-edit/categories-edit.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/app/front/src/app/categories/categories-edit/categories-edit.component.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/front/src/app/categories/categories-edit/categories-edit.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/app/front/src/app/categories/categories-edit/categories-edit.component.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/front/src/app/categories/categories-list/categories-list.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/app/front/src/app/categories/categories-list/categories-list.component.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/front/src/app/categories/categories-list/categories-list.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/app/front/src/app/categories/categories-list/categories-list.component.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/front/src/app/categories/shared/categories.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/app/front/src/app/categories/shared/categories.service.ts" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/app/backend/target/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -24,19 +25,10 @@
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/app/front/src/app/categories/categories-list/categories-list.component.ts">
-          <provider selected="true" editor-type-id="text-editor">
-            <state>
-              <caret column="57" lean-forward="true" selection-start-column="57" selection-end-column="57" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/front/src/app/app.module.ts">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="323">
-              <caret line="23" selection-start-line="23" selection-end-line="23" />
+            <state relative-caret-position="299">
+              <caret line="26" lean-forward="true" selection-start-line="26" selection-end-line="26" />
               <folding>
                 <element signature="e#0#58#0" expanded="true" />
               </folding>
@@ -45,33 +37,38 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/front/src/app/categories/categories-list/categories-list.component.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="221">
-              <caret line="13" column="11" lean-forward="true" selection-start-line="13" selection-start-column="11" selection-end-line="13" selection-end-column="11" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/front/src/app/categories/categories-edit/categories-edit.component.ts">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="34">
-              <caret line="2" column="65" selection-start-line="2" selection-start-column="65" selection-end-line="2" selection-end-column="65" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/front/src/app/categories/categories-edit/categories-edit.component.css">
+        <entry file="file://$PROJECT_DIR$/app/front/src/app/app.component.css">
           <provider selected="true" editor-type-id="text-editor" />
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/front/src/app/categories/categories-edit/categories-edit.component.html">
+        <entry file="file://$PROJECT_DIR$/app/front/src/app/app.component.ts">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="340">
-              <caret line="20" column="11" lean-forward="true" selection-start-line="20" selection-start-column="11" selection-end-line="20" selection-end-column="11" />
+            <state relative-caret-position="170">
+              <caret line="10" lean-forward="true" selection-start-line="10" selection-end-line="10" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/front/src/app/categories/categories-list/categories-list.component.ts">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="136">
+              <caret line="8" selection-start-line="8" selection-end-line="8" />
+              <folding>
+                <element signature="e#0#59#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/front/src/app/app-routing.module.ts">
+          <provider selected="true" editor-type-id="text-editor">
+            <state>
+              <folding>
+                <element signature="e#0#41#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -81,6 +78,42 @@
           <provider selected="true" editor-type-id="text-editor">
             <state>
               <caret column="52" selection-start-column="52" selection-end-column="52" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/front/src/app/app.component.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="323">
+              <caret line="19" column="106" selection-start-line="19" selection-start-column="106" selection-end-line="19" selection-end-column="106" />
+              <folding>
+                <element signature="n#style#0;n#div#0;n#!!top" expanded="true" />
+                <element signature="n#src#0;n#img#0;n#div#0;n#!!top" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/front/src/app/app.component.spec.ts">
+          <provider selected="true" editor-type-id="text-editor">
+            <state>
+              <folding>
+                <element signature="e#0#55#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/front/src/app/categories/categories-edit/categories-edit.component.ts">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="153">
+              <caret line="9" column="49" selection-start-line="9" selection-start-column="49" selection-end-line="9" selection-end-column="49" />
+              <folding>
+                <element signature="e#0#70#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -105,7 +138,6 @@
         <option value="$PROJECT_DIR$/app/frontend/login/login.component.css" />
         <option value="$PROJECT_DIR$/app/frontend/categories/categories.component.css" />
         <option value="$PROJECT_DIR$/app/frontend/categories/categories.component.html" />
-        <option value="$PROJECT_DIR$/app/backend/src/main/java/com/example/demo/api/CategoriesRestController.java" />
         <option value="$PROJECT_DIR$/app/frontend/login/login.component.ts" />
         <option value="$PROJECT_DIR$/app/backend/src/main/java/com/example/demo/api/EventsRestController.java" />
         <option value="$PROJECT_DIR$/app/backend/src/main/java/com/example/demo/api/TimeRestController.java" />
@@ -131,13 +163,20 @@
         <option value="$PROJECT_DIR$/app/frontend/events/events-list/events-list.component.css" />
         <option value="$PROJECT_DIR$/app/front/src/app/events/events-list/events-list.component.css" />
         <option value="$PROJECT_DIR$/app/front/src/app/login/login.component.ts" />
-        <option value="$PROJECT_DIR$/app/front/src/app/app.component.html" />
         <option value="$PROJECT_DIR$/app/front/src/app/categories/categories-list/categories-list.component.html" />
-        <option value="$PROJECT_DIR$/app/front/src/app/app.module.ts" />
         <option value="$PROJECT_DIR$/app/front/src/app/categories/categories-edit/categories-edit.component.html" />
-        <option value="$PROJECT_DIR$/app/front/src/app/categories/categories-edit/categories-edit.component.ts" />
         <option value="$PROJECT_DIR$/app/front/src/app/categories/shared/categories.service.ts" />
+        <option value="$PROJECT_DIR$/app/backend/src/main/java/com/example/demo/api/CategoriesRestController.java" />
+        <option value="$PROJECT_DIR$/app/backend/src/main/java/com/example/demo/entities/EventRepository.java" />
+        <option value="$PROJECT_DIR$/app/backend/src/main/java/com/example/demo/entities/SubTimeRepository.java" />
+        <option value="$PROJECT_DIR$/app/backend/src/main/java/com/example/demo/entities/TimeRepository.java" />
+        <option value="$PROJECT_DIR$/app/backend/src/main/java/com/example/demo/entities/Category.java" />
+        <option value="$PROJECT_DIR$/app/backend/src/main/java/com/example/demo/entities/CategoryRepository.java" />
+        <option value="$PROJECT_DIR$/app/front/src/app/categories/categories-edit/categories-edit.component.ts" />
         <option value="$PROJECT_DIR$/app/front/src/app/categories/categories-list/categories-list.component.ts" />
+        <option value="$PROJECT_DIR$/app/front/src/app/app.component.ts" />
+        <option value="$PROJECT_DIR$/app/front/src/app/app.component.html" />
+        <option value="$PROJECT_DIR$/app/front/src/app/app.module.ts" />
       </list>
     </option>
   </component>
@@ -163,8 +202,8 @@
     <option name="skipTests" value="true" />
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="953" />
-    <option name="width" value="974" />
+    <option name="x" value="977" />
+    <option name="width" value="946" />
     <option name="height" value="1047" />
   </component>
   <component name="ProjectView">
@@ -196,6 +235,37 @@
               <item name="santatecla-tiempos-2" type="b2602c69:ProjectViewProjectNode" />
               <item name="santatecla-tiempos-2" type="462c0819:PsiDirectoryNode" />
               <item name="app" type="462c0819:PsiDirectoryNode" />
+              <item name="backend" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="santatecla-tiempos-2" type="b2602c69:ProjectViewProjectNode" />
+              <item name="santatecla-tiempos-2" type="462c0819:PsiDirectoryNode" />
+              <item name="app" type="462c0819:PsiDirectoryNode" />
+              <item name="backend" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="santatecla-tiempos-2" type="b2602c69:ProjectViewProjectNode" />
+              <item name="santatecla-tiempos-2" type="462c0819:PsiDirectoryNode" />
+              <item name="app" type="462c0819:PsiDirectoryNode" />
+              <item name="backend" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="santatecla-tiempos-2" type="b2602c69:ProjectViewProjectNode" />
+              <item name="santatecla-tiempos-2" type="462c0819:PsiDirectoryNode" />
+              <item name="app" type="462c0819:PsiDirectoryNode" />
+              <item name="backend" type="462c0819:PsiDirectoryNode" />
+              <item name="target" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="santatecla-tiempos-2" type="b2602c69:ProjectViewProjectNode" />
+              <item name="santatecla-tiempos-2" type="462c0819:PsiDirectoryNode" />
+              <item name="app" type="462c0819:PsiDirectoryNode" />
               <item name="front" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
@@ -221,16 +291,6 @@
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="app" type="462c0819:PsiDirectoryNode" />
               <item name="categories" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="santatecla-tiempos-2" type="b2602c69:ProjectViewProjectNode" />
-              <item name="santatecla-tiempos-2" type="462c0819:PsiDirectoryNode" />
-              <item name="app" type="462c0819:PsiDirectoryNode" />
-              <item name="front" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="app" type="462c0819:PsiDirectoryNode" />
-              <item name="categories" type="462c0819:PsiDirectoryNode" />
-              <item name="categories-edit" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="santatecla-tiempos-2" type="b2602c69:ProjectViewProjectNode" />
@@ -270,7 +330,7 @@
     <property name="RequestMappingsPanelWidth1" value="75" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1553472860460" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1553474955841" />
     <property name="editor.config.ad.shown" value="true" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/app/backend/pom.xml" />
     <property name="list.type.of.created.stylesheet" value="CSS" />
@@ -328,17 +388,26 @@
       <workItem from="1553218075531" duration="4812000" />
       <workItem from="1553368878574" duration="9110000" />
       <workItem from="1553456142584" duration="2510000" />
-      <workItem from="1553460735501" duration="1891000" />
+      <workItem from="1553460735501" duration="3688000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="21417000" />
+    <option name="totallyTimeSpent" value="23214000" />
+  </component>
+  <component name="TodoView">
+    <todo-panel id="selected-file">
+      <is-autoscroll-to-source value="true" />
+    </todo-panel>
+    <todo-panel id="all">
+      <are-packages-shown value="true" />
+      <is-autoscroll-to-source value="true" />
+    </todo-panel>
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.49671054" visible="true" weight="0.18976545" />
+      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.49671054" visible="true" weight="0.14765458" />
       <window_info id="Structure" order="1" sideWeight="0.50328946" side_tool="true" weight="0.34705228" />
       <window_info id="Designer" order="2" />
       <window_info id="Image Layers" order="3" />
@@ -354,7 +423,7 @@
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" weight="0.32936078" />
-      <window_info active="true" anchor="bottom" id="Terminal" order="7" visible="true" weight="0.4853738" />
+      <window_info active="true" anchor="bottom" id="Terminal" order="7" visible="true" weight="0.40303358" />
       <window_info anchor="bottom" id="Docker" order="8" show_stripe_button="false" />
       <window_info anchor="bottom" id="Event Log" order="9" side_tool="true" weight="0.32936078" />
       <window_info anchor="bottom" id="Messages" order="10" weight="0.32936078" />
@@ -365,7 +434,7 @@
       <window_info anchor="bottom" id="TypeScript" order="15" weight="0.32936078" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
-      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
+      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.24945295" />
       <window_info anchor="right" id="Maven" order="3" weight="0.13785557" />
       <window_info anchor="right" id="Palette" order="4" />
       <window_info anchor="right" id="Capture Analysis" order="5" />
@@ -426,13 +495,6 @@
     <entry file="file://$PROJECT_DIR$/app/front/src/app/categories/categories-list/categories-list.component.css">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/backend/src/main/java/com/example/demo/api/CategoriesRestController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-51">
-          <caret line="20" selection-start-line="20" selection-end-line="20" selection-end-column="47" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/package.json" />
     <entry file="file://$PROJECT_DIR$/app/front/src/app/events/events-list/events-list.component.html">
       <provider selected="true" editor-type-id="text-editor">
@@ -465,17 +527,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/front/src/app/app.component.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="272">
-          <caret line="16" column="42" selection-start-line="16" selection-start-column="42" selection-end-line="16" selection-end-column="42" />
-          <folding>
-            <element signature="n#style#0;n#div#0;n#!!top" expanded="true" />
-            <element signature="n#src#0;n#img#0;n#div#0;n#!!top" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/front/src/app/login/login.component.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="221">
@@ -500,20 +551,51 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/front/src/app/app.module.ts">
+    <entry file="file://$PROJECT_DIR$/app/backend/src/main/java/com/example/demo/api/CategoriesRestController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="323">
-          <caret line="23" selection-start-line="23" selection-end-line="23" />
+        <state relative-caret-position="102">
+          <caret line="20" column="4" selection-start-line="20" selection-end-line="20" selection-end-column="47" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/backend/src/main/java/com/example/demo/entities/EventRepository.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="51">
+          <caret line="8" column="47" selection-start-line="8" selection-start-column="47" selection-end-line="8" selection-end-column="47" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/backend/src/main/java/com/example/demo/entities/SubTimeRepository.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="85">
+          <caret line="5" column="47" selection-start-line="5" selection-start-column="47" selection-end-line="5" selection-end-column="47" />
           <folding>
-            <element signature="e#0#58#0" expanded="true" />
+            <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/front/src/app/categories/categories-edit/categories-edit.component.ts">
+    <entry file="file://$PROJECT_DIR$/app/backend/src/main/java/com/example/demo/entities/TimeRepository.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="34">
-          <caret line="2" column="65" selection-start-line="2" selection-start-column="65" selection-end-line="2" selection-end-column="65" />
+        <state relative-caret-position="68">
+          <caret line="7" column="47" selection-start-line="7" selection-start-column="47" selection-end-line="7" selection-end-column="47" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/backend/src/main/java/com/example/demo/entities/Category.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="119">
+          <caret line="7" lean-forward="true" selection-start-line="7" selection-end-line="7" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/backend/src/main/java/com/example/demo/entities/CategoryRepository.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="68">
+          <caret line="9" selection-start-line="9" selection-end-line="9" />
         </state>
       </provider>
     </entry>
@@ -524,10 +606,80 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/front/src/app/categories/categories-list/categories-list.component.ts">
+    <entry file="file://$PROJECT_DIR$/app/front/src/app/categories/categories-edit/categories-edit.component.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="153">
+          <caret line="9" column="49" selection-start-line="9" selection-start-column="49" selection-end-line="9" selection-end-column="49" />
+          <folding>
+            <element signature="e#0#70#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/front/angular.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-1617" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/front/package.json">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/front/src/app/app.component.spec.ts">
       <provider selected="true" editor-type-id="text-editor">
         <state>
-          <caret column="57" lean-forward="true" selection-start-column="57" selection-end-column="57" />
+          <folding>
+            <element signature="e#0#55#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/front/src/app/app.component.css">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/front/src/app/app.component.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="323">
+          <caret line="19" column="106" selection-start-line="19" selection-start-column="106" selection-end-line="19" selection-end-column="106" />
+          <folding>
+            <element signature="n#style#0;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#src#0;n#img#0;n#div#0;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/front/src/app/categories/categories-list/categories-list.component.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="136">
+          <caret line="8" selection-start-line="8" selection-end-line="8" />
+          <folding>
+            <element signature="e#0#59#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/front/src/app/app-routing.module.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <folding>
+            <element signature="e#0#41#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/front/src/app/app.component.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="170">
+          <caret line="10" lean-forward="true" selection-start-line="10" selection-end-line="10" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/front/src/app/app.module.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="299">
+          <caret line="26" lean-forward="true" selection-start-line="26" selection-end-line="26" />
+          <folding>
+            <element signature="e#0#58#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
