@@ -2,10 +2,10 @@
     <mat-card-title>Categorias</mat-card-title>
     <mat-card-content>
         <mat-list>
-            <mat-list-item *ngFor="categories">
+            <mat-list-item *ngFor="categorias">
                 <h3 mat-line>{{category.nameCategory}}</h3>
                 <h3 mat-line>
-                    <a mat-button [routerLink]="['/{nameCategory}', category.id]">{{category.nameCategory}}</a>
+                    <a mat-button [routerLink]="['/categories-edit', category.id]">{{category.nameCategory}}</a>
                 </h3>
             </mat-list-item>
         </mat-list>

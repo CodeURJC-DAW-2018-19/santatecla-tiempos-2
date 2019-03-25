@@ -1,6 +1,6 @@
-import {Component,OnDestroy,OnInit} from 'node_modules/@angular/core/core';
+import {Component,OnDestroy,OnInit} from 'node_modules/@angular/core';
 import {Subscription} from 'node_modules/rxjs';
-import {ActivatedRoute,Router} from 'node_modules/@angular/router/router';
+import {ActivatedRoute,Router} from 'node_modules/@angular/router';
 import {CategoriesService} from "../shared/categories.service";
 import {NgForm} from 'node_modules/@angular/forms/forms';
 

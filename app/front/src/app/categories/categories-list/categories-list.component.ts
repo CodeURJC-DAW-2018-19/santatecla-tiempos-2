@@ -1,11 +1,11 @@
-import {Component,OnInit}from 'node_modules/@angular/core/core';
+import {Component,OnInit}from 'node_modules/@angular/core';
 import {CategoriesService}from '../shared/categories.service';
 
 
 @Component({
     selector:'categories-list',
-    templateUrl:'categories.component.html',
-    styleUrls:['categories.component.css']
+    templateUrl:'./categories-list.component.html',
+    styleUrls:['./categories-list.component.css']
 })
 
 export class CategoriesListComponent implements OnInit{
