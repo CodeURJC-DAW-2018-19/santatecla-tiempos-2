@@ -5,15 +5,15 @@ import {MatDialog,MatDialogRef} from "@angular/material";
 import {error} from "@angular/compiler/src/util";
 
 @Component({
-  selector:'login',
-  templateUrl:'./login.component.html'
+  selector: 'login',
+  templateUrl: './login.component.html',
 })
 
 export class LoginComponent{
   @ViewChild('loginDialog')loginDialog:TemplateRef<any>;
   dialogRef:MatDialogRef<any,any>;
 
-  constructor(public dialog:MatDialog,private router,private loginService:LoginService){}
+  constructor(public dialog:MatDialog,private router:Router,private loginService:LoginService){}
 
   login(event:any,user:string,pass:string){
     event.preventDefault();

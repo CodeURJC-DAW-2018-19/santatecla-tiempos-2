@@ -1,11 +1,11 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-
+import { MatIconRegistry } from '@angular/material/icon';
 import { AppComponent } from './app.component';
-
+import { DomSanitizer } from '@angular/platform-browser';
 import {FormsModule} from "@angular/forms";
 import { HttpModule, JsonpModule } from '@angular/http';
-
+import { NgxChartsModule } from '@swimlane/ngx-charts';
 import {CategoryService} from "./category.service";
 import {routing} from "./app.routing";
 import {
@@ -108,6 +108,7 @@ import {HttpClientModule} from "@angular/common/http";
     CovalentDataTableModule,
     CovalentMessageModule,
     /** Additional **/
+    NgxChartsModule,
     routing,
 
 
@@ -117,4 +118,8 @@ import {HttpClientModule} from "@angular/common/http";
   bootstrap: [AppComponent],
   declarations:[AppComponent,CategoryFormComponent,CategoryDetailComponent,LoginComponent,CategoryListComponent],
 })
-export class AppModule { }
+export class AppModule {
+  constructor(private matIconRegistry: MatIconRegistry, private domSanitizer: DomSanitizer) {
+    matIconRegistry.addSvgIconSet(domSanitizer.bypassSecurityTrustResourceUrl('/assets/symbol-defs.svg'));
+  }
+}
