@@ -1,8 +1,8 @@
 import {Component,ViewChild,TemplateRef} from "@angular/core";
 import {Router} from "@angular/router";
-import {LoginService} from "./login.service";
+import {LoginService} from "./auth/login.service";
 import {MatDialog,MatDialogRef} from "@angular/material";
-import {error} from "@angular/compiler/src/util";
+
 
 @Component({
   selector: 'login',

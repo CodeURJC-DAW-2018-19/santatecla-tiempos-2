@@ -2,7 +2,7 @@ import {Component,OnInit} from "@angular/core";
 import {Router} from "@angular/router";
 
 import {Category,CategoryService} from"./category.service";
-import {LoginService} from "./login.service";
+import {LoginService} from "./auth/login.service";
 
 @Component({
   templateUrl:'category-list.component.html'

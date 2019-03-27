@@ -3,7 +3,7 @@ import {HttpClient,HttpHeaders,HttpErrorResponse} from "@angular/common/http";
 import {map} from "rxjs/operators";
 import {utf8Encode} from "@angular/compiler/src/util";
 
-const URL = "https://localhost:8080/api";
+const URL = '/api';
 
 export interface User {
   id?:number;
@@ -78,12 +78,18 @@ export class LoginService{
       }),
     );
   }
+
+  private setCurrentUser(user: User) {
+    this.isLogged = true;
+    this.user = user;
+    this.isAdmin = this.user.rol.indexOf('ROLE_ADMIN') !== -1;
+  }
+
+  removeCurrentUser() {
+    localStorage.removeItem('currentUser');
+    this.isLogged = false;
+    this.isAdmin = false;
+  }
 }
 
-function utf8_to_b64(str) {
-  return btoa(
-    encodeURIComponent(str).replace(/%([0-9A-F]{2})/g, function(match, p1) {
-      return String.fromCharCode(<any>'0x' + p1);
-    }),
-  );
-}
+

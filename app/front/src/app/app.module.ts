@@ -51,7 +51,7 @@ import {
 } from '@covalent/core';
 import {CategoryFormComponent} from "./category-form.component";
 import {CategoryDetailComponent} from "./category-detail.component";
-import {LoginService} from "./login.service";
+import {LoginService} from "./auth/login.service";
 import {LoginComponent} from "./login.component";
 import {CategoryListComponent} from "./category-list.component";
 import {BrowserAnimationsModule} from "@angular/platform-browser/animations";

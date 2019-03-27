@@ -2,14 +2,14 @@ import {Injectable} from "@angular/core";
 import {HttpClient,HttpHeaders} from "@angular/common/http";
 import {Observable} from "rxjs";
 import {catchError} from "rxjs/operators";
-import {LoginService}from "./login.service";
+import {LoginService}from "./auth/login.service";
 
 export interface Category {
   id?:number;
   nameCategory:string;
 }
 
-const URL="https://localhost:8080/api/categories/";
+const URL='/api/categories';
 
 @Injectable()
 export class CategoryService{
