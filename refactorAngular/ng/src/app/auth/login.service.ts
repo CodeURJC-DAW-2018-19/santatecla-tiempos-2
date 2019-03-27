@@ -7,7 +7,7 @@ const URL = '/api';
 export interface User {
   id?: number;
   name: string;
-  roles: string[];
+  rol: string[];
   authdata: string;
 }
 
@@ -36,7 +36,7 @@ export class LoginService {
       'X-Requested-With': 'XMLHttpRequest',
     });
 
-    return this.http.get<User>('/api/logIn', { headers })
+    return this.http.get<User>('/api/login', { headers })
         .pipe(map(user => {
 
           if (user) {
@@ -51,7 +51,7 @@ export class LoginService {
 
   logOut() {
 
-    return this.http.get(URL + '/logOut').pipe(
+    return this.http.get(URL + '/logout').pipe(
         map(response => {
           this.removeCurrentUser();
           return response;
@@ -62,7 +62,7 @@ export class LoginService {
   private setCurrentUser(user: User) {
     this.isLogged = true;
     this.user = user;
-    this.isAdmin = this.user.roles.indexOf('ROLE_ADMIN') !== -1;
+    this.isAdmin = this.user.rol.indexOf('ROLE_ADMIN') !== -1;
   }
 
   removeCurrentUser() {

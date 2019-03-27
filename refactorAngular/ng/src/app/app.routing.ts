@@ -8,7 +8,7 @@ const appRoutes=[
   {path:'categories/new',component:CategoryFormComponent},
   {path:'categories/:id',component:CategoryDetailComponent},
   {path:'categories/edit/:id',component: CategoryFormComponent},
-  {path: '',redirectTo:'category',pathMatch:'full'}
+  {path: '',redirectTo:'categories',pathMatch:'full'}
 ]
 
 export const routing=RouterModule.forRoot(appRoutes);

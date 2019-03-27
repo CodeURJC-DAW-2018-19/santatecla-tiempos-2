@@ -16,6 +16,7 @@ export class CategoryListComponent implements OnInit{
   }
 
   ngOnInit(){
+    console.log("pidiendo datos");
     this.service.getCategories().subscribe(
       categories=>this.categories=categories,
       error=>console.log(error)

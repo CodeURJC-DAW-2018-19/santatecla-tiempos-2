@@ -1,7 +1,7 @@
 import {Injectable} from "@angular/core";
 import {HttpClient,HttpHeaders} from "@angular/common/http";
 import {Observable} from "rxjs";
-import {catchError} from "rxjs/operators";
+import {catchError, map} from "rxjs/operators";
 import {LoginService}from "./auth/login.service";
 
 export interface Category {
@@ -16,8 +16,11 @@ export class CategoryService{
   constructor(private loginService:LoginService,private http:HttpClient) {}
 
   getCategories():Observable<Category[]>{
-    return this.http.get<Category[]>(URL,{withCredentials:true})
-      .pipe(catchError((error)=>this.handleError(error)));
+    console.log("pidiendo datos");
+    return this.http.get<any>(URL,{withCredentials:true})
+      .pipe(
+          map(result => result.content),
+          catchError((error)=>this.handleError(error)));
   }
 
   getCategory(id:number|string):Observable<Category>{
