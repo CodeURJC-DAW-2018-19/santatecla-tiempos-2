@@ -1,0 +1,137 @@
+#navBar {
+    background-color: #BE6245 !important;
+    box-shadow: none;
+}
+
+#navBarCollap {
+    padding-left: 0px;
+}
+
+#navBarContainer {
+    margin-left: 0px;
+    padding-left: 0px;
+}
+
+.nav-item a:hover {
+    background-color: #FFD9CD;
+
+}
+
+.nav-item:hover {
+    color: black;
+}
+
+body {
+    background-color: #FFEFEA;
+}
+
+.active {
+    background-color: #FFD9CD;
+    color: black;
+}
+
+#categoryIcon {
+    font-size: 1.1rem;
+    padding-top: 5px;
+}
+
+#categoryIconT {
+    font-size: 1.1rem;
+}
+
+.categoryButton {
+    height: 30px;
+    width: 30px;
+}
+
+#categoryButtonAdd {
+    height: 4.0em;
+    width: 4.0em;
+    padding: 5px;
+    margin-left: 2rem;
+
+}
+
+/* Intervalos concretos */
+
+.searchInterval {
+    display: block;
+    margin-left: 3.0em;
+    background-color: #FFD9CD;
+    width: 50%;
+    
+}
+
+.searchIntervalItem {
+    margin-left: 10px;
+    margin-bottom: 5px;
+}
+
+#searchIntervalInput {
+    width: 90%;
+}
+
+.form-control {
+    background-image: linear-gradient(to top, #ff9300 2px, rgba(156, 39, 176, 0) 2px), linear-gradient(to top, #d2d2d2 1px, rgba(210, 210, 210, 0) 1px);
+}
+
+
+.card {
+    background-color: #FFD9CD;
+}
+
+.cardInterv {
+    width: 55%;
+    margin-left: 3.0em;
+
+}
+
+.intervMain {
+    display: flex;
+}
+
+.fechas {
+    display: flex;
+    margin: 2.0em;
+    width: 50%;
+}
+
+.buttonInterv {
+    display: block;
+    float: right;
+    margin: 2.0em;
+}
+
+.buttonList {
+    list-style-type: none;
+}
+
+.buttonListInt {
+    width: inherit;
+}
+
+.modal-body {
+    overflow: auto;
+}
+
+.col {
+    font-size: 2rem;
+}
+
+.row {
+    padding: 1rem;
+}
+.btn.btn-info{
+	font-size:10px;
+	box-shadow: none;
+	border-radius:10px;
+}
+.btn-info{
+	background-color:#C80000 !important;
+	border-color:#C80000 !important;
+	box-shadow:none;
+}
+.btn.btn-info:hover{
+	box-shadow: none;
+
+}
