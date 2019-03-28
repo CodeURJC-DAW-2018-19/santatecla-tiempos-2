@@ -1,0 +1,33 @@
+<mat-card>
+    <mat-card-title>
+        <div layout="row" layout-align="start center">
+            <span flex>Lista de Eventos</span>
+        </div>
+    </mat-card-title>
+    <mat-divider></mat-divider>
+    <mat-card-content>
+        <div>
+            <mat-nav-list *ngIf="loginService.isLogged">
+                <a *ngFor="let event of events" mat-list-item [routerLink]="['/events', event.id]">
+                    {{ event.nameEvent }}
+                </a>
+            </mat-nav-list>
+
+            <mat-nav-list *ngIf="!loginService.isLogged">
+                <mat-list-item [ngStyle]="{ cursor: 'auto' }" *ngFor="let event of events">
+                    {{ event.nameEvent }}
+                    {{event.date}}
+                    {{ event.location}}
+                    {{event.wiki}}
+                </mat-list-item>
+            </mat-nav-list>
+        </div>
+
+        <div layout="column" layout-align="center end" *ngIf="loginService.isLogged && loginService.isAdmin">
+            <mat-divider inset="true"></mat-divider>
+            <button mat-raised-button color="accent" class="push-top-sm" *ngIf="loginService.isLogged" (click)="newEvent()">
+                <mat-icon>add</mat-icon> New
+            </button>
+        </div>
+    </mat-card-content>
+</mat-card>

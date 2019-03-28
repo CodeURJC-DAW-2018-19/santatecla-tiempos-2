@@ -1,0 +1,24 @@
+<div *ngIf="event">
+    <mat-card>
+        <mat-card-title> Eventos "{{ event.nameEvent }}"</mat-card-title>
+        <mat-divider></mat-divider>
+        <mat-card-content>
+            <div>
+                <p>{{event.date}}</p>
+                <p>{{event.location}}</p>
+                <p>{{event.wiki}}</p>
+            </div>
+            <div layout="row" layout-align="end center">
+                <ng-container *ngIf="loginService.isLogged && loginService.isAdmin">
+                    <button mat-raised-button color="accent" (click)="removeEvent()"><mat-icon>delete</mat-icon>Remove</button>
+                    <button mat-raised-button color="accent" (click)="editEvent()" class="push-left-sm">
+                        <mat-icon>edit</mat-icon>Edit
+                    </button>
+                </ng-container>
+                <button mat-raised-button color="accent" (click)="goToEvents()" class="push-left-sm">
+                    <mat-icon>list</mat-icon>All Events
+                </button>
+            </div>
+        </mat-card-content>
+    </mat-card>
+</div>

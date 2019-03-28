@@ -13,13 +13,13 @@ export class CategoryDetailComponent{
 
   constructor(private router:Router,activatedRoute:ActivatedRoute,public service:CategoryService,public loginService:LoginService, private _dialogService: TdDialogService){
     const id=activatedRoute.snapshot.params['id'];
-    service.getCategory(id).subscribe((category)=>this.category=category),(error)=>console.error(error);
+    service.getCategory(id).subscribe((category)=>(this.category=category),(error)=>console.error(error));
   }
 
   removeCategory(){
 
     this._dialogService.openConfirm({
-      message: 'Do you want to remove this book?',
+      message: 'Borrar categoria',
       title: 'Confirm',
       width: '500px',
       height: '175px'
@@ -32,10 +32,11 @@ export class CategoryDetailComponent{
     });
   }
   editCategory(){
-    this.router.navigate(['/category/edit',this.category.id]);
+    console.log("entra");
+    this.router.navigate(['/categories/edit',this.category.id]);
   }
 
   goToCategories(){
-    this.router.navigate(['/category']);
+    this.router.navigate(['/categories']);
   }
 }

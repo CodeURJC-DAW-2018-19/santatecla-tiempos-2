@@ -60,6 +60,10 @@ import {HTTP_INTERCEPTORS, HttpClientModule} from "@angular/common/http";
 import {HashLocationStrategy, LocationStrategy} from "@angular/common";
 import {ErrorInterceptor} from "./auth/error.interceptor";
 import {BasicAuthInterceptor} from "./auth/auth.interceptor";
+import {EventService} from "./event.service";
+import {EventListComponent} from "./event-list.component";
+import {EventFormComponent} from "./event-form.component";
+import {EventDetailComponent} from "./event-detail.component";
 
 
 @NgModule({
@@ -117,12 +121,19 @@ import {BasicAuthInterceptor} from "./auth/auth.interceptor";
 
 
   ],
-  providers: [CategoryService,LoginService,
+  providers: [CategoryService,LoginService,EventService,
     { provide: HTTP_INTERCEPTORS, useClass: BasicAuthInterceptor, multi: true },
     { provide: HTTP_INTERCEPTORS, useClass: ErrorInterceptor, multi: true },
     { provide: LocationStrategy, useClass: HashLocationStrategy }],
   bootstrap: [AppComponent],
-  declarations:[AppComponent,CategoryFormComponent,CategoryDetailComponent,LoginComponent,CategoryListComponent],
+  declarations:[AppComponent,
+    CategoryFormComponent,
+    CategoryDetailComponent,
+    LoginComponent,
+    CategoryListComponent,
+    EventListComponent,
+    EventFormComponent,
+    EventDetailComponent],
 })
 export class AppModule {
   constructor(private matIconRegistry: MatIconRegistry, private domSanitizer: DomSanitizer) {

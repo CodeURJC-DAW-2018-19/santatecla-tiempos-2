@@ -26,8 +26,8 @@ export class CategoryFormComponent{
 
   save(){
     this.service.saveCategory(this.category).subscribe(
-      (book)=>{
-        console.log('Category saved!',book);
+      (category)=>{
+        console.log('Category saved!',category);
       },
       (error:Error)=>console.error('Error creating new category: '+error),
     );

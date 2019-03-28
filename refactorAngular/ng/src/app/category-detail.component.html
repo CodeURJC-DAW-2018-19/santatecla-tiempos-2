@@ -3,6 +3,9 @@
     <mat-card-title> Categoria "{{ category.nameCategory }}"</mat-card-title>
     <mat-divider></mat-divider>
     <mat-card-content>
+      <div>
+        <p>{{ category.nameCategory }}</p>
+      </div>
       <div layout="row" layout-align="end center">
         <ng-container *ngIf="loginService.isLogged && loginService.isAdmin">
           <button mat-raised-button color="accent" (click)="removeCategory()"><mat-icon>delete</mat-icon>Remove</button>

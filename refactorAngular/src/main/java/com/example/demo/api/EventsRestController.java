@@ -60,7 +60,11 @@ public class EventsRestController {
 
         return evenService.findByName(search,search);
     }
-
+    @GetMapping("/{id}")
+    public Optional<Event> getIdEvents(@PathVariable long id){
+        Event getIdEvents=evenService.findOne(id).get();
+        return evenService.findOne(id);
+    }
 
     @DeleteMapping("/{id}")
     public Event deleteEvent(@PathVariable long id){

@@ -1,0 +1,72 @@
+<div *ngIf="event">
+    <mat-card>
+        <mat-card-title> Category "{{ event.nameEvent }}"</mat-card-title>
+        <mat-divider></mat-divider>
+        <mat-card-content>
+            <form #eventForm="ngForm">
+                <div *ngIf="category.id"><label>Id: </label>{{ event.id }}</div>
+                <div>
+                    <mat-form-field>
+                        <input
+                                matInput
+                                [(ngModel)]="event.nameEvent"
+                                placeholder="Nombre de la categoria"
+                                #eventFormComponent
+                                #eventFormControl="ngModel"
+                                name="name"
+                                required
+                        />
+                    </mat-form-field>
+                    <mat-form-field>
+                        <input type="date"
+                                matInput
+                                [(ngModel)]="event.date"
+                                placeholder="Introduzca una fecha"
+                                #eventFormComponent
+                                #eventFormControl="ngModel"
+                                name="name"
+                                required
+                        />
+                    </mat-form-field>
+                    <mat-form-field>
+                        <input
+                               matInput
+                               [(ngModel)]="event.location"
+                               placeholder="Introduzca un lugar"
+                               #eventFormComponent
+                               #eventFormControl="ngModel"
+                               name="name"
+                               required
+                        />
+                    </mat-form-field>
+                    <mat-form-field>
+                        <input
+                               matInput
+                               [(ngModel)]="event.wiki"
+                               placeholder="Introduzca un wiki"
+                               #eventFormComponent
+                               #eventFormControl="ngModel"
+                               name="name"
+                               required
+                        />
+                    </mat-form-field>
+                </div>
+            </form>
+        </mat-card-content>
+        <mat-divider></mat-divider>
+        <mat-card-actions>
+            <div layout="row" layout-align="end center">
+                <button mat-raised-button color="accent" (click)="cancel()">Cancel</button>
+                <button
+                        mat-raised-button
+                        color="accent"
+                        (click)="save()"
+                        [disabled]="eventForm === undefined || (eventForm && !eventForm.valid)"
+                        class="push-left-sm"
+                >
+                    Save
+                </button>
+            </div>
+        </mat-card-actions>
+    </mat-card>
+</div>
