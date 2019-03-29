@@ -24,7 +24,8 @@ export class CategoryService{
   }
 
   getCategory(id:number|string):Observable<Category>{
-    return this.http.get<Category>(URL+id,{withCredentials:true})
+    console.log("entra en categoria unica");
+    return this.http.get<any>(URL+id,{withCredentials:true})
       .pipe(catchError((error)=>this.handleError(error)));
   }
 

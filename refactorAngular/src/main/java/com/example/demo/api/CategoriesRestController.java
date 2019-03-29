@@ -37,17 +37,13 @@ public class CategoriesRestController {
         return category;
     }
 
-    @GetMapping("/{nameCategory}")
-    public List<Category> getCategoryId(@PathVariable String nameCategory){
-        categoryService.findByName(nameCategory);
-        return categoryService.findByName(nameCategory);
-    }
-
     @GetMapping("/{id}")
-    public Optional<Category> getIdCategory(@PathVariable long id){
-        Category getIdCategory=categoryService.findOne(id).get();
+    public Optional<Category> getCategoryId(@PathVariable long id){
+        categoryService.findOne(id).get();
         return categoryService.findOne(id);
     }
+
+
 
     @DeleteMapping("/{id}")
     public Category deleteCategory(@PathVariable long id){
