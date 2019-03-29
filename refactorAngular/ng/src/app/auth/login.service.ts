@@ -27,7 +27,7 @@ export class LoginService {
     }
   }
 
-  logIn(user: string, pass: string) {
+  login(user: string, pass: string) {
 
     let auth = window.btoa(user + ':' + pass);
 
@@ -49,7 +49,7 @@ export class LoginService {
         }));
   }
 
-  logOut() {
+  logout() {
 
     return this.http.get(URL + '/logout').pipe(
         map(response => {

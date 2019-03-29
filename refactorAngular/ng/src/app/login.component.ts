@@ -17,7 +17,7 @@ export class LoginComponent{
 
   login(event:any,user:string,pass:string){
     event.preventDefault();
-    this.loginService.logIn(user, pass).subscribe((u)=> {
+    this.loginService.login(user, pass).subscribe((u)=> {
       console.log(u);
       this.dialogRef.close();
     },
@@ -26,7 +26,7 @@ export class LoginComponent{
   }
 
   logout(){
-    this.loginService.logOut().subscribe(
+    this.loginService.logout().subscribe(
       (response)=>{
         this.router.navigate(['/']);
       },
