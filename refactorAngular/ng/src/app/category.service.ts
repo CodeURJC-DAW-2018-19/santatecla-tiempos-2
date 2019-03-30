@@ -4,6 +4,7 @@ import {Observable} from "rxjs";
 import {catchError, map} from "rxjs/operators";
 import {LoginService}from "./auth/login.service";
 
+
 export interface Category {
   id?:number;
   nameCategory:string;
@@ -13,6 +14,8 @@ const URL='/api/categories/';
 
 @Injectable()
 export class CategoryService{
+
+  searchTerm:string;
   constructor(private loginService:LoginService,private http:HttpClient) {}
 
   getCategories():Observable<Category[]>{

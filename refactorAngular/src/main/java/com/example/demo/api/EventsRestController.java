@@ -52,14 +52,14 @@ public class EventsRestController {
         return event;
 
     }
-
+/*
     @GetMapping("/{search}")
     public List<Event> getEventId(@PathVariable String search){
 
         evenService.findByName(search, search);
 
         return evenService.findByName(search,search);
-    }
+    }*/
     @GetMapping("/{id}")
     public Optional<Event> getIdEvents(@PathVariable long id){
         Event getIdEvents=evenService.findOne(id).get();

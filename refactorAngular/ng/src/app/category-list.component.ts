@@ -26,4 +26,6 @@ export class CategoryListComponent implements OnInit{
   newCategory(){
     this.router.navigate(['/categories/new'])
   }
+
+
 }

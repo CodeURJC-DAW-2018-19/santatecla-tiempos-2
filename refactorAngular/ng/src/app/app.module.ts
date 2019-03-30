@@ -66,6 +66,7 @@ import {EventFormComponent} from "./event-form.component";
 import {EventDetailComponent} from "./event-detail.component";
 
 
+
 const appRoutes:Routes=[
   {path:'categories',component:CategoryListComponent},
   {path:'events',component:EventListComponent},
@@ -138,7 +139,8 @@ const appRoutes:Routes=[
     CategoryListComponent,
     EventListComponent,
     EventFormComponent,
-    EventDetailComponent],
+    EventDetailComponent]
+
 })
 export class AppModule {
   constructor(private matIconRegistry: MatIconRegistry, private domSanitizer: DomSanitizer) {

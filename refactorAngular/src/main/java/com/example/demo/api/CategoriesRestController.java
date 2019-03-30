@@ -59,4 +59,10 @@ public class CategoriesRestController {
         categoryService.saveCategory(updateCategory);
         return updateCategory;
     }
+
+    @GetMapping("/{nameCategory}")
+    public List<Category> getCategoryId(@PathVariable String nameCategory){
+        categoryService.findByName(nameCategory);
+        return categoryService.findByName(nameCategory);
+    }
 }
