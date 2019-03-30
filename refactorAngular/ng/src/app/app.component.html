@@ -1,7 +1,17 @@
 <td-layout [mode]="(media.registerQuery('gt-sm') | async) ? 'side' : 'push'"
            [sidenavWidth]="(media.registerQuery('gt-xs') | async) ? '240px' : '100%'" [class]="activeTheme">
+  <td-layout-nav>
+  <nav mat-tab-nav-bar>
+    <a mat-tab-link
+       *ngFor="let link of navLinks"
+       [routerLink]="link.path"
+       routerLinkActive #rla="routerLinkActive"
+       [active]="rla.isActive">
+      {{link.label}}
+    </a>
+  </nav>
 
-  <td-layout-nav [toolbarTitle]="(media.registerQuery('gt-xs') | async) ? 'Categorias' : ''" navigationRoute="/">
+  <router-outlet></router-outlet>
 
     <div td-toolbar-content layout="row" layout-align="start center" flex>
       <span flex *ngIf="!searchBox.searchVisible"></span>

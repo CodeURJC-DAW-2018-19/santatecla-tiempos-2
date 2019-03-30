@@ -1,6 +1,6 @@
 <div *ngIf="category">
   <mat-card>
-    <mat-card-title> Category "{{ category.nameCategory }}"</mat-card-title>
+    <mat-card-title> Nombre de la categoria:  "{{ category.nameCategory }}"</mat-card-title>
     <mat-divider></mat-divider>
     <mat-card-content>
       <form #categoryForm="ngForm">
@@ -13,7 +13,7 @@
               placeholder="Nombre de la categoria"
               #categoryFormComponent
               #categoryFormControl="ngModel"
-              name="nameCategory"
+              name="category"
               required
             />
           </mat-form-field>

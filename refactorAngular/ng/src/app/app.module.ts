@@ -55,7 +55,7 @@ import {LoginService} from "./auth/login.service";
 import {LoginComponent} from "./login.component";
 import {CategoryListComponent} from "./category-list.component";
 import {BrowserAnimationsModule} from "@angular/platform-browser/animations";
-import {RouterModule} from "@angular/router";
+import {RouterModule, Routes} from "@angular/router";
 import {HTTP_INTERCEPTORS, HttpClientModule} from "@angular/common/http";
 import {HashLocationStrategy, LocationStrategy} from "@angular/common";
 import {ErrorInterceptor} from "./auth/error.interceptor";
@@ -66,13 +66,18 @@ import {EventFormComponent} from "./event-form.component";
 import {EventDetailComponent} from "./event-detail.component";
 
 
+const appRoutes:Routes=[
+  {path:'categories',component:CategoryListComponent},
+  {path:'events',component:EventListComponent},
+];
+
 @NgModule({
 
   imports: [
     BrowserModule,
     BrowserAnimationsModule,
     FormsModule,
-    RouterModule.forRoot([]),
+   RouterModule.forRoot(appRoutes,{enableTracing:true}),//debug
     HttpClientModule,
     JsonpModule,
     /** Material Modules */

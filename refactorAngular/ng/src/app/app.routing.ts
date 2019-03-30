@@ -19,6 +19,6 @@ const appRoutes=[
   {path:'events/:id',component:EventDetailComponent},
   //ruta usada por defecto a la hora de abrir la pagina
   {path: '',redirectTo:'categories',pathMatch:'full'}
-]
+];
 
 export const routing=RouterModule.forRoot(appRoutes);

@@ -11,6 +11,12 @@ import { TdMediaService, tdRotateAnimation } from '@covalent/core';
 })
 export class AppComponent implements AfterViewInit {
 
+  navLinks=[
+      {path:'categories',label:'Category'},
+      {path:'events',label:'Events'}
+  ];
+
+
   constructor(
     public media: TdMediaService,
     public dialog: MatDialog,
