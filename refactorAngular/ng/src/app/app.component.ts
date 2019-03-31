@@ -15,7 +15,8 @@ export class AppComponent implements AfterViewInit {
 
   navLinks=[
       {path:'categories',label:'Categories'},
-      {path:'events',label:'Events'}
+      {path:'events',label:'Events'},
+      {path:'times',label:'Times'}
   ];
 
 

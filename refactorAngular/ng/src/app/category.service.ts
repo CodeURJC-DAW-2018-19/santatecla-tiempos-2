@@ -14,13 +14,13 @@ const URL='/api/categories/';
 
 @Injectable()
 export class CategoryService{
-
+  private baseUrl: string="https://localhost:8443";
   searchTerm:string;
   constructor(private loginService:LoginService,private http:HttpClient) {}
 
-  getCategories():Observable<Category[]>{
+  getCategories(page: number):Observable<Category[]>{
     console.log("pidiendo datos");
-    return this.http.get<any>(URL,{withCredentials:true})
+    return this.http.get<any>(this.baseUrl + '/?page='+ page,{withCredentials:true})
       .pipe(
           map(result => result.content),
           catchError((error)=>this.handleError(error)));

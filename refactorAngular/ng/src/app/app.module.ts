@@ -66,6 +66,7 @@ import {EventFormComponent} from "./event-form.component";
 import {EventDetailComponent} from "./event-detail.component";
 import { CategoryNameFilterPipe } from './category-name-filter.pipe';
 import { EventNameFilterPipe } from './event-name-filter.pipe';
+/*import {JsonpModule} from "@angular/http"; */
 
 
 
