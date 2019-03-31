@@ -64,6 +64,8 @@ import {EventService} from "./event.service";
 import {EventListComponent} from "./event-list.component";
 import {EventFormComponent} from "./event-form.component";
 import {EventDetailComponent} from "./event-detail.component";
+import { CategoryNameFilterPipe } from './category-name-filter.pipe';
+import { EventNameFilterPipe } from './event-name-filter.pipe';
 
 
 
@@ -139,7 +141,10 @@ const appRoutes:Routes=[
     CategoryListComponent,
     EventListComponent,
     EventFormComponent,
-    EventDetailComponent]
+    EventDetailComponent,
+    CategoryNameFilterPipe,
+    EventNameFilterPipe,
+  ]
 
 })
 export class AppModule {

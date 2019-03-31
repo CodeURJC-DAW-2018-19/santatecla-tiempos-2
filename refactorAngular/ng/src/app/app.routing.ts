@@ -12,13 +12,13 @@ const appRoutes=[
   {path:'categories/new',component:CategoryFormComponent},
   {path:'categories/:id',component:CategoryDetailComponent},
   {path:'categories/edit/:id',component: CategoryFormComponent},
-  {path:'categories/:nameCategory',component:CategoryListComponent},
+  //{path:'categories/:nameCategory',component:CategoryListComponent},
   //rutas usadas para eventos
   {path:'events',component:EventListComponent},
   {path:'events/new',component:EventFormComponent},
   {path:'events/edit/:id',component:EventFormComponent},
   {path:'events/:id',component:EventDetailComponent},
-  {path:'/events/:nameEvent',component:EventListComponent},
+  //{path:'/events/:nameEvent',component:EventListComponent},
   //ruta usada por defecto a la hora de abrir la pagina
   {path: '',redirectTo:'categories',pathMatch:'full'}
 ];

@@ -1,3 +1,10 @@
+<div class="col-md-8">
+    <span flex *ngIf="!searchBox.searchVisible"></span>
+    <td-search-box hide-xs flex #searchBox [(ngModel)]="searchEvent"
+                   [ngClass]="{ 'push-left push-right mat-whiteframe-z1 bgc-white tc-black': searchBox.searchVisible }"
+                   placeholder="search" ></td-search-box>
+</div>
+
 <mat-card>
     <mat-card-title>
         <div layout="row" layout-align="start center">
@@ -8,8 +15,11 @@
     <mat-card-content>
         <div>
             <mat-nav-list *ngIf="loginService.isLogged">
-                <a *ngFor="let event of events" mat-list-item [routerLink]="['/events', event.id]">
+                <a *ngFor="let event of events | eventNameFilter:searchEvent" mat-list-item [routerLink]="['/events', event.id]">
                     {{ event.nameEvent }}
+                    {{event.date}}
+                    {{ event.location}}
+                    {{event.wiki}}
                 </a>
             </mat-nav-list>
 

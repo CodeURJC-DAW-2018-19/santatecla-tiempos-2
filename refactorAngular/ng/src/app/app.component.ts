@@ -2,6 +2,8 @@ import {Component, ChangeDetectorRef, AfterViewInit, Pipe} from '@angular/core';
 import { DomSanitizer } from '@angular/platform-browser';
 import { MatIconRegistry, MatDialog } from '@angular/material';
 import { TdMediaService, tdRotateAnimation } from '@covalent/core';
+import {CategoryService,Category} from "./category.service";
+import {Event,EventService} from "./event.service";
 
 @Component({
   selector: 'my-app',
@@ -12,7 +14,7 @@ import { TdMediaService, tdRotateAnimation } from '@covalent/core';
 export class AppComponent implements AfterViewInit {
 
   navLinks=[
-      {path:'categories',label:'Category'},
+      {path:'categories',label:'Categories'},
       {path:'events',label:'Events'}
   ];
 

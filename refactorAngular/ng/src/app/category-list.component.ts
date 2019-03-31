@@ -10,6 +10,7 @@ import {LoginService} from "./auth/login.service";
 
 export class CategoryListComponent implements OnInit{
   categories:Category[];
+  searchCategory:string;
 
   constructor(private router:Router,private service:CategoryService,public loginService:LoginService) {
 

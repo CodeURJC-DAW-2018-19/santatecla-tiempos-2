@@ -1,4 +1,9 @@
-
+<div class="col-md-8">
+  <span flex *ngIf="!searchBox.searchVisible"></span>
+  <td-search-box hide-xs flex #searchBox [(ngModel)]="searchCategory"
+                 [ngClass]="{ 'push-left push-right mat-whiteframe-z1 bgc-white tc-black': searchBox.searchVisible }"
+                 placeholder="search" ></td-search-box>
+</div>
 
 <mat-card>
   <mat-card-title>
@@ -10,7 +15,7 @@
   <mat-card-content>
     <div>
       <mat-nav-list *ngIf="loginService.isLogged">
-        <a *ngFor="let category of categories" mat-list-item [routerLink]="['/categories', category.id]">
+        <a *ngFor="let category of categories | categoryNameFilter:searchCategory" mat-list-item [routerLink]="['/categories', category.id]">
           {{ category.nameCategory }}
         </a>
       </mat-nav-list>

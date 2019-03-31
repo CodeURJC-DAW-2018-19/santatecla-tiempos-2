@@ -11,8 +11,7 @@ import {LoginService} from "./auth/login.service";
 /*Creamos la clase de EventListComponent que se encargara coger los datos necesarios*/
 export class  EventListComponent implements OnInit{
     events:Event[];
-    displayedColumns: string[] = ['position', 'name', 'date', 'place','wiki'];
-    dataSource = this.events;
+    searchEvent:string;
     constructor(private router:Router,private service:EventService,public loginService:LoginService){}
 
     ngOnInit() {
