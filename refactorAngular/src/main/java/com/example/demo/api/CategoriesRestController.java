@@ -54,9 +54,15 @@ public class CategoriesRestController {
 
     @PutMapping("/{id}")
     public  Category updateCategory(@PathVariable long id, @RequestBody Category updateCategory){
+        System.out.println("Dame el id de la categoria");
         categoryService.findOne(id).get();
+
+        System.out.println("Actualizo el valor");
         updateCategory.setId(id);
+
+        System.out.println("Guardo el valor");
         categoryService.saveCategory(updateCategory);
+        System.out.println("Te lo devuelvo");
         return updateCategory;
     }
 /*

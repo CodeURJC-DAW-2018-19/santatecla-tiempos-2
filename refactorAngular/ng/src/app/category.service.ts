@@ -15,7 +15,7 @@ const URL='/api/categories/';
 @Injectable()
 export class CategoryService{
 
-  searchTerm:string;
+
   constructor(private loginService:LoginService,private http:HttpClient) {}
 
   getCategories():Observable<Category[]>{
@@ -44,11 +44,15 @@ export class CategoryService{
         .post<Category>(URL,body,{headers})
         .pipe(catchError((error)=>this.handleError(error)));
     }else{
+      console.log(category.nameCategory);
       return this.http
-        .put<Category>(URL+category.id,{headers})
+        .put<Category>(URL+category.id,body,{headers})
         .pipe(catchError((error)=>this.handleError(error)));
+      console.log("Actualizacion correcta");
     }
   }
+
+
 
   removeCategory(category:Category):Observable<Category>{
     return this.http

@@ -32,8 +32,9 @@ export class CategoryDetailComponent{
     });
   }
   editCategory(){
-    console.log("entra");
+    console.log("dime que quieres editar");
     this.router.navigate(['/categories/edit',this.category.id]);
+
   }
 
   goToCategories(){
