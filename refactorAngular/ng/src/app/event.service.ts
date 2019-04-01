@@ -14,6 +14,8 @@ export interface Event{
     location:string;
     wiki:string;
     hasImage:boolean;
+    category:string;
+
 }
 
 /*Añadimos URL con una variable constante que sea la usada en la api*/
@@ -24,6 +26,8 @@ const URL='/api/events/';
 export class EventService{
     /*Constructor con lo que vamos a necesitar*/
     constructor(private loginService:LoginService,private categoryService:CategoryService,private http:HttpClient){}
+
+
 
     getEvents():Observable<Event[]>{
         console.log("Entrando en getEvents");
@@ -46,12 +50,16 @@ export class EventService{
         if(!event.id){
             return this.http.post<Event>(URL,body,{headers}).pipe(catchError((error)=>this.handleError(error)));
         }else{
-            return this.http.put<Event>(URL+event.id,{headers}).pipe(catchError((error)=>this.handleError(error)));
+            return this.http.put<Event>(URL+event.id,body,{headers}).pipe(catchError((error)=>this.handleError(error)));
         }
     }
 
     removeEvent(event:Event):Observable<Event>{
         return this.http.delete<Event>(URL+event.id).pipe(catchError((error)=>this.handleError(error)));
+    }
+
+    getCategory(){
+        this.categoryService.getCategories();
     }
 
     private handleError(error:any){

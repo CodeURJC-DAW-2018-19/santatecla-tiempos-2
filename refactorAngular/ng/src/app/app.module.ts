@@ -69,6 +69,7 @@ import { EventNameFilterPipe } from './event-name-filter.pipe';
 
 
 
+
 const appRoutes:Routes=[
   {path:'categories',component:CategoryListComponent},
   {path:'events',component:EventListComponent},
@@ -144,6 +145,7 @@ const appRoutes:Routes=[
     EventDetailComponent,
     CategoryNameFilterPipe,
     EventNameFilterPipe,
+
   ]
 
 })
