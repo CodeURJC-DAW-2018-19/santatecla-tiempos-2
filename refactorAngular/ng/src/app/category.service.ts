@@ -49,7 +49,6 @@ export class CategoryService{
       return this.http
         .put<Category>(URL+category.id,body,{headers})
         .pipe(catchError((error)=>this.handleError(error)));
-      console.log("Actualizacion correcta");
     }
   }
 

@@ -13,7 +13,7 @@ export class LoginComponent{
   @ViewChild('loginDialog')loginDialog:TemplateRef<any>;
   dialogRef:MatDialogRef<any,any>;
 
-  constructor(public dialog:MatDialog,private router:Router,private loginService:LoginService){}
+  constructor(public dialog:MatDialog,public router:Router,public loginService:LoginService){}
 
   login(event:any,user:string,pass:string){
     event.preventDefault();

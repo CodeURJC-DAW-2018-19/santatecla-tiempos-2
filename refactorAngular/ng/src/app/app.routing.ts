@@ -5,6 +5,7 @@ import {CategoryDetailComponent} from "./category-detail.component";
 import {EventListComponent} from "./event-list.component";
 import {EventFormComponent} from "./event-form.component";
 import {EventDetailComponent} from "./event-detail.component";
+import {TimeListComponent} from "./time-list.component";
 
 const appRoutes=[
     //Rutas usadas para categorias
@@ -19,6 +20,7 @@ const appRoutes=[
   {path:'events/edit/:id',component:EventFormComponent},
   {path:'events/:id',component:EventDetailComponent},
   //{path:'/events/:nameEvent',component:EventListComponent},
+  {path:'times',component:TimeListComponent},
   //ruta usada por defecto a la hora de abrir la pagina
   {path: '',redirectTo:'categories',pathMatch:'full'}
 ];

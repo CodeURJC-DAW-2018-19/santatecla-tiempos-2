@@ -66,6 +66,8 @@ import {EventFormComponent} from "./event-form.component";
 import {EventDetailComponent} from "./event-detail.component";
 import { CategoryNameFilterPipe } from './category-name-filter.pipe';
 import { EventNameFilterPipe } from './event-name-filter.pipe';
+import {TimeService} from "./time.service";
+import {TimeListComponent} from "./time-list.component";
 
 
 
@@ -73,6 +75,7 @@ import { EventNameFilterPipe } from './event-name-filter.pipe';
 const appRoutes:Routes=[
   {path:'categories',component:CategoryListComponent},
   {path:'events',component:EventListComponent},
+    {path:'times',component:TimeListComponent}
 ];
 
 @NgModule({
@@ -130,7 +133,7 @@ const appRoutes:Routes=[
 
 
   ],
-  providers: [CategoryService,LoginService,EventService,
+  providers: [CategoryService,LoginService,EventService,TimeService,
     { provide: HTTP_INTERCEPTORS, useClass: BasicAuthInterceptor, multi: true },
     { provide: HTTP_INTERCEPTORS, useClass: ErrorInterceptor, multi: true },
     { provide: LocationStrategy, useClass: HashLocationStrategy }],
@@ -145,7 +148,7 @@ const appRoutes:Routes=[
     EventDetailComponent,
     CategoryNameFilterPipe,
     EventNameFilterPipe,
-
+    TimeListComponent
   ]
 
 })
