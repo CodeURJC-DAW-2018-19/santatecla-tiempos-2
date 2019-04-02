@@ -1,5 +1,5 @@
 import {Event,EventService} from "./event.service";
-import {Component} from "@angular/core";
+import {Component,OnInit} from "@angular/core";
 import {ActivatedRoute, Router} from "@angular/router";
 import {Category,CategoryService} from"./category.service";
 
@@ -7,7 +7,7 @@ import {Category,CategoryService} from"./category.service";
     templateUrl:'event-form.component.html',
 })
 
-export class EventFormComponent{
+export class EventFormComponent implements OnInit{
     newEvent:boolean;
     event:Event;
     categories:Category[];
@@ -33,7 +33,18 @@ export class EventFormComponent{
         },(error:Error)=>console.error('Error creating new event: '+error));
         window.history.back();
     }
+/*
+    getCat(){
+        this.categoryService.getCategories();
+    }*/
 
 
+    ngOnInit(){
+        console.log("pidiendo datos de select para el formulario");
+        this.categoryService.getCategories().subscribe(
+            categories=>this.categories=categories,
+            error=>console.log(error)
+        );
+    }
 
 }
