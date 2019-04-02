@@ -5,6 +5,7 @@ import {catchError, map} from "rxjs/operators";
 import {LoginService}from "./auth/login.service";
 
 
+
 export interface Category {
   id?:number;
   nameCategory:string;
@@ -14,13 +15,13 @@ const URL='/api/categories/';
 
 @Injectable()
 export class CategoryService{
-  private baseUrl: string="https://localhost:8443";
-  searchTerm:string;
+
+
   constructor(private loginService:LoginService,private http:HttpClient) {}
 
-  getCategories(page: number):Observable<Category[]>{
+  getCategories():Observable<Category[]>{
     console.log("pidiendo datos");
-    return this.http.get<any>(this.baseUrl + '/?page='+ page,{withCredentials:true})
+    return this.http.get<any>(URL,{withCredentials:true})
       .pipe(
           map(result => result.content),
           catchError((error)=>this.handleError(error)));
@@ -44,11 +45,15 @@ export class CategoryService{
         .post<Category>(URL,body,{headers})
         .pipe(catchError((error)=>this.handleError(error)));
     }else{
+      console.log(category.nameCategory);
       return this.http
-        .put<Category>(URL+category.id,{headers})
+        .put<Category>(URL+category.id,body,{headers})
         .pipe(catchError((error)=>this.handleError(error)));
+      console.log("Actualizacion correcta");
     }
   }
+
+
 
   removeCategory(category:Category):Observable<Category>{
     return this.http

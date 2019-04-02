@@ -15,9 +15,14 @@
   <mat-card-content>
     <div>
       <mat-nav-list *ngIf="loginService.isLogged">
-        <a *ngFor="let category of categories | categoryNameFilter:searchCategory" mat-list-item [routerLink]="['/categories', category.id]">
+      <!--  <a *ngFor="let category of categories | categoryNameFilter:searchCategory" mat-list-item [routerLink]="['/categories', category.id]">
           {{ category.nameCategory }}
-        </a>
+        </a> -->
+        <ul>
+          <li *ngFor="let category of categories | paginate: { itemsPerPage: 5, currentPage: p }"> {{ category.nameCategory }} </li>
+        </ul>
+
+        <pagination-controls (pageChange)="p = $event"></pagination-controls>
       </mat-nav-list>
 
       <mat-nav-list *ngIf="!loginService.isLogged">
@@ -33,8 +38,5 @@
         <mat-icon>add</mat-icon> New
       </button>
     </div>
-    <li class="nav-item" *ngFor="let p of pages; let i= index">
-      <a class="nav-link" href="#" (click)="setCategoryPage(i,$event)"[ngClass]="{'active':i==page}" ]>{{i}}</a>
-    </li>
   </mat-card-content>
 </mat-card>

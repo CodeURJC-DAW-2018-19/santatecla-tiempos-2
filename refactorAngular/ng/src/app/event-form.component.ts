@@ -1,6 +1,7 @@
 import {Event,EventService} from "./event.service";
 import {Component} from "@angular/core";
 import {ActivatedRoute, Router} from "@angular/router";
+import {Category,CategoryService} from"./category.service";
 
 @Component({
     templateUrl:'event-form.component.html',
@@ -9,14 +10,15 @@ import {ActivatedRoute, Router} from "@angular/router";
 export class EventFormComponent{
     newEvent:boolean;
     event:Event;
+    categories:Category[];
 
-    constructor(private _router:Router,activatedRoute:ActivatedRoute,private service:EventService){
+    constructor(private _router:Router,activatedRoute:ActivatedRoute,private service:EventService,private categoryService:CategoryService){
         const id=activatedRoute.snapshot.params['id'];
         if(id){
             console.log(service.getEvent(id).subscribe((event) => this.event = event), (error) => console.error(error));
             this.newEvent=false;
         }else{
-            this.event={nameEvent:'',date:'',location:'',wiki:'',hasImage:false};
+            this.event={nameEvent:'',date:'',location:'',wiki:'',hasImage:false,category:''};
             this.newEvent=true;
         }
     }
@@ -31,5 +33,7 @@ export class EventFormComponent{
         },(error:Error)=>console.error('Error creating new event: '+error));
         window.history.back();
     }
+
+
 
 }

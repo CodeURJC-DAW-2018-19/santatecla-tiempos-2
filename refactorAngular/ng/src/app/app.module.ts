@@ -8,6 +8,7 @@ import { HttpModule, JsonpModule } from '@angular/http';
 import { NgxChartsModule } from '@swimlane/ngx-charts';
 import {CategoryService} from "./category.service";
 import {routing} from "./app.routing";
+import { NgxPaginationModule} from "ngx-pagination";
 import {
   MatButtonModule,
   MatListModule,
@@ -66,7 +67,7 @@ import {EventFormComponent} from "./event-form.component";
 import {EventDetailComponent} from "./event-detail.component";
 import { CategoryNameFilterPipe } from './category-name-filter.pipe';
 import { EventNameFilterPipe } from './event-name-filter.pipe';
-/*import {JsonpModule} from "@angular/http"; */
+
 
 
 
@@ -79,6 +80,7 @@ const appRoutes:Routes=[
 
   imports: [
     BrowserModule,
+      NgxPaginationModule,
     BrowserAnimationsModule,
     FormsModule,
    RouterModule.forRoot(appRoutes,{enableTracing:true}),//debug
@@ -145,6 +147,7 @@ const appRoutes:Routes=[
     EventDetailComponent,
     CategoryNameFilterPipe,
     EventNameFilterPipe,
+
   ]
 
 })

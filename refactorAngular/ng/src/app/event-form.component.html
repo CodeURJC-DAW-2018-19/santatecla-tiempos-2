@@ -40,16 +40,40 @@
                         />
                     </mat-form-field>
                     <mat-form-field>
+                    <input
+                            matInput
+                            [(ngModel)]="event.wiki"
+                            placeholder="Introduzca un wiki"
+                            #eventFormComponent
+                            #eventFormControl="ngModel"
+                            name="name"
+                            required
+                    />
+                </mat-form-field>
+
+                    <mat-form-field>
                         <input
-                               matInput
-                               [(ngModel)]="event.wiki"
-                               placeholder="Introduzca un wiki"
-                               #eventFormComponent
-                               #eventFormControl="ngModel"
-                               name="name"
-                               required
+                                matInput
+                                [(ngModel)]="event.category"
+                                placeholder="Introduzca una categoria"
+                                #eventFormComponent
+                                #eventFormControl="ngModel"
+                                name="name"
+                                required
                         />
                     </mat-form-field>
+
+                    <!--
+                    <mat-form-field>
+                        <mat-label>Seleccione una categoria</mat-label>
+                        <mat-select disableRipple placeholder="Seleccione una categoria"  [(ngModel)]="event.category"  #eventFormComponent
+                                                 #eventFormControl="ngModel">
+                            <mat-option *ngFor="let category of categories" [value]="category.id">
+                                {{category.nameCategory}}
+                            </mat-option>
+                        </mat-select>
+                    </mat-form-field>-->
+
                 </div>
             </form>
         </mat-card-content>
