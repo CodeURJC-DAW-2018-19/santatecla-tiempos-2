@@ -11,7 +11,7 @@ import {LoginService} from "./auth/login.service";
 export class CategoryListComponent implements OnInit{
   categories:Category[];
   searchCategory:string;
-  p: number = 1;
+  p: number = 0;
 
   constructor(private router:Router,private service:CategoryService,public loginService:LoginService) {
 
@@ -19,12 +19,19 @@ export class CategoryListComponent implements OnInit{
 
   ngOnInit(){
     console.log("pidiendo datos");
-    this.service.getCategories().subscribe(
+    this.service.getCategoriesbyPage(0).subscribe(
       categories=>this.categories=categories,
       error=>console.log(error)
     );
   }
 
+  getCategoriesbyPage(page:number){
+    this.service.getCategoriesbyPage(page).subscribe(
+        categories=>this.categories=categories,
+        error=>console.log(error)
+    );
+    this.p= page;
+  }
   newCategory(){
     this.router.navigate(['/categories/new'])
   }

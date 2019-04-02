@@ -26,6 +26,13 @@ export class CategoryService{
           map(result => result.content),
           catchError((error)=>this.handleError(error)));
   }
+  getCategoriesbyPage(page:number):Observable<Category[]>{
+    console.log("pidiendo datos");
+    return this.http.get<any>(URL+ "/?page="+page,{withCredentials:true})
+        .pipe(
+            map(result => result.content),
+            catchError((error)=>this.handleError(error)));
+  }
 
   getCategory(id:number|string):Observable<Category>{
     console.log("entra en categoria unica");

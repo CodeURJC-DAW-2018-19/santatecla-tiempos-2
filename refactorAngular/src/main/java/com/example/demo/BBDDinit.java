@@ -40,28 +40,31 @@ public class BBDDinit {
         Event event1=  new Event("DAW","7-7-2019","Aulario 1","Aulario 1" );
         Event event2 = new Event("Seguridad", "20-12-18","Aulario 1", "Aulario 1");
         Event event3 = new Event("Java", "1-1-19","Aulario 2", "Aulario 2");
-       /* Event event4=  new Event("DAW","7-7-2019","Aulario 1", "Aulario 1");
-        Event event5 = new Event("Seguridad", "20-12-18","Aulario 1", "Aulario 1");
-        Event event6 = new Event("Java", "1-1-19","Aulario 2", "Aulario 2");
-        Event event7 = new Event("Javaa", "1-1-19","Aulario 3", "Aulario 2");
-        Event event8 = new Event("Javaaa", "1-1-19","Aulario 3", "Aulario 2");
-        Event event9 = new Event("Javaaa", "1-1-19","Aulario 3", "Aulario 2");
-        Event event10 = new Event("Javaaa", "1-1-19","Aulario 3", "Aulario 2");
-        Event event11 = new Event("Javaaa", "1-1-19","Aulario3", "Aulario 2");*/
+        Event event4=  new Event("DAW2","7-7-2019","Aulario 1", "Aulario 1");
+        Event event5 = new Event("Seguridad2", "20-12-18","Aulario 1", "Aulario 1");
+        Event event6 = new Event("Java2", "1-1-19","Aulario 2", "Aulario 2");
+        Event event7 = new Event("Javaa3", "1-1-19","Aulario 3", "Aulario 2");
+        Event event8 = new Event("Javaaa4", "1-1-19","Aulario 3", "Aulario 2");
+        Event event9 = new Event("Javaaa5", "1-1-19","Aulario 3", "Aulario 2");
+        Event event10 = new Event("Javaaa6", "1-1-19","Aulario 3", "Aulario 2");
+        Event event11 = new Event("Javaaa7", "1-1-19","Aulario3", "Aulario 2");
+        Event event12 = new Event("JavaaaxD", "1-1-19","Aulario3", "Aulario 2");
         
 
         event1.getCategories().add(cat1);
         eveRep.save(event1);
         eveRep.save(event2);
         eveRep.save(event3);
-       /* eveRep.save(event4);
+        eveRep.save(event4);
         eveRep.save(event5);
         eveRep.save(event6);
         eveRep.save(event7);
         eveRep.save(event8);
         eveRep.save(event9);
         eveRep.save(event10);
-        eveRep.save(event11);*/
+        eveRep.save(event11);
+        eveRep.save(event12);
+
 
 
         //Times

@@ -8,7 +8,7 @@ import { HttpModule, JsonpModule } from '@angular/http';
 import { NgxChartsModule } from '@swimlane/ngx-charts';
 import {CategoryService} from "./category.service";
 import {routing} from "./app.routing";
-import { NgxPaginationModule} from "ngx-pagination";
+import {NgxPaginationModule} from 'ngx-pagination';
 import {
   MatButtonModule,
   MatListModule,

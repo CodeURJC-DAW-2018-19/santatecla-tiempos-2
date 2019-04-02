@@ -21,6 +21,8 @@
                     {{ event.location}}
                     {{event.wiki}}
                 </a>
+                <button mat-button (click)="getEventsbyPage(p-1)">Previous</button>
+                <button mat-button (click)="getEventsbyPage(p+1)">Next</button>
             </mat-nav-list>
 
             <mat-nav-list *ngIf="!loginService.isLogged">

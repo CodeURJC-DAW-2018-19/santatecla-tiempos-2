@@ -31,9 +31,7 @@ public class CategoryService {
     	return catRep.findByNameCategory(name);
     }
 
-    public void saveCategory(Category category){
-        catRep.save(category);
-    }
+    public void saveCategory(Category category){ catRep.save(category); }
 
     public void deleteCategory(long id){
         catRep.deleteById(id);

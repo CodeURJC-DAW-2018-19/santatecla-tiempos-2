@@ -12,14 +12,23 @@ import {LoginService} from "./auth/login.service";
 export class  EventListComponent implements OnInit{
     events:Event[];
     searchEvent:string;
+    p: number = 0;
     constructor(private router:Router,private service:EventService,public loginService:LoginService){}
 
     ngOnInit() {
         console.log("Pidiendo datos ngOnInit de eventos");
-        this.service.getEvents().subscribe(
+        this.service.getEventsbyPage(0).subscribe(
             events=>this.events=events,
             error=>console.log(error)
         );
+    }
+
+    getEventsbyPage(page:number){
+        this.service.getEventsbyPage(page).subscribe(
+            categories=>this.events=categories,
+            error=>console.log(error)
+        );
+        this.p= page;
     }
 
     newEvent(){
