@@ -12,16 +12,25 @@ import {Category,CategoryService} from "./category.service";
 /*Creamos la clase de EventListComponent que se encargara coger los datos necesarios*/
 export class  EventListComponent implements OnInit{
     events:Event[];
-    category:Category[];
+    //category:Category[];
+    p: number = 0;
     searchEvent:string;
     constructor(private router:Router,private service:EventService,public loginService:LoginService,private categoryService:CategoryService){}
 
     ngOnInit() {
         console.log("Pidiendo datos ngOnInit de eventos");
-        this.service.getEvents().subscribe(
+        this.service.getEventsbyPage(0).subscribe(
             events=>this.events=events,
             error=>console.log(error)
         );
+    }
+
+    getEventsbyPage(page:number){
+        this.service.getEventsbyPage(page).subscribe(
+            categories=>this.events=categories,
+            error=>console.log(error)
+        );
+        this.p= page;
     }
 
     newEvent(){

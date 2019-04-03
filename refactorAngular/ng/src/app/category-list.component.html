@@ -18,6 +18,9 @@
         <a *ngFor="let category of categories | categoryNameFilter:searchCategory" mat-list-item [routerLink]="['/categories', category.id]">
           {{ category.nameCategory }}
         </a>
+        <button mat-button (click)="getCategoriesbyPage(p-1)">Previous</button>
+        <button mat-button (click)="getCategoriesbyPage(p+1)">Next</button>
+
       </mat-nav-list>
 
       <mat-nav-list *ngIf="!loginService.isLogged">

@@ -10,6 +10,8 @@ import {Category,CategoryService} from"./category.service";
 export class EventFormComponent implements OnInit{
     newEvent:boolean;
     event:Event;
+    categories:Category[];
+
     constructor(private _router:Router,activatedRoute:ActivatedRoute,private service:EventService,private categoryService:CategoryService){
         const id=activatedRoute.snapshot.params['id'];
 
@@ -17,7 +19,7 @@ export class EventFormComponent implements OnInit{
             console.log(service.getEvent(id).subscribe((event) => this.event = event), (error) => console.error(error));
             this.newEvent=false;
         }else{
-            this.event={nameEvent:'',date:'',location:'',wiki:'',hasImage:false,category:[]};
+            this.event={nameEvent:'',date:'',location:'',wiki:'',hasImage:false,category:null};
             this.newEvent=true;
         }
     }
@@ -37,12 +39,11 @@ export class EventFormComponent implements OnInit{
         this.categoryService.getCategories();
     }*/
 
-   private categories:Category[];
+   private categoriess:Category[];
     ngOnInit(){
-
         console.log("pidiendo datos de select para el formulario");
         this.categoryService.getCategories().subscribe(
-            categories=>this.categories=categories,
+            categories=>this.categoriess=categories,
             error=>console.log(error)
         );
     }

@@ -11,6 +11,7 @@ import {LoginService} from "./auth/login.service";
 export class CategoryListComponent implements OnInit{
   categories:Category[];
   searchCategory:string;
+  p:number=0;
 
   constructor(private router:Router,private service:CategoryService,public loginService:LoginService) {
 
@@ -23,6 +24,15 @@ export class CategoryListComponent implements OnInit{
       error=>console.log(error)
     );
   }
+
+  getCategoriesbyPage(page:number){
+    this.service.getCategoriesbyPage(page).subscribe(
+        categories=>this.categories=categories,
+        error=>console.log(error)
+    );
+    this.p= page;
+  }
+
 
   newCategory(){
     this.router.navigate(['/categories/new'])
