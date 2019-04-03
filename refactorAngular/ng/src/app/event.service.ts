@@ -14,7 +14,8 @@ export interface Event{
     location:string;
     wiki:string;
     hasImage:boolean;
-    category:string;
+    categories:Category[];
+
 
 }
 

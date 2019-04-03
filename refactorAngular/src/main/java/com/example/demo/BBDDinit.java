@@ -52,6 +52,7 @@ public class BBDDinit {
         
 
         event1.getCategories().add(cat1);
+        event2.getCategories().add(cat2);
         eveRep.save(event1);
         eveRep.save(event2);
         eveRep.save(event3);

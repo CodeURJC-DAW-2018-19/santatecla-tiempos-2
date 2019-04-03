@@ -18,7 +18,7 @@ export class EventFormComponent{
             console.log(service.getEvent(id).subscribe((event) => this.event = event), (error) => console.error(error));
             this.newEvent=false;
         }else{
-            this.event={nameEvent:'',date:'',location:'',wiki:'',hasImage:false,category:''};
+            this.event={nameEvent:'',date:'',location:'',wiki:'',hasImage:false,categories:null};
             this.newEvent=true;
         }
     }

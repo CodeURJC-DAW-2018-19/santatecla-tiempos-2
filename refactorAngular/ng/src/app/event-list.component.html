@@ -17,9 +17,14 @@
             <mat-nav-list *ngIf="loginService.isLogged">
                 <a *ngFor="let event of events | eventNameFilter:searchEvent" mat-list-item [routerLink]="['/events', event.id]">
                     {{ event.nameEvent }}
+                    :
                     {{event.date}}
+                    :
                     {{ event.location}}
+                    :
                     {{event.wiki}}
+                    :
+                    <a *ngFor="let i of event.categories ">{{i.nameCategory}}</a>
                 </a>
                 <button mat-button (click)="getEventsbyPage(p-1)">Previous</button>
                 <button mat-button (click)="getEventsbyPage(p+1)">Next</button>
@@ -28,8 +33,11 @@
             <mat-nav-list *ngIf="!loginService.isLogged">
                 <mat-list-item [ngStyle]="{ cursor: 'auto' }" *ngFor="let event of events">
                     {{ event.nameEvent }}
+                    :
                     {{event.date}}
+                    :
                     {{ event.location}}
+                    :
                     {{event.wiki}}
                 </mat-list-item>
             </mat-nav-list>
