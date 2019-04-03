@@ -3,6 +3,7 @@ import {ActivatedRoute,Router} from "@angular/router";
 import {TdDialogService} from "@covalent/core";
 import {Event,EventService} from "./event.service";
 import {LoginService} from "./auth/login.service";
+import {Category,CategoryService} from "./category.service";
 
 @Component({
     templateUrl:'event-detail.component.html',
@@ -10,10 +11,13 @@ import {LoginService} from "./auth/login.service";
 
 export class EventDetailComponent{
     event:Event;
+   category:Category;
 
-    constructor(private router:Router,activatedRoute:ActivatedRoute,public service:EventService,public loginService:LoginService, private _dialogService:TdDialogService){
+    constructor(private router:Router,activatedRoute:ActivatedRoute,public service:EventService,public loginService:LoginService, private _dialogService:TdDialogService,private categoryService:CategoryService){
         const id=activatedRoute.snapshot.params['id'];
+
         service.getEvent(id).subscribe((event=>this.event=event),(error)=>console.error(error));
+
     }
 
     removeEvent(){
@@ -32,6 +36,7 @@ export class EventDetailComponent{
 
     editEvent(){
         this.router.navigate(['/events/edit',this.event.id]);
+
     }
 
     goToEvents(){

@@ -4,6 +4,7 @@ import { MatIconRegistry, MatDialog } from '@angular/material';
 import { TdMediaService, tdRotateAnimation } from '@covalent/core';
 import {CategoryService,Category} from "./category.service";
 import {Event,EventService} from "./event.service";
+import {environment} from "./environments/environment.prod";
 
 @Component({
   selector: 'my-app',
@@ -12,6 +13,8 @@ import {Event,EventService} from "./event.service";
   animations: [tdRotateAnimation],
 })
 export class AppComponent implements AfterViewInit {
+
+  mode:string;
 
   navLinks=[
       {path:'categories',label:'Categories'},
@@ -35,8 +38,15 @@ export class AppComponent implements AfterViewInit {
         'https://raw.githubusercontent.com/Teradata/covalent-quickstart/develop/src/assets/icons/covalent.svg',
       ),
     );
+    if(environment.production){
+      this.mode="Production";
+    }else{
+      this.mode="Development";
 
   }
+
+
+}
 
   ngAfterViewInit(): void {
     // broadcast to all listener observables when loading the page

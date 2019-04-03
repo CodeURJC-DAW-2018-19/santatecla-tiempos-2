@@ -4,9 +4,10 @@
         <mat-divider></mat-divider>
         <mat-card-content>
             <div>
-                <p>{{event.date}}</p>
-                <p>{{event.location}}</p>
-                <p>{{event.wiki}}</p>
+                <p>Fecha: {{event.date}}</p>
+                <p>Lugar: {{event.location}}</p>
+                <p>Wiki: {{event.wiki}}</p>
+                <p>Categoria asociada: {{event.category}}</p>
             </div>
             <div layout="row" layout-align="end center">
                 <ng-container *ngIf="loginService.isLogged && loginService.isAdmin">

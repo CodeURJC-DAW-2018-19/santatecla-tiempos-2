@@ -1,20 +1,23 @@
-import {Injectable}from "@angular/core";
+import {Injectable, Input} from "@angular/core";
 import {HttpClient,HttpHeaders} from "@angular/common/http";
 import {Observable} from "rxjs";
 import {catchError,map} from "rxjs/operators";
 import {LoginService} from "./auth/login.service";
 import {Category, CategoryService} from "./category.service";
+import {id} from "@swimlane/ngx-charts/release/utils";
 
 
 /*Creamos los datos que va a necesitar la clase*/
 export interface Event{
+
     id?:number;
     nameEvent:string;
     date:string;
     location:string;
     wiki:string;
     hasImage:boolean;
-    category:string;
+
+    category:Category[];
 
 }
 
@@ -61,6 +64,8 @@ export class EventService{
     getCategory(){
         this.categoryService.getCategories();
     }
+
+
 
     private handleError(error:any){
         console.error(error);

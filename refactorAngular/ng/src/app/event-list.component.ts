@@ -2,6 +2,7 @@ import {Component, OnInit} from "@angular/core";
 import {Router} from "@angular/router";
 import {Event,EventService} from "./event.service";
 import {LoginService} from "./auth/login.service";
+import {Category,CategoryService} from "./category.service";
 
 /*Aqui elegimos los template y los archivos de maquetacion que vamos a usar*/
 @Component({
@@ -11,8 +12,9 @@ import {LoginService} from "./auth/login.service";
 /*Creamos la clase de EventListComponent que se encargara coger los datos necesarios*/
 export class  EventListComponent implements OnInit{
     events:Event[];
+    category:Category[];
     searchEvent:string;
-    constructor(private router:Router,private service:EventService,public loginService:LoginService){}
+    constructor(private router:Router,private service:EventService,public loginService:LoginService,private categoryService:CategoryService){}
 
     ngOnInit() {
         console.log("Pidiendo datos ngOnInit de eventos");
