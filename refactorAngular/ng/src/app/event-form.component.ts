@@ -63,12 +63,12 @@ export class EventFormComponent implements OnInit{
         this.categoryService.getCategories();
     }*/
 
-    private categoriess:Category[];
+    private allcategories:Category[];
 
     ngOnInit(){
         console.log("pidiendo datos de select para el formulario");
         this.categoryService.getAllCategories().subscribe(
-            cat=>this.categoriess=cat,
+            cat=>this.allcategories=cat,
             error=>console.log(error)
         );
     }
