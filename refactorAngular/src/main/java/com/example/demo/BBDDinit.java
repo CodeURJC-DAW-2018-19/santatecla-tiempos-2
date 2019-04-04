@@ -32,9 +32,9 @@ public class BBDDinit {
         catRep.save(cat1);
         catRep.save(cat2);
         catRep.save(cat3);
-      /*  for(int i=0;i<37;i++){
+      for(int i=0;i<37;i++){
             catRep.save(new Category("Categoria1"+i));
-        }*/
+        }
         
         //Events
         Event event1=  new Event("DAW","7-7-2019","Aulario 1","Aulario 1" );

@@ -30,6 +30,12 @@ public class CategoriesRestController {
         return categoryService.findAll(pageable);
     }
 
+    @GetMapping("/all")
+    public List<Category> getCategories(){
+        List<Category>categories=categoryService.findAll();
+        return categoryService.findAll();
+    }
+
     @PostMapping("/")
     @ResponseStatus(HttpStatus.CREATED)
     public Category saveCategory(@RequestBody Category category){

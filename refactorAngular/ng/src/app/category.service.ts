@@ -12,6 +12,7 @@ export interface Category {
 }
 
 const URL='/api/categories/';
+const ALL='/api/categories/all/';
 
 @Injectable()
 export class CategoryService{
@@ -60,7 +61,11 @@ export class CategoryService{
     }
   }
 
-
+  getAllCategories():Observable<Category[]>{
+    console.log("pidiendo todos los datos");
+    return this.http.get<Category[]>(ALL,{withCredentials:true})
+        .pipe(catchError((error)=>this.handleError(error)));
+  }
 
   removeCategory(category:Category):Observable<Category>{
     return this.http
