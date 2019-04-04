@@ -76,6 +76,12 @@
                     </mat-form-field>
 
                 </div>
+
+                <div>
+                    <span style="color:red;" *ngIf="imgMessage">{{imgMessage}}</span>
+                    <input #file type="file" accept='image/*' name="name" (change)="preview(file.files)" />
+                    <img [src]="imgURL" height="200" *ngIf="imgURL">
+                </div>
             </form>
         </mat-card-content>
         <mat-divider></mat-divider>

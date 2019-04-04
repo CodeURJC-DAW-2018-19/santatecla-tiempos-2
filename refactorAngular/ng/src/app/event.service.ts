@@ -74,17 +74,6 @@ export class EventService{
         this.categoryService.getCategories();
     }
 
-    getPhoto(event:Event):SafeResourceUrl{
-        console.log(event.encodedImage);
-        if(event.hasImage){
-
-            return this._sanitizer.bypassSecurityTrustResourceUrl('data:image/jpg;base64,'+event.encodedImage);
-
-        }
-    }
-
-
-
     private handleError(error:any){
         console.error(error);
         return Observable.throw('Server error ('+error.status+' ): '+error);

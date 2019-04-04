@@ -32,6 +32,10 @@ public class EventService {
     }
 
     public void saveEvent(Event event){
+
+        if(event.getEncodedImage()!=null){
+            event.setHasImage(true);
+        }
         eveRep.save(event);
     }
 

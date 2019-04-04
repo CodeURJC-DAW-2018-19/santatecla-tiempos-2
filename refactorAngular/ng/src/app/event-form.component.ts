@@ -12,6 +12,9 @@ export class EventFormComponent implements OnInit{
     newEvent:boolean;
     event:Event;
     categories:Category[];
+    public imagePath;
+    imgURL: any;
+    public imgMessage: string;
 
     constructor(private _router:Router,activatedRoute:ActivatedRoute,private service:EventService,private categoryService:CategoryService){
         const id=activatedRoute.snapshot.params['id'];
@@ -20,7 +23,7 @@ export class EventFormComponent implements OnInit{
             console.log(service.getEvent(id).subscribe((event) => this.event = event), (error) => console.error(error));
             this.newEvent=false;
         }else{
-            this.event={nameEvent:'',date:'',location:'',wiki:'',hasImage:false,categories:[id]};
+            this.event={nameEvent:'',date:'',location:'',wiki:'',hasImage:false,categories:[id], encodedImage:''};
             this.newEvent=true;
         }
     }
@@ -34,6 +37,26 @@ export class EventFormComponent implements OnInit{
             console.log('Event saved',event);
         },(error:Error)=>console.error('Error creating new event: '+error));
         window.history.back();
+    }
+
+    preview(files) {
+        if (files.length === 0)
+            return;
+
+        let mimeType = files[0].type;
+        if (mimeType.match(/image\/*/) == null) {
+            this.imgMessage = "Only images are supported.";
+            return;
+        }
+
+        let reader = new FileReader();
+        this.imagePath = files;
+        reader.readAsDataURL(files[0]);
+        reader.onload = (_event) => {
+            //console.log(reader.result.toString().split(',')[1]);
+            this.imgURL = reader.result;
+            this.event.encodedImage = reader.result.toString().split(',')[1];
+        }
     }
 /*
     getCat(){
