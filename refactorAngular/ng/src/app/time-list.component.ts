@@ -9,6 +9,8 @@ import {Time, TimeService} from "./time.service";
 
 export class TimeListComponent implements OnInit{
     times:Time[];
+    events:Event[];
+    p:number=0;
 
     constructor(private router:Router,private service:TimeService,public loginService:LoginService){}
     ngOnInit() {
@@ -22,4 +24,13 @@ export class TimeListComponent implements OnInit{
     newTime(){
         this.router.navigate(['/times/new'])
     }
+
+    getTimesbyPage(page:number){
+        this.service.getTimesbyPage(page).subscribe(
+            ti=>this.times=ti,
+            error=>console.log(error)
+        );
+        this.p= page;
+    }
+
 }

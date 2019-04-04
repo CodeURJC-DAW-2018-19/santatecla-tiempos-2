@@ -37,6 +37,8 @@
                     {{ event.location}}
                     {{event.wiki}}
                 </mat-list-item>
+                <button mat-button (click)="getEventsbyPage(p-1)">Previous</button>
+                <button mat-button (click)="getEventsbyPage(p+1)">Next</button>
             </mat-nav-list>
         </div>
 

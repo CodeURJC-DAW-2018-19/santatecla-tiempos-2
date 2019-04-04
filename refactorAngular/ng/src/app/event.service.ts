@@ -24,7 +24,7 @@ export interface Event{
 
 /*Añadimos URL con una variable constante que sea la usada en la api*/
 const URL='/api/events/';
-
+const ALL='/api/events/all/';
 /*Creamos el Injectable con lo necesario para servicio*/
 @Injectable()
 export class EventService{
@@ -73,6 +73,13 @@ export class EventService{
     getCategory(){
         this.categoryService.getCategories();
     }
+
+    getAllEvents():Observable<Event[]>{
+        console.log("pidiendo todos los datos");
+        return this.http.get<Event[]>(ALL,{withCredentials:true})
+            .pipe(catchError((error)=>this.handleError(error)));
+    }
+
 
     private handleError(error:any){
         console.error(error);

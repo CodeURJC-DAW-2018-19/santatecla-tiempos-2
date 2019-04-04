@@ -68,6 +68,8 @@ import { CategoryNameFilterPipe } from './category-name-filter.pipe';
 import { EventNameFilterPipe } from './event-name-filter.pipe';
 import {TimeService} from "./time.service";
 import {TimeListComponent} from "./time-list.component";
+import {TimeFormComponent} from "./time-form.component";
+import {TimeDetailComponent} from "./time-detail.component";
 
 
 
@@ -148,7 +150,9 @@ const appRoutes:Routes=[
     EventDetailComponent,
     CategoryNameFilterPipe,
     EventNameFilterPipe,
-    TimeListComponent
+    TimeListComponent,
+    TimeFormComponent,
+      TimeDetailComponent
   ]
 
 })

@@ -1,0 +1,26 @@
+<div *ngIf="time">
+    <mat-card>
+        <mat-card-title> Intervalo "{{ time.nameInterval }}"</mat-card-title>
+        <mat-divider></mat-divider>
+        <mat-card-content>
+            <div>
+                <p>{{ time.nameInterval }}</p>
+                <p>{{ time.startDate }}</p>
+                <p>{{ time.endDate }}</p>
+                <p>{{ time.subintervals }}</p>
+                <p *ngFor="let t of time.events ">{{t.nameEvent}}</p>
+            </div>
+            <div layout="row" layout-align="end center">
+                <ng-container *ngIf="loginService.isLogged && loginService.isAdmin">
+                    <button mat-raised-button color="accent" (click)="removeTime()"><mat-icon>delete</mat-icon>Remove</button>
+                    <button mat-raised-button color="accent" (click)="editTime()" class="push-left-sm">
+                        <mat-icon>edit</mat-icon>Edit
+                    </button>
+                </ng-container>
+                <button mat-raised-button color="accent" (click)="goToTimes()" class="push-left-sm">
+                    <mat-icon>list</mat-icon>All Category
+                </button>
+            </div>
+        </mat-card-content>
+    </mat-card>
+</div>

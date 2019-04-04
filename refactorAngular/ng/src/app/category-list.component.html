@@ -27,6 +27,8 @@
         <mat-list-item [ngStyle]="{ cursor: 'auto' }" *ngFor="let category of categories">
           {{ category.nameCategory }}
         </mat-list-item>
+        <button mat-button (click)="getCategoriesbyPage(p-1)">Previous</button>
+        <button mat-button (click)="getCategoriesbyPage(p+1)">Next</button>
       </mat-nav-list>
     </div>
 

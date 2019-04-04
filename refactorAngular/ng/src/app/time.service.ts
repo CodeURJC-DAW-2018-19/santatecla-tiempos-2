@@ -6,16 +6,17 @@ import {LoginService}from "./auth/login.service";
 import {Event, EventService} from "./event.service";
 
 
+
 export interface Time{
     id?:number;
     nameInterval:string;
     startDate:string;
     endDate:string;
-    events:string;
+    event: Event[] | number[];
     subintervals:string;
 }
 
-const URL = '/api/times/'
+const URL = '/api/times/';
 
 @Injectable()
 export class TimeService{
@@ -50,6 +51,14 @@ export class TimeService{
         return this.http.delete<Time>(URL+time.id).pipe(catchError((error)=>this.handleError(error)));
     }
 
+
+    getTimesbyPage(page:number):Observable<Time[]>{
+        console.log("pidiendo datos");
+        return this.http.get<any>(URL+ "/?page="+page,{withCredentials:true})
+            .pipe(
+                map(result => result.content),
+                catchError((error)=>this.handleError(error)));
+    }
 
     private handleError(error:any){
         console.error(error);

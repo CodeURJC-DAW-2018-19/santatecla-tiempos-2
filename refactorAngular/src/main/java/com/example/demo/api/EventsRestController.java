@@ -44,6 +44,13 @@ public class EventsRestController {
         return evenService.findAll(pageable);
     }
 
+
+    @GetMapping("/all")
+    public List<Event> getAllEvents(){
+        List<Event>events=evenService.findAll();
+        return evenService.findAll();
+    }
+
     @PostMapping("/")
     @ResponseStatus(HttpStatus.CREATED)
     public Event saveEvent(@RequestBody Event event){
@@ -53,6 +60,8 @@ public class EventsRestController {
 
     }
 /*
+
+
     @GetMapping("/{search}")
     public List<Event> getEventId(@PathVariable String search){
 

@@ -6,6 +6,8 @@ import {EventListComponent} from "./event-list.component";
 import {EventFormComponent} from "./event-form.component";
 import {EventDetailComponent} from "./event-detail.component";
 import {TimeListComponent} from "./time-list.component";
+import {TimeFormComponent} from "./time-form.component";
+import {TimeDetailComponent} from "./time-detail.component";
 
 const appRoutes=[
     //Rutas usadas para categorias
@@ -21,6 +23,9 @@ const appRoutes=[
   {path:'events/:id',component:EventDetailComponent},
   //{path:'/events/:nameEvent',component:EventListComponent},
   {path:'times',component:TimeListComponent},
+  {path:'times/new',component:TimeFormComponent},
+  {path:'times/edit/:id',component:TimeFormComponent},
+  {path:'times/:id',component:TimeDetailComponent},
   //ruta usada por defecto a la hora de abrir la pagina
   {path: '',redirectTo:'categories',pathMatch:'full'}
 ];

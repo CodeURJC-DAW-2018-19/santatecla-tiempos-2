@@ -21,7 +21,7 @@ public class Time {
 	private String startDate;
 	private String endDate;
 
-	@OneToMany(fetch=FetchType.EAGER)
+	@OneToMany(fetch=FetchType.EAGER,cascade=CascadeType.ALL)
 	@ElementCollection
 	private List<Event> events;
 

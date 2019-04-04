@@ -69,7 +69,7 @@
                         <mat-label>Seleccione una categoria</mat-label>
                         <mat-select disableRipple placeholder="Seleccione una categoria" [(ngModel)]="selectedCategory"   #eventFormComponent
                                                  #eventFormControl="ngModel" name="name">
-                            <mat-option *ngFor="let category of categoriess"  [value]="category.nameCategory">
+                            <mat-option *ngFor="let category of allcategories"  [value]="category.nameCategory">
                                 {{category.nameCategory}}
                             </mat-option>
                         </mat-select>
