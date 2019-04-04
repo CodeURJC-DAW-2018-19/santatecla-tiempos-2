@@ -5,7 +5,7 @@ import {catchError,map} from "rxjs/operators";
 import {LoginService} from "./auth/login.service";
 import {Category, CategoryService} from "./category.service";
 import {id} from "@swimlane/ngx-charts/release/utils";
-
+import {DomSanitizer, SafeResourceUrl} from "@angular/platform-browser";
 
 /*Creamos los datos que va a necesitar la clase*/
 export interface Event{
@@ -16,6 +16,7 @@ export interface Event{
     location:string;
     wiki:string;
     hasImage:boolean;
+    encodedImage:string;
 
     categories: Category[] | number[];
 
@@ -28,7 +29,7 @@ const URL='/api/events/';
 @Injectable()
 export class EventService{
     /*Constructor con lo que vamos a necesitar*/
-    constructor(private loginService:LoginService,private categoryService:CategoryService,private http:HttpClient){}
+    constructor(private loginService:LoginService,private categoryService:CategoryService,private http:HttpClient, private _sanitizer:DomSanitizer){}
 
 
 
@@ -71,6 +72,15 @@ export class EventService{
 
     getCategory(){
         this.categoryService.getCategories();
+    }
+
+    getPhoto(event:Event):SafeResourceUrl{
+        console.log(event.encodedImage);
+        if(event.hasImage){
+
+            return this._sanitizer.bypassSecurityTrustResourceUrl('data:image/jpg;base64,'+event.encodedImage);
+
+        }
     }
 
 

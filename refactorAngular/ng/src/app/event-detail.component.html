@@ -7,7 +7,8 @@
                 <p>Fecha: {{event.date}}</p>
                 <p>Lugar: {{event.location}}</p>
                 <p>Wiki: {{event.wiki}}</p>
-                <p *ngFor="let i of event.categories ">Categoria Asociada: {{i.nameCategory}}</p>
+                <!--<p *ngFor="let i of event.categories ">Categoria Asociada: {{i.nameCategory}}</p> -->
+                <img *ngIf="event.hasImage" src="data:image/jpg;base64,{{event.encodedImage}}">
             </div>
             <div layout="row" layout-align="end center">
                 <ng-container *ngIf="loginService.isLogged && loginService.isAdmin">

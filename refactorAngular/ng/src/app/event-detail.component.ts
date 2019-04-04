@@ -13,11 +13,9 @@ export class EventDetailComponent{
     event:Event;
    category:Category;
 
-    constructor(private router:Router,activatedRoute:ActivatedRoute,public service:EventService,public loginService:LoginService, private _dialogService:TdDialogService,private categoryService:CategoryService){
+    constructor(private router:Router,activatedRoute:ActivatedRoute,public service:EventService,public loginService:LoginService, private _dialogService:TdDialogService){
         const id=activatedRoute.snapshot.params['id'];
-
         service.getEvent(id).subscribe((event=>this.event=event),(error)=>console.error(error));
-
     }
 
     removeEvent(){
