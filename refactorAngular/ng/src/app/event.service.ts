@@ -34,7 +34,7 @@ export class EventService{
 
 
     getEvents():Observable<Event[]>{
-        console.log("Entrando en getEvents");
+        console.log("Entrando en getEvent");
         return this.http.get<any>(URL,{withCredentials:true})
             .pipe(
                 map(result=>result.content),
@@ -42,7 +42,7 @@ export class EventService{
     }
 
     getEventsbyPage(page:number):Observable<Event[]>{
-        console.log("Entrando en getEvents");
+        console.log("Entrando en getEvent");
         return this.http.get<any>(URL+ "/?page="+page,{withCredentials:true})
             .pipe(
                 map(result=>result.content),
@@ -73,7 +73,7 @@ export class EventService{
     getCategory(){
         this.categoryService.getCategories();
     }
-
+    
     getAllEvents():Observable<Event[]>{
         console.log("pidiendo todos los datos");
         return this.http.get<Event[]>(ALL,{withCredentials:true})

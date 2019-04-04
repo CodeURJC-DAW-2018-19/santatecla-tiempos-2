@@ -7,8 +7,8 @@
                 <p>{{ time.nameInterval }}</p>
                 <p>{{ time.startDate }}</p>
                 <p>{{ time.endDate }}</p>
-                <p>{{ time.subintervals }}</p>
-                <p *ngFor="let t of time.events ">{{t.nameEvent}}</p>
+               <!-- <p>{{ time.subintervals }}</p>-->
+                <p *ngFor="let t of time.event">{{t.nameEvent}}</p>
             </div>
             <div layout="row" layout-align="end center">
                 <ng-container *ngIf="loginService.isLogged && loginService.isAdmin">

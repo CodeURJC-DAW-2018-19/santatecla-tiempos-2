@@ -1,5 +1,5 @@
 package com.example.demo.web;
-
+/*
 import com.example.demo.entities.*;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
@@ -46,7 +46,7 @@ public class WebControllerTimes extends WebController{
 		return "timeList";
 
 	}
-
+/*
     @GetMapping("/times/{id}")
     public String showTimes(Model model, @PathVariable long id){
     	Optional<Time> time = timeService.findOne(id);
@@ -54,7 +54,7 @@ public class WebControllerTimes extends WebController{
     		model.addAttribute("concreteTime", time.get());
     		List<SubTime> subInterv = time.get().getSubIntervals();
     		model.addAttribute("subIntervals", subInterv);
-    		List<Event> events = time.get().getEvents();
+    		List<Event> events = time.get().getEvent();
     		model.addAttribute("eventListInt", events);
     	}
     	
@@ -104,7 +104,7 @@ public class WebControllerTimes extends WebController{
     	model.addAttribute("concreteTime", time);
 		List<SubTime> subInterv = time.getSubIntervals();
 		model.addAttribute("subIntervals", subInterv);
-		List<Event> events = time.getEvents();
+		List<Event> events = time.getEvent();
 		model.addAttribute("eventListInt", events);
 		return "concreteInterval";
     }
@@ -119,7 +119,7 @@ public class WebControllerTimes extends WebController{
     	model.addAttribute("concreteTime", time);
 		List<SubTime> subInterv = time.getSubIntervals();
 		model.addAttribute("subIntervals", subInterv);
-		List<Event> events = time.getEvents();
+		List<Event> events = time.getEvent();
 
 		Page<Time> times=timeService.findAll(pageable);
 		model.addAttribute("times",times);
@@ -138,7 +138,7 @@ public class WebControllerTimes extends WebController{
     	model.addAttribute("concreteTime", time);
 		List<SubTime> subInterv = time.getSubIntervals();
 		model.addAttribute("subIntervals", subInterv);
-		List<Event> events = time.getEvents();
+		List<Event> events = time.getEvent();
 		model.addAttribute("eventListInt", events);
 		return "concreteInterval";
     }
@@ -153,8 +153,9 @@ public class WebControllerTimes extends WebController{
     	model.addAttribute("concreteTime", time);
 		List<SubTime> subInterv = time.getSubIntervals();
 		model.addAttribute("subIntervals", subInterv);
-		List<Event> events = time.getEvents();
+		List<Event> events = time.getEvent();
 		model.addAttribute("eventListInt", events);
 		return "concreteInterval";
     }
 }
+*/

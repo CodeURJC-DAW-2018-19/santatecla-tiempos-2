@@ -23,12 +23,12 @@ public class Time {
 
 	@OneToMany(fetch=FetchType.EAGER,cascade=CascadeType.ALL)
 	@ElementCollection
-	private List<Event> events;
+	private List<Event> event;
 
 
-	@OneToMany(cascade=CascadeType.ALL)
+	/*@OneToMany(cascade=CascadeType.ALL)
 	@ElementCollection
-	private List<SubTime> subIntervals;
+	private List<SubTime> subIntervals;*/
 	
 	public Time() {}
 
@@ -36,8 +36,14 @@ public class Time {
 		this.nameInterval = nameInterval;
 		this.startDate = startDate;
 		this.endDate = endDate;
-		this.events = new ArrayList<Event>();
-		this.subIntervals = new ArrayList<SubTime>();
+	}
+
+	public Time(String nameInterval, String startDate, String endDate, List<Event> event) {
+		this.nameInterval = nameInterval;
+		this.startDate = startDate;
+		this.endDate = endDate;
+		this.event = event;
+		//this.subIntervals = new ArrayList<SubTime>();
 	}
 
 	public String getNameInterval() {
@@ -64,21 +70,21 @@ public class Time {
 		this.endDate = endDate;
 	}
 
-	public List<Event> getEvents() {
-		return events;
+	public List<Event> getEvent() {
+		return event;
 	}
 
-	public void setEvents(List<Event> events) {
-		this.events = events;
+	public void setEvent(List<Event> event) {
+		this.event = event;
 	}	
 
-	public List<SubTime> getSubIntervals() {
+	/*public List<SubTime> getSubIntervals() {
 		return subIntervals;
 	}
 
 	public void setSubIntervals(List<SubTime> subIntervals) {
 		this.subIntervals = subIntervals;
-	}
+	}*/
 
 	public long getId() {
 		return id;
@@ -91,7 +97,7 @@ public class Time {
 	@Override
 	public String toString() {
 		return "Time [id=" + id + ", nameInterval=" + nameInterval + ", startDate=" + startDate + ", endDate=" + endDate
-				+ ", events=" + events + "]";
+				+ ", event=" + event + "]";
 	}
 	
 	

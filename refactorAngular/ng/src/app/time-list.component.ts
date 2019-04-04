@@ -9,7 +9,7 @@ import {Time, TimeService} from "./time.service";
 
 export class TimeListComponent implements OnInit{
     times:Time[];
-    events:Event[];
+    //events:Event[];
     p:number=0;
 
     constructor(private router:Router,private service:TimeService,public loginService:LoginService){}

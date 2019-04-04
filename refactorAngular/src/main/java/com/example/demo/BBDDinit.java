@@ -78,9 +78,9 @@ public class BBDDinit {
         Time time9 = new Time("Intervalo 9", "2-4-2021", "2-5-2021");
         Time time10 = new Time("Intervalo 10'", "2-4-2021", "2-5-2021");
 /*
-       time1.getEvents().add(event1);
-        time1.getEvents().add(event2);
-        time1.getEvents().add(event3);
+       time1.getEvent().add(event1);
+        time1.getEvent().add(event2);
+        time1.getEvent().add(event3);
         
 
         SubTime subtime1 = new SubTime ("2018", "8-9-2018", "10-10-2018");

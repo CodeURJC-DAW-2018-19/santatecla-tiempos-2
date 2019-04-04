@@ -7,5 +7,5 @@ import org.springframework.web.bind.annotation.CrossOrigin;
 
 
 public interface TimeRepository extends JpaRepository<Time, Long> {
-	List<Time> findBySubIntervals(List<Time> subtimes);
+	//List<Time> findBySubIntervals(List<Time> subtimes);
 }

@@ -22,8 +22,8 @@
                                    matInput
                                    [(ngModel)]="time.startDate"
                                    placeholder="Introduzca una fecha"
-                                   #eventFormComponent
-                                   #eventFormControl="ngModel"
+                                   #timeFormComponent
+                                   #timeFormControl="ngModel"
                                    name="name"
                                    required
                             />
@@ -33,28 +33,28 @@
                                        matInput
                                        [(ngModel)]="time.endDate"
                                        placeholder="Introduzca una fecha"
-                                       #eventFormComponent
-                                       #eventFormControl="ngModel"
+                                       #timeFormComponent
+                                       #timeFormControl="ngModel"
                                        name="name"
                                        required
                                 />
                     </mat-form-field>
-                    <mat-form-field>
+                   <!-- <mat-form-field>
                         <input type="date"
                                matInput
                                [(ngModel)]="time.subintervals"
                                placeholder="Introduzca una fecha"
-                               #eventFormComponent
-                               #eventFormControl="ngModel"
+                               #timeFormComponent
+                               #timeFormControl="ngModel"
                                name="name"
                                required
                         />
-                    </mat-form-field>
+                    </mat-form-field>-->
                     <mat-form-field>
                         <mat-label>Seleccione un Evento</mat-label>
                         <mat-select disableRipple placeholder="Seleccione una evento" [(ngModel)]="selectedEvent" #timeFormComponent
                                     #timeFormControl="ngModel" name="name">
-                            <mat-option *ngFor="let event of eventss"  [value]="event.nameEvent">
+                            <mat-option *ngFor="let event of alleventss"  [value]="event.nameEvent">
                                 {{event.nameEvent}}
                             </mat-option>
                         </mat-select>

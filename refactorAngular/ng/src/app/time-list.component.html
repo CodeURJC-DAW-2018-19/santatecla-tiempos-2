@@ -10,6 +10,7 @@
             <mat-nav-list *ngIf="loginService.isLogged">
                 <a *ngFor="let time of times" mat-list-item [routerLink]="['/times', time.id]">
                     {{ time.nameInterval }}
+                    <a *ngFor="let t of time.events ">{{t.nameEvent}}</a>
                 </a>
                 <button mat-button (click)="getTimesbyPage(p-1)">Previous</button>
                 <button mat-button (click)="getTimesbyPage(p+1)">Next</button>

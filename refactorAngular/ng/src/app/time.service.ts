@@ -12,8 +12,9 @@ export interface Time{
     nameInterval:string;
     startDate:string;
     endDate:string;
+    //subintervals:string;
+
     event: Event[] | number[];
-    subintervals:string;
 }
 
 const URL = '/api/times/';
@@ -38,12 +39,14 @@ export class TimeService{
     saveTime(time:Time):Observable<Time>{
         const body=JSON.stringify(time);
         const headers=new HttpHeaders({'Content-Type':'application/json',});
-        console.log(event);
+        console.log(time);
 
         if(!time.id){
             return this.http.post<Time>(URL,body,{headers}).pipe(catchError((error)=>this.handleError(error)));
         }else{
+
             return this.http.put<Time>(URL+time.id,body,{headers}).pipe(catchError((error)=>this.handleError(error)));
+            console.log("Actualizo");
         }
     }
 
@@ -58,6 +61,10 @@ export class TimeService{
             .pipe(
                 map(result => result.content),
                 catchError((error)=>this.handleError(error)));
+    }
+
+    getCategory(){
+        this.eventService.getCategory();
     }
 
     private handleError(error:any){
