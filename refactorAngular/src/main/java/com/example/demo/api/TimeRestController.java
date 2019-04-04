@@ -38,12 +38,12 @@ public class TimeRestController {
         return timeService.findAll(pageable);
     }
 
-   /* @GetMapping("/visitante")
+    @GetMapping("/visitante")
     @JsonView(VisitanteView.class)
     public Page<Time> getTimesIntervals(@PageableDefault(value =5) Pageable pageable, @AuthenticationPrincipal User user){
         Page<Time>times=timeService.findAll(pageable);
         return timeService.findAll(pageable);
-    }*/
+    }
 
     @PostMapping("/")
     @ResponseStatus(HttpStatus.CREATED)
