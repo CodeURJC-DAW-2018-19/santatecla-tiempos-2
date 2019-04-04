@@ -27,7 +27,8 @@ public class Event {
 	
 	/*One-way*/
 
-	@OneToMany(fetch=FetchType.EAGER)
+
+	@OneToMany(fetch=FetchType.EAGER,cascade = CascadeType.ALL)
 	@ElementCollection
 	private List<Category> categories;
 

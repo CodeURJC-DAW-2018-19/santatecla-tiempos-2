@@ -19,6 +19,9 @@ public class EventService {
     @Autowired
     private EventRepository eveRep;
 
+    @Autowired
+    private CategoryRepository categoryRepository;
+
 
     public Optional<Event> findOne(long id){
         return eveRep.findById(id);

@@ -17,7 +17,7 @@ export interface Event{
     wiki:string;
     hasImage:boolean;
 
-    category:Category[];
+    categories: Category[] | number[];
 
 }
 

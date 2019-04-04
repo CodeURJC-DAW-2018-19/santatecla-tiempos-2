@@ -12,7 +12,7 @@ import {Category,CategoryService} from "./category.service";
 /*Creamos la clase de EventListComponent que se encargara coger los datos necesarios*/
 export class  EventListComponent implements OnInit{
     events:Event[];
-    //category:Category[];
+    //categories:Category[];
     p: number = 0;
     searchEvent:string;
     constructor(private router:Router,private service:EventService,public loginService:LoginService,private categoryService:CategoryService){}

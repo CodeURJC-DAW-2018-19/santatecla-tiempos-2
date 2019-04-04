@@ -32,9 +32,9 @@ public class BBDDinit {
         catRep.save(cat1);
         catRep.save(cat2);
         catRep.save(cat3);
-        for(int i=0;i<37;i++){
+      /*  for(int i=0;i<37;i++){
             catRep.save(new Category("Categoria1"+i));
-        }
+        }*/
         
         //Events
         Event event1=  new Event("DAW","7-7-2019","Aulario 1","Aulario 1" );
@@ -50,7 +50,7 @@ public class BBDDinit {
         Event event11 = new Event("Javaaa", "1-1-19","Aulario3", "Aulario 2");*/
         
 
-        event1.getCategories().add(cat1);
+        //event1.getCategories().add(cat1);
         eveRep.save(event1);
         eveRep.save(event2);
         eveRep.save(event3);

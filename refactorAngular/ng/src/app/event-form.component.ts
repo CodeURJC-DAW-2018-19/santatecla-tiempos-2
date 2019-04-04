@@ -2,6 +2,7 @@ import {Event,EventService} from "./event.service";
 import {Component,OnInit} from "@angular/core";
 import {ActivatedRoute, Router} from "@angular/router";
 import {Category,CategoryService} from"./category.service";
+import {id} from "@swimlane/ngx-charts/release/utils";
 
 @Component({
     templateUrl:'event-form.component.html',
@@ -19,7 +20,7 @@ export class EventFormComponent implements OnInit{
             console.log(service.getEvent(id).subscribe((event) => this.event = event), (error) => console.error(error));
             this.newEvent=false;
         }else{
-            this.event={nameEvent:'',date:'',location:'',wiki:'',hasImage:false,category:null};
+            this.event={nameEvent:'',date:'',location:'',wiki:'',hasImage:false,categories:[id]};
             this.newEvent=true;
         }
     }
@@ -48,4 +49,7 @@ export class EventFormComponent implements OnInit{
         );
     }
 
+  set  selectedCategory(id: number) {
+        this.event.categories = [id];
+    }
 }
