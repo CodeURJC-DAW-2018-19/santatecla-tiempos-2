@@ -54,7 +54,7 @@ public class WebControllerTimes extends WebController{
     		model.addAttribute("concreteTime", time.get());
     		List<SubTime> subInterv = time.get().getSubIntervals();
     		model.addAttribute("subIntervals", subInterv);
-    		List<Event> events = time.get().getEvent();
+    		List<Event> events = time.get().getEvents();
     		model.addAttribute("eventListInt", events);
     	}
     	
@@ -104,7 +104,7 @@ public class WebControllerTimes extends WebController{
     	model.addAttribute("concreteTime", time);
 		List<SubTime> subInterv = time.getSubIntervals();
 		model.addAttribute("subIntervals", subInterv);
-		List<Event> events = time.getEvent();
+		List<Event> events = time.getEvents();
 		model.addAttribute("eventListInt", events);
 		return "concreteInterval";
     }
@@ -119,7 +119,7 @@ public class WebControllerTimes extends WebController{
     	model.addAttribute("concreteTime", time);
 		List<SubTime> subInterv = time.getSubIntervals();
 		model.addAttribute("subIntervals", subInterv);
-		List<Event> events = time.getEvent();
+		List<Event> events = time.getEvents();
 
 		Page<Time> times=timeService.findAll(pageable);
 		model.addAttribute("times",times);
@@ -138,7 +138,7 @@ public class WebControllerTimes extends WebController{
     	model.addAttribute("concreteTime", time);
 		List<SubTime> subInterv = time.getSubIntervals();
 		model.addAttribute("subIntervals", subInterv);
-		List<Event> events = time.getEvent();
+		List<Event> events = time.getEvents();
 		model.addAttribute("eventListInt", events);
 		return "concreteInterval";
     }
@@ -153,7 +153,7 @@ public class WebControllerTimes extends WebController{
     	model.addAttribute("concreteTime", time);
 		List<SubTime> subInterv = time.getSubIntervals();
 		model.addAttribute("subIntervals", subInterv);
-		List<Event> events = time.getEvent();
+		List<Event> events = time.getEvents();
 		model.addAttribute("eventListInt", events);
 		return "concreteInterval";
     }

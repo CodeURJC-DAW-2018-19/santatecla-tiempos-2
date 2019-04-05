@@ -10,12 +10,12 @@ import java.util.List;
 @Entity
 public class Time {
 
-	public interface Visitante{}
+	//public interface Visitante{}
 	@Id
 	@GeneratedValue(strategy=GenerationType.AUTO)
 	private long id;
 
-	@JsonView(Visitante.class)
+	//@JsonView(Visitante.class)
 	private String nameInterval;
 
 	private String startDate;
@@ -23,7 +23,7 @@ public class Time {
 
 	@OneToMany(fetch=FetchType.EAGER,cascade=CascadeType.ALL)
 	@ElementCollection
-	private List<Event> event;
+	private List<Event> events;
 
 
 	/*@OneToMany(cascade=CascadeType.ALL)
@@ -36,13 +36,14 @@ public class Time {
 		this.nameInterval = nameInterval;
 		this.startDate = startDate;
 		this.endDate = endDate;
+		this.events = new ArrayList<>();
 	}
 
 	public Time(String nameInterval, String startDate, String endDate, List<Event> event) {
 		this.nameInterval = nameInterval;
 		this.startDate = startDate;
 		this.endDate = endDate;
-		this.event = event;
+		this.events = event;
 		//this.subIntervals = new ArrayList<SubTime>();
 	}
 
@@ -70,12 +71,12 @@ public class Time {
 		this.endDate = endDate;
 	}
 
-	public List<Event> getEvent() {
-		return event;
+	public List<Event> getEvents() {
+		return events;
 	}
 
-	public void setEvent(List<Event> event) {
-		this.event = event;
+	public void setEvents(List<Event> events) {
+		this.events = events;
 	}	
 
 	/*public List<SubTime> getSubIntervals() {
@@ -96,13 +97,12 @@ public class Time {
 
 	@Override
 	public String toString() {
-		return "Time [id=" + id + ", nameInterval=" + nameInterval + ", startDate=" + startDate + ", endDate=" + endDate
-				+ ", event=" + event + "]";
+		return "Time{" +
+				"id=" + id +
+				", nameInterval='" + nameInterval + '\'' +
+				", startDate='" + startDate + '\'' +
+				", endDate='" + endDate + '\'' +
+				", events=" + events +
+				'}';
 	}
-	
-	
-
-	
-	
-	
 }

@@ -9,7 +9,7 @@ import {TdDialogService} from "@covalent/core";
 })
 export class TimeDetailComponent{
     time:Time;
-    events:Event;
+    event:Event;
 
     constructor(private router:Router,activatedRoute:ActivatedRoute,public service:TimeService,public loginService:LoginService, private _dialogService: TdDialogService){
         const id=activatedRoute.snapshot.params['id'];

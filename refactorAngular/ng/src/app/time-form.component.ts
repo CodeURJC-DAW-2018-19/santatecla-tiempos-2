@@ -10,24 +10,32 @@ import {EventService,Event} from "./event.service";
 export class TimeFormComponent implements OnInit{
     newTime: boolean;
     time: Time;
-    event:Event[];
+    events:Event[];
     constructor(private _router:Router, activatedRoute: ActivatedRoute, private service:TimeService,private  eventService:EventService){
         const id = activatedRoute.snapshot.params['id'];
             if (id){
-                service.getTime(id).subscribe((time)=> (this.time=time),(error)=>console.error(error));
+                console.log(service.getTime(id).subscribe((time) => this.time = time), (error) => console.error(error));
                 this.newTime=false;
             }else {
-                this.time = {nameInterval: '',startDate:'',endDate:'',event:[id]};
+                this.time = {nameInterval: '',startDate:'',endDate:'',events:[id]};
                 this.newTime = true;
             }
     }
     cancel(){
         window.history.back();
     }
+
     save(){
         this.service.saveTime(this.time).subscribe(
-            _ =>{},(error:Error)=>console.error('Error creating new time: '+error));
+            (time)=>{
+                console.log('time saved',time);
+                },(error:Error)=>console.error('Error creating new time: '+error));
         window.history.back();
+    }
+
+
+    set  selectedEvent(id: number) {
+        this.time.events= [id];
     }
 
 
@@ -39,11 +47,6 @@ export class TimeFormComponent implements OnInit{
             error => console.log(error)
         );
     }
-
-    set  selectedEvent(id: number) {
-        this.time.event= [id];
-    }
-
 
 
 

@@ -24,7 +24,7 @@ import java.util.Optional;
 
 public class TimeRestController {
 
-    interface VisitanteView extends Time.Visitante{}
+    //interface VisitanteView extends Time.Visitante{}
 
     @Autowired
     private TimeService timeService;
@@ -34,7 +34,7 @@ public class TimeRestController {
 
 
     @GetMapping("/")
-    public Page<Time> getTimes(@PageableDefault(value =5) Pageable pageable, @AuthenticationPrincipal User user){
+    public Page<Time> getTimes(@PageableDefault(value =5) Pageable pageable){
         Page<Time>times=timeService.findAll(pageable);
         return timeService.findAll(pageable);
     }

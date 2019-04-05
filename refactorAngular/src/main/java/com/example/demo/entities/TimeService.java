@@ -37,8 +37,8 @@ public class TimeService {
 		return timeRep.findAll();
 	}
 
-	public void saveTimer(Time tiempo){
-		timeRep.save(tiempo);
+	public void saveTimer(Time time){
+		timeRep.save(time);
 	}
 
 	public void deleteTimer(long id){

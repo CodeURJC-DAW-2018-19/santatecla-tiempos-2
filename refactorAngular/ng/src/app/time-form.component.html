@@ -17,7 +17,7 @@
                                 required
                         />
                     </mat-form-field>
-                        <mat-form-field>
+                    <mat-form-field>
                             <input type="date"
                                    matInput
                                    [(ngModel)]="time.startDate"
@@ -27,7 +27,7 @@
                                    name="name"
                                    required
                             />
-                        </mat-form-field>
+                    </mat-form-field>
                             <mat-form-field>
                                 <input type="date"
                                        matInput
@@ -54,8 +54,8 @@
                         <mat-label>Seleccione un Evento</mat-label>
                         <mat-select disableRipple placeholder="Seleccione una evento" [(ngModel)]="selectedEvent" #timeFormComponent
                                     #timeFormControl="ngModel" name="name">
-                            <mat-option *ngFor="let event of alleventss"  [value]="event.nameEvent">
-                                {{event.nameEvent}}
+                            <mat-option *ngFor="let eve of alleventss"  [value]="eve.nameEvent">
+                                {{eve.nameEvent}}
                             </mat-option>
                         </mat-select>
                     </mat-form-field>
