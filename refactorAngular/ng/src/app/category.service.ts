@@ -66,6 +66,16 @@ export class CategoryService{
     return this.http.get<Category[]>(ALL,{withCredentials:true})
         .pipe(catchError((error)=>this.handleError(error)));
   }
+/*
+  private allcategories:Category[];
+
+ getCountCategories():number{
+   this.getAllCategories().subscribe(
+       categories=>this.allcategories=categories,
+       error=>console.log(error)
+   ) ;
+   return this.allcategories.length;
+  }*/
 
   removeCategory(category:Category):Observable<Category>{
     return this.http

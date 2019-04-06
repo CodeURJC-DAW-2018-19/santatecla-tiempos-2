@@ -12,16 +12,24 @@
                     {{ time.nameInterval }}
 
                 </a>
+                <!--
                 <button mat-button (click)="getTimesbyPage(p-1)">Previous</button>
-                <button mat-button (click)="getTimesbyPage(p+1)">Next</button>
+                <button mat-button (click)="getTimesbyPage(p+1)">Next</button>-->
+                <td-paging-bar #pagingBar [firstLast]="firstLast" [pageSize]="pageSize" [total]="total" (change)="change($event)">
+                    {{pagingBar.range}} of {{pagingBar.total}}
+                </td-paging-bar>
             </mat-nav-list>
 
             <mat-nav-list *ngIf="!loginService.isLogged">
                 <mat-list-item [ngStyle]="{ cursor: 'auto' }" *ngFor="let time of times">
                     {{ time.nameInterval }}
                 </mat-list-item>
-                <button mat-button (click)="getTimesbyPage(p-1)">Previous</button>
-                <button mat-button (click)="getTimesbyPage(p+1)">Next</button>
+                <!--
+  <button mat-button (click)="getTimesbyPage(p-1)">Previous</button>
+  <button mat-button (click)="getTimesbyPage(p+1)">Next</button>-->
+                <td-paging-bar #pagingBar [firstLast]="firstLast" [pageSize]="pageSize" [total]="total" (change)="change($event)">
+                    {{pagingBar.range}} of {{pagingBar.total}}
+                </td-paging-bar>
             </mat-nav-list>
         </div>
 

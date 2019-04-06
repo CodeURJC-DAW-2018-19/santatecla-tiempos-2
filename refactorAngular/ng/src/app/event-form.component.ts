@@ -26,6 +26,7 @@ export class EventFormComponent implements OnInit{
         }else{
             this.event={nameEvent:'',date:'',location:'',wiki:'',hasImage:false,categories:[id], encodedImage:''};
             this.newEvent=true;
+
         }
     }
 

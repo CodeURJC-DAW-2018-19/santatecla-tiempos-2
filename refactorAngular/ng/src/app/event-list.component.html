@@ -26,8 +26,12 @@
                     :
                     <a *ngFor="let i of event.categories ">{{i.nameCategory}}</a>
                 </a>
+                <!--
                 <button mat-button (click)="getEventsbyPage(p-1)">Previous</button>
-                <button mat-button (click)="getEventsbyPage(p+1)">Next</button>
+                <button mat-button (click)="getEventsbyPage(p+1)">Next</button>-->
+                <td-paging-bar #pagingBar [firstLast]="firstLast" [pageSize]="pageSize" [total]="total" (change)="change($event)">
+                    {{pagingBar.range}} of {{pagingBar.total}}
+                </td-paging-bar>
             </mat-nav-list>
 
             <mat-nav-list *ngIf="!loginService.isLogged">
@@ -37,8 +41,12 @@
                     {{ event.location}}
                     {{event.wiki}}
                 </mat-list-item>
+                <!--
                 <button mat-button (click)="getEventsbyPage(p-1)">Previous</button>
-                <button mat-button (click)="getEventsbyPage(p+1)">Next</button>
+                <button mat-button (click)="getEventsbyPage(p+1)">Next</button>-->
+                <td-paging-bar #pagingBar [firstLast]="firstLast" [pageSize]="pageSize" [total]="total" (change)="change($event)">
+                    {{pagingBar.range}} of {{pagingBar.total}}
+                </td-paging-bar>
             </mat-nav-list>
         </div>
 

@@ -77,12 +77,12 @@ public class BBDDinit {
         Time time8 = new Time("Intervalo 8", "2-4-2021", "2-5-2021");
         Time time9 = new Time("Intervalo 9", "2-4-2021", "2-5-2021");
         Time time10 = new Time("Intervalo 10'", "2-4-2021", "2-5-2021");
-/*
-       time1.getEvents().add(event1);
-        time1.getEvents().add(event2);
-        time1.getEvents().add(event3);
-        
 
+       time1.getEvents().add(event1);
+        time2.getEvents().add(event2);
+        time3.getEvents().add(event3);
+        
+/*
         SubTime subtime1 = new SubTime ("2018", "8-9-2018", "10-10-2018");
         SubTime subtime2 = new SubTime ("2019", "10-1-2019", "20-11-2019");
         

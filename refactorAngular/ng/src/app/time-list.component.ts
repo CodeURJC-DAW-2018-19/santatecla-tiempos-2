@@ -1,7 +1,8 @@
-import {Component, OnInit} from "@angular/core";
+import {Component, OnInit, ViewChild} from "@angular/core";
 import {Router} from "@angular/router";
 import {LoginService} from "./auth/login.service";
 import {Time, TimeService} from "./time.service";
+import {IPageChangeEvent, TdPagingBarComponent} from "@covalent/core";
 
 @Component({
     templateUrl:'time-list.component.html'
@@ -11,6 +12,14 @@ export class TimeListComponent implements OnInit{
     times:Time[];
     events:Event[];
     p:number=0;
+
+
+    event:IPageChangeEvent;
+    pageNumber:number;
+    pageChanged:boolean;
+    firstLast:boolean;
+    pageSize:number=5;
+    total:number=40;
 
     constructor(private router:Router,private service:TimeService,public loginService:LoginService){}
     ngOnInit() {
@@ -32,5 +41,28 @@ export class TimeListComponent implements OnInit{
         );
         this.p= page;
     }
+
+    ngDoCheck(){
+        if(this.pageChanged){
+            this.service.getTimesbyPage(this.pageNumber-1).subscribe(
+                times=>this.times=times,
+                error=>console.log(error)
+            );
+            this.pageChanged=false;
+        }
+
+    }
+
+    change(event: IPageChangeEvent): void {
+        this.event = event;
+        this.pageNumber = event.page;
+        this.pageChanged = true;
+    }
+
+    toggleFirstLast(): void {
+        this.firstLast = !this.firstLast;
+    }
+
+    @ViewChild(TdPagingBarComponent) paging: TdPagingBarComponent;
 
 }
