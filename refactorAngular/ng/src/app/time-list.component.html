@@ -1,0 +1,35 @@
+<mat-card>
+    <mat-card-title>
+        <div layout="row" layout-align="start center">
+            <span flex>Lista de Intervalos</span>
+        </div>
+    </mat-card-title>
+    <mat-divider></mat-divider>
+    <mat-card-content>
+        <div>
+            <mat-nav-list *ngIf="loginService.isLogged">
+                <a *ngFor="let time of times" mat-list-item [routerLink]="['/times', time.id]">
+                    {{ time.nameInterval }}
+
+                </a>
+                <button mat-button (click)="getTimesbyPage(p-1)">Previous</button>
+                <button mat-button (click)="getTimesbyPage(p+1)">Next</button>
+            </mat-nav-list>
+
+            <mat-nav-list *ngIf="!loginService.isLogged">
+                <mat-list-item [ngStyle]="{ cursor: 'auto' }" *ngFor="let time of times">
+                    {{ time.nameInterval }}
+                </mat-list-item>
+                <button mat-button (click)="getTimesbyPage(p-1)">Previous</button>
+                <button mat-button (click)="getTimesbyPage(p+1)">Next</button>
+            </mat-nav-list>
+        </div>
+
+        <div layout="column" layout-align="center end" *ngIf="loginService.isLogged && loginService.isAdmin">
+            <mat-divider inset="true"></mat-divider>
+            <button mat-raised-button color="accent" class="push-top-sm" *ngIf="loginService.isLogged" (click)="newTime()">
+                <mat-icon>add</mat-icon> New
+            </button>
+        </div>
+    </mat-card-content>
+</mat-card>

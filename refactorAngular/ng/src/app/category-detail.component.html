@@ -1,0 +1,22 @@
+<div *ngIf="category">
+  <mat-card>
+    <mat-card-title> Categoria "{{ category.nameCategory }}"</mat-card-title>
+    <mat-divider></mat-divider>
+    <mat-card-content>
+      <div>
+        <p>{{ category.nameCategory }}</p>
+      </div>
+      <div layout="row" layout-align="end center">
+        <ng-container *ngIf="loginService.isLogged && loginService.isAdmin">
+          <button mat-raised-button color="accent" (click)="removeCategory()"><mat-icon>delete</mat-icon>Remove</button>
+          <button mat-raised-button color="accent" (click)="editCategory()" class="push-left-sm">
+            <mat-icon>edit</mat-icon>Edit
+          </button>
+        </ng-container>
+        <button mat-raised-button color="accent" (click)="goToCategories()" class="push-left-sm">
+          <mat-icon>list</mat-icon>All Category
+        </button>
+      </div>
+    </mat-card-content>
+  </mat-card>
+</div>

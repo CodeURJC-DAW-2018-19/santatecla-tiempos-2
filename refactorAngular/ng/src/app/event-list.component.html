@@ -1,0 +1,52 @@
+<div class="col-md-8">
+    <span flex *ngIf="!searchBox.searchVisible"></span>
+    <td-search-box hide-xs flex #searchBox [(ngModel)]="searchEvent"
+                   [ngClass]="{ 'push-left push-right mat-whiteframe-z1 bgc-white tc-black': searchBox.searchVisible }"
+                   placeholder="search" ></td-search-box>
+</div>
+
+<mat-card>
+    <mat-card-title>
+        <div layout="row" layout-align="start center">
+            <span flex>Lista de Eventos</span>
+        </div>
+    </mat-card-title>
+    <mat-divider></mat-divider>
+    <mat-card-content>
+        <div>
+            <mat-nav-list *ngIf="loginService.isLogged">
+                <a *ngFor="let event of events | eventNameFilter:searchEvent" mat-list-item [routerLink]="['/events', event.id]">
+                    {{ event.nameEvent }}
+                    :
+                    {{event.date}}
+                    :
+                    {{ event.location}}
+                    :
+                    {{event.wiki}}
+                    :
+                    <a *ngFor="let i of event.categories ">{{i.nameCategory}}</a>
+                </a>
+                <button mat-button (click)="getEventsbyPage(p-1)">Previous</button>
+                <button mat-button (click)="getEventsbyPage(p+1)">Next</button>
+            </mat-nav-list>
+
+            <mat-nav-list *ngIf="!loginService.isLogged">
+                <mat-list-item [ngStyle]="{ cursor: 'auto' }" *ngFor="let event of events">
+                    {{ event.nameEvent }}
+                    {{event.date}}
+                    {{ event.location}}
+                    {{event.wiki}}
+                </mat-list-item>
+                <button mat-button (click)="getEventsbyPage(p-1)">Previous</button>
+                <button mat-button (click)="getEventsbyPage(p+1)">Next</button>
+            </mat-nav-list>
+        </div>
+
+        <div layout="column" layout-align="center end" *ngIf="loginService.isLogged && loginService.isAdmin">
+            <mat-divider inset="true"></mat-divider>
+            <button mat-raised-button color="accent" class="push-top-sm" *ngIf="loginService.isLogged" (click)="newEvent()">
+                <mat-icon>add</mat-icon> New
+            </button>
+        </div>
+    </mat-card-content>
+</mat-card>

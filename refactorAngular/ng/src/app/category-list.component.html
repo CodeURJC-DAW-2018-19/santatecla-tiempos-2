@@ -1,0 +1,42 @@
+<div class="col-md-8">
+  <span flex *ngIf="!searchBox.searchVisible"></span>
+  <td-search-box hide-xs flex #searchBox [(ngModel)]="searchCategory"
+                 [ngClass]="{ 'push-left push-right mat-whiteframe-z1 bgc-white tc-black': searchBox.searchVisible }"
+                 placeholder="search" ></td-search-box>
+</div>
+
+<mat-card>
+  <mat-card-title>
+    <div layout="row" layout-align="start center">
+      <span flex>Lista de Categorias</span>
+    </div>
+  </mat-card-title>
+  <mat-divider></mat-divider>
+  <mat-card-content>
+    <div>
+      <mat-nav-list *ngIf="loginService.isLogged">
+        <a *ngFor="let category of categories | categoryNameFilter:searchCategory" mat-list-item [routerLink]="['/categories', category.id]">
+          {{ category.nameCategory }}
+        </a>
+        <button mat-button (click)="getCategoriesbyPage(p-1)">Previous</button>
+        <button mat-button (click)="getCategoriesbyPage(p+1)">Next</button>
+
+      </mat-nav-list>
+
+      <mat-nav-list *ngIf="!loginService.isLogged">
+        <mat-list-item [ngStyle]="{ cursor: 'auto' }" *ngFor="let category of categories">
+          {{ category.nameCategory }}
+        </mat-list-item>
+        <button mat-button (click)="getCategoriesbyPage(p-1)">Previous</button>
+        <button mat-button (click)="getCategoriesbyPage(p+1)">Next</button>
+      </mat-nav-list>
+    </div>
+
+    <div layout="column" layout-align="center end" *ngIf="loginService.isLogged && loginService.isAdmin">
+      <mat-divider inset="true"></mat-divider>
+      <button mat-raised-button color="accent" class="push-top-sm" *ngIf="loginService.isLogged" (click)="newCategory()">
+        <mat-icon>add</mat-icon> New
+      </button>
+    </div>
+  </mat-card-content>
+</mat-card>

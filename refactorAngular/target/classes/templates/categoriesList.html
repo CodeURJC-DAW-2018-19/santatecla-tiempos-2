@@ -1,0 +1,27 @@
+<table class="table" id="tabla">
+    <tbody>
+    {{#categories}}
+    <tr>
+        <td class="text-center" id="change">{{nameCategory}}</td>
+        {{#admin}}
+        <td class="td-actions text-left">
+            <button class="btn btn-info btn-fab btn-fab-mini categoryButton" onClick="select({{id}})" data-toggle="modal" data-target="#UpdateCategory">
+                <i class="material-icons" id="categoryIconEdit">edit</i>
+            </button>
+        </td>
+        <td class="td-actions text-left">
+            <form action="/deleteCategory/{{id}}" method="post" id="Delete">
+                <button type="submit" rel="tooltip" class="btn btn-info btn-simple categoryButton" >
+                    <i class="material-icons" id="categoryIconDelete">delete</i>
+                </button>
+            </form>
+        </td>
+        {{/admin}}
+    </tr>
+    {{/categories}}
+
+
+
+    </tbody>
+
+</table>
