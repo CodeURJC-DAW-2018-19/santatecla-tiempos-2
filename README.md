@@ -156,3 +156,17 @@ The template diagrams have not been modified in this phase of the practice.
 ### REST API documentation
 Document [Api documentation](API.md) with information about the REST API.
 
+## Phsae 4
+
+### Installation and configuration for SPA with Angular
+
+First of all we have to install node.js, you have to go to [this link](https://nodejs.org/es/download/) to download it. 
+One you have installed it, go to a terminal and execute the following commands: 
+ Install the Angular CLI globally with the command:
+  > npm install -g angular-cli
+ Go to the workspace folder my-app for example, with:
+  > cd my-app
+ To download the modules use the command:
+  > npm install
+ End using command:
+  > npm start
