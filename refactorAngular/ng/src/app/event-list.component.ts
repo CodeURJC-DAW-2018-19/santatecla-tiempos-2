@@ -22,7 +22,7 @@ export class  EventListComponent implements OnInit{
     pageChanged:boolean;
     firstLast:boolean;
     pageSize:number=5;
-    total:number=40;
+    total:number=20;
     constructor(private router:Router,private service:EventService,public loginService:LoginService,private categoryService:CategoryService){}
 
     ngOnInit() {
@@ -31,6 +31,9 @@ export class  EventListComponent implements OnInit{
             events=>this.events=events,
             error=>console.log(error)
         );
+        this.service.getCountEvents().subscribe(
+            events=>this.total=events,
+            error=>console.log(error));
     }
 
     getEventsbyPage(page:number){
@@ -51,6 +54,9 @@ export class  EventListComponent implements OnInit{
                 events=>this.events=events,
                 error=>console.log(error)
             );
+            this.service.getCountEvents().subscribe(
+                events=>this.total=events,
+                error=>console.log(error));
             this.pageChanged=false;
         }
 

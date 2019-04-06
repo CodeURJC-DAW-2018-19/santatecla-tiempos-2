@@ -30,6 +30,9 @@ export class CategoryListComponent implements OnInit{
       categories=>this.categories=categories,
       error=>console.log(error)
     );
+    this.service.getCountCategories().subscribe(
+        categories=>this.total=categories,
+        error=>console.log(error));
   }
 
   ngDoCheck(){
@@ -38,6 +41,9 @@ export class CategoryListComponent implements OnInit{
           categories=>this.categories=categories,
           error=>console.log(error)
       );
+      this.service.getCountCategories().subscribe(
+          categories=>this.total=categories,
+          error=>console.log(error));
       this.pageChanged=false;
     }
 
@@ -63,7 +69,7 @@ export class CategoryListComponent implements OnInit{
 
 
   newCategory(){
-    this.router.navigate(['/categories/new'])
+    this.router.navigate(['/categories/new']);
   }
 
 

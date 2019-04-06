@@ -73,4 +73,10 @@ public class TimeRestController {
         timeService.saveTimer(updateTimer);
         return updateTimer;
     }
+
+    @GetMapping("/all")
+    public List<Time> getAllTimes(){
+        List<Time>times=timeService.findAll();
+        return timeService.findAll();
+    }
 }

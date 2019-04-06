@@ -2,21 +2,13 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="3555b13a-a56f-4a94-bab2-e973e3df3eba" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ng/src/app/category-form.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/ng/src/app/category-form.component.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ng/src/app/category-list.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/ng/src/app/category-list.component.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ng/src/app/category-list.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/ng/src/app/category-list.component.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ng/src/app/category.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/ng/src/app/category.service.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ng/src/app/event-form.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/ng/src/app/event-form.component.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ng/src/app/event-list.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/ng/src/app/event-list.component.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ng/src/app/event-list.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/ng/src/app/event-list.component.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ng/src/app/time-detail.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/ng/src/app/time-detail.component.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ng/src/app/time-list.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/ng/src/app/time-list.component.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ng/src/app/event.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/ng/src/app/event.service.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ng/src/app/time-list.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/ng/src/app/time-list.component.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/demo/BBDDinit.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/demo/BBDDinit.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/demo/entities/Time.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/demo/entities/Time.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/example/demo/BBDDinit.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/demo/BBDDinit.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/example/demo/entities/Time.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/demo/entities/Time.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ng/src/app/time.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/ng/src/app/time.service.ts" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/target/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -31,28 +23,10 @@
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/ng/src/app/category-list.component.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="129">
-              <caret line="23" column="94" selection-start-line="23" selection-start-column="89" selection-end-line="23" selection-end-column="94" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/ng/src/app/category-list.component.ts">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="255">
-              <caret line="20" column="17" selection-start-line="20" selection-start-column="17" selection-end-line="20" selection-end-column="17" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/ng/src/app/category.service.ts">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1241">
-              <caret line="73" column="49" lean-forward="true" selection-start-line="73" selection-start-column="49" selection-end-line="73" selection-end-column="49" />
+            <state relative-caret-position="289">
+              <caret line="70" column="19" lean-forward="true" selection-start-line="70" selection-end-line="76" selection-end-column="3" />
               <folding>
                 <element signature="e#0#41#0" expanded="true" />
               </folding>
@@ -61,52 +35,10 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/example/demo/api/CategoriesRestController.java">
+        <entry file="file://$PROJECT_DIR$/ng/src/app/event.service.ts">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="272">
-              <caret line="30" column="5" lean-forward="true" selection-start-line="30" selection-start-column="5" selection-end-line="30" selection-end-column="5" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/ng/src/app/event-form.component.ts">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="367">
-              <caret line="67" column="3" lean-forward="true" selection-start-line="67" selection-start-column="3" selection-end-line="67" selection-end-column="37" />
-              <folding>
-                <element signature="e#0#51#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/example/demo/BBDDinit.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1338">
-              <caret line="82" column="13" selection-start-line="82" selection-start-column="13" selection-end-line="82" selection-end-column="13" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/ng/src/app/event-list.component.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="266">
-              <caret line="33" column="32" lean-forward="true" selection-start-line="31" selection-start-column="16" selection-end-line="33" selection-end-column="32" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/ng/src/app/event-list.component.ts">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="294">
-              <caret line="24" column="20" lean-forward="true" selection-start-line="19" selection-start-column="4" selection-end-line="24" selection-end-column="20" />
+            <state relative-caret-position="508">
+              <caret line="89" column="38" selection-start-line="89" selection-start-column="38" selection-end-line="89" selection-end-column="38" />
               <folding>
                 <element signature="e#0#48#0" expanded="true" />
               </folding>
@@ -115,19 +47,40 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/ng/src/app/time-list.component.html">
+        <entry file="file://$PROJECT_DIR$/ng/src/app/category-list.component.ts">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="226">
-              <caret line="19" column="32" selection-start-line="19" selection-start-column="32" selection-end-line="19" selection-end-column="32" />
+            <state relative-caret-position="289">
+              <caret line="34" column="35" lean-forward="true" selection-start-line="32" selection-start-column="4" selection-end-line="34" selection-end-column="35" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/ng/src/app/event-list.component.ts">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="168">
+              <caret line="52" column="48" selection-start-line="52" selection-start-column="48" selection-end-line="52" selection-end-column="48" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/ng/src/app/time.service.ts">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-614">
+              <caret line="21" column="9" selection-start-line="21" selection-start-column="9" selection-end-line="21" selection-end-column="9" />
+              <folding>
+                <element signature="e#0#41#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/ng/src/app/time-list.component.ts">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-12">
-              <caret line="24" column="16" lean-forward="true" selection-start-line="24" selection-start-column="16" selection-end-line="24" selection-end-column="16" />
+            <state relative-caret-position="493">
+              <caret line="55" column="43" selection-start-line="55" selection-start-column="43" selection-end-line="55" selection-end-column="43" />
               <folding>
                 <element signature="e#0#59#0" expanded="true" />
               </folding>
@@ -191,8 +144,6 @@
         <option value="$PROJECT_DIR$/pom.xml" />
         <option value="$PROJECT_DIR$/src/main/java/com/example/demo/security/RestSecurityConfig.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/example/demo/security/SecurityConfiguration.java" />
-        <option value="$PROJECT_DIR$/ng/src/app/event.service.ts" />
-        <option value="$PROJECT_DIR$/ng/src/app/time.service.ts" />
         <option value="$PROJECT_DIR$/ng/src/app/category-form.component.html" />
         <option value="$PROJECT_DIR$/ng/src/app/event-form.component.html" />
         <option value="$PROJECT_DIR$/ng/src/app/time-form.component.ts" />
@@ -202,14 +153,16 @@
         <option value="$PROJECT_DIR$/ng/src/app/time-detail.component.html" />
         <option value="$PROJECT_DIR$/src/main/java/com/example/demo/api/CategoriesRestController.java" />
         <option value="$PROJECT_DIR$/ng/src/app/event-list.component.html" />
-        <option value="$PROJECT_DIR$/ng/src/app/event-list.component.ts" />
-        <option value="$PROJECT_DIR$/ng/src/app/time-list.component.ts" />
         <option value="$PROJECT_DIR$/ng/src/app/time-list.component.html" />
         <option value="$PROJECT_DIR$/ng/src/app/event-form.component.ts" />
-        <option value="$PROJECT_DIR$/ng/src/app/category-form.component.ts" />
-        <option value="$PROJECT_DIR$/ng/src/app/category.service.ts" />
         <option value="$PROJECT_DIR$/ng/src/app/category-list.component.html" />
+        <option value="$PROJECT_DIR$/ng/src/app/category.service.ts" />
         <option value="$PROJECT_DIR$/ng/src/app/category-list.component.ts" />
+        <option value="$PROJECT_DIR$/ng/src/app/category-form.component.ts" />
+        <option value="$PROJECT_DIR$/ng/src/app/event.service.ts" />
+        <option value="$PROJECT_DIR$/ng/src/app/event-list.component.ts" />
+        <option value="$PROJECT_DIR$/ng/src/app/time.service.ts" />
+        <option value="$PROJECT_DIR$/ng/src/app/time-list.component.ts" />
       </list>
     </option>
   </component>
@@ -448,12 +401,12 @@
       <workItem from="1554399728982" duration="401000" />
       <workItem from="1554547060424" duration="729000" />
       <workItem from="1554552078440" duration="7154000" />
-      <workItem from="1554565977853" duration="4279000" />
+      <workItem from="1554565977853" duration="6387000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="96417000" />
+    <option name="totallyTimeSpent" value="98525000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -466,9 +419,8 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
-    <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.24200426" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.24200426" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Designer" order="2" />
       <window_info id="Image Layers" order="3" />
@@ -479,13 +431,13 @@
       <window_info id="Web" order="8" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.32936078" />
-      <window_info anchor="bottom" id="Run" order="2" visible="true" weight="0.18201517" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.58938247" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.40303358" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
-      <window_info anchor="bottom" id="TODO" order="6" weight="0.3286119" />
+      <window_info anchor="bottom" id="TODO" order="6" weight="0.32827735" />
       <window_info anchor="bottom" id="Spring" order="7" weight="0.32936078" />
-      <window_info anchor="bottom" id="Terminal" order="8" sideWeight="0.49932885" weight="0.26868907" />
+      <window_info active="true" anchor="bottom" id="Terminal" order="8" sideWeight="0.49932885" visible="true" weight="0.26868907" />
       <window_info anchor="bottom" id="Docker" order="9" show_stripe_button="false" />
       <window_info anchor="bottom" id="Event Log" order="10" sideWeight="0.50067115" side_tool="true" weight="0.28470254" />
       <window_info anchor="bottom" id="Messages" order="11" weight="0.32152975" />
@@ -717,26 +669,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/ng/src/app/event.service.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="102">
-          <caret line="46" column="18" selection-start-line="46" selection-start-column="18" selection-end-line="46" selection-end-column="18" />
-          <folding>
-            <element signature="e#0#48#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/ng/src/app/time.service.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="284">
-          <caret line="62" column="40" selection-start-line="62" selection-start-column="40" selection-end-line="62" selection-end-column="40" />
-          <folding>
-            <element signature="e#0#41#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/ng/src/app/event-form.component.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-1417">
@@ -806,47 +738,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/ng/src/app/time-list.component.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-12">
-          <caret line="24" column="16" lean-forward="true" selection-start-line="24" selection-start-column="16" selection-end-line="24" selection-end-column="16" />
-          <folding>
-            <element signature="e#0#59#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/ng/src/app/event-list.component.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="294">
-          <caret line="24" column="20" lean-forward="true" selection-start-line="19" selection-start-column="4" selection-end-line="24" selection-end-column="20" />
-          <folding>
-            <element signature="e#0#48#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/ng/src/app/category-form.component.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="294">
-          <caret line="21" column="28" selection-start-line="21" selection-start-column="28" selection-end-line="21" selection-end-column="28" />
-          <folding>
-            <element signature="e#0#40#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/ng/src/app/category-form.component.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="555">
           <caret line="42" column="6" selection-start-line="42" selection-start-column="6" selection-end-line="42" selection-end-column="6" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/ng/src/app/event-list.component.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="266">
-          <caret line="33" column="32" lean-forward="true" selection-start-line="31" selection-start-column="16" selection-end-line="33" selection-end-column="32" />
         </state>
       </provider>
     </entry>
@@ -862,10 +757,34 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/ng/src/app/event-form.component.ts">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="367">
+        <state relative-caret-position="877">
           <caret line="67" column="3" lean-forward="true" selection-start-line="67" selection-start-column="3" selection-end-line="67" selection-end-column="37" />
           <folding>
             <element signature="e#0#51#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ng/src/app/event-list.component.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="266">
+          <caret line="33" column="32" lean-forward="true" selection-start-line="31" selection-start-column="16" selection-end-line="33" selection-end-column="32" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ng/src/app/category-list.component.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="129">
+          <caret line="23" column="94" selection-start-line="23" selection-start-column="89" selection-end-line="23" selection-end-column="94" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ng/src/app/category-form.component.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="527">
+          <caret line="31" column="80" lean-forward="true" selection-start-line="31" selection-start-column="80" selection-end-line="31" selection-end-column="80" />
+          <folding>
+            <element signature="e#0#40#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -877,27 +796,57 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/ng/src/app/event.service.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="508">
+          <caret line="89" column="38" selection-start-line="89" selection-start-column="38" selection-end-line="89" selection-end-column="38" />
+          <folding>
+            <element signature="e#0#48#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ng/src/app/event-list.component.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="168">
+          <caret line="52" column="48" selection-start-line="52" selection-start-column="48" selection-end-line="52" selection-end-column="48" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/ng/src/app/category.service.ts">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1241">
-          <caret line="73" column="49" lean-forward="true" selection-start-line="73" selection-start-column="49" selection-end-line="73" selection-end-column="49" />
+        <state relative-caret-position="289">
+          <caret line="70" column="19" lean-forward="true" selection-start-line="70" selection-end-line="76" selection-end-column="3" />
           <folding>
             <element signature="e#0#41#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/ng/src/app/category-list.component.html">
+    <entry file="file://$PROJECT_DIR$/ng/src/app/time.service.ts">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="129">
-          <caret line="23" column="94" selection-start-line="23" selection-start-column="89" selection-end-line="23" selection-end-column="94" />
+        <state relative-caret-position="-614">
+          <caret line="21" column="9" selection-start-line="21" selection-start-column="9" selection-end-line="21" selection-end-column="9" />
+          <folding>
+            <element signature="e#0#41#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/ng/src/app/category-list.component.ts">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="255">
-          <caret line="20" column="17" selection-start-line="20" selection-start-column="17" selection-end-line="20" selection-end-column="17" />
+        <state relative-caret-position="289">
+          <caret line="34" column="35" lean-forward="true" selection-start-line="32" selection-start-column="4" selection-end-line="34" selection-end-column="35" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ng/src/app/time-list.component.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="493">
+          <caret line="55" column="43" selection-start-line="55" selection-start-column="43" selection-end-line="55" selection-end-column="43" />
+          <folding>
+            <element signature="e#0#59#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

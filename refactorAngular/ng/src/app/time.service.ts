@@ -4,6 +4,7 @@ import {Observable} from "rxjs";
 import {catchError, map} from "rxjs/operators";
 import {LoginService}from "./auth/login.service";
 import {Event, EventService} from "./event.service";
+import {Category} from "./category.service";
 
 
 
@@ -18,6 +19,7 @@ export interface Time{
 }
 
 const URL = '/api/times/';
+const ALL='/api/times/all';
 
 @Injectable()
 export class TimeService{
@@ -73,6 +75,14 @@ export class TimeService{
     private handleError(error:any){
         console.error(error);
         return Observable.throw('Server error ('+error.status+' ): '+error);
+    }
+
+    getCountTime(){
+        return     this.http.get<Time[]>(ALL,{withCredentials:true})
+            .pipe(
+                map(result => result.length),
+                catchError((error)=>this.handleError(error)));
+
     }
 }
 

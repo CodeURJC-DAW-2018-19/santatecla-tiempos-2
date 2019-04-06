@@ -28,6 +28,9 @@ export class TimeListComponent implements OnInit{
             times=>this.times=times,
             error=>console.log(error)
         );
+        this.service.getCountTime().subscribe(
+            times=>this.total=times,
+            error=>console.log(error));
     }
 
     newTime(){
@@ -48,6 +51,9 @@ export class TimeListComponent implements OnInit{
                 times=>this.times=times,
                 error=>console.log(error)
             );
+            this.service.getCountTime().subscribe(
+                times=>this.total=times,
+                error=>console.log(error));
             this.pageChanged=false;
         }
 

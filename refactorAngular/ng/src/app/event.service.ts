@@ -86,4 +86,12 @@ export class EventService{
         return Observable.throw('Server error ('+error.status+' ): '+error);
     }
 
+    getCountEvents(){
+        return     this.http.get<Event[]>(ALL,{withCredentials:true})
+            .pipe(
+                map(result => result.length),
+                catchError((error)=>this.handleError(error)));
+
+    }
+
 }
