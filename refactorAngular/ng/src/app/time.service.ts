@@ -60,7 +60,7 @@ export class TimeService{
 
     getTimesbyPage(page:number):Observable<Time[]>{
         console.log("pidiendo datos");
-        return this.http.get<any>(URL+ "/?page="+page,{withCredentials:true})
+        return this.http.get<any>(URL+ "?page="+page,{withCredentials:true})
             .pipe(
                 map(result => result.content),
                 catchError((error)=>this.handleError(error)));

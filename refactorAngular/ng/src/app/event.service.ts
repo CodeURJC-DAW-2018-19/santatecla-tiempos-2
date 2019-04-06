@@ -43,7 +43,7 @@ export class EventService{
 
     getEventsbyPage(page:number):Observable<Event[]>{
         console.log("Entrando en getEvents");
-        return this.http.get<any>(URL+ "/?page="+page,{withCredentials:true})
+        return this.http.get<any>(URL+ "?page="+page,{withCredentials:true})
             .pipe(
                 map(result=>result.content),
                 catchError((error)=>this.handleError(error)));

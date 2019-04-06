@@ -5610,7 +5610,7 @@ var CategoryService = /** @class */ (function () {
     CategoryService.prototype.getCategoriesbyPage = function (page) {
         var _this = this;
         console.log("pidiendo datos");
-        return this.http.get(URL + "/?page=" + page, { withCredentials: true })
+        return this.http.get(URL + "?page=" + page, { withCredentials: true })
             .pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_4__["map"])(function (result) { return result.content; }), Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_4__["catchError"])(function (error) { return _this.handleError(error); }));
     };
     CategoryService.prototype.getCategory = function (id) {
@@ -6010,7 +6010,7 @@ var EventService = /** @class */ (function () {
     EventService.prototype.getEventsbyPage = function (page) {
         var _this = this;
         console.log("Entrando en getEvents");
-        return this.http.get(URL + "/?page=" + page, { withCredentials: true })
+        return this.http.get(URL + "?page=" + page, { withCredentials: true })
             .pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_4__["map"])(function (result) { return result.content; }), Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_4__["catchError"])(function (error) { return _this.handleError(error); }));
     };
     EventService.prototype.getEvent = function (id) {
@@ -6419,7 +6419,7 @@ var TimeService = /** @class */ (function () {
     TimeService.prototype.getTimesbyPage = function (page) {
         var _this = this;
         console.log("pidiendo datos");
-        return this.http.get(URL + "/?page=" + page, { withCredentials: true })
+        return this.http.get(URL + "?page=" + page, { withCredentials: true })
             .pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_4__["map"])(function (result) { return result.content; }), Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_4__["catchError"])(function (error) { return _this.handleError(error); }));
     };
     TimeService.prototype.getCategory = function () {
