@@ -1,4 +1,4 @@
-<div *ngIf="category">
+<div *ngIf="category && loginService.isLogged && loginService.isAdmin">
   <mat-card>
     <mat-card-title> Nombre de la categoria:  "{{ category.nameCategory }}"</mat-card-title>
     <mat-divider></mat-divider>
@@ -36,4 +36,8 @@
       </div>
     </mat-card-actions>
   </mat-card>
+</div>
+
+<div *ngIf="!loginService.isLogged">
+  No tienes permisos de administrador
 </div>

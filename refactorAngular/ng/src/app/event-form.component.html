@@ -1,4 +1,4 @@
-<div *ngIf="event">
+<div *ngIf="event && loginService.isLogged && loginService.isAdmin">
     <mat-card>
         <mat-card-title> Evento "{{ event.nameEvent }}"</mat-card-title>
         <mat-divider></mat-divider>
@@ -100,4 +100,8 @@
             </div>
         </mat-card-actions>
     </mat-card>
+</div>
+
+<div *ngIf="!loginService.isLogged">
+    No tienes permisos de administrador
 </div>

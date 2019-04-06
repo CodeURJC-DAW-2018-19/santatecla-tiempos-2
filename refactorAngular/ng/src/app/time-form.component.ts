@@ -2,6 +2,7 @@ import {Component,OnInit} from "@angular/core";
 import {ActivatedRoute, Router} from "@angular/router";
 import {Time,TimeService} from "./time.service";
 import {EventService,Event} from "./event.service";
+import {LoginService} from "./auth/login.service";
 
 
 @Component({
@@ -11,7 +12,7 @@ export class TimeFormComponent implements OnInit{
     newTime: boolean;
     time: Time;
     events:Event[];
-    constructor(private _router:Router, activatedRoute: ActivatedRoute, private service:TimeService,private  eventService:EventService){
+    constructor(private _router:Router, activatedRoute: ActivatedRoute, private service:TimeService,private  eventService:EventService, private loginService:LoginService){
         const id = activatedRoute.snapshot.params['id'];
             if (id){
                 console.log(service.getTime(id).subscribe((time) => this.time = time), (error) => console.error(error));

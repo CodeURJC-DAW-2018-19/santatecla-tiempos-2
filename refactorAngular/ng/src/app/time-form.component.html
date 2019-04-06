@@ -1,4 +1,4 @@
-<div *ngIf="time">
+<div *ngIf="time && loginService.isLogged && loginService.isAdmin">
     <mat-card>
         <mat-card-title> Nombre del intervalo:  "{{ time.nameInterval }}"</mat-card-title>
         <mat-divider></mat-divider>
@@ -78,4 +78,8 @@
             </div>
         </mat-card-actions>
     </mat-card>
+</div>
+
+<div *ngIf="!loginService.isLogged">
+    No tienes permisos de administrador
 </div>

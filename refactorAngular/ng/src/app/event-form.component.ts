@@ -3,6 +3,7 @@ import {Component,OnInit} from "@angular/core";
 import {ActivatedRoute, Router} from "@angular/router";
 import {Category,CategoryService} from"./category.service";
 import {id} from "@swimlane/ngx-charts/release/utils";
+import {LoginService} from "./auth/login.service";
 
 @Component({
     templateUrl:'event-form.component.html',
@@ -16,7 +17,7 @@ export class EventFormComponent implements OnInit{
     imgURL: any;
     public imgMessage: string;
 
-    constructor(private _router:Router,activatedRoute:ActivatedRoute,private service:EventService,private categoryService:CategoryService){
+    constructor(private _router:Router,activatedRoute:ActivatedRoute,private service:EventService,private categoryService:CategoryService, private loginService:LoginService){
         const id=activatedRoute.snapshot.params['id'];
 
         if(id){
