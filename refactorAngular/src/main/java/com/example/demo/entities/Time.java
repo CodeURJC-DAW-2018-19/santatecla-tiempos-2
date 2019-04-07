@@ -28,9 +28,9 @@ public class Time {
 	private List<Event> events;
 
 
-	/*@OneToMany(cascade=CascadeType.ALL)
+	@OneToMany(cascade=CascadeType.ALL)
 	@ElementCollection
-	private List<SubTime> subIntervals;*/
+	private List<SubTime> subIntervals;
 
 /*
 	@JsonCreator
@@ -54,6 +54,14 @@ public class Time {
 		this.endDate = endDate;
 		this.events = event;
 		//this.subIntervals = new ArrayList<SubTime>();
+	}
+
+	public Time(String nameInterval, String startDate, String endDate, List<Event> events, List<SubTime> subIntervals) {
+		this.nameInterval = nameInterval;
+		this.startDate = startDate;
+		this.endDate = endDate;
+		this.events = events;
+		this.subIntervals = subIntervals;
 	}
 
 	public String getNameInterval() {
@@ -88,13 +96,13 @@ public class Time {
 		this.events = events;
 	}	
 
-	/*public List<SubTime> getSubIntervals() {
+	public List<SubTime> getSubIntervals() {
 		return subIntervals;
 	}
 
 	public void setSubIntervals(List<SubTime> subIntervals) {
 		this.subIntervals = subIntervals;
-	}*/
+	}
 
 	public long getId() {
 		return id;
@@ -114,4 +122,6 @@ public class Time {
 				", events=" + events +
 				'}';
 	}
+
+
 }

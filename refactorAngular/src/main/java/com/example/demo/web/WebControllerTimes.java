@@ -1,5 +1,5 @@
 package com.example.demo.web;
-/*
+
 import com.example.demo.entities.*;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
@@ -46,7 +46,7 @@ public class WebControllerTimes extends WebController{
 		return "timeList";
 
 	}
-/*
+
     @GetMapping("/times/{id}")
     public String showTimes(Model model, @PathVariable long id){
     	Optional<Time> time = timeService.findOne(id);
@@ -102,8 +102,8 @@ public class WebControllerTimes extends WebController{
     public String updateTime(Model model, @PathVariable long id) {
     	Time time = timeService.findOne(id).get();
     	model.addAttribute("concreteTime", time);
-		List<SubTime> subInterv = time.getSubIntervals();
-		model.addAttribute("subIntervals", subInterv);
+		//List<SubTime> subInterv = time.getSubIntervals();
+		//model.addAttribute("subIntervals", subInterv);
 		List<Event> events = time.getEvents();
 		model.addAttribute("eventListInt", events);
 		return "concreteInterval";
@@ -117,8 +117,8 @@ public class WebControllerTimes extends WebController{
     	time.setEndDate(endDate);
     	timeService.saveTimer(time);
     	model.addAttribute("concreteTime", time);
-		List<SubTime> subInterv = time.getSubIntervals();
-		model.addAttribute("subIntervals", subInterv);
+		//List<SubTime> subInterv = time.getSubIntervals();
+		//model.addAttribute("subIntervals", subInterv);
 		List<Event> events = time.getEvents();
 
 		Page<Time> times=timeService.findAll(pageable);
@@ -132,7 +132,7 @@ public class WebControllerTimes extends WebController{
 		return "times";
     }
     
-    @GetMapping("/times/{id}/newSubtime")
+   @GetMapping("/times/{id}/newSubtime")
     public String saveSubtime(Model model, @PathVariable long id) {
     	Time time = timeService.findOne(id).get();
     	model.addAttribute("concreteTime", time);
@@ -143,7 +143,7 @@ public class WebControllerTimes extends WebController{
 		return "concreteInterval";
     }
     
-    
+
     @PostMapping("/times/{id}/newSubtime")
     public String saveSubtime(Model model,@PathVariable long id, @RequestParam String subTimeName, @RequestParam String startDate, @RequestParam String endDate) {
     	SubTime subTime = new SubTime(subTimeName, startDate, endDate);
@@ -158,4 +158,4 @@ public class WebControllerTimes extends WebController{
 		return "concreteInterval";
     }
 }
-*/
+
