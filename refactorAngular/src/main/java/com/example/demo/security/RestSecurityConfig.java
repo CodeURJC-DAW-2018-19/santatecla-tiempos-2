@@ -24,12 +24,14 @@ public class RestSecurityConfig extends WebSecurityConfigurerAdapter {
 
         //URLS de acceso
         http.authorizeRequests().antMatchers(HttpMethod.GET,"/api/categories/").permitAll();
+        http.authorizeRequests().antMatchers(HttpMethod.GET,"/api/categories/all/").permitAll();
         http.authorizeRequests().antMatchers(HttpMethod.GET,"/api/categories/**").hasAnyRole("USER","ADMIN");
         http.authorizeRequests().antMatchers(HttpMethod.POST,"/api/categories/**").hasRole("ADMIN");
         http.authorizeRequests().antMatchers(HttpMethod.PUT,"/api/categories/**").hasRole("ADMIN");
         http.authorizeRequests().antMatchers(HttpMethod.DELETE,"/api/categories/**").hasRole("ADMIN");
 
         http.authorizeRequests().antMatchers(HttpMethod.GET,"/api/events/").permitAll();
+        http.authorizeRequests().antMatchers(HttpMethod.GET,"/api/events/all/").permitAll();
         http.authorizeRequests().antMatchers(HttpMethod.GET,"/api/events/**").hasAnyRole("USER","ADMIN");
         http.authorizeRequests().antMatchers(HttpMethod.POST,"/api/events/**").hasRole("ADMIN");
         http.authorizeRequests().antMatchers(HttpMethod.PUT,"/api/events/**").hasRole("ADMIN");
@@ -38,7 +40,8 @@ public class RestSecurityConfig extends WebSecurityConfigurerAdapter {
 
 
         http.authorizeRequests().antMatchers(HttpMethod.GET,"/api/times/").permitAll();
-        http.authorizeRequests().antMatchers(HttpMethod.GET,"/api/times/visitante").permitAll();
+        http.authorizeRequests().antMatchers(HttpMethod.GET,"/api/times/all/").permitAll();
+        //http.authorizeRequests().antMatchers(HttpMethod.GET,"/api/times/visitante").permitAll();
         http.authorizeRequests().antMatchers(HttpMethod.GET,"/api/times/**").hasAnyRole("USER","ADMIN");
         http.authorizeRequests().antMatchers(HttpMethod.POST,"/api/times/**").hasRole("ADMIN");
         http.authorizeRequests().antMatchers(HttpMethod.PUT,"/api/times/**").hasRole("ADMIN");

@@ -1,5 +1,7 @@
 package com.example.demo.entities;
 
+import com.fasterxml.jackson.annotation.JsonCreator;
+import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonView;
 
 import javax.persistence.*;
@@ -21,7 +23,7 @@ public class Time {
 	private String startDate;
 	private String endDate;
 
-	@OneToMany(fetch=FetchType.EAGER,cascade=CascadeType.REFRESH)
+	@OneToMany(fetch=FetchType.EAGER,cascade=CascadeType.PERSIST)
 	@ElementCollection
 	private List<Event> events;
 
@@ -29,7 +31,13 @@ public class Time {
 	/*@OneToMany(cascade=CascadeType.ALL)
 	@ElementCollection
 	private List<SubTime> subIntervals;*/
-	
+
+/*
+	@JsonCreator
+	public Time(Long id){
+		this.id=id;
+	}*/
+
 	public Time() {}
 
 	public Time(String nameInterval, String startDate, String endDate) {
@@ -38,6 +46,7 @@ public class Time {
 		this.endDate = endDate;
 		this.events = new ArrayList<>();
 	}
+
 
 	public Time(String nameInterval, String startDate, String endDate, List<Event> event) {
 		this.nameInterval = nameInterval;

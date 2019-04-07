@@ -19,7 +19,7 @@ export interface Time{
 }
 
 const URL = '/api/times/';
-const ALL='/api/times/all';
+const ALL='/api/times/all/';
 
 @Injectable()
 export class TimeService{

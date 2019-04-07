@@ -2,6 +2,7 @@ package com.example.demo.entities;
 /*Imports*/
 
 
+import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonInclude;
 
@@ -32,6 +33,8 @@ public class Event {
 	@ElementCollection
 	private List<Category> categories;
 
+
+
 	@Lob
 	private byte[] photo;
 	
@@ -41,6 +44,10 @@ public class Event {
 	public Event() {}
 	
 	/*Constructor*/
+	@JsonCreator
+	public Event(Long id){
+		this.id=id;
+	}
 
 	public Event(String nameEvent, String date, String location, String wiki, List<Category> categories) {
 		this.nameEvent = nameEvent;

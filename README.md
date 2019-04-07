@@ -162,11 +162,36 @@ Document [Api documentation](API.md) with information about the REST API.
 
 First of all we have to install node.js, you have to go to [this link](https://nodejs.org/es/download/) to download it. 
 One you have installed it, go to a terminal and execute the following commands: 
- ##### Install the Angular CLI globally with the command:
+ 1. Install the Angular CLI globally with the command:
  npm install -g angular-cli
- ##### Go to the workspace folder my-app for example, with:
+ 2. Go to the workspace folder my-app for example, with:
  cd my-app
- ##### To download the modules use the command:
+ 3. To download the modules use the command:
  npm install
- ##### End using command:
+ 4. End using command:
  npm start
+ 
+### Component Diagram
+![Screenshot](https://github.com/CodeURJC-DAW-2018-19/santatecla-tiempos-2/blob/master/Screenshots/Phase%204/ComponentDiagram.png)
+### Templates
+##### Login
+![Screenshot](https://github.com/CodeURJC-DAW-2018-19/santatecla-tiempos-2/blob/master/Screenshots/Phase%204/LogIn.png)
+##### Login Error
+![Screenshot](https://github.com/CodeURJC-DAW-2018-19/santatecla-tiempos-2/blob/master/Screenshots/Phase%204/LogInError.png)
+##### Not Allow
+![Screenshot](https://github.com/CodeURJC-DAW-2018-19/santatecla-tiempos-2/blob/master/Screenshots/Phase%204/NoPermisos.png)
+##### Categories
+![Screenshot](https://github.com/CodeURJC-DAW-2018-19/santatecla-tiempos-2/blob/master/Screenshots/Phase%204/Categories.png)
+##### Add Category
+![Screenshot](https://github.com/CodeURJC-DAW-2018-19/santatecla-tiempos-2/blob/master/Screenshots/Phase%204/CategoriesAdd.png)
+##### Events
+![Screenshot](https://github.com/CodeURJC-DAW-2018-19/santatecla-tiempos-2/blob/master/Screenshots/Phase%204/Events.png)
+##### Search Event
+![Screenshot](https://github.com/CodeURJC-DAW-2018-19/santatecla-tiempos-2/blob/master/Screenshots/Phase%204/EventsBusqueda.png)
+##### Times
+![Screenshot](https://github.com/CodeURJC-DAW-2018-19/santatecla-tiempos-2/blob/master/Screenshots/Phase%204/Times.png)
+##### Interval
+![Screenshot](https://github.com/CodeURJC-DAW-2018-19/santatecla-tiempos-2/blob/master/Screenshots/Phase%204/TimesConcreto.png)
+##### Add Interval
+![Screenshot](https://github.com/CodeURJC-DAW-2018-19/santatecla-tiempos-2/blob/master/Screenshots/Phase%204/TimesAdd.png)
+

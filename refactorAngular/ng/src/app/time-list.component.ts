@@ -19,12 +19,12 @@ export class TimeListComponent implements OnInit{
     pageChanged:boolean;
     firstLast:boolean;
     pageSize:number=5;
-    total:number=40;
+    total:number=10;
 
     constructor(private router:Router,private service:TimeService,public loginService:LoginService){}
     ngOnInit() {
         console.log("Pidiendo datos ngOnInit de tiempos");
-        this.service.getTimesbyPage(0).subscribe(
+        this.service.getTimes().subscribe(
             times=>this.times=times,
             error=>console.log(error)
         );
