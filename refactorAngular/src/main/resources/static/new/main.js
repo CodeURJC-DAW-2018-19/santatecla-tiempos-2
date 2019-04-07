@@ -5416,7 +5416,7 @@ var CategoryDetailComponent = /** @class */ (function () {
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<div *ngIf=\"category\">\r\n  <mat-card>\r\n    <mat-card-title> Nombre de la categoria:  \"{{ category.nameCategory }}\"</mat-card-title>\r\n    <mat-divider></mat-divider>\r\n    <mat-card-content>\r\n      <form #categoryForm=\"ngForm\">\r\n        <div *ngIf=\"category.id\"><label>Id: </label>{{ category.id }}</div>\r\n        <div>\r\n          <mat-form-field>\r\n            <input\r\n              matInput\r\n              [(ngModel)]=\"category.nameCategory\"\r\n              placeholder=\"Nombre de la categoria\"\r\n              #categoryFormComponent\r\n              #categoryFormControl=\"ngModel\"\r\n              name=\"updateCategory\"\r\n              required\r\n            />\r\n          </mat-form-field>\r\n        </div>\r\n      </form>\r\n    </mat-card-content>\r\n    <mat-divider></mat-divider>\r\n    <mat-card-actions>\r\n      <div layout=\"row\" layout-align=\"end center\">\r\n        <button mat-raised-button color=\"accent\" (click)=\"cancel()\">Cancel</button>\r\n        <button\r\n          mat-raised-button\r\n          color=\"accent\"\r\n          (click)=\"save()\"\r\n          [disabled]=\"categoryForm === undefined || (categoryForm && !categoryForm.valid)\"\r\n          class=\"push-left-sm\"\r\n        >\r\n          Save\r\n        </button>\r\n      </div>\r\n    </mat-card-actions>\r\n  </mat-card>\r\n</div>\r\n"
+module.exports = "<div *ngIf=\"category && loginService.isLogged && loginService.isAdmin\">\r\n  <mat-card>\r\n    <mat-card-title> Nombre de la categoria:  \"{{ category.nameCategory }}\"</mat-card-title>\r\n    <mat-divider></mat-divider>\r\n    <mat-card-content>\r\n      <form #categoryForm=\"ngForm\">\r\n        <div *ngIf=\"category.id\"><label>Id: </label>{{ category.id }}</div>\r\n        <div>\r\n          <mat-form-field>\r\n            <input\r\n              matInput\r\n              [(ngModel)]=\"category.nameCategory\"\r\n              placeholder=\"Nombre de la categoria\"\r\n              #categoryFormComponent\r\n              #categoryFormControl=\"ngModel\"\r\n              name=\"updateCategory\"\r\n              required\r\n            />\r\n          </mat-form-field>\r\n        </div>\r\n      </form>\r\n    </mat-card-content>\r\n    <mat-divider></mat-divider>\r\n    <mat-card-actions>\r\n      <div layout=\"row\" layout-align=\"end center\">\r\n        <button mat-raised-button color=\"accent\" (click)=\"cancel()\">Cancel</button>\r\n        <button\r\n          mat-raised-button\r\n          color=\"accent\"\r\n          (click)=\"save()\"\r\n          [disabled]=\"categoryForm === undefined || (categoryForm && !categoryForm.valid)\"\r\n          class=\"push-left-sm\"\r\n        >\r\n          Save\r\n        </button>\r\n      </div>\r\n    </mat-card-actions>\r\n  </mat-card>\r\n</div>\r\n\r\n<div *ngIf=\"!loginService.isLogged\">\r\n  No tienes permisos de administrador\r\n</div>"
 
 /***/ }),
 
@@ -5434,15 +5434,18 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
 /* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/router */ "./node_modules/@angular/router/fesm5/router.js");
 /* harmony import */ var _category_service__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./category.service */ "./src/app/category.service.ts");
+/* harmony import */ var _auth_login_service__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./auth/login.service */ "./src/app/auth/login.service.ts");
+
 
 
 
 
 var CategoryFormComponent = /** @class */ (function () {
-    function CategoryFormComponent(_router, activatedRoute, service) {
+    function CategoryFormComponent(_router, activatedRoute, service, loginService) {
         var _this = this;
         this._router = _router;
         this.service = service;
+        this.loginService = loginService;
         var id = activatedRoute.snapshot.params['id'];
         if (id) {
             service.getCategory(id).subscribe(function (category) { return (_this.category = category); }, function (error) { return console.error(error); });
@@ -5464,7 +5467,7 @@ var CategoryFormComponent = /** @class */ (function () {
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({
             template: __webpack_require__(/*! ./category-form.component.html */ "./src/app/category-form.component.html"),
         }),
-        tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:paramtypes", [_angular_router__WEBPACK_IMPORTED_MODULE_2__["Router"], _angular_router__WEBPACK_IMPORTED_MODULE_2__["ActivatedRoute"], _category_service__WEBPACK_IMPORTED_MODULE_3__["CategoryService"]])
+        tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:paramtypes", [_angular_router__WEBPACK_IMPORTED_MODULE_2__["Router"], _angular_router__WEBPACK_IMPORTED_MODULE_2__["ActivatedRoute"], _category_service__WEBPACK_IMPORTED_MODULE_3__["CategoryService"], _auth_login_service__WEBPACK_IMPORTED_MODULE_4__["LoginService"]])
     ], CategoryFormComponent);
     return CategoryFormComponent;
 }());
@@ -5480,7 +5483,7 @@ var CategoryFormComponent = /** @class */ (function () {
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"col-md-8\">\r\n  <span flex *ngIf=\"!searchBox.searchVisible\"></span>\r\n  <td-search-box hide-xs flex #searchBox [(ngModel)]=\"searchCategory\"\r\n                 [ngClass]=\"{ 'push-left push-right mat-whiteframe-z1 bgc-white tc-black': searchBox.searchVisible }\"\r\n                 placeholder=\"search\" ></td-search-box>\r\n</div>\r\n\r\n<mat-card>\r\n  <mat-card-title>\r\n    <div layout=\"row\" layout-align=\"start center\">\r\n      <span flex>Lista de Categorias</span>\r\n    </div>\r\n  </mat-card-title>\r\n  <mat-divider></mat-divider>\r\n  <mat-card-content>\r\n    <div>\r\n      <mat-nav-list *ngIf=\"loginService.isLogged\">\r\n        <a *ngFor=\"let category of categories | categoryNameFilter:searchCategory\" mat-list-item [routerLink]=\"['/categories', category.id]\">\r\n          {{ category.nameCategory }}\r\n        </a>\r\n        <button mat-button (click)=\"getCategoriesbyPage(p-1)\">Previous</button>\r\n        <button mat-button (click)=\"getCategoriesbyPage(p+1)\">Next</button>\r\n\r\n      </mat-nav-list>\r\n\r\n      <mat-nav-list *ngIf=\"!loginService.isLogged\">\r\n        <mat-list-item [ngStyle]=\"{ cursor: 'auto' }\" *ngFor=\"let category of categories\">\r\n          {{ category.nameCategory }}\r\n        </mat-list-item>\r\n        <button mat-button (click)=\"getCategoriesbyPage(p-1)\">Previous</button>\r\n        <button mat-button (click)=\"getCategoriesbyPage(p+1)\">Next</button>\r\n      </mat-nav-list>\r\n    </div>\r\n\r\n    <div layout=\"column\" layout-align=\"center end\" *ngIf=\"loginService.isLogged && loginService.isAdmin\">\r\n      <mat-divider inset=\"true\"></mat-divider>\r\n      <button mat-raised-button color=\"accent\" class=\"push-top-sm\" *ngIf=\"loginService.isLogged\" (click)=\"newCategory()\">\r\n        <mat-icon>add</mat-icon> New\r\n      </button>\r\n    </div>\r\n  </mat-card-content>\r\n</mat-card>\r\n"
+module.exports = "<div class=\"col-md-8\">\r\n  <span flex *ngIf=\"!searchBox.searchVisible\"></span>\r\n  <td-search-box hide-xs flex #searchBox [(ngModel)]=\"searchCategory\"\r\n                 [ngClass]=\"{ 'push-left push-right mat-whiteframe-z1 bgc-white tc-black': searchBox.searchVisible }\"\r\n                 placeholder=\"search\" ></td-search-box>\r\n</div>\r\n\r\n<mat-card>\r\n  <mat-card-title>\r\n    <div layout=\"row\" layout-align=\"start center\">\r\n      <span flex>Lista de Categorias</span>\r\n    </div>\r\n  </mat-card-title>\r\n  <mat-divider></mat-divider>\r\n  <mat-card-content>\r\n    <div>\r\n      <mat-nav-list *ngIf=\"loginService.isLogged\">\r\n        <a *ngFor=\"let category of categories | categoryNameFilter:searchCategory\" mat-list-item [routerLink]=\"['/categories', category.id]\">\r\n          {{ category.nameCategory }}\r\n        </a>\r\n        <!--\r\n        <button mat-button (click)=\"getCategoriesbyPage(p-1)\">Previous</button>\r\n        <button mat-button (click)=\"getCategoriesbyPage(p+1)\">Next</button>-->\r\n        <td-paging-bar #pagingBar [firstLast]=\"firstLast\" [pageSize]=\"pageSize\" [total]=\"total\" (change)=\"change($event)\">\r\n          {{pagingBar.range}} of {{pagingBar.total}}\r\n        </td-paging-bar>\r\n\r\n      </mat-nav-list>\r\n\r\n      <mat-nav-list *ngIf=\"!loginService.isLogged\">\r\n        <mat-list-item [ngStyle]=\"{ cursor: 'auto' }\" *ngFor=\"let category of categories\">\r\n          {{ category.nameCategory }}\r\n        </mat-list-item>\r\n        <!--\r\n       <button mat-button (click)=\"getCategoriesbyPage(p-1)\">Previous</button>\r\n       <button mat-button (click)=\"getCategoriesbyPage(p+1)\">Next</button>-->\r\n\r\n        <td-paging-bar #pagingBar [firstLast]=\"firstLast\" [pageSize]=\"pageSize\" [total]=\"total\" (change)=\"change($event)\">\r\n          {{pagingBar.range}} of {{pagingBar.total}}\r\n        </td-paging-bar>\r\n      </mat-nav-list>\r\n    </div>\r\n\r\n    <div layout=\"column\" layout-align=\"center end\" *ngIf=\"loginService.isLogged && loginService.isAdmin\">\r\n      <mat-divider inset=\"true\"></mat-divider>\r\n      <button mat-raised-button color=\"accent\" class=\"push-top-sm\" *ngIf=\"loginService.isLogged\" (click)=\"newCategory()\">\r\n        <mat-icon>add</mat-icon> New\r\n      </button>\r\n    </div>\r\n  </mat-card-content>\r\n</mat-card>\r\n"
 
 /***/ }),
 
@@ -5499,6 +5502,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/router */ "./node_modules/@angular/router/fesm5/router.js");
 /* harmony import */ var _category_service__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./category.service */ "./src/app/category.service.ts");
 /* harmony import */ var _auth_login_service__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./auth/login.service */ "./src/app/auth/login.service.ts");
+/* harmony import */ var _covalent_core__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @covalent/core */ "./node_modules/@covalent/core/fesm5/covalent-core.js");
+
 
 
 
@@ -5510,11 +5515,30 @@ var CategoryListComponent = /** @class */ (function () {
         this.service = service;
         this.loginService = loginService;
         this.p = 0;
+        this.pageSize = 5;
+        this.total = 40;
     }
     CategoryListComponent.prototype.ngOnInit = function () {
         var _this = this;
         console.log("pidiendo datos");
         this.service.getCategories().subscribe(function (categories) { return _this.categories = categories; }, function (error) { return console.log(error); });
+        this.service.getCountCategories().subscribe(function (categories) { return _this.total = categories; }, function (error) { return console.log(error); });
+    };
+    CategoryListComponent.prototype.ngDoCheck = function () {
+        var _this = this;
+        if (this.pageChanged) {
+            this.service.getCategoriesbyPage(this.pageNumber - 1).subscribe(function (categories) { return _this.categories = categories; }, function (error) { return console.log(error); });
+            this.service.getCountCategories().subscribe(function (categories) { return _this.total = categories; }, function (error) { return console.log(error); });
+            this.pageChanged = false;
+        }
+    };
+    CategoryListComponent.prototype.change = function (event) {
+        this.event = event;
+        this.pageNumber = event.page;
+        this.pageChanged = true;
+    };
+    CategoryListComponent.prototype.toggleFirstLast = function () {
+        this.firstLast = !this.firstLast;
     };
     CategoryListComponent.prototype.getCategoriesbyPage = function (page) {
         var _this = this;
@@ -5524,6 +5548,10 @@ var CategoryListComponent = /** @class */ (function () {
     CategoryListComponent.prototype.newCategory = function () {
         this.router.navigate(['/categories/new']);
     };
+    tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["ViewChild"])(_covalent_core__WEBPACK_IMPORTED_MODULE_5__["TdPagingBarComponent"]),
+        tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:type", _covalent_core__WEBPACK_IMPORTED_MODULE_5__["TdPagingBarComponent"])
+    ], CategoryListComponent.prototype, "paging", void 0);
     CategoryListComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({
             template: __webpack_require__(/*! ./category-list.component.html */ "./src/app/category-list.component.html")
@@ -5643,6 +5671,11 @@ var CategoryService = /** @class */ (function () {
         console.log("pidiendo todos los datos");
         return this.http.get(ALL, { withCredentials: true })
             .pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_4__["catchError"])(function (error) { return _this.handleError(error); }));
+    };
+    CategoryService.prototype.getCountCategories = function () {
+        var _this = this;
+        return this.http.get(ALL, { withCredentials: true })
+            .pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_4__["map"])(function (result) { return result.length; }), Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_4__["catchError"])(function (error) { return _this.handleError(error); }));
     };
     CategoryService.prototype.removeCategory = function (category) {
         var _this = this;
@@ -5765,7 +5798,7 @@ var EventDetailComponent = /** @class */ (function () {
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<div *ngIf=\"event\">\r\n    <mat-card>\r\n        <mat-card-title> Evento \"{{ event.nameEvent }}\"</mat-card-title>\r\n        <mat-divider></mat-divider>\r\n        <mat-card-content>\r\n            <form #eventForm=\"ngForm\">\r\n                <div *ngIf=\"event.id\"><label>Id: </label>{{ event.id }}</div>\r\n                <div>\r\n                    <mat-form-field>\r\n                        <input\r\n                                matInput\r\n                                [(ngModel)]=\"event.nameEvent\"\r\n                                placeholder=\"Nombre del Evento\"\r\n                                #eventFormComponent\r\n                                #eventFormControl=\"ngModel\"\r\n                                name=\"name\"\r\n                                required\r\n                        />\r\n                    </mat-form-field>\r\n                    <mat-form-field>\r\n                        <input type=\"date\"\r\n                                matInput\r\n                                [(ngModel)]=\"event.date\"\r\n                                placeholder=\"Introduzca una fecha\"\r\n                                #eventFormComponent\r\n                                #eventFormControl=\"ngModel\"\r\n                                name=\"name\"\r\n                                required\r\n                        />\r\n                    </mat-form-field>\r\n                    <mat-form-field>\r\n                        <input\r\n                               matInput\r\n                               [(ngModel)]=\"event.location\"\r\n                               placeholder=\"Introduzca un lugar\"\r\n                               #eventFormComponent\r\n                               #eventFormControl=\"ngModel\"\r\n                               name=\"name\"\r\n                               required\r\n                        />\r\n                    </mat-form-field>\r\n                    <mat-form-field>\r\n                    <input\r\n                            matInput\r\n                            [(ngModel)]=\"event.wiki\"\r\n                            placeholder=\"Introduzca un wiki\"\r\n                            #eventFormComponent\r\n                            #eventFormControl=\"ngModel\"\r\n                            name=\"name\"\r\n                            required\r\n                    />\r\n                </mat-form-field>\r\n\r\n                    <!--\r\n                    <mat-form-field>\r\n                        <input\r\n                                matInput\r\n                                [(ngModel)]=\"event.categories\"\r\n                                placeholder=\"Introduzca una categoria\"\r\n                                #eventFormComponent\r\n                                #eventFormControl=\"ngModel\"\r\n                                name=\"name\"\r\n                                required\r\n                        />\r\n                    </mat-form-field>-->\r\n\r\n\r\n                    <mat-form-field>\r\n                        <mat-label>Seleccione una categoria</mat-label>\r\n                        <mat-select disableRipple placeholder=\"Seleccione una categoria\" [(ngModel)]=\"selectedCategory\"   #eventFormComponent\r\n                                                 #eventFormControl=\"ngModel\" name=\"name\">\r\n                            <mat-option *ngFor=\"let category of allcategories\"  [value]=\"category.nameCategory\">\r\n                                {{category.nameCategory}}\r\n                            </mat-option>\r\n                        </mat-select>\r\n                    </mat-form-field>\r\n\r\n                </div>\r\n\r\n                <div>\r\n                    <span style=\"color:red;\" *ngIf=\"imgMessage\">{{imgMessage}}</span>\r\n                    <input #file type=\"file\" accept='image/*' name=\"name\" (change)=\"preview(file.files)\" />\r\n                    <img [src]=\"imgURL\" height=\"200\" *ngIf=\"imgURL\">\r\n                </div>\r\n            </form>\r\n        </mat-card-content>\r\n        <mat-divider></mat-divider>\r\n        <mat-card-actions>\r\n            <div layout=\"row\" layout-align=\"end center\">\r\n                <button mat-raised-button color=\"accent\" (click)=\"cancel()\">Cancel</button>\r\n                <button\r\n                        mat-raised-button\r\n                        color=\"accent\"\r\n                        (click)=\"save()\"\r\n                        [disabled]=\"eventForm === undefined || (eventForm && !eventForm.valid)\"\r\n                        class=\"push-left-sm\"\r\n                >\r\n                    Save\r\n                </button>\r\n            </div>\r\n        </mat-card-actions>\r\n    </mat-card>\r\n</div>\r\n"
+module.exports = "<div *ngIf=\"event && loginService.isLogged && loginService.isAdmin\">\r\n    <mat-card>\r\n        <mat-card-title> Evento \"{{ event.nameEvent }}\"</mat-card-title>\r\n        <mat-divider></mat-divider>\r\n        <mat-card-content>\r\n            <form #eventForm=\"ngForm\">\r\n                <div *ngIf=\"event.id\"><label>Id: </label>{{ event.id }}</div>\r\n                <div>\r\n                    <mat-form-field>\r\n                        <input\r\n                                matInput\r\n                                [(ngModel)]=\"event.nameEvent\"\r\n                                placeholder=\"Nombre del Evento\"\r\n                                #eventFormComponent\r\n                                #eventFormControl=\"ngModel\"\r\n                                name=\"name\"\r\n                                required\r\n                        />\r\n                    </mat-form-field>\r\n                    <mat-form-field>\r\n                        <input type=\"date\"\r\n                                matInput\r\n                                [(ngModel)]=\"event.date\"\r\n                                placeholder=\"Introduzca una fecha\"\r\n                                #eventFormComponent\r\n                                #eventFormControl=\"ngModel\"\r\n                                name=\"name\"\r\n                                required\r\n                        />\r\n                    </mat-form-field>\r\n                    <mat-form-field>\r\n                        <input\r\n                               matInput\r\n                               [(ngModel)]=\"event.location\"\r\n                               placeholder=\"Introduzca un lugar\"\r\n                               #eventFormComponent\r\n                               #eventFormControl=\"ngModel\"\r\n                               name=\"name\"\r\n                               required\r\n                        />\r\n                    </mat-form-field>\r\n                    <mat-form-field>\r\n                    <input\r\n                            matInput\r\n                            [(ngModel)]=\"event.wiki\"\r\n                            placeholder=\"Introduzca un wiki\"\r\n                            #eventFormComponent\r\n                            #eventFormControl=\"ngModel\"\r\n                            name=\"name\"\r\n                            required\r\n                    />\r\n                </mat-form-field>\r\n\r\n                    <!--\r\n                    <mat-form-field>\r\n                        <input\r\n                                matInput\r\n                                [(ngModel)]=\"event.categories\"\r\n                                placeholder=\"Introduzca una categoria\"\r\n                                #eventFormComponent\r\n                                #eventFormControl=\"ngModel\"\r\n                                name=\"name\"\r\n                                required\r\n                        />\r\n                    </mat-form-field>-->\r\n\r\n\r\n                    <mat-form-field>\r\n                        <mat-label>Seleccione una categoria</mat-label>\r\n                        <mat-select disableRipple placeholder=\"Seleccione una categoria\" [(ngModel)]=\"selectedCategory\"   #eventFormComponent\r\n                                                 #eventFormControl=\"ngModel\" name=\"name\">\r\n                            <mat-option *ngFor=\"let category of allcategories\"  [value]=\"category.nameCategory\">\r\n                                {{category.nameCategory}}\r\n                            </mat-option>\r\n                        </mat-select>\r\n                    </mat-form-field>\r\n\r\n                </div>\r\n\r\n                <div>\r\n                    <span style=\"color:red;\" *ngIf=\"imgMessage\">{{imgMessage}}</span>\r\n                    <input #file type=\"file\" accept='image/*' name=\"name\" (change)=\"preview(file.files)\" />\r\n                    <img [src]=\"imgURL\" height=\"200\" *ngIf=\"imgURL\">\r\n                </div>\r\n            </form>\r\n        </mat-card-content>\r\n        <mat-divider></mat-divider>\r\n        <mat-card-actions>\r\n            <div layout=\"row\" layout-align=\"end center\">\r\n                <button mat-raised-button color=\"accent\" (click)=\"cancel()\">Cancel</button>\r\n                <button\r\n                        mat-raised-button\r\n                        color=\"accent\"\r\n                        (click)=\"save()\"\r\n                        [disabled]=\"eventForm === undefined || (eventForm && !eventForm.valid)\"\r\n                        class=\"push-left-sm\"\r\n                >\r\n                    Save\r\n                </button>\r\n            </div>\r\n        </mat-card-actions>\r\n    </mat-card>\r\n</div>\r\n\r\n<div *ngIf=\"!loginService.isLogged\">\r\n    No tienes permisos de administrador\r\n</div>\r\n"
 
 /***/ }),
 
@@ -5784,17 +5817,20 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
 /* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @angular/router */ "./node_modules/@angular/router/fesm5/router.js");
 /* harmony import */ var _category_service__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./category.service */ "./src/app/category.service.ts");
+/* harmony import */ var _auth_login_service__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./auth/login.service */ "./src/app/auth/login.service.ts");
+
 
 
 
 
 
 var EventFormComponent = /** @class */ (function () {
-    function EventFormComponent(_router, activatedRoute, service, categoryService) {
+    function EventFormComponent(_router, activatedRoute, service, categoryService, loginService) {
         var _this = this;
         this._router = _router;
         this.service = service;
         this.categoryService = categoryService;
+        this.loginService = loginService;
         var id = activatedRoute.snapshot.params['id'];
         if (id) {
             console.log(service.getEvent(id).subscribe(function (event) { return _this.event = event; }), function (error) { return console.error(error); });
@@ -5848,7 +5884,7 @@ var EventFormComponent = /** @class */ (function () {
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_2__["Component"])({
             template: __webpack_require__(/*! ./event-form.component.html */ "./src/app/event-form.component.html"),
         }),
-        tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:paramtypes", [_angular_router__WEBPACK_IMPORTED_MODULE_3__["Router"], _angular_router__WEBPACK_IMPORTED_MODULE_3__["ActivatedRoute"], _event_service__WEBPACK_IMPORTED_MODULE_1__["EventService"], _category_service__WEBPACK_IMPORTED_MODULE_4__["CategoryService"]])
+        tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:paramtypes", [_angular_router__WEBPACK_IMPORTED_MODULE_3__["Router"], _angular_router__WEBPACK_IMPORTED_MODULE_3__["ActivatedRoute"], _event_service__WEBPACK_IMPORTED_MODULE_1__["EventService"], _category_service__WEBPACK_IMPORTED_MODULE_4__["CategoryService"], _auth_login_service__WEBPACK_IMPORTED_MODULE_5__["LoginService"]])
     ], EventFormComponent);
     return EventFormComponent;
 }());
@@ -5864,7 +5900,7 @@ var EventFormComponent = /** @class */ (function () {
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"col-md-8\">\r\n    <span flex *ngIf=\"!searchBox.searchVisible\"></span>\r\n    <td-search-box hide-xs flex #searchBox [(ngModel)]=\"searchEvent\"\r\n                   [ngClass]=\"{ 'push-left push-right mat-whiteframe-z1 bgc-white tc-black': searchBox.searchVisible }\"\r\n                   placeholder=\"search\" ></td-search-box>\r\n</div>\r\n\r\n<mat-card>\r\n    <mat-card-title>\r\n        <div layout=\"row\" layout-align=\"start center\">\r\n            <span flex>Lista de Eventos</span>\r\n        </div>\r\n    </mat-card-title>\r\n    <mat-divider></mat-divider>\r\n    <mat-card-content>\r\n        <div>\r\n            <mat-nav-list *ngIf=\"loginService.isLogged\">\r\n                <a *ngFor=\"let event of events | eventNameFilter:searchEvent\" mat-list-item [routerLink]=\"['/events', event.id]\">\r\n                    {{ event.nameEvent }}\r\n                    :\r\n                    {{event.date}}\r\n                    :\r\n                    {{ event.location}}\r\n                    :\r\n                    {{event.wiki}}\r\n                    :\r\n                    <a *ngFor=\"let i of event.categories \">{{i.nameCategory}}</a>\r\n                </a>\r\n                <button mat-button (click)=\"getEventsbyPage(p-1)\">Previous</button>\r\n                <button mat-button (click)=\"getEventsbyPage(p+1)\">Next</button>\r\n            </mat-nav-list>\r\n\r\n            <mat-nav-list *ngIf=\"!loginService.isLogged\">\r\n                <mat-list-item [ngStyle]=\"{ cursor: 'auto' }\" *ngFor=\"let event of events\">\r\n                    {{ event.nameEvent }}\r\n                    {{event.date}}\r\n                    {{ event.location}}\r\n                    {{event.wiki}}\r\n                </mat-list-item>\r\n                <button mat-button (click)=\"getEventsbyPage(p-1)\">Previous</button>\r\n                <button mat-button (click)=\"getEventsbyPage(p+1)\">Next</button>\r\n            </mat-nav-list>\r\n        </div>\r\n\r\n        <div layout=\"column\" layout-align=\"center end\" *ngIf=\"loginService.isLogged && loginService.isAdmin\">\r\n            <mat-divider inset=\"true\"></mat-divider>\r\n            <button mat-raised-button color=\"accent\" class=\"push-top-sm\" *ngIf=\"loginService.isLogged\" (click)=\"newEvent()\">\r\n                <mat-icon>add</mat-icon> New\r\n            </button>\r\n        </div>\r\n    </mat-card-content>\r\n</mat-card>\r\n"
+module.exports = "<div class=\"col-md-8\">\r\n    <span flex *ngIf=\"!searchBox.searchVisible\"></span>\r\n    <td-search-box hide-xs flex #searchBox [(ngModel)]=\"searchEvent\"\r\n                   [ngClass]=\"{ 'push-left push-right mat-whiteframe-z1 bgc-white tc-black': searchBox.searchVisible }\"\r\n                   placeholder=\"search\" ></td-search-box>\r\n</div>\r\n\r\n<mat-card>\r\n    <mat-card-title>\r\n        <div layout=\"row\" layout-align=\"start center\">\r\n            <span flex>Lista de Eventos</span>\r\n        </div>\r\n    </mat-card-title>\r\n    <mat-divider></mat-divider>\r\n    <mat-card-content>\r\n        <div>\r\n            <mat-nav-list *ngIf=\"loginService.isLogged\">\r\n                <a *ngFor=\"let event of events | eventNameFilter:searchEvent\" mat-list-item [routerLink]=\"['/events', event.id]\">\r\n                    {{ event.nameEvent }}\r\n                    :\r\n                    {{event.date}}\r\n                    :\r\n                    {{ event.location}}\r\n                    :\r\n                    {{event.wiki}}\r\n                    :\r\n                    <a *ngFor=\"let i of event.categories \">{{i.nameCategory}}</a>\r\n                </a>\r\n                <!--\r\n                <button mat-button (click)=\"getEventsbyPage(p-1)\">Previous</button>\r\n                <button mat-button (click)=\"getEventsbyPage(p+1)\">Next</button>-->\r\n                <td-paging-bar #pagingBar [firstLast]=\"firstLast\" [pageSize]=\"pageSize\" [total]=\"total\" (change)=\"change($event)\">\r\n                    {{pagingBar.range}} of {{pagingBar.total}}\r\n                </td-paging-bar>\r\n            </mat-nav-list>\r\n\r\n            <mat-nav-list *ngIf=\"!loginService.isLogged\">\r\n                <mat-list-item [ngStyle]=\"{ cursor: 'auto' }\" *ngFor=\"let event of events\">\r\n                    {{ event.nameEvent }}\r\n                    {{event.date}}\r\n                    {{ event.location}}\r\n                    {{event.wiki}}\r\n                </mat-list-item>\r\n                <!--\r\n                <button mat-button (click)=\"getEventsbyPage(p-1)\">Previous</button>\r\n                <button mat-button (click)=\"getEventsbyPage(p+1)\">Next</button>-->\r\n                <td-paging-bar #pagingBar [firstLast]=\"firstLast\" [pageSize]=\"pageSize\" [total]=\"total\" (change)=\"change($event)\">\r\n                    {{pagingBar.range}} of {{pagingBar.total}}\r\n                </td-paging-bar>\r\n            </mat-nav-list>\r\n        </div>\r\n\r\n        <div layout=\"column\" layout-align=\"center end\" *ngIf=\"loginService.isLogged && loginService.isAdmin\">\r\n            <mat-divider inset=\"true\"></mat-divider>\r\n            <button mat-raised-button color=\"accent\" class=\"push-top-sm\" *ngIf=\"loginService.isLogged\" (click)=\"newEvent()\">\r\n                <mat-icon>add</mat-icon> New\r\n            </button>\r\n        </div>\r\n    </mat-card-content>\r\n</mat-card>\r\n"
 
 /***/ }),
 
@@ -5884,6 +5920,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _event_service__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./event.service */ "./src/app/event.service.ts");
 /* harmony import */ var _auth_login_service__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./auth/login.service */ "./src/app/auth/login.service.ts");
 /* harmony import */ var _category_service__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./category.service */ "./src/app/category.service.ts");
+/* harmony import */ var _covalent_core__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! @covalent/core */ "./node_modules/@covalent/core/fesm5/covalent-core.js");
+
 
 
 
@@ -5899,11 +5937,14 @@ var EventListComponent = /** @class */ (function () {
         this.categoryService = categoryService;
         //categories:Category[];
         this.p = 0;
+        this.pageSize = 5;
+        this.total = 20;
     }
     EventListComponent.prototype.ngOnInit = function () {
         var _this = this;
         console.log("Pidiendo datos ngOnInit de eventos");
         this.service.getEventsbyPage(0).subscribe(function (events) { return _this.events = events; }, function (error) { return console.log(error); });
+        this.service.getCountEvents().subscribe(function (events) { return _this.total = events; }, function (error) { return console.log(error); });
     };
     EventListComponent.prototype.getEventsbyPage = function (page) {
         var _this = this;
@@ -5913,6 +5954,26 @@ var EventListComponent = /** @class */ (function () {
     EventListComponent.prototype.newEvent = function () {
         this.router.navigate(['/events/new']);
     };
+    EventListComponent.prototype.ngDoCheck = function () {
+        var _this = this;
+        if (this.pageChanged) {
+            this.service.getEventsbyPage(this.pageNumber - 1).subscribe(function (events) { return _this.events = events; }, function (error) { return console.log(error); });
+            this.service.getCountEvents().subscribe(function (events) { return _this.total = events; }, function (error) { return console.log(error); });
+            this.pageChanged = false;
+        }
+    };
+    EventListComponent.prototype.change = function (event) {
+        this.event = event;
+        this.pageNumber = event.page;
+        this.pageChanged = true;
+    };
+    EventListComponent.prototype.toggleFirstLast = function () {
+        this.firstLast = !this.firstLast;
+    };
+    tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["ViewChild"])(_covalent_core__WEBPACK_IMPORTED_MODULE_6__["TdPagingBarComponent"]),
+        tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:type", _covalent_core__WEBPACK_IMPORTED_MODULE_6__["TdPagingBarComponent"])
+    ], EventListComponent.prototype, "paging", void 0);
     EventListComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({
             template: __webpack_require__(/*! ./event-list.component.html */ "./src/app/event-list.component.html")
@@ -6047,6 +6108,11 @@ var EventService = /** @class */ (function () {
         console.error(error);
         return rxjs__WEBPACK_IMPORTED_MODULE_3__["Observable"].throw('Server error (' + error.status + ' ): ' + error);
     };
+    EventService.prototype.getCountEvents = function () {
+        var _this = this;
+        return this.http.get(ALL, { withCredentials: true })
+            .pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_4__["map"])(function (result) { return result.length; }), Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_4__["catchError"])(function (error) { return _this.handleError(error); }));
+    };
     EventService = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Injectable"])(),
         tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:paramtypes", [_auth_login_service__WEBPACK_IMPORTED_MODULE_5__["LoginService"], _category_service__WEBPACK_IMPORTED_MODULE_6__["CategoryService"], _angular_common_http__WEBPACK_IMPORTED_MODULE_2__["HttpClient"], _angular_platform_browser__WEBPACK_IMPORTED_MODULE_7__["DomSanitizer"]])
@@ -6140,7 +6206,7 @@ var LoginComponent = /** @class */ (function () {
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<div *ngIf=\"time\">\r\n    <mat-card>\r\n        <mat-card-title> Intervalo \"{{ time.nameInterval }}\"</mat-card-title>\r\n        <mat-divider></mat-divider>\r\n        <mat-card-content>\r\n            <div>\r\n                <p>{{ time.nameInterval }}</p>\r\n                <p>{{ time.startDate }}</p>\r\n                <p>{{ time.endDate }}</p>\r\n               <!-- <p>{{ time.subintervals }}</p>-->\r\n                <p *ngFor=\"let t of time.event\">{{t.nameEvent}}</p>\r\n            </div>\r\n            <div layout=\"row\" layout-align=\"end center\">\r\n                <ng-container *ngIf=\"loginService.isLogged && loginService.isAdmin\">\r\n                    <button mat-raised-button color=\"accent\" (click)=\"removeTime()\"><mat-icon>delete</mat-icon>Remove</button>\r\n                    <button mat-raised-button color=\"accent\" (click)=\"editTime()\" class=\"push-left-sm\">\r\n                        <mat-icon>edit</mat-icon>Edit\r\n                    </button>\r\n                </ng-container>\r\n                <button mat-raised-button color=\"accent\" (click)=\"goToTimes()\" class=\"push-left-sm\">\r\n                    <mat-icon>list</mat-icon>All Times\r\n                </button>\r\n            </div>\r\n        </mat-card-content>\r\n    </mat-card>\r\n</div>\r\n"
+module.exports = "<div *ngIf=\"time\">\r\n    <mat-card>\r\n        <mat-card-title> Intervalo \"{{ time.nameInterval }}\"</mat-card-title>\r\n        <mat-divider></mat-divider>\r\n        <mat-card-content>\r\n            <div>\r\n                 <p>Intervalo: {{ time.nameInterval }}</p>\r\n                <p>Fecha de inicio: {{ time.startDate }}</p>\r\n                <p>Fecha de fin: {{ time.endDate }}</p>\r\n               <!-- <p>{{ time.subintervals }}</p>-->\r\n                <p *ngFor=\"let t of time.events\">Evento asociado:{{t.nameEvent}}</p>\r\n            </div>\r\n            <div layout=\"row\" layout-align=\"end center\">\r\n                <ng-container *ngIf=\"loginService.isLogged && loginService.isAdmin\">\r\n                    <button mat-raised-button color=\"accent\" (click)=\"removeTime()\"><mat-icon>delete</mat-icon>Remove</button>\r\n                    <button mat-raised-button color=\"accent\" (click)=\"editTime()\" class=\"push-left-sm\">\r\n                        <mat-icon>edit</mat-icon>Edit\r\n                    </button>\r\n                </ng-container>\r\n                <button mat-raised-button color=\"accent\" (click)=\"goToTimes()\" class=\"push-left-sm\">\r\n                    <mat-icon>list</mat-icon>All Times\r\n                </button>\r\n            </div>\r\n        </mat-card-content>\r\n    </mat-card>\r\n</div>\r\n"
 
 /***/ }),
 
@@ -6218,7 +6284,7 @@ var TimeDetailComponent = /** @class */ (function () {
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<div *ngIf=\"time\">\r\n    <mat-card>\r\n        <mat-card-title> Nombre del intervalo:  \"{{ time.nameInterval }}\"</mat-card-title>\r\n        <mat-divider></mat-divider>\r\n        <mat-card-content>\r\n            <form #timeForm=\"ngForm\">\r\n                <div *ngIf=\"time.id\"><label>Id: </label>{{ time.id }}</div>\r\n                <div>\r\n                    <mat-form-field>\r\n                        <input\r\n                                matInput\r\n                                [(ngModel)]=\"time.nameInterval\"\r\n                                placeholder=\"Nombre del intervalo\"\r\n                                #timeFormComponent\r\n                                #timeFormControl=\"ngModel\"\r\n                                name=\"updateTime\"\r\n                                required\r\n                        />\r\n                    </mat-form-field>\r\n                    <mat-form-field>\r\n                            <input type=\"date\"\r\n                                   matInput\r\n                                   [(ngModel)]=\"time.startDate\"\r\n                                   placeholder=\"Introduzca una fecha\"\r\n                                   #timeFormComponent\r\n                                   #timeFormControl=\"ngModel\"\r\n                                   name=\"name\"\r\n                                   required\r\n                            />\r\n                    </mat-form-field>\r\n                            <mat-form-field>\r\n                                <input type=\"date\"\r\n                                       matInput\r\n                                       [(ngModel)]=\"time.endDate\"\r\n                                       placeholder=\"Introduzca una fecha\"\r\n                                       #timeFormComponent\r\n                                       #timeFormControl=\"ngModel\"\r\n                                       name=\"name\"\r\n                                       required\r\n                                />\r\n                    </mat-form-field>\r\n                   <!-- <mat-form-field>\r\n                        <input type=\"date\"\r\n                               matInput\r\n                               [(ngModel)]=\"time.subintervals\"\r\n                               placeholder=\"Introduzca una fecha\"\r\n                               #timeFormComponent\r\n                               #timeFormControl=\"ngModel\"\r\n                               name=\"name\"\r\n                               required\r\n                        />\r\n                    </mat-form-field>-->\r\n                    <mat-form-field>\r\n                        <mat-label>Seleccione un Evento</mat-label>\r\n                        <mat-select disableRipple placeholder=\"Seleccione una evento\" [(ngModel)]=\"selectedEvent\" #timeFormComponent\r\n                                    #timeFormControl=\"ngModel\" name=\"name\">\r\n                            <mat-option *ngFor=\"let eve of alleventss\"  [value]=\"eve.nameEvent\">\r\n                                {{eve.nameEvent}}\r\n                            </mat-option>\r\n                        </mat-select>\r\n                    </mat-form-field>\r\n                </div>\r\n            </form>\r\n        </mat-card-content>\r\n        <mat-divider></mat-divider>\r\n        <mat-card-actions>\r\n            <div layout=\"row\" layout-align=\"end center\">\r\n                <button mat-raised-button color=\"accent\" (click)=\"cancel()\">Cancel</button>\r\n                <button\r\n                        mat-raised-button\r\n                        color=\"accent\"\r\n                        (click)=\"save()\"\r\n                        [disabled]=\"timeForm === undefined || (timeForm && !timeForm.valid)\"\r\n                        class=\"push-left-sm\"\r\n                >\r\n                    Save\r\n                </button>\r\n            </div>\r\n        </mat-card-actions>\r\n    </mat-card>\r\n</div>\r\n"
+module.exports = "<div *ngIf=\"time && loginService.isLogged && loginService.isAdmin\">\r\n    <mat-card>\r\n        <mat-card-title> Nombre del intervalo:  \"{{ time.nameInterval }}\"</mat-card-title>\r\n        <mat-divider></mat-divider>\r\n        <mat-card-content>\r\n            <form #timeForm=\"ngForm\">\r\n                <div *ngIf=\"time.id\"><label>Id: </label>{{ time.id }}</div>\r\n                <div>\r\n                    <mat-form-field>\r\n                        <input\r\n                                matInput\r\n                                [(ngModel)]=\"time.nameInterval\"\r\n                                placeholder=\"Nombre del intervalo\"\r\n                                #timeFormComponent\r\n                                #timeFormControl=\"ngModel\"\r\n                                name=\"updateTime\"\r\n                                required\r\n                        />\r\n                    </mat-form-field>\r\n                    <mat-form-field>\r\n                            <input type=\"date\"\r\n                                   matInput\r\n                                   [(ngModel)]=\"time.startDate\"\r\n                                   placeholder=\"Introduzca una fecha\"\r\n                                   #timeFormComponent\r\n                                   #timeFormControl=\"ngModel\"\r\n                                   name=\"name\"\r\n                                   required\r\n                            />\r\n                    </mat-form-field>\r\n                            <mat-form-field>\r\n                                <input type=\"date\"\r\n                                       matInput\r\n                                       [(ngModel)]=\"time.endDate\"\r\n                                       placeholder=\"Introduzca una fecha\"\r\n                                       #timeFormComponent\r\n                                       #timeFormControl=\"ngModel\"\r\n                                       name=\"name\"\r\n                                       required\r\n                                />\r\n                    </mat-form-field>\r\n                   <!-- <mat-form-field>\r\n                        <input type=\"date\"\r\n                               matInput\r\n                               [(ngModel)]=\"time.subintervals\"\r\n                               placeholder=\"Introduzca una fecha\"\r\n                               #timeFormComponent\r\n                               #timeFormControl=\"ngModel\"\r\n                               name=\"name\"\r\n                               required\r\n                        />\r\n                    </mat-form-field>-->\r\n                    <mat-form-field>\r\n                        <mat-label>Seleccione un Evento</mat-label>\r\n                        <mat-select disableRipple placeholder=\"Seleccione una evento\" [(ngModel)]=\"selectedEvent\" #timeFormComponent\r\n                                    #timeFormControl=\"ngModel\" name=\"name\">\r\n                            <mat-option *ngFor=\"let eve of alleventss\"  [value]=\"eve.nameEvent\">\r\n                                {{eve.nameEvent}}\r\n                            </mat-option>\r\n                        </mat-select>\r\n                    </mat-form-field>\r\n                </div>\r\n            </form>\r\n        </mat-card-content>\r\n        <mat-divider></mat-divider>\r\n        <mat-card-actions>\r\n            <div layout=\"row\" layout-align=\"end center\">\r\n                <button mat-raised-button color=\"accent\" (click)=\"cancel()\">Cancel</button>\r\n                <button\r\n                        mat-raised-button\r\n                        color=\"accent\"\r\n                        (click)=\"save()\"\r\n                        [disabled]=\"timeForm === undefined || (timeForm && !timeForm.valid)\"\r\n                        class=\"push-left-sm\"\r\n                >\r\n                    Save\r\n                </button>\r\n            </div>\r\n        </mat-card-actions>\r\n    </mat-card>\r\n</div>\r\n\r\n<div *ngIf=\"!loginService.isLogged\">\r\n    No tienes permisos de administrador\r\n</div>"
 
 /***/ }),
 
@@ -6237,17 +6303,20 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/router */ "./node_modules/@angular/router/fesm5/router.js");
 /* harmony import */ var _time_service__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./time.service */ "./src/app/time.service.ts");
 /* harmony import */ var _event_service__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./event.service */ "./src/app/event.service.ts");
+/* harmony import */ var _auth_login_service__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./auth/login.service */ "./src/app/auth/login.service.ts");
+
 
 
 
 
 
 var TimeFormComponent = /** @class */ (function () {
-    function TimeFormComponent(_router, activatedRoute, service, eventService) {
+    function TimeFormComponent(_router, activatedRoute, service, eventService, loginService) {
         var _this = this;
         this._router = _router;
         this.service = service;
         this.eventService = eventService;
+        this.loginService = loginService;
         var id = activatedRoute.snapshot.params['id'];
         if (id) {
             console.log(service.getTime(id).subscribe(function (time) { return _this.time = time; }), function (error) { return console.error(error); });
@@ -6283,7 +6352,7 @@ var TimeFormComponent = /** @class */ (function () {
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({
             template: __webpack_require__(/*! ./time-form.component.html */ "./src/app/time-form.component.html"),
         }),
-        tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:paramtypes", [_angular_router__WEBPACK_IMPORTED_MODULE_2__["Router"], _angular_router__WEBPACK_IMPORTED_MODULE_2__["ActivatedRoute"], _time_service__WEBPACK_IMPORTED_MODULE_3__["TimeService"], _event_service__WEBPACK_IMPORTED_MODULE_4__["EventService"]])
+        tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:paramtypes", [_angular_router__WEBPACK_IMPORTED_MODULE_2__["Router"], _angular_router__WEBPACK_IMPORTED_MODULE_2__["ActivatedRoute"], _time_service__WEBPACK_IMPORTED_MODULE_3__["TimeService"], _event_service__WEBPACK_IMPORTED_MODULE_4__["EventService"], _auth_login_service__WEBPACK_IMPORTED_MODULE_5__["LoginService"]])
     ], TimeFormComponent);
     return TimeFormComponent;
 }());
@@ -6299,7 +6368,7 @@ var TimeFormComponent = /** @class */ (function () {
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<mat-card>\r\n    <mat-card-title>\r\n        <div layout=\"row\" layout-align=\"start center\">\r\n            <span flex>Lista de Intervalos</span>\r\n        </div>\r\n    </mat-card-title>\r\n    <mat-divider></mat-divider>\r\n    <mat-card-content>\r\n        <div>\r\n            <mat-nav-list *ngIf=\"loginService.isLogged\">\r\n                <a *ngFor=\"let time of times\" mat-list-item [routerLink]=\"['/times', time.id]\">\r\n                    {{ time.nameInterval }}\r\n\r\n                </a>\r\n                <button mat-button (click)=\"getTimesbyPage(p-1)\">Previous</button>\r\n                <button mat-button (click)=\"getTimesbyPage(p+1)\">Next</button>\r\n            </mat-nav-list>\r\n\r\n            <mat-nav-list *ngIf=\"!loginService.isLogged\">\r\n                <mat-list-item [ngStyle]=\"{ cursor: 'auto' }\" *ngFor=\"let time of times\">\r\n                    {{ time.nameInterval }}\r\n                </mat-list-item>\r\n                <button mat-button (click)=\"getTimesbyPage(p-1)\">Previous</button>\r\n                <button mat-button (click)=\"getTimesbyPage(p+1)\">Next</button>\r\n            </mat-nav-list>\r\n        </div>\r\n\r\n        <div layout=\"column\" layout-align=\"center end\" *ngIf=\"loginService.isLogged && loginService.isAdmin\">\r\n            <mat-divider inset=\"true\"></mat-divider>\r\n            <button mat-raised-button color=\"accent\" class=\"push-top-sm\" *ngIf=\"loginService.isLogged\" (click)=\"newTime()\">\r\n                <mat-icon>add</mat-icon> New\r\n            </button>\r\n        </div>\r\n    </mat-card-content>\r\n</mat-card>\r\n"
+module.exports = "<mat-card>\r\n    <mat-card-title>\r\n        <div layout=\"row\" layout-align=\"start center\">\r\n            <span flex>Lista de Intervalos</span>\r\n        </div>\r\n    </mat-card-title>\r\n    <mat-divider></mat-divider>\r\n    <mat-card-content>\r\n        <div>\r\n            <mat-nav-list *ngIf=\"loginService.isLogged\">\r\n                <a *ngFor=\"let time of times\" mat-list-item [routerLink]=\"['/times', time.id]\">\r\n                    {{ time.nameInterval }}\r\n\r\n                </a>\r\n                <!--\r\n                <button mat-button (click)=\"getTimesbyPage(p-1)\">Previous</button>\r\n                <button mat-button (click)=\"getTimesbyPage(p+1)\">Next</button>-->\r\n                <td-paging-bar #pagingBar [firstLast]=\"firstLast\" [pageSize]=\"pageSize\" [total]=\"total\" (change)=\"change($event)\">\r\n                    {{pagingBar.range}} of {{pagingBar.total}}\r\n                </td-paging-bar>\r\n            </mat-nav-list>\r\n\r\n            <mat-nav-list *ngIf=\"!loginService.isLogged\">\r\n                <mat-list-item [ngStyle]=\"{ cursor: 'auto' }\" *ngFor=\"let time of times\">\r\n                    {{ time.nameInterval }}\r\n                </mat-list-item>\r\n                <!--\r\n  <button mat-button (click)=\"getTimesbyPage(p-1)\">Previous</button>\r\n  <button mat-button (click)=\"getTimesbyPage(p+1)\">Next</button>-->\r\n                <td-paging-bar #pagingBar [firstLast]=\"firstLast\" [pageSize]=\"pageSize\" [total]=\"total\" (change)=\"change($event)\">\r\n                    {{pagingBar.range}} of {{pagingBar.total}}\r\n                </td-paging-bar>\r\n            </mat-nav-list>\r\n        </div>\r\n\r\n        <div layout=\"column\" layout-align=\"center end\" *ngIf=\"loginService.isLogged && loginService.isAdmin\">\r\n            <mat-divider inset=\"true\"></mat-divider>\r\n            <button mat-raised-button color=\"accent\" class=\"push-top-sm\" *ngIf=\"loginService.isLogged\" (click)=\"newTime()\">\r\n                <mat-icon>add</mat-icon> New\r\n            </button>\r\n        </div>\r\n    </mat-card-content>\r\n</mat-card>\r\n"
 
 /***/ }),
 
@@ -6318,6 +6387,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/router */ "./node_modules/@angular/router/fesm5/router.js");
 /* harmony import */ var _auth_login_service__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./auth/login.service */ "./src/app/auth/login.service.ts");
 /* harmony import */ var _time_service__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./time.service */ "./src/app/time.service.ts");
+/* harmony import */ var _covalent_core__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @covalent/core */ "./node_modules/@covalent/core/fesm5/covalent-core.js");
+
 
 
 
@@ -6329,11 +6400,14 @@ var TimeListComponent = /** @class */ (function () {
         this.service = service;
         this.loginService = loginService;
         this.p = 0;
+        this.pageSize = 5;
+        this.total = 40;
     }
     TimeListComponent.prototype.ngOnInit = function () {
         var _this = this;
         console.log("Pidiendo datos ngOnInit de tiempos");
         this.service.getTimesbyPage(0).subscribe(function (times) { return _this.times = times; }, function (error) { return console.log(error); });
+        this.service.getCountTime().subscribe(function (times) { return _this.total = times; }, function (error) { return console.log(error); });
     };
     TimeListComponent.prototype.newTime = function () {
         this.router.navigate(['/times/new']);
@@ -6343,6 +6417,26 @@ var TimeListComponent = /** @class */ (function () {
         this.service.getTimesbyPage(page).subscribe(function (ti) { return _this.times = ti; }, function (error) { return console.log(error); });
         this.p = page;
     };
+    TimeListComponent.prototype.ngDoCheck = function () {
+        var _this = this;
+        if (this.pageChanged) {
+            this.service.getTimesbyPage(this.pageNumber - 1).subscribe(function (times) { return _this.times = times; }, function (error) { return console.log(error); });
+            this.service.getCountTime().subscribe(function (times) { return _this.total = times; }, function (error) { return console.log(error); });
+            this.pageChanged = false;
+        }
+    };
+    TimeListComponent.prototype.change = function (event) {
+        this.event = event;
+        this.pageNumber = event.page;
+        this.pageChanged = true;
+    };
+    TimeListComponent.prototype.toggleFirstLast = function () {
+        this.firstLast = !this.firstLast;
+    };
+    tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["ViewChild"])(_covalent_core__WEBPACK_IMPORTED_MODULE_5__["TdPagingBarComponent"]),
+        tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:type", _covalent_core__WEBPACK_IMPORTED_MODULE_5__["TdPagingBarComponent"])
+    ], TimeListComponent.prototype, "paging", void 0);
     TimeListComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({
             template: __webpack_require__(/*! ./time-list.component.html */ "./src/app/time-list.component.html")
@@ -6381,6 +6475,7 @@ __webpack_require__.r(__webpack_exports__);
 
 
 var URL = '/api/times/';
+var ALL = '/api/times/all';
 var TimeService = /** @class */ (function () {
     function TimeService(loginService, eventService, http) {
         this.loginService = loginService;
@@ -6428,6 +6523,11 @@ var TimeService = /** @class */ (function () {
     TimeService.prototype.handleError = function (error) {
         console.error(error);
         return rxjs__WEBPACK_IMPORTED_MODULE_3__["Observable"].throw('Server error (' + error.status + ' ): ' + error);
+    };
+    TimeService.prototype.getCountTime = function () {
+        var _this = this;
+        return this.http.get(ALL, { withCredentials: true })
+            .pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_4__["map"])(function (result) { return result.length; }), Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_4__["catchError"])(function (error) { return _this.handleError(error); }));
     };
     TimeService = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Injectable"])(),
