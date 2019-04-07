@@ -175,23 +175,23 @@ One you have installed it, go to a terminal and execute the following commands:
 ![Screenshot](https://github.com/CodeURJC-DAW-2018-19/santatecla-tiempos-2/blob/master/Screenshots/Phase%204/ComponentDiagram.png)
 ### Templates
 ##### Login
-![Screenshot](https://github.com/CodeURJC-DAW-2018-19/santatecla-tiempos-2/blob/master/Screenshots/Phase%204/LogIn.png)
+![Screenshot](https://github.com/CodeURJC-DAW-2018-19/santatecla-tiempos-2/blob/master/Screenshots/Phase%204/LogInN.png)
 ##### Login Error
-![Screenshot](https://github.com/CodeURJC-DAW-2018-19/santatecla-tiempos-2/blob/master/Screenshots/Phase%204/LogInError.png)
+![Screenshot](https://github.com/CodeURJC-DAW-2018-19/santatecla-tiempos-2/blob/master/Screenshots/Phase%204/LoginErrorN.png)
 ##### Not Allow
-![Screenshot](https://github.com/CodeURJC-DAW-2018-19/santatecla-tiempos-2/blob/master/Screenshots/Phase%204/NoPermisos.png)
+![Screenshot](https://github.com/CodeURJC-DAW-2018-19/santatecla-tiempos-2/blob/master/Screenshots/Phase%204/ErrorN.png)
 ##### Categories
-![Screenshot](https://github.com/CodeURJC-DAW-2018-19/santatecla-tiempos-2/blob/master/Screenshots/Phase%204/Categories.png)
+![Screenshot](https://github.com/CodeURJC-DAW-2018-19/santatecla-tiempos-2/blob/master/Screenshots/Phase%204/CategoriesN.png)
 ##### Add Category
-![Screenshot](https://github.com/CodeURJC-DAW-2018-19/santatecla-tiempos-2/blob/master/Screenshots/Phase%204/CategoriesAdd.png)
+![Screenshot](https://github.com/CodeURJC-DAW-2018-19/santatecla-tiempos-2/blob/master/Screenshots/Phase%204/CategoriesAddN.png)
 ##### Events
-![Screenshot](https://github.com/CodeURJC-DAW-2018-19/santatecla-tiempos-2/blob/master/Screenshots/Phase%204/Events.png)
+![Screenshot](https://github.com/CodeURJC-DAW-2018-19/santatecla-tiempos-2/blob/master/Screenshots/Phase%204/EventsN.png)
 ##### Search Event
-![Screenshot](https://github.com/CodeURJC-DAW-2018-19/santatecla-tiempos-2/blob/master/Screenshots/Phase%204/EventsBusqueda.png)
+![Screenshot](https://github.com/CodeURJC-DAW-2018-19/santatecla-tiempos-2/blob/master/Screenshots/Phase%204/SearchEventN.png)
 ##### Times
-![Screenshot](https://github.com/CodeURJC-DAW-2018-19/santatecla-tiempos-2/blob/master/Screenshots/Phase%204/Times.png)
+![Screenshot](https://github.com/CodeURJC-DAW-2018-19/santatecla-tiempos-2/blob/master/Screenshots/Phase%204/TimesN.png)
 ##### Interval
-![Screenshot](https://github.com/CodeURJC-DAW-2018-19/santatecla-tiempos-2/blob/master/Screenshots/Phase%204/TimesConcreto.png)
+![Screenshot](https://github.com/CodeURJC-DAW-2018-19/santatecla-tiempos-2/blob/master/Screenshots/Phase%204/IntervalN.png)
 ##### Add Interval
-![Screenshot](https://github.com/CodeURJC-DAW-2018-19/santatecla-tiempos-2/blob/master/Screenshots/Phase%204/TimesAdd.png)
+![Screenshot](https://github.com/CodeURJC-DAW-2018-19/santatecla-tiempos-2/blob/master/Screenshots/Phase%204/TimesAddN.png)
 
