@@ -7,7 +7,8 @@ import {IPageChangeEvent, TdPagingBarComponent} from "@covalent/core";
 
 /*Aqui elegimos los template y los archivos de maquetacion que vamos a usar*/
 @Component({
-    templateUrl:'event-list.component.html'
+    templateUrl:'event-list.component.html',
+    styleUrls: ['app.component.css']
 })
 
 /*Creamos la clase de EventListComponent que se encargara coger los datos necesarios*/

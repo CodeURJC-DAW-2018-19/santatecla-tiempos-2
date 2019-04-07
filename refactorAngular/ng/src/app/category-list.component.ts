@@ -6,7 +6,8 @@ import {LoginService} from "./auth/login.service";
 import {IPageChangeEvent, TdPagingBarComponent} from "@covalent/core";
 
 @Component({
-  templateUrl:'category-list.component.html'
+  templateUrl:'category-list.component.html',
+  styleUrls: ['app.component.css']
 })
 
 export class CategoryListComponent implements OnInit{

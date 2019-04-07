@@ -5,7 +5,8 @@ import {Time, TimeService} from "./time.service";
 import {IPageChangeEvent, TdPagingBarComponent} from "@covalent/core";
 
 @Component({
-    templateUrl:'time-list.component.html'
+    templateUrl:'time-list.component.html',
+    styleUrls: ['app.component.css']
 })
 
 export class TimeListComponent implements OnInit{
