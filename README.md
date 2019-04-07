@@ -171,5 +171,27 @@ One you have installed it, go to a terminal and execute the following commands:
  4. End using command:
  npm start
  
-##### Component Diagram
+### Component Diagram
 ![Screenshot](https://github.com/CodeURJC-DAW-2018-19/santatecla-tiempos-2/blob/master/Screenshots/Phase%204/ComponentDiagram.png)
+### Templates
+##### Login
+![Screenshot](https://github.com/CodeURJC-DAW-2018-19/santatecla-tiempos-2/blob/master/Screenshots/Phase%204/LogIn.png)
+##### Login Error
+![Screenshot](https://github.com/CodeURJC-DAW-2018-19/santatecla-tiempos-2/blob/master/Screenshots/Phase%204/LogInError.png)
+##### Not Allow
+![Screenshot](https://github.com/CodeURJC-DAW-2018-19/santatecla-tiempos-2/blob/master/Screenshots/Phase%204/NoPermisos.png)
+##### Categories
+![Screenshot](https://github.com/CodeURJC-DAW-2018-19/santatecla-tiempos-2/blob/master/Screenshots/Phase%204/Categories.png)
+##### Add Category
+![Screenshot](https://github.com/CodeURJC-DAW-2018-19/santatecla-tiempos-2/blob/master/Screenshots/Phase%204/CategoriesAdd.png)
+##### Events
+![Screenshot](https://github.com/CodeURJC-DAW-2018-19/santatecla-tiempos-2/blob/master/Screenshots/Phase%204/Events.png)
+##### Search Event
+![Screenshot](https://github.com/CodeURJC-DAW-2018-19/santatecla-tiempos-2/blob/master/Screenshots/Phase%204/EventsBusqueda.png)
+##### Times
+![Screenshot](https://github.com/CodeURJC-DAW-2018-19/santatecla-tiempos-2/blob/master/Screenshots/Phase%204/Times.png)
+##### Interval
+![Screenshot](https://github.com/CodeURJC-DAW-2018-19/santatecla-tiempos-2/blob/master/Screenshots/Phase%204/TimesConcreto.png)
+##### Add Interval
+![Screenshot](https://github.com/CodeURJC-DAW-2018-19/santatecla-tiempos-2/blob/master/Screenshots/Phase%204/TimesAdd.png)
+
