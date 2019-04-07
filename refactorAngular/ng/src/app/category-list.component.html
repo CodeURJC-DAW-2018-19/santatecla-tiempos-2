@@ -18,9 +18,6 @@
         <a *ngFor="let category of categories | categoryNameFilter:searchCategory" mat-list-item [routerLink]="['/categories', category.id]">
           {{ category.nameCategory }}
         </a>
-        <!--
-        <button mat-button (click)="getCategoriesbyPage(p-1)">Previous</button>
-        <button mat-button (click)="getCategoriesbyPage(p+1)">Next</button>-->
         <td-paging-bar #pagingBar [firstLast]="firstLast" [pageSize]="pageSize" [total]="total" (change)="change($event)">
           {{pagingBar.range}} of {{pagingBar.total}}
         </td-paging-bar>
@@ -31,9 +28,6 @@
         <mat-list-item [ngStyle]="{ cursor: 'auto' }" *ngFor="let category of categories">
           {{ category.nameCategory }}
         </mat-list-item>
-        <!--
-       <button mat-button (click)="getCategoriesbyPage(p-1)">Previous</button>
-       <button mat-button (click)="getCategoriesbyPage(p+1)">Next</button>-->
 
         <td-paging-bar #pagingBar [firstLast]="firstLast" [pageSize]="pageSize" [total]="total" (change)="change($event)">
           {{pagingBar.range}} of {{pagingBar.total}}

@@ -2,13 +2,16 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="3555b13a-a56f-4a94-bab2-e973e3df3eba" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/ng/src/app/category-form.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/ng/src/app/category-form.component.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ng/src/app/category-list.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/ng/src/app/category-list.component.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ng/src/app/category.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/ng/src/app/category.service.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ng/src/app/event-list.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/ng/src/app/event-list.component.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ng/src/app/event.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/ng/src/app/event.service.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ng/src/app/time-list.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/ng/src/app/time-list.component.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ng/src/app/time.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/ng/src/app/time.service.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docker/web-ng-rest-db-security-0.1.0.jar" beforeDir="false" afterPath="$PROJECT_DIR$/docker/web-ng-rest-db-security-0.1.0.jar" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ng/dist/my-app/main.js" beforeDir="false" afterPath="$PROJECT_DIR$/ng/dist/my-app/main.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ng/dist/my-app/main.js.map" beforeDir="false" afterPath="$PROJECT_DIR$/ng/dist/my-app/main.js.map" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ng/src/app/app.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/ng/src/app/app.component.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/static/new/main.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/new/main.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/static/new/main.js.map" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/new/main.js.map" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/new/main.js" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/static/new/main.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/new/main.js.map" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/static/new/main.js.map" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/web-ng-rest-db-security-0.1.0.jar" beforeDir="false" afterPath="$PROJECT_DIR$/target/web-ng-rest-db-security-0.1.0.jar" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/web-ng-rest-db-security-0.1.0.jar.original" beforeDir="false" afterPath="$PROJECT_DIR$/target/web-ng-rest-db-security-0.1.0.jar.original" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/target/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -23,67 +26,22 @@
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/ng/src/app/category.service.ts">
+        <entry file="file://$PROJECT_DIR$/ng/src/app/app.component.ts">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="289">
-              <caret line="70" column="19" lean-forward="true" selection-start-line="70" selection-end-line="76" selection-end-column="3" />
+            <state relative-caret-position="-136">
+              <caret line="21" column="4" selection-start-line="21" selection-start-column="4" selection-end-line="21" selection-end-column="4" />
               <folding>
-                <element signature="e#0#41#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/ng/src/app/event.service.ts">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="508">
-              <caret line="89" column="38" selection-start-line="89" selection-start-column="38" selection-end-line="89" selection-end-column="38" />
-              <folding>
-                <element signature="e#0#48#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/ng/src/app/category-list.component.ts">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="289">
-              <caret line="34" column="35" lean-forward="true" selection-start-line="32" selection-start-column="4" selection-end-line="34" selection-end-column="35" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/ng/src/app/event-list.component.ts">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="168">
-              <caret line="52" column="48" selection-start-line="52" selection-start-column="48" selection-end-line="52" selection-end-column="48" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/ng/src/app/time.service.ts">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-614">
-              <caret line="21" column="9" selection-start-line="21" selection-start-column="9" selection-end-line="21" selection-end-column="9" />
-              <folding>
-                <element signature="e#0#41#0" expanded="true" />
+                <element signature="e#0#80#0" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/ng/src/app/time-list.component.ts">
+        <entry file="file://$PROJECT_DIR$/ng/src/app/app.component.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="493">
-              <caret line="55" column="43" selection-start-line="55" selection-start-column="43" selection-end-line="55" selection-end-column="43" />
-              <folding>
-                <element signature="e#0#59#0" expanded="true" />
-              </folding>
+            <state relative-caret-position="265">
+              <caret line="29" column="127" selection-start-line="29" selection-start-column="127" selection-end-line="29" selection-end-column="127" />
             </state>
           </provider>
         </entry>
@@ -129,7 +87,6 @@
         <option value="$PROJECT_DIR$/ng/src/app/app.routing.ts" />
         <option value="$PROJECT_DIR$/ng/src/app/environments/environment.prod.ts" />
         <option value="$PROJECT_DIR$/ng/src/app/environments/environment.ts" />
-        <option value="$PROJECT_DIR$/ng/src/app/app.component.html" />
         <option value="$PROJECT_DIR$/ng/src/app/app.component.ts" />
         <option value="$PROJECT_DIR$/src/main/java/com/example/demo/entities/EventService.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/example/demo/entities/Event.java" />
@@ -163,6 +120,7 @@
         <option value="$PROJECT_DIR$/ng/src/app/event-list.component.ts" />
         <option value="$PROJECT_DIR$/ng/src/app/time.service.ts" />
         <option value="$PROJECT_DIR$/ng/src/app/time-list.component.ts" />
+        <option value="$PROJECT_DIR$/ng/src/app/app.component.html" />
       </list>
     </option>
   </component>
@@ -173,11 +131,11 @@
       </MavenImportingSettings>
     </option>
   </component>
-  <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="192" />
-    <option name="y" value="50" />
+  <component name="ProjectFrameBounds" extendedState="7">
+    <option name="x" value="-1672" />
+    <option name="y" value="-9" />
     <option name="width" value="955" />
-    <option name="height" value="1049" />
+    <option name="height" value="1050" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectView">
@@ -186,7 +144,6 @@
     </navigator>
     <panes>
       <pane id="Scope" />
-      <pane id="PackagesPane" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -283,10 +240,18 @@
               <item name="demo" type="462c0819:PsiDirectoryNode" />
               <item name="web" type="462c0819:PsiDirectoryNode" />
             </path>
+            <path>
+              <item name="web-ng-rest-db-security" type="b2602c69:ProjectViewProjectNode" />
+              <item name="refactorAngular" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="resources" type="462c0819:PsiDirectoryNode" />
+            </path>
           </expand>
           <select />
         </subPane>
       </pane>
+      <pane id="PackagesPane" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -310,7 +275,7 @@
     <property name="project.structure.proportion" value="0.0" />
     <property name="project.structure.side.proportion" value="0.0" />
     <property name="settings.editor.selected.configurable" value="configurable.group.language" />
-    <property name="ts.external.directory.path" value="D:\Repositorios\santatecla-tiempos-2\refactorAngular\ng\node_modules\typescript\lib" />
+    <property name="ts.external.directory.path" value="C:\Users\sergi\Documents\GitHub\santatecla-tiempos-2\refactorAngular\ng\node_modules\typescript\lib" />
   </component>
   <component name="RecentsManager">
     <key name="CopyClassDialog.RECENTS_KEY">
@@ -402,11 +367,12 @@
       <workItem from="1554547060424" duration="729000" />
       <workItem from="1554552078440" duration="7154000" />
       <workItem from="1554565977853" duration="6387000" />
+      <workItem from="1554647183985" duration="163000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="98525000" />
+    <option name="totallyTimeSpent" value="98688000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -418,9 +384,10 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
+    <frame x="-1927" y="-104" width="1550" height="838" extended-state="6" />
+    <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.24200426" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.24563758" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Designer" order="2" />
       <window_info id="Image Layers" order="3" />
@@ -437,7 +404,7 @@
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" weight="0.32827735" />
       <window_info anchor="bottom" id="Spring" order="7" weight="0.32936078" />
-      <window_info active="true" anchor="bottom" id="Terminal" order="8" sideWeight="0.49932885" visible="true" weight="0.26868907" />
+      <window_info anchor="bottom" id="Terminal" order="8" sideWeight="0.49932885" visible="true" weight="0.26770538" />
       <window_info anchor="bottom" id="Docker" order="9" show_stripe_button="false" />
       <window_info anchor="bottom" id="Event Log" order="10" sideWeight="0.50067115" side_tool="true" weight="0.28470254" />
       <window_info anchor="bottom" id="Messages" order="11" weight="0.32152975" />
@@ -574,12 +541,6 @@
     <entry file="file://$PROJECT_DIR$/ng/src/app/environments/environment.ts">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/ng/src/app/app.component.css">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/ng/src/app/app.component.html">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
     <entry file="file://$PROJECT_DIR$/ng/src/app/environments/environment.prod.ts">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
@@ -610,16 +571,6 @@
           <caret line="77" column="45" selection-start-line="77" selection-start-column="45" selection-end-line="77" selection-end-column="45" />
           <folding>
             <element signature="e#0#58#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/ng/src/app/app.component.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="357">
-          <caret line="21" column="4" lean-forward="true" selection-start-line="21" selection-start-column="4" selection-end-line="21" selection-end-column="4" />
-          <folding>
-            <element signature="e#0#80#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -697,13 +648,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="306">
           <caret line="23" column="64" selection-start-line="23" selection-start-column="64" selection-end-line="23" selection-end-column="64" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/example/demo/web/WebControllerTimes.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="531">
-          <caret line="160" column="2" selection-start-line="160" selection-start-column="2" selection-end-line="160" selection-end-column="2" />
         </state>
       </provider>
     </entry>
@@ -796,57 +740,84 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/ng/src/app/category.service.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1122">
+          <caret line="79" column="19" selection-start-line="79" selection-end-line="85" selection-end-column="3" />
+          <folding>
+            <element signature="e#0#41#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/ng/src/app/event.service.ts">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="508">
-          <caret line="89" column="38" selection-start-line="89" selection-start-column="38" selection-end-line="89" selection-end-column="38" />
+        <state relative-caret-position="1394">
+          <caret line="97" selection-start-line="97" selection-end-line="97" />
           <folding>
             <element signature="e#0#48#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/ng/src/app/event-list.component.ts">
+    <entry file="file://$PROJECT_DIR$/ng/src/app/category-list.component.ts">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="168">
-          <caret line="52" column="48" selection-start-line="52" selection-start-column="48" selection-end-line="52" selection-end-column="48" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/ng/src/app/category.service.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="289">
-          <caret line="70" column="19" lean-forward="true" selection-start-line="70" selection-end-line="76" selection-end-column="3" />
-          <folding>
-            <element signature="e#0#41#0" expanded="true" />
-          </folding>
+        <state relative-caret-position="1156">
+          <caret line="68" selection-start-line="68" selection-end-line="68" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/ng/src/app/time.service.ts">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-614">
-          <caret line="21" column="9" selection-start-line="21" selection-start-column="9" selection-end-line="21" selection-end-column="9" />
+        <state relative-caret-position="306">
+          <caret line="23" column="9" selection-start-line="23" selection-start-column="9" selection-end-line="23" selection-end-column="9" />
           <folding>
             <element signature="e#0#41#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/ng/src/app/category-list.component.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="289">
-          <caret line="34" column="35" lean-forward="true" selection-start-line="32" selection-start-column="4" selection-end-line="34" selection-end-column="35" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/ng/src/app/time-list.component.ts">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="493">
-          <caret line="55" column="43" selection-start-line="55" selection-start-column="43" selection-end-line="55" selection-end-column="43" />
+        <state relative-caret-position="435">
+          <caret line="74" selection-start-line="74" selection-end-line="74" />
           <folding>
             <element signature="e#0#59#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/example/demo/web/WebControllerTimes.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2720">
+          <caret line="160" column="2" selection-start-line="160" selection-start-column="2" selection-end-line="160" selection-end-column="2" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ng/src/app/app.component.css">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ng/src/app/event-list.component.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="595">
+          <caret line="76" selection-start-line="76" selection-end-line="76" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ng/src/app/app.component.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-136">
+          <caret line="21" column="4" selection-start-line="21" selection-start-column="4" selection-end-line="21" selection-end-column="4" />
+          <folding>
+            <element signature="e#0#80#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ng/src/app/app.component.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="265">
+          <caret line="29" column="127" selection-start-line="29" selection-start-column="127" selection-end-line="29" selection-end-column="127" />
         </state>
       </provider>
     </entry>
