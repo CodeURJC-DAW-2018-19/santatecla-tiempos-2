@@ -54,7 +54,7 @@
                         <mat-label>Seleccione un Evento</mat-label>
                         <mat-select disableRipple placeholder="Seleccione una evento" [(ngModel)]="selectedEvent" #timeFormComponent
                                     #timeFormControl="ngModel" name="name">
-                            <mat-option *ngFor="let eve of alleventss"  [value]="eve.nameEvent">
+                            <mat-option *ngFor="let eve of alleventss"  [value]="eve.id">
                                 {{eve.nameEvent}}
                             </mat-option>
                         </mat-select>
