@@ -1,5 +1,8 @@
 # santatecla-tiempos-2
 
+## Angular Application Video
+https://www.youtube.com/watch?v=EOf7xEh1z2M&t=
+
 ## Phase 0
 
 ### Name: Time Manager
